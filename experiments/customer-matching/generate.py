@@ -27,9 +27,12 @@ LAST = ["Smith", "Johnson", "Williams", "Brown", "Garcia", "Miller", "Davis", "R
         "Martin", "Lee", "Thompson", "White", "Harris", "Clark", "Lewis", "Walker", "Hall", "Young", "Allen"]
 STEMS = ["Harbor Point", "Summit", "Blue Ridge", "Cedar", "Ironwood", "Bright Path", "Northgate", "Redwood",
          "Silver Creek", "Atlas", "Pioneer", "Lakeside", "Granite", "Evergreen", "Keystone", "Meridian",
-         "Copper Hill", "Falcon", "Maple Leaf", "Stonebridge", "Riverbend", "Oakmont", "Sterling", "Beacon"]
+         "Copper Hill", "Falcon", "Maple Leaf", "Stonebridge", "Riverbend", "Oakmont", "Sterling", "Beacon",
+         "Crestview", "Driftwood", "Emberly", "Foxglove", "Glenwood", "Highland", "Juniper", "Kingsley",
+         "Lantern", "Marlow", "Nimbus", "Orchard", "Paragon", "Quarry", "Rosewood", "Skyline"]
 TRADES = ["Plumbing", "Dental", "Logistics", "Consulting", "Roofing", "Analytics", "Bakery", "Insurance",
-          "Electric", "Landscaping", "Legal Services", "Software", "Staffing", "Auto Repair", "Design"]
+          "Electric", "Landscaping", "Legal Services", "Software", "Staffing", "Auto Repair", "Design",
+          "Catering", "Printing", "Security", "Fitness", "Veterinary", "Marketing", "Machining", "Cleaning"]
 SUFFIXES = ["Inc", "LLC", "Co", "Corp", "Ltd", ""]
 STREETS = ["Main", "Oak", "Maple", "Cedar", "Elm", "Washington", "Lake", "Hill", "Park", "Sunset", "Church"]
 KINDS = {"Street": "St", "Avenue": "Ave", "Road": "Rd", "Boulevard": "Blvd", "Drive": "Dr"}
@@ -84,8 +87,7 @@ def mess_address(r):
 
 
 # ---- accounts ----
-def new_account(i):
-    stem, trade = rng.choice(STEMS), rng.choice(TRADES)
+def new_account(i, stem, trade):
     name = f"{stem} {trade}"
     a = {"true_id": f"TA{i:04d}", "name": name, "suffix": rng.choice(SUFFIXES),
          "website": f"www.{slug(name)}.com", "phone": f"{rng.randrange(200, 999)}{rng.randrange(200, 999)}{rng.randrange(10000):04d}",
@@ -118,7 +120,9 @@ def account_row(a, variant):
 
 
 def make_accounts():
-    base = [new_account(i) for i in range(N_TRUE_ACCOUNTS - N_ACCOUNT_DECOYS)]
+    combos = [(s, t) for s in STEMS for t in TRADES]  # unique names; same-name collisions come only from decoys
+    rng.shuffle(combos)
+    base = [new_account(i, *combos[i]) for i in range(N_TRUE_ACCOUNTS - N_ACCOUNT_DECOYS)]
     # decoys: look like an existing business but are a different one (other city, other trade or same-brand sibling)
     for j in range(N_ACCOUNT_DECOYS):
         d = dict(rng.choice(base))

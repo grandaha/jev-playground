@@ -17,6 +17,102 @@ It is defensive only. The alerts describe what a detector saw. They contain no a
 
 The costly mistake here is the reverse of record matching. A false merge was the worst error there. Here the worst error is closing the alert of a real attack, so the design leans toward escalating.
 
+## Where Jev is used, and why
+Jev is called at two points: once for each alert, and once for each pair of alerts that might belong together. Code does everything else. This section lists every question, what goes in, what comes back, and what code does with each answer.
+
+**Why a model at all.** The difference between an attack and its harmless look-alike sits in the words of the alert, not in a field a rule can test. "Sign-in from a country never seen for this user, on an unregistered device, right after a password reset" is an attack. "First sign-in from a new country on the user's registered laptop, and the calendar shows a flight that day" is a trip. Both arrive under the same kind of rule at the same detector severity. A rules-only baseline can use the severity and two lists, so it escalates the trip and misses the quiet attacks. Jev reads the evidence and returns probabilities. Code then decides how cautious to be.
+
+### Call 1: judge one alert
+**When it runs.** Once for every alert, except alerts the allowlist already closes. Alerts on the never-suppress list are still asked, because Jev decides whether they escalate or only get investigated.
+
+**What goes in.** The alert's own fields: time, detector, rule name, description, the detector's severity, user, host, source and destination address, and the tactic the detector claims. Two items of context go with it: the asset's criticality and the user's access level. A note says the detector's severity and tactic are its own guesses and are sometimes wrong. No field from the answer key is ever sent.
+
+**The four questions, exactly as they appear in `scripts/ask.py`:**
+
+```
+disposition (Choice)
+  Is this alert a real attack, a false alarm, or real but authorized activity?
+  true_positive          Real malicious activity that needs a response.
+  false_positive         Benign activity that only looked suspicious, or a detector misfire.
+  benign_true_positive   Real behavior that is authorized or expected, such as an approved admin task, a scheduled job or an authorized security test.
+
+impact (Score)
+  If this alert is real, how much damage could it do to the company?
+  0  Minimal: no sensitive data or systems are at risk.
+  1  Limited: one account or workstation is affected and the damage is easy to contain.
+  2  Serious: sensitive data or an important system is at risk, or several accounts are affected.
+  3  Severe: customer data, crown-jewel systems or company-wide operations are at risk.
+
+stage (Choice)
+  Which attacker goal does this activity serve?
+  reconnaissance         Gathering information about the company to plan an attack.
+  resource_development   Setting up infrastructure or accounts to support an attack.
+  initial_access         Getting a first foothold, for example through phishing or a stolen sign-in.
+  execution              Running attacker-controlled code.
+  persistence            Keeping access across restarts and password changes.
+  privilege_escalation   Gaining higher permissions.
+  stealth                Hiding actions so they look normal.
+  defense_impairment     Turning off or weakening security tools and logging.
+  credential_access      Stealing or guessing account credentials.
+  discovery              Mapping the environment to decide where to go next.
+  lateral_movement       Moving from one system to another.
+  collection             Gathering the data the attacker wants.
+  command_and_control    Communicating with compromised systems from outside.
+  exfiltration           Stealing data out of the company.
+  impact                 Disrupting, encrypting or destroying systems and data.
+
+benign_explanation (Noul)
+  Does an ordinary, authorized explanation fit the evidence in this alert?
+```
+
+**What comes back.** The two Choice questions return a probability for each option. The impact Score returns a number from 0 to 3. The Noul question returns a probability of yes.
+
+**What code does with each answer.**
+- `disposition`: call the probability of `true_positive` *p*. At *p* of 0.60 or more the alert escalates. A never-suppress alert below that is investigated. At *p* of 0.15 or more the alert is investigated. Below that, the alert closes only if every closing condition holds. The probability of `false_positive` plus `benign_true_positive` must be 0.90 or more. The `benign_explanation` answer must be 0.80 or more. No other alert on the same user or host within 72 hours may doubt it. That means being on the never-suppress list, being unanswered, or having a *p* of 0.15 or more. If any condition fails, the alert is investigated. An alert with no answer is investigated too.
+- `impact`: multiplied by *p* to give the finding's risk (impact divided by 3, times 100, times *p*). That risk feeds the account score, and the impact sets an incident's severity.
+- `stage`: not used for any decision in this build. Its answer is compared with the answer key and with the detector's claimed tactic. That measures whether Jev maps alerts to attack stages better than detectors do. A later round may use it for a decision only if that measurement earns it.
+- `benign_explanation`: a second, separate check, so that closing an alert never rests on one answer.
+
+The thresholds live in `decide.Policy`. A sweep over the saved answers picks them on one seed, and a fresh seed checks them.
+
+**Why these questions.** The disposition has three options because security teams treat "real but authorized" differently from "false alarm". The first is closed quietly. The second points at a detector that needs tuning. The impact question exists because detector severity is unreliable and account risk needs an honest measure of damage.
+
+**What the rules-only baseline does instead.** It escalates high and critical detector severities, investigates medium, closes low and informational, and applies the never-suppress list and the allowlist. It cannot read the description.
+
+### Call 2: judge a pair of alerts
+**When it runs.** For every candidate pair, meaning two alerts that share a user, host or address within 72 hours. The obvious-link rule (same user and same host within 30 minutes) settles some pairs without a call.
+
+**What goes in.** Both alerts' fields, and the list of entities they share.
+
+**The two questions, exactly as they appear in `scripts/ask.py`:**
+
+```
+same_incident (Score)
+  Are these two alerts part of the same attack or event?
+  0  They are unrelated events that only share a name or address.
+  1  They might be related, but the evidence is thin.
+  2  They are clearly steps of the same attack or the same event.
+
+shared_entity_is_coincidence (Noul)
+  Is the shared user, host or address a coincidence, for example a shared office or guest network address used by many people?
+```
+
+**What code does with the answers.** A pair links when the `same_incident` Score is 1.6 or more and the coincidence probability is below 0.5. Linked pairs cluster into incidents. A pair with no answer is not linked, and each of its alerts still gets its own decision.
+
+**Why Jev here.** Sharing an entity is weak evidence. Many unrelated users sit behind one guest-network address, and unrelated incidents touch the same server. In the other direction, a real incident's alert can lose its user field. Telling these apart means reading the two descriptions together and asking whether one is the next step of the other. The coincidence question exists so that a shared address does not link strangers.
+
+**What the baseline does instead.** It links every candidate pair, which over-links.
+
+### Account risk
+Account risk makes no Jev call of its own. It uses the `impact` and the probability *p* from Call 1 and does the arithmetic in code (see Account risk below).
+
+### What Jev never decides
+- Whether to close an alert. Code closes, and only when every condition above holds.
+- The never-suppress list and the allowlist. They are fixed rules.
+- Thresholds and weights. Code sets them and the answer key checks them.
+- Obvious links, the clustering of linked pairs, the account score and every metric.
+- Anything about a person. No question asks about an employee. Every question is about an alert.
+
 ## Standards this design follows
 - **Triage outcomes.** Security operations center (SOC) teams sort each alert into one of three outcomes. A true positive is real malicious activity. A false positive is benign activity that looked bad. A benign true positive is real but authorized behavior, such as an admin using a remote tool. The team then closes, investigates or escalates the alert ([CyberDefenders](https://cyberdefenders.org/blog/alert-triage-process/), [Corelight](https://corelight.com/resources/glossary/alert-triage)). Guides also keep a never-suppress list: privilege escalation, data leaving to unknown destinations, and command-and-control traffic ([Blink Ops](https://www.blinkops.com/blog/alert-triage)).
 - **Attack stages.** MITRE ATT&CK describes an attacker's goals as tactics. The current page lists 15, from Reconnaissance and Initial Access through Lateral Movement to Exfiltration and Impact ([MITRE ATT&CK](https://attack.mitre.org/tactics/enterprise/)).
@@ -73,13 +169,9 @@ Each script reads the files the previous stage wrote. Jev answers are saved, so 
 1. **Generate** the alerts and the answer key.
 2. **Enrich** each alert with entity keys, asset context and time windows.
 3. **Rules (code).** The never-suppress list never closes an alert. Such an alert is at least investigated, and it escalates when Jev judges it a likely true positive. An allowlist closes known-harmless alerts with a reason, such as a scheduled backup or an approved scanner. The detector's severity is an input, never the answer.
-4. **Ask Jev** once per remaining alert. It gets the alert with its asset and user context and answers:
-   - Disposition (Choice): true positive, false positive or benign true positive.
-   - Impact (Score): minimal, limited, serious or severe.
-   - Stage (Choice): one of the 15 ATT&CK tactics.
-   - Benign explanation (Noul): does an ordinary explanation fit?
-5. **Decide each alert.** Code closes, investigates or escalates, and leans toward escalating. An alert closes only when three things hold. Jev is confident it is benign. It is not on the never-suppress list. No other alert in its story casts doubt. The thresholds come from a sweep on one seed, and a fresh seed checks them.
-6. **Group into incidents.** Alerts that share a user, host or address within 72 hours become candidate pairs. Code settles the obvious links (the same user and host within 30 minutes). Jev judges the ambiguous ones: is this the same incident? The pairs cluster into incidents. An incident's severity and disposition come from its alerts. Alerts on one user that do not fit together stay separate.
+4. **Ask Jev about each alert** (Call 1 in [Where Jev is used, and why](#where-jev-is-used-and-why)). The four questions, their inputs and their use are listed there, and nowhere else.
+5. **Decide each alert.** Code closes, investigates or escalates, and leans toward escalating. The exact conditions, and the thresholds, are in Call 1.
+6. **Group into incidents.** Alerts that share a user, host or address within 72 hours become candidate pairs. Code settles the obvious links (the same user and host within 30 minutes). Jev (Call 2) judges the ambiguous ones. The linked pairs cluster into incidents. An incident's severity and disposition come from its alerts. Alerts on one user that do not fit together stay separate.
 7. **Score accounts.** See the next section.
 8. **Explain and report.** Every alert, incident and account records the rule that fired, Jev's answers and the evidence. A browsable report shows them, in the style of the matching reports.
 
@@ -101,6 +193,7 @@ Each stage also runs as plain rules on the same alerts:
 - Benign look-alikes: benign true positives closed with a reason, against ones escalated for no reason.
 - Grouping: how many alert pairs from one incident get linked, how many wrong pairs get linked, and whether any incident mixes two real ones.
 - Account ranking: how many of the compromised accounts land in the top 10 and top 20.
+- Stage accuracy: for real alerts, how often Jev's `stage` answer matches the true tactic, against how often the detector's claimed tactic matches it.
 - Every metric comes per scenario, side by side for Jev and the baseline.
 - Mean time to detect and mean time to respond need live operations, so the experiment does not claim them.
 
@@ -123,7 +216,7 @@ Each phase is checked before the next starts.
 
 ## Risks
 - **Flattering results.** The same person writes the stories and the rules. Hard look-alike scenarios, added in new rounds, and a plain caveat in the README are the answer.
-- **Cost.** A full run is roughly 600 to 900 Jev requests, so it is cheap.
+- **Cost.** A full run is about 1,000 requests for Call 1. Call 2 adds one request per ambiguous candidate pair, which is several hundred more. It is cheap, and the results report the measured count.
 - **Scope.** The work has three pieces: triage, grouping and account risk. The build order keeps each one small enough to verify.
 - **Sensitivity.** The account ranking is about people. The guardrails above apply to the report and to the README.
 

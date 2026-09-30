@@ -22,6 +22,7 @@
 - Account score: rolling 7-day window, 0 to 100. Finding risk is impact times confidence divided by 100.
 - Never-suppress list (privilege escalation, data leaving to an unknown destination, command and control) never closes an alert.
 - Jev answers are saved; `replay.sh` rebuilds every result with no API key and no network.
+- `DESIGN.md` quotes every Jev question exactly as the code sends it, and says what each answer is used for. `tests/test_design_matches_code.py` fails when the document and the code differ. Any question that is asked but unused must be labeled as measured only (as `stage` is).
 - The API key lives in `.env` (gitignored). Never commit or print it.
 - All commits stay on branch `worktree-security-alert-triage`, in the worktree at `.claude/worktrees/security-alert-triage`. Do not push. The pull request comes only after every task is done, and only when the user says so.
 - Commit messages end with the trailer `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`.
@@ -76,19 +77,17 @@ All paths are under `experiments/security-alert-triage/`.
 - Produces: `generate.build(seed) -> (employees, alerts, key)` (three lists of dicts), `generate.write(employees, alerts, key, employees_path, alerts_path, key_path)`, `scenarios.SHARED_NAT_IP`, `scenarios.SERVERS`
 - Alert dict keys are `schema.ALERT_COLUMNS`; key dict keys are `schema.KEY_COLUMNS`; timestamps are `YYYY-MM-DDTHH:MM:SSZ`.
 
-- [ ] **Step 1: Set up the environment in the worktree**
+- [ ] **Step 1: Confirm the environment in the worktree**
 
-The worktree has no `.venv` and no `.env` (both are untracked). From the worktree root `/Users/daveraffaele/Developer/jev-playground/.claude/worktrees/security-alert-triage`:
+Already done while writing the plan: the worktree has `.venv` (with `typesafe-sdk`, `python-dotenv` and `pytest`), `pytest==` is pinned in `requirements.txt`, and `.env` was copied from the main checkout. From the worktree root `/Users/daveraffaele/Developer/jev-playground/.claude/worktrees/security-alert-triage`, confirm:
 
 ```bash
-python3.13 -m venv .venv
-.venv/bin/pip install -q -r requirements.txt pytest
-.venv/bin/pip freeze | grep -i "^pytest==" >> requirements.txt
-cp /Users/daveraffaele/Developer/jev-playground/.env .env
 git check-ignore -q .venv && git check-ignore -q .env && echo "both ignored"
+grep -c "^pytest==" requirements.txt
+.venv/bin/python -c "import typesafe_sdk, dotenv, pytest; print('imports ok')"
 ```
 
-Expected: `both ignored`. Do not print `.env`.
+Expected: `both ignored`, `1`, `imports ok`. If `.venv` or `.env` is missing, recreate them: `python3.13 -m venv .venv`, `.venv/bin/pip install -r requirements.txt`, and `cp /Users/daveraffaele/Developer/jev-playground/.env .env`. Do not print `.env`.
 
 - [ ] **Step 2: Write the failing tests**
 
@@ -1169,9 +1168,36 @@ def test_ask_alerts_skips_allowlisted_alerts():
     assert [r["asked"] for r in rows] == ["yes", "no"]
 ```
 
+Also create `tests/test_design_matches_code.py`, which keeps `DESIGN.md` honest about every Jev question (it covers the link questions too once Task 6 adds them):
+
+```python
+"""The design document must quote every Jev question exactly as the code sends it."""
+from pathlib import Path
+
+import pytest
+
+import ask
+
+DESIGN = (Path(__file__).resolve().parent.parent / "DESIGN.md").read_text()
+QUESTIONS = {**ask.ALERT_QUESTIONS, **getattr(ask, "LINK_QUESTIONS", {})}
+
+
+def texts(question):
+    criteria = question.criteria
+    if isinstance(criteria, dict):   # Choice: option name -> description
+        criteria = list(criteria.values())
+    return [question.instructions, *(criteria or [])]   # Score: list of levels; Noul: none
+
+
+@pytest.mark.parametrize("name,question", list(QUESTIONS.items()))
+def test_design_quotes_the_question_verbatim(name, question):
+    for text in texts(question):
+        assert text in DESIGN, f"{name}: DESIGN.md does not quote: {text}"
+```
+
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `../../.venv/bin/python -m pytest tests/test_ask.py -q`
+Run: `../../.venv/bin/python -m pytest tests/test_ask.py tests/test_design_matches_code.py -q`
 Expected: FAIL with `ModuleNotFoundError: No module named 'ask'`.
 
 - [ ] **Step 3: Write the alert questions**
@@ -1300,8 +1326,8 @@ if __name__ == "__main__":
 
 - [ ] **Step 4: Run the tests to verify they pass**
 
-Run: `../../.venv/bin/python -m pytest tests/test_ask.py -q`
-Expected: 6 passed.
+Run: `../../.venv/bin/python -m pytest tests/test_ask.py tests/test_design_matches_code.py -q`
+Expected: 10 passed (6 for `ask`, 4 for the design check). If the design test fails, `DESIGN.md` and the question text in `ask.py` have drifted: fix whichever is wrong, and keep them identical.
 
 - [ ] **Step 5: Probe the real API on five alerts**
 
@@ -1422,10 +1448,24 @@ def test_an_alert_with_no_entities_is_decided_alone():
     assert run([a], [answer("A1")])["A1"]["action"] == "close"
 ```
 
+Append to `tests/test_evaluate.py` (stage accuracy is computed from the answers, so it lives in `evaluate.py`):
+
+```python
+def test_stage_accuracy_compares_jev_and_the_detector_on_real_alerts():
+    key = [{"alert_id": "A1", "disposition": "true_positive", "true_tactic": "exfiltration"},
+           {"alert_id": "A2", "disposition": "true_positive", "true_tactic": "collection"},
+           {"alert_id": "A3", "disposition": "false_positive", "true_tactic": ""}]
+    alerts = [{"alert_id": "A1", "claimed_tactic": "exfiltration"}, {"alert_id": "A2", "claimed_tactic": ""},
+              {"alert_id": "A3", "claimed_tactic": "execution"}]
+    answers = {"A1": {"asked": "yes", "stage": "exfiltration"}, "A2": {"asked": "yes", "stage": "collection"},
+               "A3": {"asked": "yes", "stage": "execution"}}
+    assert evaluate.stage_accuracy(key, alerts, answers) == {"real_alerts": 2, "jev_correct": 2, "detector_correct": 1}
+```
+
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `../../.venv/bin/python -m pytest tests/test_decide.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'decide'`.
+Run: `../../.venv/bin/python -m pytest tests/test_decide.py tests/test_evaluate.py -q`
+Expected: FAIL with `ModuleNotFoundError: No module named 'decide'` and `AttributeError: module 'evaluate' has no attribute 'stage_accuracy'`.
 
 - [ ] **Step 3: Write the policy**
 
@@ -1542,10 +1582,32 @@ if __name__ == "__main__":
     main()
 ```
 
+Also add this function to `scripts/evaluate.py`, above `_print_alert_section`. It measures the `stage` question, which no decision uses in this build:
+
+```python
+def stage_accuracy(key, alerts, answers):
+    """For real alerts: how often Jev's stage, and the detector's claimed tactic, match the true tactic."""
+    claimed = {a["alert_id"]: a["claimed_tactic"] for a in alerts}
+    real = [k for k in key if k["disposition"] == "true_positive"]
+    jev = sum(1 for k in real if answers.get(k["alert_id"], {}).get("stage") == k["true_tactic"])
+    detector = sum(1 for k in real if claimed[k["alert_id"]] == k["true_tactic"])
+    return {"real_alerts": len(real), "jev_correct": jev, "detector_correct": detector}
+```
+
+and print it from `main()`, after the two alert sections:
+
+```python
+    if os.path.exists(path("answers_alerts.csv")):
+        answers = {r["alert_id"]: r for r in read_csv(path("answers_alerts.csv"))}
+        s = stage_accuracy(key, read_csv(path("alerts.csv")), answers)
+        print(f"\nStage accuracy on {s['real_alerts']} real alerts: Jev {s['jev_correct']}, "
+              f"the detector's claimed tactic {s['detector_correct']}")
+```
+
 - [ ] **Step 4: Run the tests to verify they pass**
 
-Run: `../../.venv/bin/python -m pytest tests/test_decide.py -q`
-Expected: 10 passed. Note that `test_a_suspicious_neighbor_blocks_closing` expects `neighbor_doubt` to be `True` (a Python bool), which the code stores; once written to CSV it becomes the string `True`.
+Run: `../../.venv/bin/python -m pytest -q`
+Expected: every test passes (10 in `test_decide.py`). Note that `test_a_suspicious_neighbor_blocks_closing` expects `neighbor_doubt` to be `True` (a Python bool), which the code stores; once written to CSV it becomes the string `True`.
 
 - [ ] **Step 5: Write the sweep**
 
@@ -2645,7 +2707,7 @@ In `DESIGN.md`, add a `Results` section with two tables (seed 101 and seed 202):
 
 - [ ] **Step 4: Write the README**
 
-Load the `writing-standards:writing-standards` skill, profile `deliverable`. `README.md` covers, in this order: what the project does; what you get; how to see the result with no key (`replay.sh`, then the report); how to run it with a key; how it works in five steps; the results table; what the tests found; limits (the author wrote both the scenarios and the rules, the set is small, the account ranking is an input for a human and never a verdict); a link to `DESIGN.md`. Run `python3 tools/style_check.py` from the skill folder on `README.md` and `DESIGN.md` and fix every `fix`.
+Load the `writing-standards:writing-standards` skill, profile `deliverable`. `README.md` covers, in this order: what the project does; what you get; how to see the result with no key (`replay.sh`, then the report); how to run it with a key; how it works in five steps, with a short list of where Jev is used and a link to `DESIGN.md#where-jev-is-used-and-why` for the exact questions; the results table; what the tests found; limits (the author wrote both the scenarios and the rules, the set is small, the account ranking is an input for a human and never a verdict); a link to `DESIGN.md`. Run `python3 tools/style_check.py` from the skill folder on `README.md` and `DESIGN.md` and fix every `fix`.
 
 - [ ] **Step 5: Scan before anything leaves the machine**
 

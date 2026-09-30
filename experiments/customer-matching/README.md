@@ -65,4 +65,8 @@ Three rule gaps turned up, and each got a fix in the rules:
 - The author wrote both the scenarios and the rules. The results show the method works on these cases. No test covers accuracy on your data.
 - The test set is small: 48 duplicate pairs in the accounts and 68 in the contacts. The two designs (Jev's score alone, and Jev plus the evidence rules) give identical results here, so the set cannot rank them.
 
+## License
+
+MIT. See [LICENSE](LICENSE).
+
 Start with [spec.md](spec.md) for the full design: the scenarios, the rules and the decisions behind them.

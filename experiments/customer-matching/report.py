@@ -96,7 +96,7 @@ function card(p,d){const A=d.records[p.a],B=d.records[p.b];
   +`<tr class="sec"><th colspan="3">match keys (green = shared, what made them candidates)</th></tr>`
   +[...new Set([...Object.keys(A.keys),...Object.keys(B.keys)])].sort().map(k=>{const x=A.keys[k]||'',y=B.keys[k]||'';return row(k,x,y,x&&x===y?'s':'')}).join('');
  const truth=p.dup?'same entity':'different entities';
- const vtxt=p.verdict=='review'?`review: truth is ${truth}`:p.verdict=='unprovable'?'unprovable: same entity, but only the name matches':p.verdict=='right'?'right':'wrong';
+ const vtxt=p.verdict=='review'?`review: truth is ${truth}`:p.verdict=='unprovable'?'unprovable: same entity, but only the name matches':p.verdict=='right'?'right':p.decision=='merge'?'wrong: merged, but the answer key says different entities':'wrong: not merged, but the answer key says the same entity';
  return`<div class="card"><div class="top"><span class="tag ${p.verdict}">${vtxt}</span><span>${LABEL[p.decision]}</span>
  <span class="mut">rule: ${p.rule}</span>${p.score?`<span class="mut">${esc(p.score)}</span>`:''}
  <span class="mut">truth: ${truth} (${p.kinds})</span><span class="mut">scenario: ${p.scenario}</span></div>

@@ -53,8 +53,17 @@ Run 1 (random 1,000/3,000 set, single score) is tagged `run-1-single-score`; run
 - Both policies (signals and single score) score the same on this set, so it cannot yet say which is better. The set is small (about 50 duplicate pairs per table) and was shaped while reading results, so a second seed is still needed before trusting it.
 - One contact in `dup_account` is never proposed: its account's two records were never merged (an unprovable moved account), so the contacts do not share a master account. That is the two-step flow working as designed, and a consequence of the account miss.
 
-## Holdout run (seed 23, `data_seed2/`)
-Run with `MATCH_DATA=data_seed2 SEED=23 experiments/customer-matching/run_all.sh` and no change to thresholds or rules. The seed 11 data in `data/` is untouched; the two sets are never mixed.
-- Accounts and contacts: 0 false merges and 100% recall on provable pairs (43 of 43 each), the same as seed 11. Siblings, twins and same-name-same-company are rejected; franchise accounts (6) and some junior/senior pairs (2) go to review.
-- What this does and does not show: the thresholds and rules are not tied to seed 11's random values. It does not show they cope with kinds of cases we have not written, because seed 23 uses the same scenarios with different random draws.
-- The master-record proxy fell (clean original chosen in 14 of 33 account groups, 21 of 43 contact groups) because recency is weighted 0.3 and is random noise in the data. Still open.
+## Holdout runs (same code, same thresholds)
+`MATCH_DATA=data_seed2 SEED=23 experiments/customer-matching/run_all.sh`, and `data_seed3` with `SEED=37`. The sets are never mixed.
+Fixed after reading the seed 23 results (so seed 23 stopped being a clean holdout and seed 37 was generated afterwards as a fresh one):
+- Generator: two random people could be given the same name at the same company, and their emails (built from the name) then collided. Random names are now redrawn so one name and company means one person; same-name scenarios stay intentional.
+- Rule: an identical non-role email with a compatible name (nickname, initial, swapped order) is a hard merge even when the phones differ. The old phone exemption only protected junior decoys, which now have their own emails.
+
+| Seed | False merges | Accounts recall (provable) | Contacts recall (provable) | Contacts in review that are true duplicates |
+|---|---|---|---|---|
+| 11 (tuned on) | 0 | 100% | 95.3% | 2 |
+| 23 (used to find the two fixes) | 0 | 100% | 95.3% | 2 |
+| 37 (fresh) | 0 | 100% | 100% | 0 |
+
+Open finding: the 2 contact true duplicates in review (seeds 11 and 23) are people whose accounts were never merged (an account pair left unmerged, e.g. a moved business), so the `different_account` penalty (-2) applies to two records that share a company email domain and often a phone. A company-domain signal would fix them, but adding it now would be tuning on these sets again, so it is left for a decision.
+- The master-record proxy is still low (recency 0.3 on random dates). Still open.

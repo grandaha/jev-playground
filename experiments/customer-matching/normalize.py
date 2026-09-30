@@ -102,6 +102,7 @@ def norm_contact(r):
             "phone_norm": phone(r["phone"]), "address_norm": address(r["address"]),
             "k_email": "" if r["email"].split("@")[0].lower() in ROLE_MAILBOXES else r["email"].lower().strip(),  # a shared mailbox is not an identifier
             "k_phone": phone(r["phone"]),
+            "name_a": f"{ini}{soundex(l)}", "name_b": f"{l[:1]}{soundex(f)}",  # first initial + last sound, and the same with names swapped
             "k_name_domain": f"{ini}{soundex(l)}|{dom}" if dom and ini and l else "",
             "k_name_street": f"{ini}{soundex(l)}|{street_key(r['address'], r['zip'])}" if ini and l and r["address"] else "",
             "k_name_swap": f"{names}|{dom}" if dom and ini and l else "",

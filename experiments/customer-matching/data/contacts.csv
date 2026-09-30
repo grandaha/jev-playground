@@ -1,245 +1,245 @@
 contact_id,account_id,first_name,last_name,email,phone,title,address,city,state,zip,source_system,updated_at
-C00001,,Daniel,Miller,danielmiller0177@gmail.com,(285) 404-3095,VP Sales,,,,,trade_show,2026-04-24
-C00002,A00084,Nathan,Nguyen,nathan.nguyen@atlasautorepair.com,980-994-0754,VP Sales,,,,,web_form,2022-06-10
-C00003,A00108,Susan,Lee,susan.lee@pioneeranalytics.com,+1 368 637 3788,Office Manager,,,,,crm,2022-01-11
-C00004,A00125,Patricia,Anderson,patricia.anderson@sterlinglogistics.com,2146373211,Purchasing Agent,,,,,billing,2022-05-31
-C00005,A00096,Daniel,Walker,daniel.walker@falconanalytics.com,294-925-4387,Engineer,,,,,web_form,2025-09-19
-C00006,A00110,Aisha,Nguyen,,,VP Sales,,,,,web_form,2025-01-03
-C00007,A00126,Daniel,Walker,daniel.walker@silvercreekbakery.com,+1 790 620 6534,Purchasing Agent,,,,,billing,2023-06-12
-C00008,A00147,Joseph,Taylor,joseph.taylor@harborpointinsurance.com,8157549384,Director of Operations,8664 Church Boulevard,Austin,TX,78757,web_form,2025-04-30
-C00009,A00107,Carlos,Allen,carlos.allen@atlaslogistics.com,656-328-4479,Owner,,,,,erp,2022-08-13
-C00010,A00127,Hannah,Wilson,hannah.wilson@mapleleafplumbing.com,583-620-5998,VP Sales,5785 Hill Road,Atlanta,GA,30371,web_form,2026-06-26
-C00011,A00107,Wei,Miller,wei.miller@atlaslogistics.com,(523) 691-9921,Purchasing Agent,353 Lake Boulevard,Boston,MA,02129,erp,2025-12-06
-C00012,A00043,Marcus,Harris,marcusharris0026@gmail.com,950.209.6118,Director of Operations,,,,,billing,2024-01-19
-C00013,A00072,Rick,White,rick.white@sterlinglogistics.com,(984) 331-2810,CFO,,,,,web_form,2023-12-06
-C00014,A00117,Christopher,Kim,christopher.kim.jr@blueridgedesign.com,+1 886 438 5540,Engineer,7245 Cedar Street,Boston,MA,02153,trade_show,2026-06-06
-C00015,A00068,Patricia,Clark,,,Purchasing Agent,,,,,erp,2022-11-23
-C00016,A00100,D.,Kim,,,Director of Operations,,,,,erp,2022-05-07
-C00017,A00047,Omar,Smith,info@redwoodroofing.com,(829) 380-9072,VP Sales,,,,,billing,2025-11-25
-C00018,A00073,Brown,Saah,,2808927453,Engineer,6360 CEDAR BLVD,Phoenix,AZ,85076,trade_show,2025-09-10
-C00019,A00047,Richard,Patel,info@redwoodroofing.com,(807) 561-8058,Owner,,,,,trade_show,2022-05-09
-C00020,A00048,Kevin,Taylor,kevin.taylor@pioneerlandscaping.com,+1 665 867 3840,Office Manager,9605 Washington Drive,Austin,TX,78792,trade_show,2022-12-26
-C00021,,Katherine,Moore,katherinemoore0043@gmail.com,,Engineer,,,,,web_form,2022-04-22
-C00022,A00089,Daniel,Patel,daniel.patel@blueridgeplumbing.com,837-520-3085,VP Sales,,,,,erp,2024-04-03
-C00023,A00119,Carlos,Anderson,,,Purchasing Agent,,,,,web_form,2022-07-05
-C00024,A00026,Jennifer,Garcia,jennifer.garcia@silvercreekconsulting.com,+1 480 683 6678,Engineer,6195 Cedar Boulevard,Portland,OR,97263,trade_show,2025-11-13
-C00025,A00117,Aisha,Young,ayoung@blueridgedesign.com,(431) 815-1394,Office Manager,,,,,web_form,2025-02-27
-C00026,A00052,James,Wilson,james.wilson@blueridgeanalytics.com,593.324.8699,Purchasing Agent,,,,,crm,2022-02-27
-C00027,A00075,Michael,Clark,michael.clark@northgateinsurance.com,622.476.8950,Office Manager,,,,,erp,2025-01-07
-C00028,A00074,Robert,Johnson,robert.johnson.jr@blueridgelegalservices.com,410.363.8074,CFO,9221 Sunset Street,Atlanta,GA,30360,billing,2022-05-19
-C00029,A00142,Wei,Walker,wei.walker@granitestaffing.com,4856672191,Director of Operations,,,,,crm,2023-12-11
-C00030,A00121,Thomas,Clark,thomas.clark@oakmontplumbing.com,531.406.0241,Purchasing Agent,,,,,billing,2025-08-27
-C00031,A00107,Patricia,Harris,patricia.harris@atlaslogistics.com,685-888-6896,Engineer,,,,,erp,2024-03-25
-C00032,A00148,Christopher,Harris,christopher.harris@cedarbakery.com,(259) 646-6677,VP Sales,,,,,crm,2025-03-11
-C00033,,Carlos,Williams,carloswilliams0169@gmail.com,271-556-4378,CFO,,,,,erp,2026-04-03
-C00034,A00127,Hannah,Allen,,,Purchasing Agent,,,,,trade_show,2022-08-29
-C00035,A00082,Christopher,Harris,christopher.harris@summitconsulting.com,854-703-3685,Director of Operations,,,,,web_form,2022-03-22
-C00036,A00016,Omar,Kim,okim@northgateplumbing.com,+1 420 867 6410,Owner,5985 Sunset Boulevard,Chicago,IL,60632,web_form,2025-12-15
-C00037,A00035,Anthony,Lewis,anthony.lewis@pioneersoftware.com,2668832617,VP Sales,6398 Elm Road,Atlanta,GA,30323,erp,2025-11-22
-C00038,A00094,Anthony,Lewis,anthony.lewis@evergreeninsurance.com,687.510.3999,Owner,8395 Church Road,Austin,TX,78760,erp,2025-10-15
-C00039,,Katherine,Moore,katherinemoore0043@gmail.com,951.366.8758,Engineer,,,,,erp,2026-05-07
-C00040,A00010,Lewis,Katheriine,,583-230-9670,Owner,,,,,trade_show,2022-05-29
-C00041,A00061,Linda,Lopez,linda.lopez@falconinsurance.com,2535634843,Office Manager,,,,,erp,2024-04-28
-C00042,A00032,Margaret,Anderson,margaret.anderson@atlasconsulting.com,(518) 576-6288,Office Manager,,,,,billing,2026-01-31
-C00043,A00045,J.,Wilson,,(434) 357-1794,Owner,,,,,trade_show,2022-08-14
-C00044,A00130,Thomas,Smith,thomas.smith@cedardental.com,+1 798 532 8339,Engineer,,,,,web_form,2026-03-31
-C00045,A00043,Jennifer,Martinez,jennifer.martinez@evergreenlegalservices.com,(753) 781-7249,Purchasing Agent,5039 Washington Avenue,Denver,CO,80274,erp,2023-06-21
-C00046,A00055,Margaret,Thompson,margaret.thompson@blueridgeautorepair.com,7467928605,Director of Operations,,,,,crm,2026-03-21
-C00047,A00145,Anthony,Anderson,anthony.anderson@beaconroofing.com,+1 962 738 4092,Engineer,,,,,erp,2024-01-16
-C00048,A00006,Omar,Davis,omar.davis@northgatebakery.com,275.629.2576,VP Sales,,,,,erp,2023-01-05
-C00049,A00160,Hannah,Lee,hannahlee0028@gmail.com,291.492.9375,Director of Operations,,,,,web_form,2022-03-08
-C00050,A00010,Katherine,Lewis,katherine.lewis@mapleleafstaffing.com,(583) 230-9670,Owner,,,,,web_form,2026-07-29
-C00051,A00109,Margaret,Brown,admin@ironwoodinsurance.com,(249) 671-7583,Purchasing Agent,,,,,trade_show,2025-03-12
-C00052,A00090,Hannah,Lewis,hannah.lewis@falconanalytics.com,6555271170,Owner,,,,,web_form,2025-09-26
-C00053,A00067,Michael,Moore,michael.moore@meridianconsulting.com,3515981812,Owner,,,,,trade_show,2025-04-26
-C00054,A00006,Anthony,Anderson,anthony.anderson@northgatebakery.com,541-311-4576,Owner,1089 Main Street,Phoenix,AZ,85090,erp,2022-04-13
-C00055,,Patricia,Moore,patriciamoore0041@gmail.com,,Office Manager,,,,,crm,2023-07-13
-C00056,A00155,Omar,Smith,omar.smith@beaconelectric.com,+1 936 798 5231,Engineer,,,,,crm,2025-12-16
-C00057,A00047,Daniel,Young,daniel.young@redwoodroofing.com,399.276.1794,VP Sales,8914 Lake Drive,Chicago,IL,60671,web_form,2022-03-21
-C00058,A00120,Wei,Lewis,wei.lewis@atlasstaffing.com,(901) 928-5347,Purchasing Agent,,,,,billing,2022-11-12
-C00059,A00102,C.,Thompson,,,Purchasing Agent,,,,,crm,2023-03-22
-C00060,A00154,Patricia,Patel,patricia.patel@blueridgeinsurance.com,829.206.0716,Owner,,,,,web_form,2024-02-24
-C00061,A00100,Daniel,Kim,daniel.kim@oakmontinsurance.com,(688) 593-5873,Director of Operations,,,,,web_form,2024-07-12
-C00062,A00161,Richard,Nguyen,richard.nguyen@beaconplumbing.com,(812) 670-5739,Engineer,3056 Maple Road,Columbus,OH,43281,trade_show,2024-08-10
-C00063,A00080,William,Allen,william.allen@evergreenautorepair.com,4244951923,Engineer,,,,,erp,2024-03-06
-C00064,A00043,Jennifer,Martinez,jennifer.martinez.jr@evergreenlegalservices.com,294.283.3652,Owner,5039 Washington Avenue,Denver,CO,80274,erp,2023-06-21
-C00065,A00062,Linda,Allen,linda.allen.jr@riverbendroofing.com,(314) 505-4928,Owner,8033 Sunset Drive,Austin,TX,78778,crm,2022-08-12
-C00066,A00096,Hannah,Lewis,,,Owner,,,,,crm,2025-12-10
-C00067,A00032,Kate,Walker,kate.walker@atlasconsulting.com,345.317.1707,Engineer,,,,,web_form,2024-11-26
-C00068,A00145,James,Wilson,james.wilson@beaconroofing.com,+1 829 648 2094,VP Sales,,,,,trade_show,2025-03-19
-C00069,A00074,Robert,Thompson,robert.thompson@blueridgelegalservices.com,+1 475 709 9407,Director of Operations,8156 Park Boulevard,Denver,CO,80287,erp,2024-08-04
-C00070,A00160,Susan,Thomas,susan.thomas@mapleleafstaffing.com,+1 346 727 6465,Engineer,69 Maple Drive,Denver,CO,80294,web_form,2025-09-20
-C00071,A00069,David,Nguyen,david.nguyen@lakesideinsurance.com,212.888.4009,VP Sales,2175 Sunset Road,Chicago,IL,60649,trade_show,2023-07-25
-C00072,A00130,Daniel,Lee,,,Office Manager,,,,,trade_show,2023-05-14
-C00073,,Hannah,Allen,hannahallen0044@gmail.com,,Engineer,,,,,web_form,2023-04-21
-C00074,A00160,Hannah,Lee,hannah.lee@mapleleafstaffing.com,291-492-9375,Director of Operations,,,,,crm,2024-03-23
-C00075,A00125,Marcus,Lee,marcus.lee@sterlinglogistics.com,6732424215,Director of Operations,1758 Park Avenue,Phoenix,AZ,85076,billing,2025-03-07
-C00076,A00145,Omar,Taylor,omar.taylor@beaconroofing.com,6453369765,Purchasing Agent,,,,,crm,2026-02-15
-C00077,A00041,Elizabeth,White,elizabeth.white@silvercreekdental.com,(281) 894-2468,Purchasing Agent,,,,,erp,2024-05-17
-C00078,A00118,Jennifer,Nguyen,jennifer.nguyen@meridianroofing.com,260.804.6253,CFO,,,,,billing,2022-08-04
-C00079,A00060,Michael,Martin,michael.martin@mapleleafautorepair.com,+1 273 621 4022,Director of Operations,,,,,erp,2023-11-29
-C00080,A00160,Thomas,Ssan,,(346) 727-6465,Engineer,69 MAPLE DR,Denver,CO,80294,web_form,2024-01-20
-C00081,A00010,Thomas,Clark,thomas.clark@mapleleafstaffing.com,(252) 559-1099,VP Sales,625 Main Avenue,Seattle,WA,98182,trade_show,2022-10-24
-C00082,A00129,James,Wilson,james.wilson@keystoneroofing.com,486.413.5289,Purchasing Agent,,,,,trade_show,2023-01-28
-C00083,,Michael,Moore,,7888721176,Owner,,,,,crm,2022-07-28
-C00084,,Marcus,White,,827-710-3236,Office Manager,,,,,crm,2024-05-04
-C00085,A00029,Linda,Miller,linda.miller@evergreenautorepair.com,7937946831,CFO,9216 Washington Boulevard,Atlanta,GA,30332,erp,2024-07-31
-C00086,A00105,Jennifer,Williams,jennifer.williams@silvercreekconsulting.com,399.848.8256,Engineer,455 Elm Drive,Seattle,WA,98156,crm,2023-06-06
-C00087,A00105,Jennifer,Garcia,,,Engineer,6195 Cedar Boulevard,Portland,OR,97263,trade_show,2022-08-04
-C00088,A00090,Priya,Allen,priya.allen@falconanalytics.com,281.635.3677,Purchasing Agent,,,,,crm,2022-06-17
-C00089,A00071,Thomas,Taylor,thomastaylor0025@gmail.com,530.609.3648,Purchasing Agent,,,,,trade_show,2023-04-17
-C00090,A00149,Yuki,Moore,yuki.moore@lakesideanalytics.com,3558713326,Purchasing Agent,2665 Church Street,Nashville,TN,37253,trade_show,2023-01-11
-C00091,A00084,Susan,Jackson,susanjackson0030@gmail.com,+1 954 690 6854,Owner,,,,,billing,2024-02-13
-C00092,A00128,Nathan,Lewis,nathan.lewis@meridianlandscaping.com,4799073069,Director of Operations,1701 Washington Road,Atlanta,GA,30306,crm,2023-08-19
-C00093,A00150,Thomas,Clark,thomas.clark@blueridgeautorepair.com,+1 649 343 7624,Owner,4588 Church Drive,Nashville,TN,37242,crm,2023-11-16
-C00094,A00159,Priya,Brown,,,CFO,5325 WASHINGTON ST,Chicago,IL,60691,web_form,2022-02-11
-C00095,A00114,Robert,Lee,robert.lee@atlasinsurance.com,481-680-8307,VP Sales,,,,,crm,2024-06-02
-C00096,A00053,Hannah,Allen,hannah.allen@mapleleafplumbing.com,+1 266 772 2944,Purchasing Agent,,,,,erp,2024-07-22
-C00097,A00144,Priya,Nguyen,priya.nguyen@oakmontplumbing.com,+1 270 908 3367,Owner,,,,,web_form,2023-09-28
-C00098,A00098,Wei,Brown,wei.brown@northgateroofing.com,863-226-7799,VP Sales,9615 Maple Street,Austin,TX,78720,erp,2023-12-15
-C00099,A00074,Richard,Thompson,richard.thompson@blueridgelegalservices.com,(257) 292-5234,Director of Operations,8156 Park Boulevard,Denver,CO,80287,erp,2024-08-04
-C00100,A00074,Elizabeth,Lewis,elizabeth.lewis@blueridgelegalservices.com,257.989.8999,Engineer,,,,,crm,2026-06-20
-C00101,,Katherine,White,,,Director of Operations,,,,,billing,2024-05-25
-C00102,A00123,Luis,Wilson,luis.wilson@meridianlandscaping.com,+1 838 223 6736,CFO,,,,,erp,2026-05-02
-C00103,A00016,Omar,Kim,omar.kim@northgateplumbing.com,4652926222,Director of Operations,4919 Cedar Boulevard,Portland,OR,97207,trade_show,2025-04-08
-C00104,,Anthony,Johnson,anthonyjohnson0134@gmail.com,2283985501,Purchasing Agent,,,,,trade_show,2026-06-04
-C00105,A00089,Dan,Patel,dan.patel@blueridgeplumbing.com,+1 837 520 3085,VP Sales,,,,,crm,2023-04-25
-C00106,A00071,Thomas,Taylor,thomas.taylor@blueridgestaffing.com,530.609.3648,Purchasing Agent,,,,,web_form,2022-03-08
-C00107,A00166,James,Johnson,james.johnson@silvercreeklegalservices.com,+1 724 948 7994,Owner,7332 Church Avenue,Nashville,TN,37285,web_form,2025-11-21
-C00108,A00050,L.,Miller,,6703401709,Owner,,,,,billing,2024-04-12
-C00109,A00044,Susan,Harris,susan.harris@riverbendplumbing.com,4423023971,VP Sales,4324 Park Street,Denver,CO,80256,web_form,2026-01-07
-C00110,A00121,Nathan,Patel,nathan.patel@oakmontplumbing.com,355-657-5845,Director of Operations,,,,,crm,2023-05-21
-C00111,A00026,James,Williams,james.williams@silvercreekconsulting.com,+1 251 440 9555,Engineer,455 Elm Drive,Seattle,WA,98156,crm,2023-06-06
-C00112,A00111,Maria,Martin,maria.martin@cedarlegalservices.com,(461) 787-0366,Purchasing Agent,5463 Maple Avenue,Boston,MA,02186,billing,2025-10-12
-C00113,A00160,Katherine,Smith,katherine.smith@mapleleafstaffing.com,421-604-3801,Owner,3063 Sunset Drive,Seattle,WA,98174,web_form,2023-03-26
-C00114,A00160,Katherine,Smith,katherine.smith.jr@mapleleafstaffing.com,555.601.0244,Engineer,3063 Sunset Drive,Seattle,WA,98174,web_form,2023-03-26
-C00115,A00117,Christopher,Kim,christopher.kim@blueridgedesign.com,271-274-6343,Office Manager,7245 Cedar Street,Boston,MA,02153,trade_show,2026-06-06
-C00116,A00059,Christopher,Thompson,christopher.thompson@riverbenddesign.com,7245154816,Purchasing Agent,,,,,billing,2023-05-21
-C00117,A00094,Thomas,Johnson,thomas.johnson@evergreeninsurance.com,(954) 416-0321,Director of Operations,6572 Park Street,Nashville,TN,37236,crm,2023-01-09
-C00118,,Thomas,Thomas,thomasthomas0152@gmail.com,335-366-2228,CFO,9290 Church Avenue,Denver,CO,80227,web_form,2024-07-02
-C00119,A00156,Grace,Martin,grace.martin@meridianautorepair.com,(229) 568-0123,VP Sales,,,,,erp,2022-11-29
-C00120,A00107,Daniel,Moore,office@atlaslogistics.com,+1 564 455 5898,Owner,4920 Elm Street,Atlanta,GA,30302,web_form,2023-09-28
-C00121,A00052,O.,Patel,,869.773.2259,CFO,,,,,erp,2023-06-13
-C00122,A00103,Carlos,Anderson,carlos.anderson@beacondesign.com,+1 802 673 5869,Purchasing Agent,,,,,billing,2024-09-11
-C00123,A00063,Elizabeth,Taylor,elizabeth.taylor@pioneerdental.com,562-464-2183,Director of Operations,,,,,erp,2022-09-10
-C00124,A00004,Kevin,Davis,kevin.davis@oakmontlegalservices.com,324.669.4959,CFO,,,,,crm,2025-04-17
-C00125,A00117,Aisha,Young,aisha.young@blueridgedesign.com,+1 958 432 4853,Owner,9807 Church Boulevard,Nashville,TN,37255,billing,2025-08-31
-C00126,A00144,Thomas,Clark,,,Purchasing Agent,,,,,trade_show,2025-04-26
-C00127,A00130,Joseph,Rodriguez,joseph.rodriguez.jr@cedardental.com,(349) 273-3028,VP Sales,2242 Maple Road,Seattle,WA,98105,crm,2023-07-14
-C00128,A00050,Joseph,Kim,joseph.kim@blueridgeroofing.com,+1 673 908 6083,VP Sales,,,,,trade_show,2022-07-05
-C00129,A00164,James,Wilson,james.wilson@cedarconsulting.com,398-458-0918,Director of Operations,,,,,crm,2023-07-06
-C00130,A00054,Patricia,Clark,patricia.clark@copperhillconsulting.com,304.895.5022,Purchasing Agent,,,,,billing,2022-03-13
-C00131,A00112,Elizabeth,Thomas,elizabeth.thomas@ironwoodstaffing.com,520-885-1958,Engineer,6785 Park Drive,Columbus,OH,43272,trade_show,2022-07-09
-C00132,A00043,Omar,Smith,omar.smith@evergreenlegalservices.com,(393) 386-0933,Owner,,,,,billing,2025-02-03
-C00133,A00145,James,Martin,james.martin@beaconroofing.com,+1 584 207 9517,CFO,4432 Maple Boulevard,Nashville,TN,37214,web_form,2026-08-06
-C00134,A00135,James,Jackson,james.jackson@evergreendesign.com,(278) 234-7243,Purchasing Agent,,,,,web_form,2022-12-16
-C00135,A00060,Linda,Garcia,lindagarcia0029@gmail.com,(492) 857-4626,CFO,795 Lake Drive,Phoenix,AZ,85010,erp,2025-10-30
-C00136,A00144,Nathan,Patel,,,Director of Operations,,,,,billing,2023-02-13
-C00137,A00106,Linda,Lopez,linda.lopez@oakmontroofing.com,441.685.1295,Director of Operations,7808 Church Boulevard,Portland,OR,97297,erp,2026-07-15
-C00138,A00114,Wei,Moore,wei.moore@atlasinsurance.com,351-806-9959,Director of Operations,196 Hill Drive,Columbus,OH,43280,billing,2024-07-07
-C00139,A00004,Olivia,Wilson,olivia.wilson@oakmontlegalservices.com,(603) 901-7929,Office Manager,,,,,trade_show,2024-01-02
-C00140,A00125,Pat,Anderson,pat.anderson@sterlinglogistics.com,+1 214 637 3211,Purchasing Agent,,,,,trade_show,2023-05-11
-C00141,,Wei,Nguyen,,,Office Manager,,,,,billing,2022-06-26
-C00142,A00095,Joseph,Rodriguez,joseph.rodriguez@cedardental.com,894.442.7434,VP Sales,2242 Maple Road,Seattle,WA,98105,crm,2023-07-14
-C00143,A00088,Nathan,Lewis,nathan.lewis@harborpointinsurance.com,8698331928,CFO,,,,,erp,2024-06-02
-C00144,A00142,Walker,Wie,,+1 485 667 2191,Director of Operations,,,,,erp,2022-08-29
-C00145,A00107,Miller,Wie,,+1 523 691 9921,Purchasing Agent,353 Lake Boulevard,Boston,MA,02129,billing,2024-11-26
-C00146,A00042,Luis,White,luis.white@ironwoodelectric.com,+1 450 623 6389,Purchasing Agent,,,,,web_form,2024-08-17
-C00147,A00041,Kevin,Thomas,kevin.thomas@silvercreekdental.com,+1 981 411 0740,Engineer,,,,,billing,2024-08-21
-C00148,A00019,Sarah,Brown,sarah.brown@riverbendinsurance.com,(280) 892-7453,Engineer,6360 Cedar Boulevard,Phoenix,AZ,85076,billing,2024-07-07
-C00149,A00125,Elizabeth,Lee,elizabeth.lee@sterlinglogistics.com,844.523.3228,Purchasing Agent,,,,,trade_show,2024-02-14
-C00150,A00095,Daniel,Lee,daniel.lee@cedardental.com,559.947.6730,Office Manager,,,,,web_form,2022-05-12
-C00151,,Patricia,Moore,patriciamoore0041@gmail.com,+1 883 500 4693,Office Manager,,,,,billing,2023-06-22
-C00152,A00048,Grace,Kim,sales@pioneerlandscaping.com,+1 923 556 3540,Purchasing Agent,,,,,web_form,2023-04-09
-C00153,A00123,Luis,Wilson,lwilson@meridianlandscaping.com,6669527758,Owner,,,,,erp,2024-07-20
-C00154,A00153,Carlos,Thompson,carlos.thompson@northgatesoftware.com,4575935167,Owner,,,,,billing,2023-09-12
-C00155,A00108,Priya,Allen,priya.allen@pioneeranalytics.com,8878656084,Office Manager,,,,,erp,2025-07-31
-C00156,,William,Nguyen,williamnguyen0042@gmail.com,,Engineer,,,,,billing,2025-06-02
-C00157,A00014,Deborah,Thompson,deborah.thompson@beaconstaffing.com,(947) 679-1730,Director of Operations,7983 Sunset Road,Boston,MA,02181,crm,2023-11-19
-C00158,A00092,Patricia,Young,patricia.young@beaconbakery.com,+1 931 843 6946,Engineer,,,,,erp,2022-08-22
-C00159,A00053,Priya,Williams,priya.williams@mapleleafplumbing.com,(863) 937-8808,Office Manager,,,,,trade_show,2024-07-24
-C00160,A00073,Sarah,Moore,sarah.moore@riverbendinsurance.com,(335) 364-6282,VP Sales,,,,,web_form,2025-12-18
-C00161,A00055,Wei,Walker,weiwalker0027@gmail.com,8239809657,CFO,8163 OAK DR,Seattle,WA,98197,web_form,2026-07-13
-C00162,A00070,Christopher,Hall,christopher.hall@atlasinsurance.com,2388061844,Purchasing Agent,3139 Hill Street,Seattle,WA,98155,billing,2022-05-31
-C00163,A00032,Katherine,Walker,katherine.walker@atlasconsulting.com,(345) 317-1707,Engineer,,,,,web_form,2022-05-13
-C00164,A00043,Marcus,Harris,marcus.harris@evergreenlegalservices.com,9502096118,Director of Operations,,,,,crm,2022-01-15
-C00165,A00002,Linda,Thomas,linda.thomas@sterlingroofing.com,+1 322 629 1268,Owner,9087 Main Avenue,Nashville,TN,37258,trade_show,2025-05-11
-C00166,A00162,Kevin,Clark,kevin.clark@blueridgeplumbing.com,7703236801,Owner,,,,,web_form,2025-04-24
-C00167,A00070,James,Williams,james.williams@atlasinsurance.com,862.420.7308,CFO,,,,,billing,2025-11-04
-C00168,A00048,Wei,Johnson,sales@pioneerlandscaping.com,7049350771,CFO,,,,,crm,2026-04-20
-C00169,,William,Nguyen,williamnguyen0042@gmail.com,4847212493,Engineer,,,,,billing,2026-08-11
-C00170,A00030,Daniel,Nguyen,daniel.nguyen@meridianautorepair.com,+1 508 601 0521,Office Manager,,,,,crm,2025-06-24
-C00171,A00128,Joe,Allen,joe.allen@meridianlandscaping.com,996-565-8603,CFO,,,,,erp,2025-06-16
-C00172,A00106,Susan,Miller,susan.miller@oakmontroofing.com,(318) 238-6717,VP Sales,,,,,web_form,2025-03-06
-C00173,A00036,Nathan,Smith,nathan.smith@brightpathanalytics.com,+1 866 588 2602,Engineer,,,,,trade_show,2022-12-31
-C00174,,Marcus,White,,,Office Manager,,,,,trade_show,2023-01-31
-C00175,A00109,Grace,White,sales@ironwoodinsurance.com,228-652-9338,Office Manager,,,,,erp,2024-01-06
-C00176,A00084,N.,Nguyen,,,VP Sales,,,,,crm,2025-09-07
-C00177,A00169,Maria,Thomas,maria.thomas@summitsoftware.com,360.722.4361,Purchasing Agent,5898 Sunset Road,Seattle,WA,98187,crm,2026-06-12
-C00178,A00097,William,Moore,support@stonebridgestaffing.com,(607) 873-6628,Office Manager,4101 Cedar Avenue,Atlanta,GA,30303,crm,2022-06-25
-C00179,A00140,James,Nguyen,james.nguyen@northgateinsurance.com,(922) 347-6959,Office Manager,,,,,crm,2025-02-06
-C00180,A00109,Sarah,Kim,admin@ironwoodinsurance.com,,Director of Operations,2765 Washington Avenue,Columbus,OH,43248,web_form,2022-10-27
-C00181,A00092,Pat,Young,pat.young@beaconbakery.com,+1 931 843 6946,Engineer,,,,,trade_show,2024-05-08
-C00182,A00029,Luis,Miller,luis.miller@evergreenautorepair.com,462-540-8052,CFO,9216 Washington Boulevard,Atlanta,GA,30332,erp,2024-07-31
-C00183,A00050,Aisha,Lewis,aisha.lewis@blueridgeroofing.com,+1 705 299 5632,VP Sales,,,,,web_form,2024-10-27
-C00184,A00120,Deborah,Davis,deborah.davis@atlasstaffing.com,(693) 820-5727,VP Sales,,,,,web_form,2023-10-02
-C00185,A00052,James,Williams,james.williams@blueridgeanalytics.com,693-355-4761,Engineer,,,,,erp,2024-10-27
-C00186,A00037,Marcus,Patel,marcus.patel@riverbendroofing.com,961-468-3972,Purchasing Agent,,,,,trade_show,2025-11-27
-C00187,A00126,Wei,Allen,wei.allen@silvercreekbakery.com,8542990052,Office Manager,8347 Park Road,Phoenix,AZ,85097,web_form,2023-08-05
-C00188,A00054,Susan,Martin,susan.martin@copperhillconsulting.com,980-518-5470,CFO,8581 Oak Avenue,Columbus,OH,43233,billing,2026-07-26
-C00189,A00012,Priya,Lee,priya.lee@northgateroofing.com,300.236.2278,Office Manager,,,,,web_form,2025-11-01
-C00190,A00022,Anthony,Johnson,anthony.johnson@beaconstaffing.com,563-291-7728,Director of Operations,1059 Elm Drive,Atlanta,GA,30343,erp,2022-07-15
-C00191,A00109,Omar,Hall,omar.hall@ironwoodinsurance.com,+1 234 251 4845,Purchasing Agent,,,,,web_form,2026-07-10
-C00192,A00074,Liz,Lewis,liz.lewis@blueridgelegalservices.com,257-989-8999,Engineer,,,,,crm,2023-11-15
-C00193,A00107,Patricia,Williams,patricia.williams@atlaslogistics.com,(448) 890-8182,VP Sales,8915 Washington Drive,Phoenix,AZ,85080,erp,2022-02-06
-C00194,,Michael,Moore,,,Owner,,,,,crm,2023-02-04
-C00195,A00072,Richard,White,richard.white@sterlinglogistics.com,984.331.2810,CFO,,,,,trade_show,2022-03-26
-C00196,A00078,Priya,Clark,priya.clark@stonebridgeroofing.com,477-737-9872,Engineer,,,,,web_form,2026-02-28
-C00197,,Hannah,Allen,hannahallen0044@gmail.com,5718678888,Engineer,,,,,erp,2023-07-09
-C00198,A00144,Nguyen,Pirya,,(270) 908-3367,Owner,,,,,web_form,2024-05-19
-C00199,,Wei,Nguyen,,3442621112,Office Manager,,,,,crm,2024-06-13
-C00200,A00124,Omar,Young,omar.young@beaconlegalservices.com,716.444.2292,Owner,,,,,erp,2025-01-24
-C00201,A00109,Daniel,Martin,sales@ironwoodinsurance.com,5273535590,Purchasing Agent,,,,,trade_show,2022-12-26
-C00202,A00108,Priya,Brown,priya.brown@pioneeranalytics.com,983.394.9542,CFO,5325 Washington Street,Chicago,IL,60691,web_form,2025-05-30
-C00203,A00064,William,Martinez,william.martinez@beaconsoftware.com,(718) 910-9922,Office Manager,3265 Lake Drive,Atlanta,GA,30377,web_form,2026-02-11
-C00204,A00052,Omar,Patel,omar.patel@blueridgeanalytics.com,+1 869 773 2259,CFO,,,,,erp,2022-07-18
-C00205,A00097,Joseph,Martinez,support@stonebridgestaffing.com,,Owner,5427 Cedar Drive,Atlanta,GA,30390,web_form,2025-12-03
-C00206,A00097,Thomas,Walker,thomas.walker@stonebridgestaffing.com,+1 584 619 2451,Engineer,,,,,erp,2022-07-17
-C00207,A00090,James,Kim,james.kim@falconanalytics.com,932.343.3305,VP Sales,,,,,billing,2024-08-27
-C00208,A00088,Joe,Taylor,joe.taylor@harborpointinsurance.com,815.754.9384,Director of Operations,8664 CHURCH BLVD,Austin,TX,78757,billing,2025-01-04
-C00209,A00017,Patricia,Rodriguez,patricia.rodriguez@copperhillplumbing.com,4533311472,Purchasing Agent,,,,,erp,2024-11-28
-C00210,A00074,Patricia,Wilson,patricia.wilson@blueridgelegalservices.com,(236) 445-9681,VP Sales,,,,,billing,2025-10-13
-C00211,A00080,William,Brown,william.brown@evergreenautorepair.com,7487748743,Director of Operations,,,,,crm,2023-09-10
-C00212,A00130,Thomas,Smith,tsmith@cedardental.com,551.740.8113,Purchasing Agent,,,,,trade_show,2025-09-20
-C00213,A00084,Elizabeth,Williams,elizabeth.williams@atlasautorepair.com,2343333104,Engineer,,,,,billing,2024-06-11
-C00214,A00152,Jennifer,White,jennifer.white@mapleleafanalytics.com,(743) 844-1375,VP Sales,,,,,trade_show,2023-04-08
-C00215,A00074,Robert,Johnson,robert.johnson@blueridgelegalservices.com,589.266.6960,Owner,9221 Sunset Street,Atlanta,GA,30360,billing,2022-05-19
-C00216,A00060,Linda,Garcia,linda.garcia@mapleleafautorepair.com,492.857.4626,CFO,795 Lake Drive,Phoenix,AZ,85010,erp,2022-10-11
-C00217,A00080,Brown,Willima,,(748) 774-8743,Director of Operations,,,,,erp,2023-05-03
-C00218,A00084,Susan,Jackson,susan.jackson@atlasautorepair.com,(954) 690-6854,Owner,,,,,crm,2022-12-20
-C00219,A00050,Katherine,Miller,katherine.miller@blueridgeroofing.com,(299) 715-1516,VP Sales,2570 Elm Road,Nashville,TN,37273,web_form,2023-08-27
-C00220,A00023,Aisha,Nguyen,aisha.nguyen@northgateanalytics.com,+1 868 773 1865,VP Sales,,,,,billing,2022-07-18
-C00221,A00048,Kevin,Taylor,kevin.taylor.jr@pioneerlandscaping.com,+1 405 353 3464,Office Manager,9605 Washington Drive,Austin,TX,78792,trade_show,2022-12-26
-C00222,A00128,Joseph,Allen,joseph.allen@meridianlandscaping.com,(996) 565-8603,CFO,,,,,billing,2026-02-04
-C00223,A00045,Jennifer,Wilson,jennifer.wilson@evergreendental.com,434.357.1794,Owner,,,,,trade_show,2022-11-17
-C00224,A00069,Nguyen,Daavid,,(212) 888-4009,VP Sales,2175 SUNSET RD,Chicago,IL,60649,trade_show,2023-03-05
-C00225,,Daniel,Young,danielyoung0188@gmail.com,+1 587 909 4507,VP Sales,,,,,trade_show,2025-12-23
-C00226,A00142,Deborah,Thompson,deborah.thompson@granitestaffing.com,247.289.9240,Director of Operations,9354 Hill Boulevard,Austin,TX,78702,trade_show,2022-05-30
-C00227,A00145,Priya,White,priya.white@beaconroofing.com,497-634-4558,CFO,,,,,trade_show,2022-03-03
-C00228,A00053,Patricia,White,patricia.white@mapleleafplumbing.com,496.881.1967,Director of Operations,,,,,trade_show,2026-01-09
-C00229,A00161,Robert,Nguyen,robert.nguyen@beaconplumbing.com,+1 239 395 2414,Engineer,3056 Maple Road,Columbus,OH,43281,trade_show,2024-08-10
-C00230,A00165,Linda,Johnson,linda.johnson@evergreeninsurance.com,550.215.2725,Director of Operations,6572 Park Street,Nashville,TN,37236,crm,2023-01-09
-C00231,A00050,Luis,Miller,luis.miller@blueridgeroofing.com,670-340-1709,Owner,,,,,erp,2022-11-14
-C00232,A00055,Wei,Walker,wei.walker@blueridgeautorepair.com,(823) 980-9657,CFO,8163 Oak Drive,Seattle,WA,98197,web_form,2022-04-19
-C00233,A00126,Thomas,Allen,thomas.allen@silvercreekbakery.com,+1 440 768 9562,Office Manager,8347 Park Road,Phoenix,AZ,85097,web_form,2023-08-05
-C00234,A00111,Maria,Martin,maria.martin.jr@cedarlegalservices.com,2354538848,Owner,5463 Maple Avenue,Boston,MA,02186,billing,2025-10-12
-C00235,A00110,Jennifer,Taylor,jennifer.taylor@northgateanalytics.com,373-449-6899,CFO,,,,,trade_show,2024-01-17
-C00236,A00019,Elizabeth,Martinez,elizabeth.martinez@riverbendinsurance.com,+1 499 450 1625,Office Manager,,,,,billing,2025-07-10
-C00237,A00161,David,Rodriguez,david.rodriguez@beaconplumbing.com,(476) 785-2354,VP Sales,,,,,trade_show,2025-03-01
-C00238,A00062,Linda,Allen,linda.allen@riverbendroofing.com,+1 987 731 2574,Owner,8033 Sunset Drive,Austin,TX,78778,crm,2022-08-12
-C00239,A00021,Yuki,Thompson,yuki.thompson@riverbendplumbing.com,(795) 703-6188,Office Manager,858 Main Road,Nashville,TN,37297,web_form,2022-11-18
-C00240,A00084,James,Thompson,james.thompson@atlasautorepair.com,(493) 654-4686,Office Manager,,,,,trade_show,2023-03-09
-C00241,A00072,Liz,Lee,liz.lee@sterlinglogistics.com,844.523.3228,Purchasing Agent,,,,,web_form,2025-09-10
-C00242,A00107,Patricia,Martinez,office@atlaslogistics.com,,CFO,,,,,erp,2023-01-24
-C00243,A00080,Bill,Allen,bill.allen@evergreenautorepair.com,+1 424 495 1923,Engineer,,,,,trade_show,2022-05-28
-C00244,,Katherine,White,,2307709198,Director of Operations,,,,,web_form,2022-11-06
+C00001,A00080,William,Hall,william.hall@evergreenautorepair.com,495-320-6816,CFO,520 Church Drive,Portland,OR,97259,trade_show,2022-05-28
+C00002,A00156,Wei,White,,,Office Manager,,,,,web_form,2022-02-11
+C00003,A00024,Robert,Allen,robert.allen@riverbendinsurance.com,+1 547 490 1588,VP Sales,2674 Hill Drive,Nashville,TN,37271,billing,2025-12-08
+C00004,A00059,Susan,Williams,susan.williams@riverbenddesign.com,473.863.9680,Office Manager,,,,,billing,2024-04-25
+C00005,A00123,Nathan,Smith,nathan.smith@meridianlandscaping.com,(620) 703-9636,Owner,,,,,erp,2023-06-03
+C00006,A00149,Olivia,Rodriguez,olivia.rodriguez@lakesideanalytics.com,+1 423 245 6788,Director of Operations,4071 Park Street,Austin,TX,78710,billing,2024-01-30
+C00007,A00045,James,Martin,james.martin@evergreendental.com,335.584.0119,Director of Operations,,,,,billing,2025-02-27
+C00008,A00125,Nathan,Garcia,,,Director of Operations,3589 CEDAR DR,Seattle,WA,98194,billing,2025-04-07
+C00009,A00047,Omar,Smith,info@redwoodroofing.com,(829) 380-9072,VP Sales,,,,,billing,2025-11-25
+C00010,A00160,Aisha,Williams,aisha.williams@mapleleafstaffing.com,785-896-1593,Office Manager,4111 Washington Street,Boston,MA,02140,billing,2026-08-06
+C00011,A00140,Susan,Walker,swalker@northgateinsurance.com,792-689-4121,Office Manager,,,,,erp,2024-04-14
+C00012,A00037,Robert,Kim,robert.kim@riverbendroofing.com,+1 367 867 5730,Engineer,,,,,erp,2025-11-01
+C00013,A00092,Marcus,Thomas,marcus.thomas@beaconbakery.com,+1 607 271 5567,Office Manager,4853 Park Drive,Chicago,IL,60653,billing,2024-04-13
+C00014,A00134,Priya,Lee,priya.lee@harborpointplumbing.com,(578) 300-0585,Owner,4198 Park Boulevard,Atlanta,GA,30347,crm,2022-04-28
+C00015,A00062,Richard,Anderson,richard.anderson@riverbendroofing.com,(306) 715-2536,CFO,8611 Maple Boulevard,Nashville,TN,37279,erp,2025-12-30
+C00016,A00071,Jennifer,Martin,jennifer.martin@blueridgestaffing.com,+1 786 243 8441,Purchasing Agent,,,,,erp,2025-07-08
+C00017,A00152,Yuki,Kim,yuki.kim@mapleleafanalytics.com,(797) 351-7872,Engineer,,,,,trade_show,2023-11-03
+C00018,A00137,Priya,Rodriguez,priya.rodriguez@meridianbakery.com,8129106043,Office Manager,,,,,billing,2025-06-01
+C00019,A00014,Nathan,Brown,nathan.brown@beaconstaffing.com,(849) 514-7068,VP Sales,6213 Elm Street,Boston,MA,02152,trade_show,2026-02-07
+C00020,A00048,Grace,Kim,sales@pioneerlandscaping.com,+1 923 556 3540,Purchasing Agent,,,,,web_form,2023-04-09
+C00021,A00160,E.,Patel,,,Office Manager,,,,,erp,2022-08-03
+C00022,A00071,Robert,Thompson,robert.thompson@blueridgestaffing.com,+1 610 475 8154,Director of Operations,1846 Hill Drive,Columbus,OH,43283,erp,2024-08-04
+C00023,A00119,Wei,Smith,wei.smith@beacondesign.com,748.738.2662,Director of Operations,6593 Park Boulevard,Denver,CO,80212,web_form,2024-03-01
+C00024,A00145,Joseph,Martinez,joseph.martinez@beaconroofing.com,7632720034,Owner,,,,,erp,2024-06-15
+C00025,A00089,Thomas,Taylor,thomas.taylor@blueridgeplumbing.com,557.664.3398,Engineer,,,,,trade_show,2023-02-06
+C00026,A00021,Dan,Garcia,dan.garcia@riverbendplumbing.com,(318) 464-5636,Office Manager,,,,,billing,2026-02-16
+C00027,,Marcus,White,marcuswhite0044@gmail.com,,Office Manager,,,,,trade_show,2023-01-31
+C00028,A00047,Susan,Thomas,susan.thomas@redwoodroofing.com,+1 346 727 6465,Office Manager,69 Maple Drive,Denver,CO,80294,web_form,2025-09-20
+C00029,A00108,Katherine,Young,katherine.young@pioneeranalytics.com,4697611677,Engineer,,,,,web_form,2026-01-07
+C00030,A00114,Hannah,Taylor,hannah.taylor@atlasinsurance.com,(517) 239-4741,Purchasing Agent,,,,,crm,2024-12-25
+C00031,A00161,David,Jackson,david.jackson@beaconplumbing.com,(465) 613-8137,CFO,,,,,billing,2026-05-11
+C00032,A00055,Daniel,Johnson,daniel.johnson@blueridgeautorepair.com,609.859.1056,Engineer,4887 Maple Street,Atlanta,GA,30360,erp,2025-10-15
+C00033,A00060,J.,Harris,,,VP Sales,,,,,web_form,2025-01-17
+C00034,A00128,William,Garcia,william.garcia@meridianlandscaping.com,6795364194,Purchasing Agent,,,,,web_form,2023-01-21
+C00035,,Kevin,Thomas,kevinthomas0153@gmail.com,+1 981 411 0740,Director of Operations,,,,,billing,2024-08-21
+C00036,A00014,Luis,White,luis.white@beaconstaffing.com,712.450.6769,VP Sales,,,,,web_form,2024-10-29
+C00037,A00163,Linda,Miller,linda.miller@evergreenelectric.com,+1 347 793 9518,Office Manager,9216 Washington Boulevard,Atlanta,GA,30332,trade_show,2025-01-11
+C00038,A00088,Grace,Miller,grace.miller@harborpointinsurance.com,674-685-6896,VP Sales,,,,,erp,2024-03-25
+C00039,A00155,Thompson,Saarah,,(212) 888-4009,VP Sales,2175 SUNSET RD,Chicago,IL,60649,trade_show,2023-03-05
+C00040,A00135,Margaret,Garcia,margaret.garcia@evergreendesign.com,(738) 596-9217,Owner,,,,,crm,2025-01-31
+C00041,A00047,Jennifer,Nguyen,jennifer.nguyen@redwoodroofing.com,(493) 280-7453,Owner,6360 Cedar Boulevard,Phoenix,AZ,85076,billing,2024-07-07
+C00042,A00032,Christopher,Jackson,christopher.jackson@atlasconsulting.com,299-603-4904,Purchasing Agent,,,,,erp,2023-06-13
+C00043,,Thomas,Thomas,thomasthomas0151@gmail.com,335-366-2228,CFO,9290 Church Avenue,Denver,CO,80227,web_form,2024-07-02
+C00044,A00158,Sarah,Patel,sarah.patel@oakmontlandscaping.com,881-715-8240,Engineer,963 Oak Boulevard,Columbus,OH,43261,billing,2025-08-17
+C00045,A00021,Omar,Patel,omar.patel@riverbendplumbing.com,(343) 326-2540,Purchasing Agent,,,,,trade_show,2024-04-14
+C00046,A00117,Michael,Harris,michael.harris@blueridgedesign.com,5034349898,CFO,,,,,trade_show,2024-06-10
+C00047,A00074,Jennifer,Taylor,jennifertaylor0026@gmail.com,971.552.0869,Engineer,,,,,trade_show,2025-08-18
+C00048,A00146,Jennifer,Johnson,jennifer.johnson@oakmontinsurance.com,609-746-1301,VP Sales,,,,,billing,2024-06-28
+C00049,A00037,R.,Anderson,,,CFO,8611 MAPLE BLVD,Nashville,TN,37279,billing,2026-06-21
+C00050,,Katherine,White,,2307709198,Director of Operations,,,,,web_form,2022-11-06
+C00051,A00052,James,Lopez,jameslopez0028@gmail.com,2857652269,Purchasing Agent,,,,,erp,2022-01-12
+C00052,,Wei,Nguyen,weinguyen0043@gmail.com,3442621112,Office Manager,,,,,crm,2024-06-13
+C00053,A00112,Joseph,Martinez,joseph.martinez@ironwoodstaffing.com,+1 710 786 4010,Director of Operations,,,,,billing,2025-10-27
+C00054,,Hannah,Allen,hannahallen0041@gmail.com,,Engineer,,,,,web_form,2023-04-21
+C00055,A00160,Elizabeth,Patel,elizabeth.patel@mapleleafstaffing.com,(695) 435-8517,Office Manager,,,,,trade_show,2026-02-10
+C00056,,Marcus,Miller,,(311) 314-4881,Owner,,,,,crm,2024-04-28
+C00057,A00106,Priya,Harris,,,Director of Operations,,,,,billing,2024-06-05
+C00058,A00139,Yuki,Moore,yuki.moore@harborpointanalytics.com,8333553326,VP Sales,2665 Church Street,Nashville,TN,37253,trade_show,2023-01-11
+C00059,A00107,Patel,Oilvia,,+1 886 867 9921,Director of Operations,353 Lake Boulevard,Boston,MA,02129,billing,2024-11-26
+C00060,A00044,Katherine,White,katherine.white@riverbendplumbing.com,+1 331 451 0896,Purchasing Agent,,,,,trade_show,2022-02-04
+C00061,A00055,Deborah,Johnson,deborah.johnson@blueridgeautorepair.com,(223) 724-5622,Engineer,4887 Maple Street,Atlanta,GA,30360,erp,2025-10-15
+C00062,A00153,E.,Lopez,,,Director of Operations,,,,,trade_show,2023-02-22
+C00063,A00058,Maria,Thomas,maria.thomas@summitbakery.com,+1 434 436 1928,Director of Operations,,,,,erp,2024-06-02
+C00064,A00073,Michael,Thomas,michael.thomas.jr@riverbendinsurance.com,704-431-5217,Office Manager,3819 Washington Avenue,Portland,OR,97248,billing,2022-11-24
+C00065,A00154,Michael,Clark,michael.clark@blueridgeinsurance.com,+1 940 932 6637,Director of Operations,,,,,billing,2022-11-04
+C00066,A00059,Hannah,Patel,hannah.patel@riverbenddesign.com,+1 952 684 9017,Director of Operations,,,,,trade_show,2025-10-20
+C00067,A00017,Deborah,Garcia,deborah.garcia@copperhillplumbing.com,+1 919 717 9796,Owner,,,,,erp,2026-06-13
+C00068,A00007,Yuki,Williams,yuki.williams@oakmontstaffing.com,(713) 766-3712,Director of Operations,,,,,billing,2022-06-02
+C00069,A00062,Nathan,Thomas,,,Director of Operations,,,,,erp,2023-10-26
+C00070,A00019,Michael,Thomas,michael.thomas@riverbendinsurance.com,214-253-8175,Engineer,3819 Washington Avenue,Portland,OR,97248,billing,2022-11-24
+C00071,A00058,Elizabeth,Miller,elizabeth.miller.jr@summitbakery.com,550.215.2725,Office Manager,6572 Park Street,Nashville,TN,37236,crm,2023-01-09
+C00072,A00159,Luis,Garcia,luis.garcia@pioneeranalytics.com,765-888-8213,Office Manager,6308 Lake Drive,Chicago,IL,60660,erp,2024-06-10
+C00073,A00167,Yuki,Kim,,,Engineer,,,,,trade_show,2023-04-24
+C00074,A00107,Olivia,Patel,olivia.patel@atlaslogistics.com,(886) 867-9921,Director of Operations,353 Lake Boulevard,Boston,MA,02129,erp,2025-12-06
+C00075,A00072,Jennifer,Kim,jennifer.kim@sterlinglogistics.com,637.436.1488,CFO,,,,,trade_show,2022-09-19
+C00076,A00100,Jennifer,Wilson,jennifer.wilson@oakmontinsurance.com,(687) 902-6814,Director of Operations,,,,,erp,2026-07-15
+C00077,A00048,Maria,Martin,maria.martin@pioneerlandscaping.com,788.461.9394,Purchasing Agent,3629 Washington Avenue,Phoenix,AZ,85030,billing,2023-09-29
+C00078,A00044,Omar,Patel,,,Purchasing Agent,,,,,trade_show,2024-02-13
+C00079,A00067,Deb,Rodriguez,deb.rodriguez@meridianconsulting.com,864-345-1876,CFO,,,,,crm,2025-12-28
+C00080,A00166,Katherine,White,katherine.white@silvercreeklegalservices.com,9606007676,Owner,,,,,billing,2023-05-18
+C00081,A00033,Maria,Thompson,maria.thompson@summitplumbing.com,493-458-9188,Office Manager,1251 Elm Street,Phoenix,AZ,85036,web_form,2024-11-08
+C00082,A00153,Carlos,Garcia,carlos.garcia@northgatesoftware.com,(930) 247-2272,Owner,,,,,erp,2026-07-04
+C00083,A00161,C.,Kim,,,VP Sales,8711 MAIN AVE,Atlanta,GA,30367,crm,2025-12-31
+C00084,A00119,Richard,Kim,richard.kim@beacondesign.com,7487748743,Director of Operations,,,,,crm,2023-09-10
+C00085,A00102,Wei,Smith,wei.smith@riverbenddesign.com,(230) 940-9670,Office Manager,,,,,web_form,2026-07-29
+C00086,A00079,Patricia,Wilson,,,Purchasing Agent,1686 Church Road,Seattle,WA,98164,erp,2024-09-30
+C00087,A00160,Marcus,Harris,marcus.harris.jr@mapleleafstaffing.com,+1 379 405 2457,CFO,3972 Elm Street,Austin,TX,78774,billing,2024-04-28
+C00088,A00019,Thomas,Allen,thomas.allen@riverbendinsurance.com,521.440.9092,VP Sales,2674 Hill Drive,Nashville,TN,37271,billing,2025-12-08
+C00089,A00052,James,Lopez,james.lopez@blueridgeanalytics.com,285-765-2269,Purchasing Agent,,,,,crm,2025-06-17
+C00090,A00113,Richard,Nguyen,richard.nguyen.jr@harborpointelectric.com,+1 239 395 2414,Director of Operations,3056 Maple Road,Columbus,OH,43281,trade_show,2024-08-10
+C00091,A00124,Margaret,Thompson,margaret.thompson@beaconlegalservices.com,(672) 746-9486,Office Manager,,,,,erp,2026-08-05
+C00092,A00060,Jennifer,Harris,jennifer.harris@mapleleafautorepair.com,+1 929 585 2564,VP Sales,,,,,erp,2022-02-28
+C00093,A00082,Christopher,Kim,christopher.kim@summitconsulting.com,(975) 900-9410,Purchasing Agent,1487 Maple Drive,Chicago,IL,60683,crm,2024-10-28
+C00094,A00033,Anthony,Lee,anthony.lee@summitplumbing.com,332-292-3431,Owner,,,,,crm,2025-09-10
+C00095,A00158,Susan,Patel,susan.patel@oakmontlandscaping.com,420-906-7308,Engineer,963 Oak Boulevard,Columbus,OH,43261,billing,2025-08-17
+C00096,A00103,Kim,Richadr,,(748) 774-8743,Director of Operations,,,,,erp,2023-05-03
+C00097,A00024,Priya,Wilson,priya.wilson@riverbendinsurance.com,227.679.6065,Director of Operations,,,,,erp,2025-11-04
+C00098,,Wei,Nguyen,weinguyen0043@gmail.com,,Office Manager,,,,,billing,2022-06-26
+C00099,,Patricia,White,,732-793-1360,Purchasing Agent,,,,,web_form,2023-11-19
+C00100,A00125,Katherine,Young,katherine.young@sterlinglogistics.com,+1 722 234 0829,Director of Operations,,,,,web_form,2026-07-10
+C00101,A00063,Susan,Clark,susan.clark@pioneerdental.com,275.629.2576,VP Sales,,,,,erp,2023-01-05
+C00102,A00058,Elizabeth,Miller,elizabeth.miller@summitbakery.com,(954) 416-0321,Director of Operations,6572 Park Street,Nashville,TN,37236,crm,2023-01-09
+C00103,A00113,Maria,Thomas,maria.thomas@harborpointelectric.com,703.430.6299,VP Sales,,,,,crm,2022-02-16
+C00104,A00055,Patricia,Smith,patricia.smith@blueridgeautorepair.com,794.834.4962,Purchasing Agent,,,,,crm,2023-11-14
+C00105,A00062,Robert,Kim,,,Engineer,,,,,trade_show,2025-03-22
+C00106,A00156,Marcus,Rodriguez,marcus.rodriguez@meridianautorepair.com,450.402.7532,VP Sales,,,,,trade_show,2025-05-26
+C00107,A00028,Priya,Rodriguez,priyarodriguez0025@gmail.com,(812) 910-6043,Office Manager,,,,,web_form,2023-01-12
+C00108,A00071,Sue,Smith,sue.smith@blueridgestaffing.com,547-916-5166,Engineer,,,,,billing,2022-12-18
+C00109,A00148,Michael,Walker,michaelwalker0030@gmail.com,5648828980,Owner,,,,,crm,2023-03-09
+C00110,A00063,Elizabeth,Walker,elizabeth.walker@pioneerdental.com,444-343-8951,Purchasing Agent,,,,,erp,2023-08-04
+C00111,A00114,Nathan,Lewis,nathan.lewis@atlasinsurance.com,(294) 476-0848,Director of Operations,2584 Oak Avenue,Atlanta,GA,30303,trade_show,2025-05-03
+C00112,A00151,Patricia,Smith,patricia.smith@beaconelectric.com,(473) 902-1691,VP Sales,,,,,crm,2022-02-24
+C00113,A00111,Linda,Hall,linda.hall@cedarlegalservices.com,+1 809 961 4301,CFO,,,,,web_form,2025-10-13
+C00114,A00110,William,Jackson,william.jackson@northgateanalytics.com,265.364.8708,CFO,,,,,crm,2025-05-20
+C00115,A00130,Deborah,Young,deborah.young.jr@cedardental.com,(349) 273-3028,VP Sales,5244 Main Avenue,Seattle,WA,98130,crm,2023-07-14
+C00116,A00042,Wei,Hall,wei.hall@ironwoodelectric.com,988-618-3279,Office Manager,6968 Washington Drive,Atlanta,GA,30352,web_form,2024-07-24
+C00117,A00136,Sarah,Thompson,sarah.thompson@summitplumbing.com,(364) 592-6096,CFO,,,,,crm,2025-08-30
+C00118,A00048,Maria,Martin,maria.martin.jr@pioneerlandscaping.com,437-267-4939,Purchasing Agent,3629 Washington Avenue,Phoenix,AZ,85030,billing,2023-09-29
+C00119,A00140,Susan,Walker,susan.walker@northgateinsurance.com,6002689672,VP Sales,,,,,web_form,2026-03-10
+C00120,A00148,Daniel,Anderson,daniel.anderson@cedarbakery.com,(321) 721-1566,Owner,6909 Hill Boulevard,Boston,MA,02146,billing,2024-01-26
+C00121,A00159,David,Taylor,david.taylor.jr@pioneeranalytics.com,294.283.3652,Owner,5039 Washington Avenue,Denver,CO,80274,erp,2023-06-21
+C00122,A00118,Daniel,Clark,daniel.clark@meridianroofing.com,447.273.8137,Director of Operations,,,,,erp,2022-05-15
+C00123,,Patricia,White,,,Purchasing Agent,,,,,web_form,2024-03-13
+C00124,A00160,Wei,Young,wei.young@mapleleafstaffing.com,+1 767 853 9536,Director of Operations,8850 Washington Road,Austin,TX,78756,web_form,2025-07-20
+C00125,A00032,Jennifer,Wilson,jennifer.wilson@atlasconsulting.com,457-800-8866,Purchasing Agent,,,,,crm,2024-12-16
+C00126,A00006,Linda,Thompson,linda.thompson@northgatebakery.com,3617318684,Owner,,,,,erp,2026-03-06
+C00127,A00128,Will,Garcia,will.garcia@meridianlandscaping.com,+1 679 536 4194,Purchasing Agent,,,,,crm,2022-09-17
+C00128,A00160,Marcus,Harris,marcus.harris@mapleleafstaffing.com,733.891.5765,Office Manager,3972 Elm Street,Austin,TX,78774,billing,2024-04-28
+C00129,A00159,Christopher,Martin,,,Owner,,,,,web_form,2022-04-22
+C00130,A00055,Elizabeth,Anderson,elizabeth.anderson@blueridgeautorepair.com,563-291-7728,Director of Operations,1059 Elm Drive,Atlanta,GA,30343,erp,2022-07-15
+C00131,A00072,Nathan,Garcia,nathan.garcia@sterlinglogistics.com,(983) 565-4952,Director of Operations,3589 Cedar Drive,Seattle,WA,98194,erp,2023-12-06
+C00132,,Margaret,Lewis,margaretlewis0121@gmail.com,9328541812,Director of Operations,,,,,trade_show,2025-04-26
+C00133,A00130,Deborah,Young,deborah.young@cedardental.com,943.884.7434,Engineer,5244 Main Avenue,Seattle,WA,98130,crm,2023-07-14
+C00134,A00164,Kevin,Smith,kevin.smith@cedarconsulting.com,(983) 984-3781,Director of Operations,3284 Cedar Boulevard,Denver,CO,80240,trade_show,2026-04-24
+C00135,A00109,Margaret,Brown,admin@ironwoodinsurance.com,(249) 671-7583,Purchasing Agent,,,,,trade_show,2025-03-12
+C00136,A00057,Priya,Harris,priya.harris@oakmontroofing.com,788-246-4211,Director of Operations,,,,,web_form,2024-02-13
+C00137,A00022,Hannah,Patel,hannah.patel@beaconstaffing.com,8382236736,CFO,,,,,erp,2026-05-02
+C00138,A00007,Olivia,Brown,olivia.brown@oakmontstaffing.com,2056855036,Director of Operations,470 Cedar Road,Nashville,TN,37201,trade_show,2026-06-04
+C00139,A00119,Christopher,Clark,christopher.clark@beacondesign.com,+1 798 532 8339,Engineer,,,,,web_form,2026-03-31
+C00140,A00030,Wei,White,wei.white@meridianautorepair.com,572-311-4765,Office Manager,,,,,web_form,2022-08-15
+C00141,A00150,Omar,Martinez,omar.martinez@blueridgeautorepair.com,+1 498 609 9257,Purchasing Agent,,,,,web_form,2022-02-04
+C00142,A00113,Aisha,Smith,aisha.smith@harborpointelectric.com,+1 626 552 6990,Engineer,,,,,erp,2024-02-17
+C00143,A00133,James,Martin,james.martin@beaconsoftware.com,+1 388 764 4465,CFO,,,,,erp,2026-01-28
+C00144,A00112,Wei,Martin,wei.martin@ironwoodstaffing.com,+1 898 299 4752,Office Manager,8295 Lake Road,Nashville,TN,37250,trade_show,2024-03-26
+C00145,A00048,Margaret,Walker,margaret.walker@pioneerlandscaping.com,(595) 897-0731,Office Manager,,,,,web_form,2025-03-10
+C00146,A00045,Grace,Wilson,gracewilson0029@gmail.com,+1 895 840 1228,Office Manager,7227 Church Avenue,Denver,CO,80248,web_form,2026-02-13
+C00147,A00116,Maria,Thompson,,,Office Manager,1251 Elm Street,Phoenix,AZ,85036,billing,2026-08-11
+C00148,A00128,James,Martin,james.martin@meridianlandscaping.com,(985) 863-0679,Office Manager,,,,,trade_show,2022-05-05
+C00149,A00047,Richard,Patel,info@redwoodroofing.com,(807) 561-8058,Owner,,,,,trade_show,2022-05-09
+C00150,A00066,Wei,Harris,wei.harris@summitbakery.com,(559) 268-2420,Owner,,,,,erp,2022-03-18
+C00151,A00124,Robert,Rodriguez,robert.rodriguez@beaconlegalservices.com,+1 678 813 7992,Director of Operations,,,,,crm,2024-11-23
+C00152,A00162,Tom,Taylor,tom.taylor@blueridgeplumbing.com,557-664-3398,Engineer,,,,,crm,2022-08-08
+C00153,,William,Martin,,,Director of Operations,,,,,crm,2026-04-25
+C00154,A00113,Richard,Nguyen,richard.nguyen@harborpointelectric.com,(812) 670-5739,Director of Operations,3056 Maple Road,Columbus,OH,43281,trade_show,2024-08-10
+C00155,A00011,Marcus,Thomas,marcus.thomas@brightpathanalytics.com,236-298-8772,Owner,4102 Elm Avenue,Columbus,OH,43274,web_form,2023-05-10
+C00156,A00010,Wei,Moore,wei.moore@mapleleafstaffing.com,598-351-9707,Office Manager,,,,,erp,2023-01-05
+C00157,A00047,Nguyen,Jenifer,,4932807453,Owner,6360 CEDAR BLVD,Phoenix,AZ,85076,trade_show,2025-09-10
+C00158,A00047,Thomas,Ssan,,(346) 727-6465,Office Manager,69 MAPLE DR,Denver,CO,80294,web_form,2024-01-20
+C00159,A00159,Omar,Hall,omar.hall@pioneeranalytics.com,570.804.9919,VP Sales,,,,,erp,2025-03-27
+C00160,A00037,David,Lee,david.lee@riverbendroofing.com,+1 824 539 1696,Engineer,,,,,trade_show,2022-01-03
+C00161,A00113,Aisha,Smith,asmith@harborpointelectric.com,6075063221,CFO,,,,,trade_show,2022-05-03
+C00162,A00155,Sarah,Thompson,sarah.thompson@beaconelectric.com,212.888.4009,VP Sales,2175 Sunset Road,Chicago,IL,60649,trade_show,2023-07-25
+C00163,A00071,Susan,Smith,susan.smith@blueridgestaffing.com,547-916-5166,Engineer,,,,,web_form,2025-09-10
+C00164,A00013,Patricia,Wilson,patricia.wilson@blueridgelogistics.com,666.596.7975,Purchasing Agent,1686 Church Road,Seattle,WA,98164,billing,2022-03-13
+C00165,,Hannah,Allen,hannahallen0041@gmail.com,5718678888,Engineer,,,,,erp,2023-07-09
+C00166,A00045,Patricia,Patel,patricia.patel@evergreendental.com,317.829.0109,VP Sales,,,,,crm,2025-02-27
+C00167,A00117,Michael,Harris,mharris@blueridgedesign.com,869.505.3702,CFO,,,,,crm,2025-01-09
+C00168,A00047,David,Davis,david.davis@redwoodroofing.com,821-598-3136,Office Manager,,,,,crm,2023-06-22
+C00169,A00094,Anthony,Jackson,anthony.jackson@evergreeninsurance.com,(851) 319-2329,Director of Operations,,,,,erp,2025-07-13
+C00170,,Michael,Moore,michaelmoore0042@gmail.com,,Owner,,,,,crm,2023-02-04
+C00171,A00089,Jennifer,Patel,jennifer.patel@blueridgeplumbing.com,294-925-4387,Owner,,,,,web_form,2025-09-19
+C00172,A00092,Patricia,Hall,patricia.hall@beaconbakery.com,+1 843 634 8271,VP Sales,,,,,crm,2022-09-06
+C00173,A00135,Marcus,Williams,marcus.williams@evergreendesign.com,+1 652 691 4074,Owner,,,,,crm,2025-04-02
+C00174,A00107,Daniel,Moore,office@atlaslogistics.com,+1 564 455 5898,Owner,4920 Elm Street,Atlanta,GA,30302,web_form,2023-09-28
+C00175,A00023,Daniel,Clark,daniel.clark@northgateanalytics.com,(655) 865-4834,CFO,,,,,trade_show,2023-03-13
+C00176,A00160,Aisha,Williams,aishawilliams0027@gmail.com,785.896.1593,Office Manager,4111 Washington Street,Boston,MA,02140,crm,2026-04-13
+C00177,A00001,Luis,Thomas,luis.thomas@stonebridgedental.com,469.693.9855,Engineer,,,,,billing,2024-11-11
+C00178,A00056,Deborah,Rodriguez,deborah.rodriguez@meridianconsulting.com,(864) 345-1876,CFO,,,,,erp,2023-05-31
+C00179,A00074,Jennifer,Taylor,jennifer.taylor@blueridgelegalservices.com,9715520869,Engineer,,,,,billing,2023-06-01
+C00180,A00114,Joseph,Allen,joseph.allen@atlasinsurance.com,4283247519,Engineer,,,,,trade_show,2022-06-04
+C00181,A00140,Sarah,Allen,sarah.allen@northgateinsurance.com,5439222357,Owner,,,,,crm,2022-08-12
+C00182,A00081,Carlos,Nguyen,carlos.nguyen@ironwoodstaffing.com,(944) 885-0959,VP Sales,,,,,trade_show,2026-04-24
+C00183,A00048,Wei,Johnson,sales@pioneerlandscaping.com,7049350771,CFO,,,,,crm,2026-04-20
+C00184,,Michael,Moore,michaelmoore0042@gmail.com,7888721176,Owner,,,,,crm,2022-07-28
+C00185,A00043,Daniel,Nguyen,daniel.nguyen@evergreenlegalservices.com,+1 503 508 6416,Owner,7484 Elm Drive,Austin,TX,78724,web_form,2025-02-14
+C00186,A00128,Joe,Young,joe.young@meridianlandscaping.com,996-565-8603,CFO,,,,,erp,2025-06-16
+C00187,A00080,Bill,Hall,bill.hall@evergreenautorepair.com,495.320.6816,CFO,520 Church Drive,Portland,OR,97259,billing,2025-02-20
+C00188,A00031,Robert,Lee,robert.lee@sterlingplumbing.com,+1 856 481 7685,Office Manager,,,,,crm,2022-05-14
+C00189,,Marcus,Miller,,,Owner,,,,,billing,2026-08-27
+C00190,A00109,Grace,White,sales@ironwoodinsurance.com,228-652-9338,Office Manager,,,,,erp,2024-01-06
+C00191,A00032,C.,Jackson,,,Purchasing Agent,,,,,trade_show,2026-06-10
+C00192,A00036,Patricia,Rodriguez,patricia.rodriguez@brightpathanalytics.com,(318) 238-6717,VP Sales,,,,,web_form,2025-03-06
+C00193,A00097,William,Moore,support@stonebridgestaffing.com,(607) 873-6628,Office Manager,4101 Cedar Avenue,Atlanta,GA,30303,crm,2022-06-25
+C00194,A00118,Luis,Williams,luis.williams@meridianroofing.com,+1 348 963 0772,Engineer,,,,,web_form,2022-08-22
+C00195,A00109,Sarah,Kim,admin@ironwoodinsurance.com,,Director of Operations,2765 Washington Avenue,Columbus,OH,43248,web_form,2022-10-27
+C00196,A00092,Trish,Hall,trish.hall@beaconbakery.com,+1 843 634 8271,VP Sales,,,,,trade_show,2024-02-27
+C00197,A00071,Richard,Thompson,richard.thompson@blueridgestaffing.com,(257) 292-5234,Director of Operations,1846 Hill Drive,Columbus,OH,43283,erp,2024-08-04
+C00198,A00075,Katherine,Martinez,katherine.martinez@northgateinsurance.com,+1 251 440 9555,Engineer,455 Elm Drive,Seattle,WA,98156,crm,2023-06-06
+C00199,A00068,Omar,Williams,omar.williams@copperhillconsulting.com,(451) 613-9795,Director of Operations,,,,,billing,2024-10-20
+C00200,A00019,Carlos,Nguyen,carlos.nguyen@riverbendinsurance.com,+1 390 825 4283,Office Manager,,,,,erp,2025-08-22
+C00201,,Susan,Walker,susanwalker0172@gmail.com,+1 588 841 2602,VP Sales,,,,,trade_show,2022-12-31
+C00202,A00075,Kevin,Martinez,kevin.martinez@northgateinsurance.com,399.848.8256,Engineer,455 Elm Drive,Seattle,WA,98156,crm,2023-06-06
+C00203,A00069,Susan,Martin,susan.martin@lakesideinsurance.com,(448) 980-5097,Owner,,,,,erp,2024-12-07
+C00204,A00117,Daniel,Walker,daniel.walker@blueridgedesign.com,230.283.5189,Office Manager,5107 Maple Street,Denver,CO,80275,erp,2024-02-21
+C00205,A00007,Priya,Clark,priya.clark@oakmontstaffing.com,981-477-8603,Purchasing Agent,,,,,web_form,2026-02-28
+C00206,A00007,James,Johnson,james.johnson@oakmontstaffing.com,+1 262 724 7994,Director of Operations,7332 Church Avenue,Nashville,TN,37285,web_form,2025-11-21
+C00207,A00118,Dan,Clark,dan.clark@meridianroofing.com,447-273-8137,Director of Operations,,,,,crm,2023-11-15
+C00208,A00047,Patricia,Williams,patricia.williams@redwoodroofing.com,(962) 448-8182,Director of Operations,8915 Washington Drive,Phoenix,AZ,85080,erp,2022-02-06
+C00209,,Katherine,White,,,Director of Operations,,,,,billing,2024-05-25
+C00210,A00021,Daniel,Garcia,daniel.garcia@riverbendplumbing.com,(318) 464-5636,Office Manager,,,,,web_form,2023-09-22
+C00211,A00107,Patricia,Martinez,office@atlaslogistics.com,,CFO,,,,,erp,2023-01-24
+C00212,,Marcus,White,marcuswhite0044@gmail.com,827-710-3236,Office Manager,,,,,crm,2024-05-04
+C00213,A00042,Hall,Wie,,+1 988 618 3279,Office Manager,6968 WASHINGTON DR,Atlanta,GA,30352,billing,2024-10-05
+C00214,,William,Martin,,804-902-9362,Director of Operations,,,,,erp,2023-10-10
+C00215,A00072,Hannah,Anderson,hannah.anderson@sterlinglogistics.com,+1 463 260 7631,Owner,9781 Cedar Drive,Seattle,WA,98168,erp,2025-04-06
+C00216,A00109,Daniel,Martin,sales@ironwoodinsurance.com,5273535590,Purchasing Agent,,,,,trade_show,2022-12-26
+C00217,A00108,Christopher,Martin,christopher.martin@pioneeranalytics.com,756.951.2666,Owner,,,,,erp,2026-05-07
+C00218,A00031,Joseph,Moore,joseph.moore@sterlingplumbing.com,(469) 403-6231,Engineer,,,,,web_form,2026-02-11
+C00219,A00161,Carlos,Kim,carlos.kim@beaconplumbing.com,640.541.7386,VP Sales,8711 Main Avenue,Atlanta,GA,30367,trade_show,2025-01-26
+C00220,A00097,Joseph,Martinez,support@stonebridgestaffing.com,,Owner,5427 Cedar Drive,Atlanta,GA,30390,web_form,2025-12-03
+C00221,A00147,Sarah,Miller,sarah.miller@harborpointinsurance.com,661-314-7159,CFO,2764 Oak Avenue,Columbus,OH,43268,trade_show,2024-04-19
+C00222,A00064,Maria,Davis,maria.davis@beaconsoftware.com,941.429.2711,Engineer,2312 Cedar Street,Austin,TX,78794,billing,2024-08-27
+C00223,A00071,Jenny,Martin,jenny.martin@blueridgestaffing.com,786.243.8441,Purchasing Agent,,,,,erp,2022-04-05
+C00224,A00153,Wei,Allen,wei.allen@northgatesoftware.com,574.326.4100,Director of Operations,,,,,web_form,2025-02-22
+C00225,A00045,Maria,Lopez,maria.lopez@evergreendental.com,8633896805,VP Sales,,,,,crm,2023-05-07
+C00226,A00081,Katherine,Taylor,katherine.taylor@ironwoodstaffing.com,+1 515 501 5779,Purchasing Agent,,,,,billing,2025-04-24
+C00227,A00103,Christopher,Clark,cclark@beacondesign.com,551.740.8113,Purchasing Agent,,,,,trade_show,2025-09-20
+C00228,A00074,Deborah,Anderson,deborah.anderson@blueridgelegalservices.com,6969420702,CFO,2140 Cedar Boulevard,Austin,TX,78759,billing,2024-06-11
+C00229,A00006,Nathan,Rodriguez,nathan.rodriguez@northgatebakery.com,268.561.7756,Owner,,,,,web_form,2024-05-19
+C00230,A00159,David,Taylor,david.taylor@pioneeranalytics.com,(753) 781-7249,Purchasing Agent,5039 Washington Avenue,Denver,CO,80274,erp,2023-06-21
+C00231,A00045,Grace,Wilson,grace.wilson@evergreendental.com,+1 895 840 1228,Office Manager,7227 Church Avenue,Denver,CO,80248,trade_show,2025-10-18
+C00232,A00081,Taylor,Kathreine,,515-501-5779,Purchasing Agent,,,,,erp,2024-07-14
+C00233,A00148,Michael,Walker,michael.walker@cedarbakery.com,564.882.8980,Owner,,,,,crm,2024-03-24
+C00234,A00142,Thomas,Nguyen,thomas.nguyen@granitestaffing.com,(791) 503-4827,Office Manager,,,,,trade_show,2025-08-15
+C00235,A00037,Nathan,Thomas,nathan.thomas@riverbendroofing.com,906-597-8380,Director of Operations,,,,,crm,2025-01-30
+C00236,A00149,Olivia,Rodriguez,olivia.rodriguez.jr@lakesideanalytics.com,885-565-1145,Owner,4071 Park Street,Austin,TX,78710,billing,2024-01-30
+C00237,A00128,Joseph,Young,joseph.young@meridianlandscaping.com,(996) 565-8603,CFO,,,,,billing,2026-02-04
+C00238,A00153,Elizabeth,Lopez,elizabeth.lopez@northgatesoftware.com,+1 506 280 3516,Director of Operations,,,,,crm,2025-09-07
+C00239,A00059,Smith,Wi,,(230) 940-9670,Office Manager,,,,,web_form,2022-12-16
+C00240,A00055,Sarah,Rodriguez,sarah.rodriguez@blueridgeautorepair.com,301.916.3042,Engineer,,,,,web_form,2026-04-17
+C00241,A00123,Jennifer,Patel,jennifer.patel@meridianlandscaping.com,+1 222 426 8336,Office Manager,,,,,trade_show,2023-01-28
+C00242,A00161,William,Davis,william.davis@beaconplumbing.com,+1 783 997 5343,VP Sales,,,,,crm,2022-09-03
+C00243,A00144,Katherine,Williams,katherine.williams@oakmontplumbing.com,+1 390 911 3885,Office Manager,,,,,crm,2025-07-21
+C00244,A00163,Luis,Miller,luis.miller@evergreenelectric.com,800-671-4200,Office Manager,9216 Washington Boulevard,Atlanta,GA,30332,trade_show,2025-01-11

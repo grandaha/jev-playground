@@ -1,66 +1,66 @@
 id_a,id_b,block_keys,hard_decision,hard_rule,error,score,confidence,p_diff,p_maybe,p_same,name_same,details_conflict,lookalike,decision,rule,detail
 A00001,A00101,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00002,A00065,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00003,A00051,k_name+k_name_sound,,,,0.21,0.69,0.8,0.19,0.01,0.37,0.66,0.81,no_match,single_low,score 0.21 <= 0.6
-A00005,A00076,k_name+k_name_sound,,,,0.17,0.75,0.83,0.16,0.01,0.34,0.66,0.84,no_match,single_low,score 0.17 <= 0.6
-A00009,A00157,k_name+k_name_sound,,,,0.31,0.54,0.7,0.28,0.02,0.45,0.62,0.81,no_match,single_low,score 0.31 <= 0.6
-A00010,A00160,k_domain+k_name+k_name_sound,,,,0.72,0.4,0.34,0.6,0.06,0.54,0.62,0.77,review,single_mid,0.6 < score 0.72 < 1.6
+A00003,A00051,k_name+k_name_sound,,,,0.31,0.53,0.7,0.29,0.01,0.39,0.65,0.81,no_match,single_low,score 0.31 <= 0.6
+A00005,A00076,k_name+k_name_sound,,,,0.13,0.8,0.87,0.12,0.01,0.34,0.66,0.82,no_match,single_low,score 0.13 <= 0.6
+A00009,A00157,k_name+k_name_sound,,,,0.32,0.53,0.7,0.29,0.01,0.44,0.59,0.81,no_match,single_low,score 0.32 <= 0.6
+A00010,A00160,k_domain+k_name+k_name_sound,,,,0.68,0.34,0.38,0.56,0.06,0.52,0.61,0.8,review,single_mid,0.6 < score 0.68 < 1.6
 A00011,A00036,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00012,A00098,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00013,A00079,k_name+k_name_sound,,,,0.34,0.49,0.6799999999999999,0.29,0.03,0.38,0.46,0.81,no_match,single_low,score 0.34 <= 0.6
-A00014,A00022,k_domain+k_name+k_name_sound,,,,0.62,0.3,0.42,0.54,0.04,0.49,0.58,0.82,review,single_mid,0.6 < score 0.62 < 1.6
-A00015,A00071,k_domain+k_name+k_name_sound,,,,0.62,0.33,0.41,0.56,0.03,0.51,0.63,0.78,review,single_mid,0.6 < score 0.62 < 1.6
-A00018,A00132,k_name+k_name_sound,,,,0.09,0.87,0.91,0.08,0.01,0.33,0.63,0.85,no_match,single_low,score 0.09 <= 0.6
+A00013,A00079,k_name+k_name_sound,,,,0.37,0.44,0.65,0.32,0.03,0.36,0.46,0.81,no_match,single_low,score 0.37 <= 0.6
+A00014,A00022,k_domain+k_name+k_name_sound,,,,0.65,0.32,0.4,0.55,0.05,0.49,0.59,0.81,review,single_mid,0.6 < score 0.65 < 1.6
+A00015,A00071,k_domain+k_name+k_name_sound,,,,0.72,0.34,0.36,0.56,0.08,0.54,0.67,0.78,review,single_mid,0.6 < score 0.72 < 1.6
+A00018,A00132,k_name+k_name_sound,,,,0.1,0.85,0.91,0.09,0.0,0.35,0.61,0.86,no_match,single_low,score 0.10 <= 0.6
 A00019,A00024,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00019,A00073,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00020,A00104,k_name+k_name_sound,,,,0.14,0.79,0.86,0.13,0.01,0.36,0.66,0.85,no_match,single_low,score 0.14 <= 0.6
+A00020,A00104,k_name+k_name_sound,,,,0.16,0.76,0.84,0.15,0.01,0.36,0.68,0.86,no_match,single_low,score 0.16 <= 0.6
 A00021,A00044,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00023,A00110,k_phone+k_name_sound+k_street,,,,2.0,0.99,0.0,0.0,1.0,0.93,0.1,0.07,merge,single_high,"score 2.00 >= 1.6, lookalike 0.07 < 0.5"
+A00023,A00110,k_phone+k_name_sound+k_street,,,,2.0,0.99,0.0,0.0,1.0,0.93,0.09,0.07,merge,single_high,"score 2.00 >= 1.6, lookalike 0.07 < 0.5"
 A00024,A00073,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00025,A00115,k_name+k_name_sound,,,,0.34,0.49,0.67,0.32,0.01,0.46,0.6,0.8,no_match,single_low,score 0.34 <= 0.6
+A00025,A00115,k_name+k_name_sound,,,,0.39,0.41,0.62,0.37,0.01,0.48,0.63,0.79,no_match,single_low,score 0.39 <= 0.6
 A00026,A00105,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00026,A00168,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00028,A00137,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00029,A00080,k_domain+k_name+k_name_sound,,,,0.22,0.67,0.8,0.19,0.01,0.35,0.66,0.85,review,shared_identifier,would reject (single_low) but they share k_domain. score 0.22 <= 0.6
+A00029,A00080,k_domain+k_name+k_name_sound,,,,0.23,0.66,0.78,0.2,0.02,0.34,0.63,0.86,review,shared_identifier,would reject (single_low) but they share k_domain. score 0.23 <= 0.6
 A00030,A00156,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00033,A00116,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00033,A00136,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00034,A00083,k_name+k_name_sound,,,,0.11,0.83,0.89,0.1,0.01,0.32,0.65,0.84,no_match,single_low,score 0.11 <= 0.6
+A00034,A00083,k_name+k_name_sound,,,,0.13,0.81,0.88,0.11,0.01,0.32,0.65,0.83,no_match,single_low,score 0.13 <= 0.6
 A00037,A00062,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00040,A00143,k_name+k_name_sound,,,,0.44,0.33,0.58,0.39,0.03,0.4,0.62,0.79,no_match,single_low,score 0.44 <= 0.6
-A00046,A00093,k_name+k_name_sound,,,,0.35,0.47,0.66,0.32,0.02,0.46,0.62,0.8,no_match,single_low,score 0.35 <= 0.6
-A00053,A00127,k_name+k_name_sound,,,,0.24,0.64,0.78,0.21,0.01,0.36,0.58,0.84,no_match,single_low,score 0.24 <= 0.6
+A00040,A00143,k_name+k_name_sound,,,,0.39,0.42,0.63,0.35,0.02,0.4,0.61,0.79,no_match,single_low,score 0.39 <= 0.6
+A00046,A00093,k_name+k_name_sound,,,,0.31,0.54,0.71,0.28,0.01,0.44,0.64,0.81,no_match,single_low,score 0.31 <= 0.6
+A00053,A00127,k_name+k_name_sound,,,,0.21,0.69,0.81,0.18,0.01,0.37,0.56,0.83,no_match,single_low,score 0.21 <= 0.6
 A00054,A00068,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00055,A00150,k_domain+k_name+k_name_sound,,,,0.22,0.66,0.78,0.21,0.01,0.33,0.67,0.85,review,shared_identifier,would reject (single_low) but they share k_domain. score 0.22 <= 0.6
-A00056,A00067,k_domain+k_name_sound+k_street,,,,1.89,0.83,0.0,0.1,0.9,0.84,0.08,0.1,merge,single_high,"score 1.89 >= 1.6, lookalike 0.10 < 0.5"
-A00057,A00106,k_name+k_name_sound,,,,0.49,0.27,0.57,0.37,0.06,0.52,0.52,0.77,no_match,single_low,score 0.49 <= 0.6
+A00055,A00150,k_domain+k_name+k_name_sound,,,,0.21,0.68,0.79,0.2,0.01,0.37,0.63,0.83,review,shared_identifier,would reject (single_low) but they share k_domain. score 0.21 <= 0.6
+A00056,A00067,k_domain+k_name_sound+k_street,,,,1.9,0.84,0.0,0.1,0.9,0.85,0.07,0.09,merge,single_high,"score 1.90 >= 1.6, lookalike 0.09 < 0.5"
+A00057,A00106,k_name+k_name_sound,,,,0.54,0.19,0.53,0.41,0.06,0.52,0.49,0.76,no_match,single_low,score 0.54 <= 0.6
 A00058,A00066,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00059,A00102,k_domain+k_name_sound+k_street,,,,1.99,0.99,0.0,0.01,0.99,0.94,0.09,0.1,merge,single_high,"score 1.99 >= 1.6, lookalike 0.10 < 0.5"
+A00059,A00102,k_domain+k_name_sound+k_street,,,,1.99,0.99,0.0,0.01,0.99,0.95,0.09,0.11,merge,single_high,"score 1.99 >= 1.6, lookalike 0.11 < 0.5"
 A00061,A00138,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00064,A00133,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00070,A00114,k_domain+k_name+k_name_sound,,,,0.31,0.54,0.71,0.27,0.02,0.41,0.62,0.82,review,shared_identifier,would reject (single_low) but they share k_domain. score 0.31 <= 0.6
+A00070,A00114,k_domain+k_name+k_name_sound,,,,0.38,0.43,0.64,0.33,0.03,0.41,0.59,0.81,review,shared_identifier,would reject (single_low) but they share k_domain. score 0.38 <= 0.6
 A00072,A00125,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00075,A00140,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00077,A00085,k_name+k_name_sound,,,,0.14,0.79,0.86,0.13,0.01,0.37,0.7,0.83,no_match,single_low,score 0.14 <= 0.6
-A00081,A00112,k_domain+k_street,,,,1.97,0.95,0.0,0.03,0.97,0.95,0.08,0.11,merge,single_high,"score 1.97 >= 1.6, lookalike 0.11 < 0.5"
+A00077,A00085,k_name+k_name_sound,,,,0.18,0.74,0.83,0.16,0.01,0.36,0.66,0.84,no_match,single_low,score 0.18 <= 0.6
+A00081,A00112,k_domain+k_street,,,,1.96,0.94,0.0,0.04,0.96,0.95,0.09,0.11,merge,single_high,"score 1.96 >= 1.6, lookalike 0.11 < 0.5"
 A00082,A00099,k_domain+k_phone+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00082,A00141,k_domain+k_phone+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00086,A00164,k_phone+k_name_sound+k_street,,,,1.99,0.99,0.0,0.0,1.0,0.94,0.1,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"
-A00088,A00147,k_name+k_name_sound,,,,0.31,0.53,0.71,0.27,0.02,0.49,0.49,0.81,no_match,single_low,score 0.31 <= 0.6
-A00089,A00162,k_name+k_name_sound,,,,0.25,0.63,0.78,0.19,0.03,0.49,0.52,0.83,no_match,single_low,score 0.25 <= 0.6
+A00086,A00164,k_phone+k_name_sound+k_street,,,,2.0,1.0,0.0,0.0,1.0,0.94,0.09,0.07,merge,single_high,"score 2.00 >= 1.6, lookalike 0.07 < 0.5"
+A00088,A00147,k_name+k_name_sound,,,,0.33,0.51,0.69,0.29,0.02,0.5,0.47,0.8,no_match,single_low,score 0.33 <= 0.6
+A00089,A00162,k_name+k_name_sound,,,,0.26,0.6,0.76,0.21,0.03,0.48,0.53,0.83,no_match,single_low,score 0.26 <= 0.6
 A00090,A00096,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00091,A00158,k_domain+k_street,,,,1.88,0.82,0.0,0.12,0.88,0.91,0.08,0.12,merge,single_high,"score 1.88 >= 1.6, lookalike 0.12 < 0.5"
+A00091,A00158,k_domain+k_street,,,,1.9,0.85,0.0,0.1,0.9,0.92,0.09,0.11,merge,single_high,"score 1.90 >= 1.6, lookalike 0.11 < 0.5"
 A00094,A00165,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00095,A00130,k_domain+k_name_sound+k_street,,,,2.0,0.99,0.0,0.0,1.0,0.93,0.09,0.09,merge,single_high,"score 2.00 >= 1.6, lookalike 0.09 < 0.5"
+A00095,A00130,k_domain+k_name_sound+k_street,,,,2.0,0.99,0.0,0.0,1.0,0.93,0.08,0.1,merge,single_high,"score 2.00 >= 1.6, lookalike 0.10 < 0.5"
 A00099,A00141,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00100,A00146,k_phone+k_street,,,,1.91,0.86,0.0,0.08,0.92,0.85,0.1,0.11,merge,single_high,"score 1.91 >= 1.6, lookalike 0.11 < 0.5"
+A00100,A00146,k_phone+k_street,,,,1.95,0.93,0.0,0.05,0.95,0.86,0.1,0.11,merge,single_high,"score 1.95 >= 1.6, lookalike 0.11 < 0.5"
 A00103,A00119,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00105,A00168,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00108,A00159,k_domain+k_name_sound+k_street,,,,2.0,0.99,0.0,0.0,1.0,0.94,0.07,0.08,merge,single_high,"score 2.00 >= 1.6, lookalike 0.08 < 0.5"
+A00108,A00159,k_domain+k_name_sound+k_street,,,,1.99,0.99,0.0,0.0,1.0,0.94,0.08,0.08,merge,single_high,"score 1.99 >= 1.6, lookalike 0.08 < 0.5"
 A00116,A00136,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00121,A00144,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00122,A00151,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
 A00122,A00155,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00123,A00128,k_domain+k_name+k_name_sound,,,,0.38,0.43,0.63,0.35,0.02,0.43,0.61,0.82,review,shared_identifier,would reject (single_low) but they share k_domain. score 0.38 <= 0.6
+A00123,A00128,k_domain+k_name+k_name_sound,,,,0.31,0.53,0.7,0.28,0.02,0.42,0.61,0.83,review,shared_identifier,would reject (single_low) but they share k_domain. score 0.31 <= 0.6
 A00151,A00155,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
-A00152,A00167,k_domain+k_street,,,,1.98,0.98,0.0,0.01,0.99,0.93,0.08,0.1,merge,single_high,"score 1.98 >= 1.6, lookalike 0.10 < 0.5"
+A00152,A00167,k_domain+k_street,,,,1.98,0.96,0.0,0.02,0.98,0.93,0.09,0.11,merge,single_high,"score 1.98 >= 1.6, lookalike 0.11 < 0.5"

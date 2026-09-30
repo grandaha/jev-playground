@@ -199,9 +199,18 @@ def corp_email(c, acct, style="f.l"):
     return {"f.l": f"{f}.{l}@{domain(acct)}", "fl": f"{f[0]}{l}@{domain(acct)}"}[style]
 
 
+_used_names = set()  # (first, last, account): random people never collide, so two records with one name and company are one person
+
+
 def base_contact(accounts, first=None, last=None, acct="any", **over):
-    c = {"true_id": new_tid("C"), "first": first or rng.choice(FIRST), "last": last or rng.choice(LAST),
-         "acct": rng.choice(list(accounts)) if acct == "any" else acct,
+    acct = rng.choice(list(accounts)) if acct == "any" else acct
+    while True:  # name parts left open are redrawn until (first, last, account) is new; fully specified names are intentional
+        f, l = first or rng.choice(FIRST), last or rng.choice(LAST)
+        if (first and last) or (f, l, acct) not in _used_names:
+            break
+    _used_names.add((f, l, acct))
+    c = {"true_id": new_tid("C"), "first": f, "last": l,
+         "acct": acct,
          "title": rng.choice(TITLES), "phone": digits10(), "addr": new_address() if rng.random() < 0.25 else None,
          "source_system": rng.choice(SOURCES), "updated_at": when()}
     c.update(over)

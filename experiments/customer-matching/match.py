@@ -66,9 +66,9 @@ def hard_rule(table, a, b):
     if table == "accounts" and a["k_phone"] and a["k_phone"] == b["k_phone"] and a["k_domain"] and a["k_domain"] == b["k_domain"]:
         return "merge", "same_phone_and_domain"
     if table == "contacts" and a["k_email"] and a["k_email"] == b["k_email"]:
-        if a["k_phone"] and b["k_phone"] and a["k_phone"] != b["k_phone"]:
-            return None  # same email but different phones: let the policy weigh it
-        return "merge", "same_email"
+        # one mailbox and a compatible name (nickname, initial or swapped order): phones and titles change, so they do not veto
+        if {a["name_a"], a["name_b"]} & {b["name_a"], b["name_b"]}:
+            return "merge", "same_email"
     return None
 
 

@@ -153,7 +153,8 @@ def new_contact(i, acct, first=None, last=None):
 def email_for(c, domain, variant):
     f, l = slug(c["first"]), slug(c["last"])
     style = rng.choice(["f.l", "fl", "first", "gmail"]) if variant else "f.l"
-    return {"f.l": f"{f}.{l}@{domain}", "fl": f"{f[0]}{l}@{domain}", "first": f"{f}@{domain}",
+    tag = c.get("email_tag", "")  # a junior has their own mailbox, e.g. kevin.hall.jr@
+    return {"f.l": f"{f}.{l}{tag}@{domain}", "fl": f"{f[0]}{l}{tag}@{domain}", "first": f"{f}{tag}@{domain}",
             "gmail": f"{f}{l}{rng.randrange(100)}@gmail.com"}[style]
 
 
@@ -172,6 +173,8 @@ def make_contacts(accts, acct_ids):
         if kind == "twin":
             d["first"] = rng.choice([n for n in FIRST if n[0] == o["first"][0]] or FIRST)
         d["decoy"], d["sibling"] = kind, o["true_id"]
+        if kind == "junior":
+            d["email_tag"] = ".jr"
         base.append(d)
     by_c = {c["true_id"]: c for c in base}
 

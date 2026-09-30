@@ -40,8 +40,9 @@ Every pair decision writes: `decision`, `rule` (e.g. `exact_email`, `conflicting
 4. `master accounts`, `master contacts` (`--reuse` re-weights saved Jev answers without new calls)
 5. `evaluate`
 
-## First results (seed 7)
+## Results (seed 7, `run_all.sh`)
 - Some true duplicates share only a name (the generator moved the business or person and dropped other fields), so no method can prove them: 4 of 227 account pairs, 42 of 677 contact pairs. `evaluate.py` and the report list them as "unprovable" instead of counting them as misses.
-- Accounts: precision 100%, recall 93.3% on provable pairs (92.1% on all; 97.8% on all if the review queue is resolved correctly).
-- Contacts: precision 99.2%, recall 98.9% on provable pairs (92.8% on all).
-- Master weights matter: with recency weighted 0.3, the clean original wins 66% / 53% of groups; with recency 0 it wins 86% / 91%. Recency is random noise in the synthetic data, so this is a generator artifact until we decide how recency should really count.
+- Accounts: precision 100%, recall 92.8% on provable pairs (98.2% on all if the review queue is resolved correctly).
+- Contacts: precision 99.5%, recall 98.7% on provable pairs. 3 false merges left: two are a swapped-name record matching both a clean record and its variant, and one is two different people with an identical gmail address (a generator artifact: no-account contacts all get a gmail address without random digits).
+- Hard rules: `same_phone_and_domain` (accounts) and `same_email` (contacts, unless both phones are present and differ). Junior decoys now have their own mailbox.
+- Master weights matter: with recency weighted 0.3, the clean original wins about 65% / 53% of groups; with recency 0 it wins about 86% / 91%. Recency is random noise in the synthetic data, so this is a generator artifact until we decide how recency should really count.

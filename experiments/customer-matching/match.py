@@ -49,8 +49,10 @@ def hard_rule(table, a, b):
     """Returns (decision, rule) or None. Kept to cases that are safe without judgment."""
     if table == "accounts" and a["k_phone"] and a["k_phone"] == b["k_phone"] and a["k_domain"] and a["k_domain"] == b["k_domain"]:
         return "merge", "same_phone_and_domain"
-    if table == "contacts" and a["k_email"] and a["k_email"] == b["k_email"] and a["k_phone"] and a["k_phone"] == b["k_phone"]:
-        return "merge", "same_email_and_phone"  # email alone is unsafe: a junior/senior pair can share one
+    if table == "contacts" and a["k_email"] and a["k_email"] == b["k_email"]:
+        if a["k_phone"] and b["k_phone"] and a["k_phone"] != b["k_phone"]:
+            return None  # same email but different phones: let Jev look (the phone-conflict guard then sends it to review)
+        return "merge", "same_email"
     return None
 
 

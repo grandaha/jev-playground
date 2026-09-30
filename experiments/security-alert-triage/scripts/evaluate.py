@@ -119,7 +119,7 @@ def main():
             print(f"\n{name}: {len(set(groups.values()))} groups; linked pairs {g['pairs_linked']}, "
                   f"correct {g['correct_pairs']} of {g['true_pairs']} true pairs "
                   f"(precision {g['precision']:.0%}, recall {g['recall']:.0%}); "
-                  f"groups that hold two different real incidents: {g['merged_incidents']}")
+                  f"groups that hold more than one real incident: {g['merged_incidents']}")
             for s, v in sorted(g["by_scenario"].items()):
                 print(f"    {s:<26} wrong links {v['wrong_links']}, missed links {v['missed_links']}")
     for name, file in (("Account risk with Jev", "output_account_risk.csv"),

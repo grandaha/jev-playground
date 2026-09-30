@@ -53,23 +53,24 @@ button{font:inherit;padding:6px 12px;border-radius:6px;border:1px solid var(--li
 </style></head><body><header><h1>Alert triage</h1>
 <label>View <select id="v"><option value="alerts">alerts</option><option value="incidents">incidents</option><option value="accounts">accounts by risk</option></select></label>
 <label>Show <select id="f"></select></label><label>Search <input id="q" size="14"></label></header>
-<main><p class="mut" id="sum"></p><div id="list"></div><button id="more">Show more</button></main>
+<main><p class="mut">Accounts are ranked by security events, never by who a person is. The ranking is an input for a human to review and never a verdict. "compromised (answer key)" is the label from the synthetic answer key, and the pipeline never sees it.</p><p class="mut" id="sum"></p><div id="list"></div><button id="more">Show more</button></main>
 <script>
 const D=__DATA__;let shown=0;const PAGE=60,$=id=>document.getElementById(id);
-const esc=s=>String(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const FILTERS={alerts:[['missed','missed real alerts'],['queue cost','benign alerts that reach a person'],['disagree','Jev and baseline disagree'],['all','all']],incidents:[['all','all']],accounts:[['compromised','compromised accounts'],['all','all']]};
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const FILTERS={alerts:[['missed','missed real alerts'],['queue cost','benign alerts that reach a person'],['disagree','Jev and baseline disagree'],['all','all']],incidents:[['all','all']],accounts:[['compromised','compromised (answer key)'],['all','all']]};
+const ev=(label,val)=>val?`<br><span class="mut">${label}: ${esc(val)}</span>`:'';
 function setFilters(){$('f').innerHTML=FILTERS[$('v').value].map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}
 function rows(){const q=$('q').value.trim().toLowerCase(),v=$('v').value,f=$('f').value;
  let r=D[v];if(v=='alerts'){r=r.filter(a=>f=='all'||(f=='disagree'?a.action!=a.baseline_action:a.verdict==f))}
  if(v=='accounts'&&f=='compromised')r=r.filter(a=>a.compromised);
  return r.filter(x=>!q||JSON.stringify(x).toLowerCase().includes(q))}
 function card(x){const v=$('v').value;
- if(v=='alerts')return`<div class="card"><b>${x.alert_id}</b> ${esc(x.rule_name)} <span class="mut">${x.timestamp} · ${x.detector} · detector severity ${x.source_severity}</span><br>${esc(x.description)}<br>
+ if(v=='alerts')return`<div class="card"><b>${esc(x.alert_id)}</b> ${esc(x.rule_name)} <span class="mut">${esc(x.timestamp)} · ${esc(x.detector)} · detector severity ${esc(x.source_severity)}</span><br>${esc(x.description)}<br>
  <span class="mut">${esc(x.user)} ${esc(x.host)} ${esc(x.src_ip)} ${esc(x.dst_ip)}</span><br>
- Jev policy: <b>${x.action}</b> <span class="mut">${esc(x.reason)}</span> · baseline: <b>${x.baseline_action}</b> <span class="mut">${esc(x.baseline_reason)}</span><br>
- <span class="${x.verdict=='right'?'ok':x.verdict=='missed'?'bad':'rev'}">${x.verdict}</span> <span class="mut">truth: ${x.disposition} · ${x.scenario} · ${x.incident||'no incident'} · group ${x.group}</span></div>`;
- if(v=='incidents')return`<div class="card"><b>${x.group_id}</b> ${x.alerts} alert(s) · <b>${x.action}</b> · severity ${x.severity} <span class="mut">${esc(x.users)} · strongest true-positive probability ${x.max_p_true_positive}</span></div>`;
- return`<div class="card"><b>#${x.rank}</b> ${esc(x.user)} score ${x.score} <span class="mut">(detector-severity rank ${x.baseline_rank||'none'})</span> ${x.compromised?'<span class="bad">compromised</span>':''}${x.alert_ids?`<br><span class="mut">alerts: ${esc(x.alert_ids)}</span>`:''}${x.group_ids?`<br><span class="mut">groups: ${esc(x.group_ids)}</span>`:''}</div>`}
+ Jev policy: <b>${esc(x.action)}</b> <span class="mut">${esc(x.reason)}</span> · baseline: <b>${esc(x.baseline_action)}</b> <span class="mut">${esc(x.baseline_reason)}</span><br>
+ <span class="${x.verdict=='right'?'ok':x.verdict=='missed'?'bad':'rev'}">${esc(x.verdict)}</span> <span class="mut">truth: ${esc(x.disposition)} · ${esc(x.scenario)} · ${esc(x.incident||'no incident')} · group ${esc(x.group)}</span></div>`;
+ if(v=='incidents')return`<div class="card"><b>${esc(x.group_id)}</b> ${esc(x.alerts)} alert(s) · <b>${esc(x.action)}</b> · severity ${esc(x.severity)} <span class="mut">${esc(x.users)} · strongest true-positive probability ${esc(x.max_p_true_positive)}</span></div>`;
+ return`<div class="card"><b>#${esc(x.rank)}</b> ${esc(x.user)} score ${esc(x.score)} <span class="mut">(detector-severity rank ${esc(x.baseline_rank||'none')})</span> ${x.compromised?'<span class="bad">compromised (answer key)</span>':''}${ev('alerts',x.alert_ids)}${ev('groups',x.group_ids)}</div>`}
 function render(reset){const r=rows();if(reset){shown=0;$('list').innerHTML=''}
  $('sum').textContent=`${r.length} ${$('v').value} shown. The evidence behind every decision is on its card.`;
  $('list').insertAdjacentHTML('beforeend',r.slice(shown,shown+PAGE).map(card).join(''));shown+=PAGE;$('more').style.display=shown<r.length?'':'none'}

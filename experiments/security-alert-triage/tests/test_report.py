@@ -45,3 +45,38 @@ def test_account_keeps_its_alert_and_group_evidence():
     data = report.build(t)
     assert data["accounts"][0]["alert_ids"] == "A1 A9" and data["accounts"][0]["group_ids"] == "GRP-0001"
     assert "A9" in report.render(data)
+
+
+def _interpolations(text):
+    """Every top-level ${...} expression in text (nested braces matched)."""
+    out, i = [], 0
+    while (i := text.find("${", i)) != -1:
+        depth, j = 1, i + 2
+        while depth:
+            depth += {"{": 1, "}": -1}.get(text[j], 0)
+            j += 1
+        out.append(text[i + 2:j - 1])
+        i = j
+    return out
+
+
+def test_every_value_in_card_goes_through_esc():
+    """Rule: each ${...} in the card function is esc(...), ev(...) (a helper that calls esc), or a
+    ternary of string literals (conditions like x.ok or x.v=='a', branches all quoted literals)."""
+    import re
+    start = report.PAGE.index("function card(")
+    card = report.PAGE[start:report.PAGE.index("function render(", start)]
+    cond = r"x\.\w+(?:=='[^']*')?"
+    literal_ternary = re.compile(rf"^(?:{cond}\?'[^']*':)+'[^']*'$")
+    exprs = _interpolations(card)
+    assert len(exprs) > 20
+    bad = [e for e in exprs if not (e.startswith(("esc(", "ev(")) or literal_ternary.match(e))]
+    assert bad == []
+
+
+def test_embedded_data_cannot_close_the_script_tag():
+    t = tables()
+    t["alerts"][0]["description"] = "</script><img src=x onerror=alert(1)>"
+    html = report.render(report.build(t))
+    assert html.count("</script>") == 1          # only the page's own closing tag
+    assert "<\\/script>" in html

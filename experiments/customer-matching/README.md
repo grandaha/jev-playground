@@ -69,4 +69,4 @@ Three rule gaps turned up, and each got a fix in the rules:
 
 MIT. See [LICENSE](LICENSE).
 
-Start with [spec.md](spec.md) for the full design: the scenarios, the rules and the decisions behind them.
+Start with [DESIGN.md](DESIGN.md) for the full design: the scenarios, the rules and the decisions behind them.

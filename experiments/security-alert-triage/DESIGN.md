@@ -1,6 +1,6 @@
 # Design: security alert triage with Jev
 
-Status: draft for review. Nothing is built yet.
+Status: built and run on two seeds. See Results.
 
 This experiment triages security alerts. For each alert it decides whether the alert is a real threat, how serious it is, and what to do. It groups related alerts into incidents and ranks which employee accounts are most likely compromised or targeted.
 
@@ -225,7 +225,8 @@ Jev is worse than the baseline on one cell: `mfa_fatigue` in the top 10, where t
 experiments/security-alert-triage/
   README.md  DESIGN.md  run_all.sh  replay.sh
   scripts/      generate, enrich, rules, ask, decide, group, risk, evaluate, reports
-  data/         source (alerts and answer key), work, output, reports
+  data/         source (alerts and answer key), work, output, reports (seed 101)
+  data_holdout/ the same layout for seed 202
 ```
 It mirrors the matching experiment. `replay.sh` rebuilds every result from the saved Jev answers with no API key.
 
@@ -239,9 +240,47 @@ Each phase is checked before the next starts.
 
 Baseline floor (seed 101): the rules-only baseline misses 30 of 84 real alerts and 6 of 21 real incidents (no alert surfaced). 9 incidents have no escalated alert. 495 of 1042 alerts reach a person (52% fewer), and 517 of 958 benign alerts are closed. The misses are `slow_burn` (all 24 closed), `low_severity_real` (all 3) and `mfa_fatigue` (3 of 9). The benign look-alikes `benign_admin_tool` and `benign_backup` are all escalated.
 
+## Results
+The rules were frozen (git tag `triage-rules-frozen`) before seed 202 ran. Seed 202 ran once, into `data_holdout/`, with no change to a rule, threshold, question or weight afterward.
+
+**Seed 101 is the tuning seed.** The escalate and close thresholds and the link threshold (1.8) were chosen while looking at it. Its numbers are not a clean test. **Seed 202 is the only clean check.** The scenarios are the same kinds with new random draws. It tests the thresholds on new data, not the scenario list on new kinds of attack.
+
+| Seed 101 (tuning) | Baseline | Jev |
+|---|---|---|
+| Missed real alerts (of 84) | 30 | 0 |
+| Real incidents with no surfaced alert (of 21) | 6 | 0 |
+| Real incidents with no escalated alert | 9 | 0 |
+| Alerts that reach a person (of 1,042) | 495 | 656 |
+| Grouping precision / recall | 4% / 100% | 77% / 96% |
+| Groups holding more than one real incident | 6 | 1 |
+| Compromised accounts in top 10 / top 20 (of 21) | 6 / 10 | 10 / 19 |
+
+| Seed 202 (clean check) | Baseline | Jev |
+|---|---|---|
+| Missed real alerts (of 84) | 30 | 0 |
+| Real incidents with no surfaced alert (of 21) | 6 | 0 |
+| Real incidents with no escalated alert | 9 | 0 |
+| Alerts that reach a person (of 1,042) | 502 | 674 |
+| Grouping precision / recall | 5% / 100% | 67% / 96% |
+| Groups holding more than one real incident | 4 | 2 |
+| Compromised accounts in top 10 / top 20 (of 21) | 4 / 8 | 10 / 19 |
+
+**Seed 202 held on the headline.** Jev closed no real alert and every real incident got an escalated alert. The baseline missed 30 alerts and left 6 incidents with no surfaced alert.
+
+**Where Jev did worse than the baseline on seed 202.**
+- The queue is bigger: 674 alerts reach a person against 502, and Jev closes 368 of 958 benign alerts against 510. The design leans toward escalating, and this is the price. In `background` noise Jev escalates 113 false positives.
+- Stage accuracy: Jev's `stage` answer matches the true tactic on 60 of 84 real alerts, the detector's claimed tactic on 78.
+- Grouping precision fell from 77% to 67%, and two groups each hold more than one real incident (one on seed 101). The baseline is still far worse at 5%. Jev's 322 linked pairs include 48 wrong links among `benign_pentest` alerts and 36 across scenarios. The 9 missed links are all `benign_backup`, as on seed 101.
+- `slow_burn`: Jev escalates only 4 of 24 alerts and investigates 20. Nothing closes, so no incident is missed, but a person sees most of these alerts as "investigate", not "escalate". `mfa_fatigue` escalates 3 of 9 and investigates 6.
+- `low_severity_real`: no account reaches the top 10 for either ranking, and Jev places 1 of 3 in the top 20 (the baseline 0).
+
+**Account ranking on seed 202, top 10 and top 20 per scenario (3 compromised accounts each), Jev then baseline.** `low_severity_real` 0 and 1 against 0 and 0. `malware_lateral` 3 and 3 against 1 and 2. `mfa_fatigue` 0 and 3 against 0 and 0. `missing_entity_link` 2 and 3 against 1 and 2. `phish_to_exfil` 2 and 3 against 2 and 3. `slow_burn` 0 and 3 against 0 and 0. `two_incidents_one_user` 3 and 3 against 0 and 1. Jev matches or beats the baseline in every cell. Its top-10 placements are zero for `low_severity_real`, `mfa_fatigue` and `slow_burn`, the three quiet scenarios.
+
+**Finding.** No real incident was missed on seed 202, so there is nothing to record as a rule failure. The shortfalls above are costs of the current rules (a larger queue, weaker precision in grouping, quiet scenarios ranked low). They were not tuned away, because the rule was frozen. Two seeds of 21 incidents each is a small sample, and the author wrote both the scenarios and the rules.
+
 ## Risks
 - **Flattering results.** The same person writes the stories and the rules. Hard look-alike scenarios, added in new rounds, and a plain caveat in the README are the answer.
-- **Cost.** A full run is about 1,000 requests for Call 1. Call 2 adds one request per ambiguous candidate pair, which is several hundred more. It is cheap, and the results report the measured count.
+- **Cost.** One request per asked alert plus one per candidate pair the obvious-link rule did not settle. Seed 101: 1,036 alert requests plus 1,376 pair requests, 2,412 in all. Seed 202: 1,036 alert requests plus 1,450 pair requests, 2,486 in all. There were 0 errors in both runs.
 - **Scope.** The work has three pieces: triage, grouping and account risk. The build order keeps each one small enough to verify.
 - **Sensitivity.** The account ranking is about people. The guardrails above apply to the report and to the README.
 

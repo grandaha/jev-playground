@@ -1,92 +1,121 @@
-# Customer record matching: spec
+# Customer record matching
 
-Goal: dedupe a messy synthetic customer file, explain every match, pick a master per group.
+Takes two messy, linked customer files (accounts and contacts), finds the duplicates, explains every decision, picks a master record for each group, and builds one golden record per real-world entity. Jev (TypeSafe System One) makes the judgment calls that code cannot; everything else is plain Python. The data is synthetic, so an answer key can grade the result.
 
-## Decisions
-- Entities: businesses (accounts) and people (contacts), in separate linked files.
-- Scale: a small targeted set, 169 account records (126 true accounts) and 244 contact records (196 true contacts), built from named scenarios (see below). Synthetic only, no real data, no PII concerns.
-- Output: scripts only (terminal report + CSV/JSON files). UI later.
-- Language: Python 3.13, `.venv`, `typesafe-sdk`.
-- Lives in `experiments/customer-matching/`. Run scripts from the repo root, e.g. `.venv/bin/python experiments/customer-matching/generate.py`.
+## Run it
+From the repo root:
 
-## Files: accounts and contacts (Salesforce-style)
+```
+experiments/customer-matching/run_all.sh     # builds data/ from scratch, about 120 Jev requests (one per ambiguous pair)
+```
+
+Then open `data/reports/report.html` (every pair decision) and `data/reports/golden_report.html` (golden records and their lineage). Another dataset: `SEED=23 ROUND=1 MATCH_DATA=data_other experiments/customer-matching/run_all.sh`.
+
+## Layout
+```
+experiments/customer-matching/
+  spec.md            this file
+  run_all.sh         runs every script in order
+  scripts/           generate, normalize, block, match, cluster, master, golden, evaluate, sweep, report, golden_report, paths
+  data/
+    source/          generated inputs: accounts.csv, contacts.csv, answer_key.csv (hidden truth, used only for grading)
+    work/            in-between files: normalized records and match keys, candidate pairs, Jev answers, decisions, groups, masters
+    golden/          the output: golden_accounts.csv, golden_contacts.csv, and separate phone and email tables
+    reports/         report.html, golden_report.html
+```
+
+## Data
 - `accounts.csv` (businesses): `account_id`, `name`, `website`, `phone`, `address`, `city`, `state`, `zip`, `industry`, `source_system`, `updated_at`.
-- `contacts.csv` (people): `contact_id`, `account_id` (nullable), `first_name`, `last_name`, `email`, `phone`, `title`, `address`, `city`, `state`, `zip`, `source_system`, `updated_at`. A contact's address is their own (about a quarter have one), never a copy of the account's, so address is not treated as evidence for colleagues at one company.
-- Two steps; the output of the first is an input to the second. Step 1 matches accounts, clusters them, and picks a master account per group (`master.py accounts`). Step 2 gives every contact a `master_account_id` (its account's master) in `contacts_norm.csv`. That id is a match key (`k_name_acct`: swap-proof name plus master account), a signal (`same_account`), and the account context Jev sees for each contact, so two contacts whose accounts were duplicates now count as the same company. Matching contacts on master account alone is too broad (every pair of colleagues), so it is always combined with a name.
-- Sole proprietors and contacts with no account are left in as edge cases (`account_id` empty, or an account named after the person).
+- `contacts.csv` (people): `contact_id`, `account_id` (nullable), `first_name`, `last_name`, `email`, `phone`, `title`, `address`, `city`, `state`, `zip`, `source_system`, `updated_at`. A contact's address is their own (about a quarter have one), never a copy of the account's, so a shared address is not evidence that two colleagues are the same person.
+- The sample dataset (seed 67): 169 account records (126 real accounts) and 344 contact records (276 real contacts), built from named scenarios, one per hard case, plus unrelated single records as background.
 
-## Pipeline (one script per stage, files handed along in `data/`)
-1. `generate.py` -> `data/accounts.csv`, `data/contacts.csv` + `data/answer_key.csv` (hidden `true_id`, `kind`, `scenario`). One named scenario per hard case; the counts are in `ACCOUNT_SCENARIOS` / `CONTACT_SCENARIOS` at the top of the file.
-2. `normalize.py` -> normalized fields + match keys (email, E.164 phone, name+ZIP, phonetic name, normalized company name, address).
-3. `block.py` -> candidate pairs. Each pair records `block_keys` (which keys it shared).
-4. `match.py ask` then `match.py decide`. `ask` runs hard rules in code (same phone and website for accounts, same email for contacts) and sends every other pair to Jev once: a holistic same-entity Score plus Noul signals for name agreement, conflicting details and lookalikes. Raw answers are saved, so `decide` can apply a policy (and `sweep.py` can tune thresholds) with no new calls.
-   - Policy `signals` (main): evidence points added up, each signal named in the trace (Jev's name/conflict/lookalike answers plus code signals: shared phone, website, email, merged account, own address, title). Merge at 4.0 points or more, reject at 0.0 or less, review between.
-   - Vetoes: a differing phone never auto-merges; a shared phone, website or email never auto-rejects. Both go to review.
-   - Policy `single` (first design): the holistic Score alone. Kept so the two can be compared on the same answers.
-5. `cluster.py` -> union-find groups from merged pairs.
-6. `master.py` -> the master of each multi-record group is the record from the most trusted source system (`SOURCE_RANK` in master.py: erp, billing, crm, web_form, trade_show; order confirmed by Dave), and among records from that source the most recently updated. Code only, no Jev calls. `evaluate.py` checks that no member beats the chosen master on that rule. An earlier version had Jev score completeness and name cleanliness and weighted them with recency; it is in git history and Dave chose source-then-recency as good enough.
-7. `golden.py` -> one golden record per final entity (singles included), built from every record in the group. Each field starts from the master (source system, then recency) and blanks are filled from the next-best record; the address is filled as one block so two addresses are never mixed. Phones (accounts and contacts) and emails (contacts) keep every distinct value in their own tables (`golden_*_phones.csv`, `golden_contact_emails.csv`) with the source systems, record ids and latest update, and a primary flag. `filled_from` on each golden row says which fields came from a record other than the master. Code only, no Jev calls. A golden record is keyed by its master's own record id (`golden_id` = `master_id`), so every id in the output is a real source id; `group_id` (from `cluster.py`, renumbered whenever groups change) is kept only as a column. A contact's golden row points to its golden account by the master account record's id (`golden_account_id`, the same value as `master_account_id`). If records arrive over time, a better record joining a group would change its golden id; a persistent surrogate id would be needed then.
-8. `golden_report.py` -> `golden_report.html`: browse golden records. Each card shows every field's value and which source record supplied it (and whether that record was the master), the phones and emails kept with their source systems, the master and why, all source records side by side, and the pair decisions (rule and evidence) that joined them, plus any pairs inside the group that were not merged. Filters: built from 2+ records, fields filled from another record, more than one phone or email, group needs review, problems. The answer key adds a check per group (correct / falsely merged / incomplete).
-9. `evaluate.py` -> precision, recall, false-merge rate, review-queue size vs answer key; also a rules-only/fuzzy baseline for comparison.
+### Scenarios
+`DUP` = the same entity appearing more than once, which must merge. `DISTINCT` = look-alikes, which must not.
 
-## Match explanation (required)
-Every pair decision writes: `decision`, `rule` (e.g. `exact_email`, `conflicting_id_block`, `jev_score`), `block_keys` that created the candidate, and for Jev decisions the raw Score, each Noul probability, confidence, and the threshold that fired. Every group merge traces back to the pairs, and each pair to its rule.
+| Table | Scenario | Kind | What it tests |
+|---|---|---|---|
+| accounts | exact_formatting | DUP | only case, St/Street and phone format differ |
+| accounts | typo_suffix | DUP | name typo and different legal suffix; phone or website kept |
+| accounts | moved_keeps_ids | DUP | new address, same phone and website |
+| accounts | three_way | DUP | three records of one business |
+| accounts | moved_lost_ids | DUP, unprovable | moved, and phone and website gone: nothing left to match on |
+| accounts | sibling_locations | DISTINCT | same brand, two cities, different phones |
+| accounts | shared_brand_website | DISTINCT | franchises sharing one website |
+| accounts | same_name_other_trade | DISTINCT | "Summit Dental" vs "Summit Logistics" |
+| contacts | nickname | DUP | Robert / Bob |
+| contacts | swapped_typo | DUP | first and last swapped, plus a typo |
+| contacts | initial_only | DUP | "R." vs "Robert" |
+| contacts | email_changed | DUP | work email vs personal gmail, same phone |
+| contacts | same_email_details_changed | DUP | same name, company and email; new phone and title |
+| contacts | dup_account | DUP | one person attached to two duplicate variants of an account |
+| contacts | account_vs_no_account | DUP | one record has its account, the other has none |
+| contacts | no_account_email | DUP | no account, same personal email |
+| contacts | jr_both_same | DUP | "Johnson Jr" on both records |
+| contacts | no_account_name_only | DUP, unprovable | no account, only the name in common |
+| contacts | junior_senior | DISTINCT | same name, company and address; own emails and phones |
+| contacts | twins | DISTINCT | same last name, company and address; first names share an initial |
+| contacts | namesakes_other_company | DISTINCT | same name at different companies |
+| contacts | same_name_same_company | DISTINCT | two people, same name and company, different emails |
+| contacts | shared_mailbox | DISTINCT | two people on `info@company` |
+| contacts | shared_personal_email | DISTINCT | spouses sharing one gmail |
+| contacts | phone_only_shared | DISTINCT | two people sharing one phone, no account |
+| contacts | jr_sr_marked | DISTINCT | "Johnson Sr" and "Johnson Jr", own emails and phones |
+| contacts | jr_marker_one_side | DISTINCT | "Johnson Jr" and plain "Johnson" |
+| contacts | jr_sr_shared_details | DISTINCT | Sr and Jr sharing one email and one phone |
 
-## Open defaults (change if wrong)
-- 1,000 / 3,000 read as total records per file, not true entities.
-- False merges treated as the costly error, so thresholds favor review over auto-merge.
+"Unprovable" pairs share nothing but a name, so no method could prove them. They are reported separately and are not counted as misses.
 
-## Run order
-`experiments/customer-matching/run_all.sh` runs everything from the repo root (about 2,000 Jev calls). To re-tune, edit `MERGE_POINTS`/`REJECT_POINTS` in match.py and run `match.py decide` for both tables, then `cluster.py`, `evaluate.py`, `report.py` (no new Jev calls).
+## Pipeline
+Each script reads the previous stage's files. Accounts run first, and their result feeds the contact step.
 
-## Scenarios
-Duplicates the pipeline should merge (DUP) and look-alikes it must not (DISTINCT). `evaluate.py` and the report break results down by scenario.
-- Accounts DUP: exact_formatting, typo_suffix, moved_keeps_ids, three_way, and moved_lost_ids (unprovable: moved with no phone or website left).
-- Accounts DISTINCT: sibling_locations (same brand, two cities), shared_brand_website (franchise), same_name_other_trade.
-- Contacts DUP: nickname, swapped_typo, initial_only, email_changed, dup_account (person attached to two duplicate variants of an account), no_account_email, and no_account_name_only (unprovable).
-- Contacts DISTINCT: junior_senior, twins, namesakes_other_company, same_name_same_company, shared_mailbox (two people on info@company).
-- Plus single unrelated records as background (40 accounts, 80 contacts).
+1. `generate.py` writes the source files and the answer key. The scenario counts are at the top of the file.
+2. `normalize.py` cleans names, phones, emails, addresses and company names, and builds match keys (`k_*` columns).
+3. `block.py` turns shared keys into candidate pairs, and records which keys made each pair a candidate.
+4. `match.py ask` applies the hard rules, then sends every other pair to Jev once with all questions. `match.py decide` applies a policy to the saved answers, so rules and thresholds can change with no new Jev calls.
+5. `cluster.py` groups merged pairs (union-find) and flags any group that contains a pair that was not merged.
+6. `master.py` picks a master record per group.
+7. Step 1 of accounts ends here. Re-running `normalize.py` and `block.py` then gives every contact a `master_account_id` (its account's master record id). That id is a match key (`k_name_acct`, `k_initial_acct`: name plus master account), a signal (same company), and the account context Jev sees. Matching on master account alone is too broad (every pair of colleagues), so it is always combined with a name.
+8. `golden.py` builds the golden records.
+9. `evaluate.py`, `sweep.py`, `report.py`, `golden_report.py` grade and show the result.
 
-## Results (seed 11, targeted set)
-Run 1 (random 1,000/3,000 set, single score) is tagged `run-1-single-score`; run 2 (random set, signals policy) is tagged `run-2-signals`.
-- Accounts and contacts: 0 false merges and 100% recall on provable pairs (43 of 48 duplicate pairs each; the other 5 share only a name). The unprovable ones are never merged, as intended.
-- Look-alikes: siblings and twins are rejected; franchise accounts sharing a website (6 pairs), junior/senior (3) and same-name-same-company (1) go to a review queue rather than merging.
-- Two real bugs the scenarios found, both fixed: (1) "R. Smith" vs "Robert Smith" was never proposed as a pair, so contacts now also block on first initial + last-name sound + master account (`k_initial_acct`); (2) the same-email hard rule merged three different people sharing `info@`, so role mailboxes (info, sales, office, admin, support, contact, billing, hello, accounts, team) are no longer treated as identifiers.
-- Both policies (signals and single score) score the same on this set, so it cannot yet say which is better. The set is small (about 50 duplicate pairs per table) and was shaped while reading results, so a second seed is still needed before trusting it.
-- One contact in `dup_account` is never proposed: its account's two records were never merged (an unprovable moved account), so the contacts do not share a master account. That is the two-step flow working as designed, and a consequence of the account miss.
+## Decision rules
+**Hard rules (code, no Jev call)**
+- Accounts: same phone and same website merge (`same_phone_and_domain`).
+- Contacts: the same email (not a role mailbox: info, sales, office, admin, support, contact, billing, hello, accounts, team) with a compatible name merges (`same_email`). Compatible means sound-alike first and last names (nicknames and typos), swapped order, or a bare initial against a full first name. Phone and title do not veto it, because people change both.
+- Contacts: different generational suffixes (Jr and Sr, II and III) are a hard no-match (`generational_suffix_differs`).
 
-## Holdout runs (same code, same thresholds)
-`MATCH_DATA=data_seed2 SEED=23 experiments/customer-matching/run_all.sh`, and `data_seed3` with `SEED=37`. The sets are never mixed.
-Fixed after reading the seed 23 results (so seed 23 stopped being a clean holdout and seed 37 was generated afterwards as a fresh one):
-- Generator: two random people could be given the same name at the same company, and their emails (built from the name) then collided. Random names are now redrawn so one name and company means one person; same-name scenarios stay intentional.
-- Rule: an identical non-role email with a compatible name (nickname, initial, swapped order) is a hard merge even when the phones differ. The old phone exemption only protected junior decoys, which now have their own emails.
+**Jev questions per pair:** a same-entity Score (different / maybe / same), and Noul answers for name agreement, conflicting details, and look-alike.
 
-| Seed | False merges | Accounts recall (provable) | Contacts recall (provable) | Contacts in review that are true duplicates |
-|---|---|---|---|---|
-| 11 (tuned on) | 0 | 100% | 95.3% | 2 |
-| 23 (used to find the two fixes) | 0 | 100% | 95.3% | 2 |
-| 37 (fresh) | 0 | 100% | 100% | 0 |
+**Policy `signals` (main):** evidence points are added up, and every signal is named in the trace. Jev's name, conflict and look-alike answers and its Score combine with code signals (shared phone, website, email, same master account, own address, title). Merge at 4.0 points or more, reject at 0.0 or less, review in between. The thresholds came from `sweep.py`. The alternative policy `single` (Jev's Score alone) is kept for comparison.
 
-Open finding: the 2 contact true duplicates in review (seeds 11 and 23) are people whose accounts were never merged (an account pair left unmerged, e.g. a moved business), so the `different_account` penalty (-2) applies to two records that share a company email domain and often a phone. A company-domain signal would fix them, but adding it now would be tuning on these sets again, so it is left for a decision.
-- Master record: decided. Source system first, then recency (see step 6). The old "clean original" proxy was dropped because source and dates are random in the synthetic data.
+**Vetoes**
+- A differing phone never auto-merges, and a merge where only one record has a Jr/Sr suffix goes to review.
+- A shared phone, website or email never auto-rejects; it goes to review.
 
-## Round 2: new scenarios, fresh seed 41 (`data_round2/`)
-`ROUND=2 MATCH_DATA=data_round2 SEED=41 experiments/customer-matching/run_all.sh`. `ROUND=2` only adds scenarios; the seed 11, 23 and 37 data are byte-identical to before (checked with cmp). Rule: never edit data to make a result pass, so fixes are to rules.
-New contact scenarios: `shared_personal_email` (spouses sharing one gmail, DISTINCT), `phone_only_shared` (two people, one phone, no account, DISTINCT), `account_vs_no_account` (one record lacks its account, DUP), and `same_email_details_changed` (same name, company and work email, second record has a new phone and title, DUP).
-- `account_vs_no_account` 8 of 8 and `same_email_details_changed` 6 of 6 merged. `phone_only_shared` and `shared_personal_email`: all pairs go to review, none merged.
-- `shared_personal_email` first merged 1 of 6 spouse pairs: the same-email rule's name check accepted "same first initial and last-name sound" (Maria Lopez and Marcus Lopez). Fixed in the rule: an initial only matches when one side is a bare initial; otherwise first names must sound alike or be swapped.
-- This scenario was first written as `namesake_identical_email` (two different people with identical name, company and email). Dave's judgment: identical work email, name and company is one person, and a work email belongs to one person; real namesakes get different addresses (covered by `same_name_same_company`). The scenario was replaced with `same_email_details_changed` and round 2 was regenerated. The earlier version is in git history.
-- Result: 0 false merges; contacts recall on provable pairs 94.7% (3 true duplicates in review: one `dup_account`, one `initial_only`, one `swapped_typo`).
+**Explanation:** every decision records `decision`, `rule`, `detail` (the signals and points, or the rule that fired), `block_keys`, and the raw Jev answers. Each group traces back to its merged pairs.
 
-## Rounds 3 and 4: generational suffixes (Jr / Sr), seeds 53 and 67
-`ROUND=3 MATCH_DATA=data_round3 SEED=53 run_all.sh` adds `jr_sr_marked` ("Johnson Sr" and "Johnson Jr", own emails and phones), `jr_marker_one_side` ("Johnson Jr" and plain "Johnson") and `jr_both_same` (one "Johnson Jr" twice, DUP). `ROUND=4 MATCH_DATA=data_round4 SEED=67` adds `jr_sr_shared_details` (Sr and Jr sharing one email and one phone). Earlier rounds were verified byte-identical with cmp before and after.
-- Round 3 with the old rules: no false merges (Jev read the suffix and the emails differed), so round 4 was added to find the gap.
-- Round 4 with the old rules: `same_email` merged all 6 shared-mailbox Sr/Jr pairs (rule precision 62.5%).
-- Rule change (rules only, no data edit): `normalize.py` parses the generational suffix (jr, sr, ii, iii, iv) from the last name. Two records with different suffixes are a hard `no_match` (`generational_suffix_differs`). `same_email` no longer merges when only one record has a suffix, and any merge where only one side has a suffix goes to review (`generational_suffix_missing`).
-- After the change: round 4 has 0 false merges; seeds 11, 23, 37 and rounds 2 and 3 are unchanged and still 0 false merges.
+## Master and golden records
+- **Master:** the record from the most trusted source system (`SOURCE_RANK` in `master.py`: erp, billing, crm, web_form, trade_show), and among those the most recently updated. Code only.
+- **Golden record:** one per final entity, singles included. Each field starts from the master; blanks are filled from the next-best record in the same order. The address is filled as one block, so two addresses are never mixed.
+- **Keys:** a golden record is keyed by its master's own record id (`golden_id` = `master_id`), so every id in the output is a real source id. A contact's `golden_account_id` is its master account's id. If records arrived over time, a better record joining a group would change the golden id, and a persistent surrogate id would be needed then.
+- **Phones and emails** keep every distinct value in their own tables (`golden_*_phones.csv`, `golden_contact_emails.csv`) with source systems, record ids, latest update and a primary flag. `filled_from` on a golden row says which fields came from a record other than the master.
 
-## Decisions (Dave, 2026-09-30)
-- Source-system trust order confirmed.
-- No company-domain signal: contacts whose accounts were never merged stay in the review queue; a data steward decides those in a real system.
-- Jr/Sr means different people (implemented above).
-- No review UI: an HTML file cannot send decisions back, so the static reports are enough for this experiment.
+## Results (sample dataset)
+| | Precision | Recall on provable pairs | Review queue |
+|---|---|---|---|
+| Accounts | 100% | 100% (43 of 43) | 6 pairs, all true non-duplicates |
+| Contacts | 100% | 98.4% (62 of 63) | 20 pairs (1 true duplicate) |
+
+- 0 false merges and 0 golden records that mix two real entities. Golden records: 131 accounts (126 real) and 282 contacts (276 real). The leftover splits are the unprovable pairs plus one email_changed pair in review.
+- Every look-alike scenario ends in rejection or the review queue; none merges.
+- On this data the `signals` policy and the `single` policy give identical results (100% and 98.4% recall on provable pairs, no false merges), so the dataset cannot rank them. The value of `signals` is that every decision names its evidence.
+- Every master follows the source-then-recency rule (checked in `evaluate.py`).
+
+## How it got here, and what it found
+- Tests are the point: each scenario was added to find a rule gap, and the gap was fixed in the rules. Rule: never edit data to make a result pass; add scenarios as a new round.
+- Found and fixed by scenarios: "R. Smith" never becoming a candidate (added `k_initial_acct`); shared `info@` mailboxes merging strangers (role mailboxes are not identifiers); a same-email rule that accepted "same initial, same last-name sound" for different first names (now stricter); a same-email rule exempted by differing phones; a father and son sharing one mailbox merging (generational suffix rules).
+- Judgment calls by Dave: identical work email, name and company is one person (so the scenario became `same_email_details_changed`); source system before recency for masters; email and phone keep multiple values; contacts whose accounts were never merged stay in review for a data steward; Jr/Sr means different people; no review UI, because an HTML file cannot send decisions back.
+- Tried and dropped: Jev-scored master selection (completeness, name cleanliness, recency weights); a company-domain signal; a local Nimble decision model via Ollama (9.5 GB, too slow and memory-hungry on a 16 GB Mac); a pure-Python replacement for the Jev questions was proposed, not built.
+
+## Earlier datasets
+Six earlier dataset folders were removed to leave one sample. They are all in git under the tag `before-cleanup`, and every one regenerates exactly from its seed: seeds 11, 23 and 37 with `ROUND=1`, seed 41 with `ROUND=2`, seed 53 with `ROUND=3`. Tags `run-1-single-score` and `run-2-signals` hold the first two designs (random 1,000 and 3,000 record sets).

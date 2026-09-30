@@ -1,0 +1,65 @@
+id_a,id_b,block_keys,hard_decision,hard_rule,error,score,confidence,p_diff,p_maybe,p_same,name_same,details_conflict,lookalike,decision,rule,detail
+A00001,A00034,k_domain+k_phone+k_name+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00001,A00103,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00002,A00146,k_name+k_name_sound,,,,0.14,0.78,0.87,0.13,0.0,0.35,0.66,0.81,no_match,signals_low,"-7.9 points: lookalike -2.4, phone_differs -2.0, details_conflict -1.3, holistic_score -1.3, name_same -0.9"
+A00003,A00035,k_phone+k_name+k_name_sound+k_street,,,,2.0,1.0,0.0,0.0,1.0,0.94,0.08,0.09,merge,signals_high,"+8.2 points: phone_equal +3.0, name_same +2.6, holistic_score +1.5, street_equal +1.5, lookalike -0.3, details_conflict -0.2"
+A00005,A00132,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00005,A00154,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00006,A00120,k_name+k_name_sound,,,,0.16,0.75,0.84,0.15,0.01,0.34,0.65,0.83,no_match,signals_low,"-8.0 points: lookalike -2.5, phone_differs -2.0, details_conflict -1.3, holistic_score -1.3, name_same -1.0"
+A00007,A00056,k_domain+k_name_sound+k_street,,,,1.99,0.99,0.0,0.01,0.99,0.93,0.09,0.09,merge,signals_high,"+8.1 points: domain_equal +3.0, name_same +2.6, street_equal +1.5, holistic_score +1.5, lookalike -0.3, details_conflict -0.2"
+A00010,A00153,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00011,A00064,k_domain+k_phone+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00011,A00092,k_domain+k_phone+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00012,A00068,k_name+k_name_sound,,,,0.32,0.52,0.69,0.3,0.01,0.38,0.67,0.82,no_match,signals_low,"-7.5 points: lookalike -2.5, phone_differs -2.0, details_conflict -1.3, holistic_score -1.0, name_same -0.7"
+A00013,A00136,k_domain+k_name+k_street,,,,1.97,0.95,0.0,0.03,0.97,0.95,0.09,0.1,merge,signals_high,"+8.2 points: domain_equal +3.0, name_same +2.7, street_equal +1.5, holistic_score +1.5, lookalike -0.3, details_conflict -0.2"
+A00014,A00105,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00017,A00057,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00020,A00093,k_name+k_name_sound,,,,0.04,0.94,0.96,0.04,0.0,0.3,0.62,0.89,no_match,signals_low,"-8.6 points: lookalike -2.7, phone_differs -2.0, holistic_score -1.4, details_conflict -1.2, name_same -1.2"
+A00022,A00080,k_name+k_name_sound,,,,0.26,0.61,0.75,0.24,0.01,0.39,0.59,0.83,no_match,signals_low,"-7.4 points: lookalike -2.5, phone_differs -2.0, details_conflict -1.2, holistic_score -1.1, name_same -0.7"
+A00023,A00041,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00025,A00142,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00028,A00122,k_domain+k_name+k_name_sound,,,,0.28,0.57,0.74,0.24,0.02,0.4,0.65,0.84,review,shared_identifier,"would reject (signals_low) but they share k_domain. -4.5 points: domain_equal +3.0, lookalike -2.5, phone_differs -2.0, details_conflict -1.3, holistic_score -1.1, name_same -0.6"
+A00029,A00140,k_domain+k_name+k_name_sound,,,,0.18,0.73,0.84,0.14,0.02,0.36,0.65,0.86,review,shared_identifier,"would reject (signals_low) but they share k_domain. -5.0 points: domain_equal +3.0, lookalike -2.6, phone_differs -2.0, details_conflict -1.3, holistic_score -1.2, name_same -0.8"
+A00032,A00158,k_name+k_name_sound,,,,0.1,0.85,0.9,0.1,0.0,0.3,0.65,0.85,no_match,signals_low,"-8.4 points: lookalike -2.5, phone_differs -2.0, holistic_score -1.4, details_conflict -1.3, name_same -1.2"
+A00033,A00130,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00034,A00103,k_domain+k_phone+k_name+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00036,A00058,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00037,A00150,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00038,A00114,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00039,A00087,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00039,A00099,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00040,A00118,k_name+k_name_sound,,,,0.22,0.67,0.79,0.2,0.01,0.4,0.69,0.84,no_match,signals_low,"-7.7 points: lookalike -2.5, phone_differs -2.0, details_conflict -1.4, holistic_score -1.2, name_same -0.6"
+A00043,A00073,k_phone+k_street,,,,1.97,0.96,0.0,0.03,0.97,0.91,0.1,0.11,merge,signals_high,"+7.9 points: phone_equal +3.0, name_same +2.5, street_equal +1.5, holistic_score +1.5, lookalike -0.3, details_conflict -0.2"
+A00044,A00137,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00045,A00149,k_name+k_name_sound,,,,0.04,0.95,0.97,0.03,0.0,0.27,0.66,0.88,no_match,signals_low,"-8.8 points: lookalike -2.6, phone_differs -2.0, holistic_score -1.4, name_same -1.4, details_conflict -1.3"
+A00047,A00115,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00048,A00123,k_name+k_name_sound,,,,0.54,0.19,0.53,0.41,0.06,0.49,0.47,0.76,no_match,signals_low,"-4.0 points: lookalike -2.3, details_conflict -0.9, holistic_score -0.7, name_same -0.1"
+A00050,A00110,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00051,A00128,k_name+k_name_sound,,,,0.4,0.4,0.64,0.32,0.04,0.39,0.43,0.83,no_match,signals_low,"-4.9 points: lookalike -2.5, holistic_score -0.9, details_conflict -0.9, name_same -0.7"
+A00052,A00082,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00053,A00098,k_domain+k_name+k_name_sound,,,,0.29,0.56,0.73,0.24,0.03,0.41,0.66,0.84,review,shared_identifier,"would reject (signals_low) but they share k_domain. -4.4 points: domain_equal +3.0, lookalike -2.5, phone_differs -2.0, details_conflict -1.3, holistic_score -1.1, name_same -0.5"
+A00054,A00083,k_name+k_name_sound,,,,0.51,0.24,0.56,0.37,0.07,0.4,0.5,0.77,no_match,signals_low,"-4.6 points: lookalike -2.3, details_conflict -1.0, holistic_score -0.7, name_same -0.6"
+A00055,A00119,k_phone+k_name_sound+k_street,,,,1.96,0.94,0.0,0.04,0.96,0.89,0.14,0.13,merge,signals_high,"+7.6 points: phone_equal +3.0, name_same +2.3, street_equal +1.5, holistic_score +1.4, lookalike -0.4, details_conflict -0.3"
+A00060,A00095,k_domain+k_phone+k_name+k_name_sound,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00063,A00094,k_phone+k_name_sound+k_street,,,,1.98,0.98,0.0,0.02,0.98,0.92,0.1,0.09,merge,signals_high,"+8.0 points: phone_equal +3.0, name_same +2.5, street_equal +1.5, holistic_score +1.5, lookalike -0.3, details_conflict -0.2"
+A00064,A00092,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00069,A00101,k_phone+k_street,,,,1.98,0.98,0.0,0.02,0.98,0.94,0.1,0.11,merge,signals_high,"+8.1 points: phone_equal +3.0, name_same +2.6, street_equal +1.5, holistic_score +1.5, lookalike -0.3, details_conflict -0.2"
+A00070,A00126,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00071,A00143,k_phone+k_name_sound+k_street,,,,1.98,0.97,0.0,0.02,0.98,0.92,0.11,0.1,merge,signals_high,"+8.0 points: phone_equal +3.0, name_same +2.5, street_equal +1.5, holistic_score +1.5, lookalike -0.3, details_conflict -0.2"
+A00074,A00081,k_name+k_name_sound,,,,0.49,0.26,0.55,0.41,0.04,0.5,0.48,0.8,no_match,signals_low,"-4.1 points: lookalike -2.4, details_conflict -1.0, holistic_score -0.8"
+A00079,A00161,k_phone+k_name_sound+k_street,,,,2.0,0.99,0.0,0.0,1.0,0.94,0.11,0.07,merge,signals_high,"+8.2 points: phone_equal +3.0, name_same +2.6, holistic_score +1.5, street_equal +1.5, details_conflict -0.2, lookalike -0.2"
+A00086,A00147,k_domain+k_name_sound+k_street,,,,1.95,0.92,0.0,0.05,0.95,0.89,0.08,0.15,merge,signals_high,"+7.7 points: domain_equal +3.0, name_same +2.3, street_equal +1.5, holistic_score +1.4, lookalike -0.4, details_conflict -0.2"
+A00087,A00099,k_domain+k_phone+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00090,A00135,k_domain+k_name+k_name_sound,,,,0.21,0.68,0.8,0.18,0.02,0.37,0.64,0.86,review,shared_identifier,"would reject (signals_low) but they share k_domain. -4.8 points: domain_equal +3.0, lookalike -2.6, phone_differs -2.0, details_conflict -1.3, holistic_score -1.2, name_same -0.8"
+A00096,A00141,k_domain+k_name+k_name_sound,,,,0.51,0.24,0.53,0.44,0.03,0.5,0.63,0.79,review,shared_identifier,"would reject (signals_low) but they share k_domain. -3.4 points: domain_equal +3.0, lookalike -2.4, phone_differs -2.0, details_conflict -1.3, holistic_score -0.7"
+A00097,A00157,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00106,A00125,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00106,A00168,k_domain+k_phone+k_name+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00109,A00165,k_name+k_name_sound,,,,0.09,0.87,0.92,0.08,0.0,0.33,0.59,0.86,no_match,signals_low,"-8.1 points: lookalike -2.6, phone_differs -2.0, holistic_score -1.4, details_conflict -1.2, name_same -1.0"
+A00124,A00129,k_name+k_name_sound,,,,0.24,0.64,0.77,0.22,0.01,0.42,0.66,0.83,no_match,signals_low,"-7.4 points: lookalike -2.5, phone_differs -2.0, details_conflict -1.3, holistic_score -1.1, name_same -0.5"
+A00125,A00168,k_domain+k_phone+k_name+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00127,A00152,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00132,A00154,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00134,A00159,k_domain+k_name+k_name_sound,,,,0.4,0.39,0.62,0.36,0.02,0.41,0.61,0.84,review,shared_identifier,"would reject (signals_low) but they share k_domain. -4.2 points: domain_equal +3.0, lookalike -2.5, phone_differs -2.0, details_conflict -1.2, holistic_score -0.9, name_same -0.5"
+A00138,A00148,k_domain+k_phone+k_name+k_name_sound+k_street,merge,same_phone_and_domain,,,,,,,,,,merge,same_phone_and_domain,hard rule same_phone_and_domain
+A00151,A00163,k_name+k_name_sound,,,,0.49,0.26,0.55,0.41,0.04,0.46,0.51,0.82,no_match,signals_low,"-4.5 points: lookalike -2.5, details_conflict -1.0, holistic_score -0.8, name_same -0.2"

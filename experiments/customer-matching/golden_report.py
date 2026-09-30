@@ -16,7 +16,7 @@ FIELDS = {"accounts": ["name", "website", "industry"], "contacts": ["first_name"
 ADDRESS = ["address", "city", "state", "zip"]
 SHOW = {"accounts": ["name", "website", "phone", "address", "city", "state", "zip", "source_system", "updated_at"],
         "contacts": ["first_name", "last_name", "email", "phone", "title", "address", "city", "state", "zip", "account_id",
-                     "source_system", "updated_at"]}
+                     "master_account_id", "source_system", "updated_at"]}
 
 
 def read(name):
@@ -26,6 +26,9 @@ def read(name):
 def build(table):
     idc = f"{table[:-1]}_id"
     raw = {r[idc]: r for r in read(f"{table}.csv")}
+    if table == "contacts":  # the master account each contact was keyed to, from normalization
+        for r in read("contacts_norm.csv"):
+            raw[r["contact_id"]]["master_account_id"] = r["master_account_id"]
     golden = read(f"golden_{table}.csv")
     decisions = read(f"decisions_{table}.csv")
     masters = {m["group_id"]: m["reason"] for m in read(f"masters_{table}.csv")}

@@ -15,6 +15,7 @@ DATA = Path(__file__).parent / "data"
 CANON = {n.lower(): full.lower() for full, ns in NICKS.items() for n in ns}
 COMPANY_NOISE = {"inc", "incorporated", "llc", "co", "corp", "corporation", "ltd", "group", "company"}
 STREET = {"street": "st", "avenue": "ave", "road": "rd", "boulevard": "blvd", "drive": "dr"}
+ROLE_MAILBOXES = {"info", "sales", "office", "admin", "support", "contact", "billing", "hello", "accounts", "team"}
 PERSONAL_DOMAINS = {"gmail.com", "yahoo.com", "outlook.com", "hotmail.com"}
 
 
@@ -98,12 +99,14 @@ def norm_contact(r):
     names = "".join(sorted([f[:1] + soundex(l), l[:1] + soundex(f)]))  # first/last swap-proof
     return {**r, "first_norm": f, "last_norm": l, "email_norm": r["email"].lower().strip(),
             "phone_norm": phone(r["phone"]), "address_norm": address(r["address"]),
-            "k_email": r["email"].lower().strip(), "k_phone": phone(r["phone"]),
+            "k_email": "" if r["email"].split("@")[0].lower() in ROLE_MAILBOXES else r["email"].lower().strip(),  # a shared mailbox is not an identifier
+            "k_phone": phone(r["phone"]),
             "k_name_domain": f"{ini}{soundex(l)}|{dom}" if dom and ini and l else "",
             "k_name_street": f"{ini}{soundex(l)}|{street_key(r['address'], r['zip'])}" if ini and l and r["address"] else "",
             "k_name_swap": f"{names}|{dom}" if dom and ini and l else "",
             "master_account_id": master,
-            "k_name_acct": f"{names}|{master}" if master and ini and l else ""}
+            "k_name_acct": f"{names}|{master}" if master and ini and l else "",
+            "k_initial_acct": f"{ini}{soundex(l)}|{master}" if master and ini and l else ""}  # catches "R. Smith" vs "Robert Smith"
 
 
 def run(src, dst, fn):

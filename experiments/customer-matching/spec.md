@@ -4,7 +4,7 @@ Goal: dedupe a messy synthetic customer file, explain every match, pick a master
 
 ## Decisions
 - Entities: businesses (accounts) and people (contacts), in separate linked files.
-- Scale: 1,000 account records and 3,000 contact records, counting duplicate variants (~800 true accounts, ~2,400 true contacts). Synthetic only, no real data, no PII concerns.
+- Scale: a small targeted set, 169 account records (126 true accounts) and 244 contact records (196 true contacts), built from named scenarios (see below). Synthetic only, no real data, no PII concerns.
 - Output: scripts only (terminal report + CSV/JSON files). UI later.
 - Language: Python 3.13, `.venv`, `typesafe-sdk`.
 - Lives in `experiments/customer-matching/`. Run scripts from the repo root, e.g. `.venv/bin/python experiments/customer-matching/generate.py`.
@@ -16,7 +16,7 @@ Goal: dedupe a messy synthetic customer file, explain every match, pick a master
 - Sole proprietors and contacts with no account are left in as edge cases (`account_id` empty, or an account named after the person).
 
 ## Pipeline (one script per stage, files handed along in `data/`)
-1. `generate.py` -> `data/accounts.csv`, `data/contacts.csv` + `data/answer_key.csv` (hidden `true_account_id` / `true_contact_id`). Mess: nicknames, typos, swapped names, Inc/LLC/Co, phone/address formats, old addresses, missing fields, plus look-alike non-duplicates (twins, father/son, similar company names).
+1. `generate.py` -> `data/accounts.csv`, `data/contacts.csv` + `data/answer_key.csv` (hidden `true_id`, `kind`, `scenario`). One named scenario per hard case; the counts are in `ACCOUNT_SCENARIOS` / `CONTACT_SCENARIOS` at the top of the file.
 2. `normalize.py` -> normalized fields + match keys (email, E.164 phone, name+ZIP, phonetic name, normalized company name, address).
 3. `block.py` -> candidate pairs. Each pair records `block_keys` (which keys it shared).
 4. `match.py ask` then `match.py decide`. `ask` runs hard rules in code (same phone and website for accounts, same email for contacts) and sends every other pair to Jev once: a holistic same-entity Score plus Noul signals for name agreement, conflicting details and lookalikes. Raw answers are saved, so `decide` can apply a policy (and `sweep.py` can tune thresholds) with no new calls.
@@ -37,11 +37,18 @@ Every pair decision writes: `decision`, `rule` (e.g. `exact_email`, `conflicting
 ## Run order
 `experiments/customer-matching/run_all.sh` runs everything from the repo root (about 2,000 Jev calls). To re-tune, edit `MERGE_POINTS`/`REJECT_POINTS` in match.py and run `match.py decide` for both tables, then `cluster.py`, `evaluate.py`, `report.py` (no new Jev calls).
 
-## Results (seed 7, run 2: accounts and contacts separate, contacts have their own addresses, per-signal policy)
-Run 1 (single score, contacts inherited account addresses) is tagged `run-1-single-score`.
-- Some true duplicates share only a name, so no method can prove them: 4 of 227 account pairs, 66 of 676 contact pairs. They are reported as "unprovable", not as misses.
-- Accounts: precision 100%; recall 91.5% on provable pairs; 98.7% if the review queue (41 pairs, 20 true duplicates) is decided correctly.
-- Contacts: precision 100%; recall 98.7% on provable pairs; review queue 19 pairs (after adding the mastered account id).
-- Policy comparison on the same Jev answers: the single score gets 92.8% (accounts) and 98.7% (contacts) provable recall, the signals policy 91.5% and 98.4%. No accuracy gain from signals; the gain is the named evidence behind each decision.
-- Caution: there were 0 false merges at every threshold tried, under either policy. The synthetic negatives are now too easy to tell the policies apart on precision. Next step is harder look-alikes and a second seed to check the thresholds were not fitted to seed 7.
-- Master weights matter: with recency weighted 0.3 the clean original wins about 64% / 48% of groups; recency is random noise in the synthetic data.
+## Scenarios
+Duplicates the pipeline should merge (DUP) and look-alikes it must not (DISTINCT). `evaluate.py` and the report break results down by scenario.
+- Accounts DUP: exact_formatting, typo_suffix, moved_keeps_ids, three_way, and moved_lost_ids (unprovable: moved with no phone or website left).
+- Accounts DISTINCT: sibling_locations (same brand, two cities), shared_brand_website (franchise), same_name_other_trade.
+- Contacts DUP: nickname, swapped_typo, initial_only, email_changed, dup_account (person attached to two duplicate variants of an account), no_account_email, and no_account_name_only (unprovable).
+- Contacts DISTINCT: junior_senior, twins, namesakes_other_company, same_name_same_company, shared_mailbox (two people on info@company).
+- Plus single unrelated records as background (40 accounts, 80 contacts).
+
+## Results (seed 11, targeted set)
+Run 1 (random 1,000/3,000 set, single score) is tagged `run-1-single-score`; run 2 (random set, signals policy) is tagged `run-2-signals`.
+- Accounts and contacts: 0 false merges and 100% recall on provable pairs (43 of 48 duplicate pairs each; the other 5 share only a name). The unprovable ones are never merged, as intended.
+- Look-alikes: siblings and twins are rejected; franchise accounts sharing a website (6 pairs), junior/senior (3) and same-name-same-company (1) go to a review queue rather than merging.
+- Two real bugs the scenarios found, both fixed: (1) "R. Smith" vs "Robert Smith" was never proposed as a pair, so contacts now also block on first initial + last-name sound + master account (`k_initial_acct`); (2) the same-email hard rule merged three different people sharing `info@`, so role mailboxes (info, sales, office, admin, support, contact, billing, hello, accounts, team) are no longer treated as identifiers.
+- Both policies (signals and single score) score the same on this set, so it cannot yet say which is better. The set is small (about 50 duplicate pairs per table) and was shaped while reading results, so a second seed is still needed before trusting it.
+- One contact in `dup_account` is never proposed: its account's two records were never merged (an unprovable moved account), so the contacts do not share a master account. That is the two-step flow working as designed, and a consequence of the account miss.

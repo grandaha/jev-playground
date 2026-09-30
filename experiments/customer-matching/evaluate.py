@@ -14,7 +14,7 @@ BASELINE_NAME_SIM = 0.88  # fuzzy-name baseline: merge any candidate pair whose 
 
 
 # Identifiers beyond the name. A true duplicate pair sharing none of these can't be proven from the records.
-EVIDENCE = {"accounts": ["k_domain", "k_phone", "k_street"], "contacts": ["k_email", "k_phone", "k_name_street", "k_name_acct"]}
+EVIDENCE = {"accounts": ["k_domain", "k_phone", "k_street"], "contacts": ["k_email", "k_phone", "k_name_street", "k_name_acct", "k_initial_acct"]}
 
 
 def corroborated(table, a, b):
@@ -88,6 +88,25 @@ def main():
         gid = {i: g for g, ids in groups.items() for i in ids}
         split = sum(1 for ids in by_true.values() if len({gid[i] for i in ids}) > 1)
         print(f"Groups: {len(groups)} (truth {len(by_true)}); {impure} contain more than one true entity; {split} true entities split across groups")
+
+        scen = {k["record_id"]: k["scenario"] for k in key if k["table"] == table}
+        decided = {(d["id_a"], d["id_b"]): d["decision"] for d in dec}
+        rows = defaultdict(lambda: defaultdict(int))
+        for p in true_pairs:
+            s = scen[p[0]]
+            if scen[p[1]] == s:
+                rows[s]["dup_" + {"merge": "merged", "review": "review", "no_match": "rejected"}.get(decided.get(p), "not_candidate")] += 1
+        for p, d in decided.items():
+            s = scen[p[0]]
+            if p not in true_pairs and scen[p[1]] == s:
+                rows[s]["distinct_" + {"merge": "MERGED", "review": "review", "no_match": "rejected"}[d]] += 1
+        print("By scenario: true duplicate pairs (merged / review / rejected / never a candidate), "
+              "look-alike pairs that were candidates (merged = FALSE MERGE / review / rejected)")
+        for s in sorted(rows):
+            r = rows[s]
+            dup = f"{r['dup_merged']:>3} / {r['dup_review']:>3} / {r['dup_rejected']:>3} / {r['dup_not_candidate']:>3}"
+            dis = f"{r['distinct_MERGED']:>3} / {r['distinct_review']:>3} / {r['distinct_rejected']:>3}"
+            print(f"  {s:<24} dup {dup}   distinct {dis}")
 
         m = read(f"masters_{table}.csv")
         with_clean = [r for r in m if any(kind[i] == "clean" for i in r["members"].split())]

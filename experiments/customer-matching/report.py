@@ -45,7 +45,7 @@ def build(table):
             verdict = "review"
         pairs.append({"a": a, "b": b, "decision": decision, "rule": rule, "detail": detail, "score": score,
                       "look": look, "keys": keys, "dup": dup, "verdict": verdict,
-                      "kinds": f"{key[a]['kind']} / {key[b]['kind']}"})
+                      "kinds": f"{key[a]['kind']} / {key[b]['kind']}", "scenario": key[a]["scenario"]})
 
     for d in read(f"decisions_{table}.csv"):
         seen.add((d["id_a"], d["id_b"]))
@@ -80,14 +80,14 @@ button{font:inherit;padding:6px 12px;border-radius:6px;border:1px solid var(--li
 </style></head><body><header><h1>Match review</h1>
 <label>Table <select id="t"><option>accounts</option><option>contacts</option></select></label>
 <label>Show <select id="v"><option value="all">all</option><option value="wrong" selected>wrong only</option><option value="review">review queue</option><option value="right">right only</option><option value="unprovable">unprovable (no shared evidence)</option></select></label>
-<label>Rule <select id="r"></select></label><label>Search id <input id="q" size="8"></label></header>
+<label>Rule <select id="r"></select></label><label>Scenario <select id="s"></select></label><label>Search id <input id="q" size="8"></label></header>
 <main><p class="sum" id="sum"></p><div id="list"></div><button id="more">Show more</button></main>
 <script>
 const D=__DATA__;let shown=0;const PAGE=100;
 const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const LABEL={merge:'merged',no_match:'not a match',review:'sent to review',missed:'missed (never a candidate)'};
-function filtered(){const d=D[$('t').value],v=$('v').value,r=$('r').value,q=$('q').value.trim().toUpperCase();
- return d.pairs.filter(p=>(v=='all'||p.verdict==v)&&(r=='all'||p.rule==r)&&(!q||p.a.includes(q)||p.b.includes(q)))}
+function filtered(){const d=D[$('t').value],v=$('v').value,r=$('r').value,s=$('s').value,q=$('q').value.trim().toUpperCase();
+ return d.pairs.filter(p=>(v=='all'||p.verdict==v)&&(r=='all'||p.rule==r)&&(s=='all'||p.scenario==s)&&(!q||p.a.includes(q)||p.b.includes(q)))}
 function card(p,d){const A=d.records[p.a],B=d.records[p.b];
  const row=(f,x,y,cls)=>{const diff=x!==y;return`<tr><th>${f}</th><td class="${cls||(diff?'d':'')}">${esc(x)}</td><td class="${cls||(diff?'d':'')}">${esc(y)}</td></tr>`};
  const rows=d.fields.map(f=>row(f,A.raw[f],B.raw[f])).join('')
@@ -98,16 +98,17 @@ function card(p,d){const A=d.records[p.a],B=d.records[p.b];
  const vtxt=p.verdict=='review'?`review: truth is ${truth}`:p.verdict=='unprovable'?'unprovable: same entity, but only the name matches':p.verdict=='right'?'right':'wrong';
  return`<div class="card"><div class="top"><span class="tag ${p.verdict}">${vtxt}</span><span>${LABEL[p.decision]}</span>
  <span class="mut">rule: ${p.rule}</span>${p.score?`<span class="mut">${esc(p.score)}</span>`:''}
- <span class="mut">truth: ${truth} (${p.kinds})</span></div>
+ <span class="mut">truth: ${truth} (${p.kinds})</span><span class="mut">scenario: ${p.scenario}</span></div>
  <table><tr><th>record</th><td><b>${p.a}</b></td><td><b>${p.b}</b></td></tr>${rows}</table>
  <div class="note">${esc(p.detail)}${p.keys?` · candidate because of: ${p.keys.split('+').join(', ')}`:''}</div></div>`}
 function render(reset){const d=D[$('t').value],f=filtered();if(reset){shown=0;$('list').innerHTML=''}
  const c={right:0,wrong:0,review:0,unprovable:0};d.pairs.forEach(p=>c[p.verdict]++);
  $('sum').textContent=`${d.pairs.length} pairs: ${c.right} right, ${c.wrong} wrong, ${c.unprovable} unprovable (true duplicates sharing only a name), ${c.review} in the review queue. Showing ${Math.min(shown+PAGE,f.length)} of ${f.length} matching.`;
  $('list').insertAdjacentHTML('beforeend',f.slice(shown,shown+PAGE).map(p=>card(p,d)).join(''));shown+=PAGE;$('more').style.display=shown<f.length?'':'none'}
+function scenarios(){const d=D[$('t').value];$('s').innerHTML='<option value="all">all</option>'+[...new Set(d.pairs.map(p=>p.scenario))].sort().map(x=>`<option>${x}</option>`).join('')}
 function rules(){const d=D[$('t').value];$('r').innerHTML='<option value="all">all</option>'+[...new Set(d.pairs.map(p=>p.rule))].sort().map(x=>`<option>${x}</option>`).join('')}
-$('t').onchange=()=>{rules();render(true)};['v','r'].forEach(i=>$(i).onchange=()=>render(true));$('q').oninput=()=>render(true);$('more').onclick=()=>render(false);
-rules();render(true);
+$('t').onchange=()=>{rules();scenarios();render(true)};['v','r','s'].forEach(i=>$(i).onchange=()=>render(true));$('q').oninput=()=>render(true);$('more').onclick=()=>render(false);
+rules();scenarios();render(true);
 </script></body></html>"""
 
 if __name__ == "__main__":

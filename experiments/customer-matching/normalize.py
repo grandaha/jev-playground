@@ -2,6 +2,7 @@
 
 Run from repo root: .venv/bin/python experiments/customer-matching/normalize.py
 Reads data/accounts.csv, data/contacts.csv; writes data/accounts_norm.csv, data/contacts_norm.csv.
+Contacts also get master_account_id (from the account cluster + master steps), which feeds k_name_acct.
 Each k_* column is a match key. Records sharing a non-empty k_* value become candidates in block.py.
 """
 import csv
@@ -17,13 +18,22 @@ STREET = {"street": "st", "avenue": "ave", "road": "rd", "boulevard": "blvd", "d
 PERSONAL_DOMAINS = {"gmail.com", "yahoo.com", "outlook.com", "hotmail.com"}
 
 
-def account_groups():
-    """record -> merged account group, once cluster.py has run on accounts (else empty: raw ids are used)."""
-    f = DATA / "groups_accounts.csv"
-    return {r["record_id"]: r["group_id"] for r in csv.DictReader(open(f))} if f.exists() else {}
+def master_accounts():
+    """record -> master account id, once accounts are clustered (cluster.py) and mastered (master.py accounts).
+    A record in a group of one is its own master. Empty before those steps: raw account ids are used."""
+    g = DATA / "groups_accounts.csv"
+    if not g.exists():
+        return {}
+    groups = list(csv.DictReader(open(g)))
+    m = DATA / "masters_accounts.csv"
+    master = {r["group_id"]: r["master_id"] for r in csv.DictReader(open(m))} if m.exists() else {}
+    first = {}
+    for r in sorted(groups, key=lambda r: r["record_id"]):
+        first.setdefault(r["group_id"], r["record_id"])
+    return {r["record_id"]: master.get(r["group_id"], first[r["group_id"]]) for r in groups}
 
 
-GROUPS = account_groups()
+MASTER = master_accounts()
 
 
 def words(s):
@@ -84,6 +94,7 @@ def norm_contact(r):
     f = CANON.get(f, f)
     ini = f[:1]
     dom = domain(r["email"])
+    master = MASTER.get(r["account_id"], r["account_id"])  # the mastered account this contact belongs to
     names = "".join(sorted([f[:1] + soundex(l), l[:1] + soundex(f)]))  # first/last swap-proof
     return {**r, "first_norm": f, "last_norm": l, "email_norm": r["email"].lower().strip(),
             "phone_norm": phone(r["phone"]), "address_norm": address(r["address"]),
@@ -91,7 +102,8 @@ def norm_contact(r):
             "k_name_domain": f"{ini}{soundex(l)}|{dom}" if dom and ini and l else "",
             "k_name_street": f"{ini}{soundex(l)}|{street_key(r['address'], r['zip'])}" if ini and l and r["address"] else "",
             "k_name_swap": f"{names}|{dom}" if dom and ini and l else "",
-            "k_name_acct": f"{names}|{GROUPS.get(r['account_id'], r['account_id'])}" if r["account_id"] and ini and l else ""}
+            "master_account_id": master,
+            "k_name_acct": f"{names}|{master}" if master and ini and l else ""}
 
 
 def run(src, dst, fn):

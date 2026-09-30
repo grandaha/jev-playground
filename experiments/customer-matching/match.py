@@ -20,8 +20,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 from typesafe_sdk import Noul, Score, TypeSafeClient
 
-import normalize
-
 DATA = Path(__file__).parent / "data"
 load_dotenv(DATA.parents[2] / ".env")
 WORKERS = 8
@@ -75,8 +73,9 @@ def hard_rule(table, a, b):
 
 def view(table, r, accounts):
     v = {k: r[k] for k in PUBLIC[table] if r.get(k)}
-    if table == "contacts" and r["account_id"]:
-        acct = accounts[r["account_id"]]
+    acct_id = r.get("master_account_id") or r.get("account_id")  # show the master account, not a messy duplicate
+    if table == "contacts" and acct_id:
+        acct = accounts[acct_id]
         v["account"] = {k: acct[k] for k in ("name", "website", "address", "city", "state") if acct.get(k)}
     return v
 
@@ -141,7 +140,7 @@ def evidence(table, a, b, r):
         if both("k_street") and a["k_street"] == b["k_street"]:
             pts.append(("street_equal", W["street_equal"]))
     else:
-        ga, gb = (normalize.GROUPS.get(x["account_id"], x["account_id"]) for x in (a, b))
+        ga, gb = a["master_account_id"], b["master_account_id"]
         if ga and gb:
             pts.append(("same_account", W["same_account"]) if ga == gb else ("different_account", -W["different_account"]))
         if both("k_email") and a["k_email"] == b["k_email"]:

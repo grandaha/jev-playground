@@ -16,7 +16,7 @@ DATA = Path(__file__).parent / "data"
 FIELDS = {"accounts": ["name", "website", "phone", "address", "city", "state", "zip", "industry", "source_system", "updated_at"],
           "contacts": ["first_name", "last_name", "email", "phone", "title", "address", "city", "state", "zip", "account_id", "source_system", "updated_at"]}
 NORM = {"accounts": ["name_norm", "phone_norm", "address_norm"],
-        "contacts": ["first_norm", "last_norm", "email_norm", "phone_norm", "address_norm"]}
+        "contacts": ["first_norm", "last_norm", "email_norm", "phone_norm", "address_norm", "master_account_id"]}
 
 
 def read(name):

@@ -12,7 +12,7 @@ Goal: dedupe a messy synthetic customer file, explain every match, pick a master
 ## Files: accounts and contacts (Salesforce-style)
 - `accounts.csv` (businesses): `account_id`, `name`, `website`, `phone`, `address`, `city`, `state`, `zip`, `industry`, `source_system`, `updated_at`.
 - `contacts.csv` (people): `contact_id`, `account_id` (nullable), `first_name`, `last_name`, `email`, `phone`, `title`, `address`, `city`, `state`, `zip`, `source_system`, `updated_at`. A contact's address is their own (about a quarter have one), never a copy of the account's, so address is not treated as evidence for colleagues at one company.
-- Dedupe runs twice, accounts against accounts and contacts against contacts. The two passes inform each other: two contacts with the same name at the same account are a stronger candidate pair, two accounts sharing contacts (same email or name) are a stronger account pair, and merging accounts repoints their contacts to the surviving account (which can expose new contact duplicates, so contacts run after accounts).
+- Two steps; the output of the first is an input to the second. Step 1 matches accounts, clusters them, and picks a master account per group (`master.py accounts`). Step 2 gives every contact a `master_account_id` (its account's master) in `contacts_norm.csv`. That id is a match key (`k_name_acct`: swap-proof name plus master account), a signal (`same_account`), and the account context Jev sees for each contact, so two contacts whose accounts were duplicates now count as the same company. Matching contacts on master account alone is too broad (every pair of colleagues), so it is always combined with a name.
 - Sole proprietors and contacts with no account are left in as edge cases (`account_id` empty, or an account named after the person).
 
 ## Pipeline (one script per stage, files handed along in `data/`)
@@ -41,7 +41,7 @@ Every pair decision writes: `decision`, `rule` (e.g. `exact_email`, `conflicting
 Run 1 (single score, contacts inherited account addresses) is tagged `run-1-single-score`.
 - Some true duplicates share only a name, so no method can prove them: 4 of 227 account pairs, 66 of 676 contact pairs. They are reported as "unprovable", not as misses.
 - Accounts: precision 100%; recall 91.5% on provable pairs; 98.7% if the review queue (41 pairs, 20 true duplicates) is decided correctly.
-- Contacts: precision 100%; recall 98.4% on provable pairs; review queue 21 pairs.
+- Contacts: precision 100%; recall 98.7% on provable pairs; review queue 19 pairs (after adding the mastered account id).
 - Policy comparison on the same Jev answers: the single score gets 92.8% (accounts) and 98.7% (contacts) provable recall, the signals policy 91.5% and 98.4%. No accuracy gain from signals; the gain is the named evidence behind each decision.
 - Caution: there were 0 false merges at every threshold tried, under either policy. The synthetic negatives are now too easy to tell the policies apart on precision. Next step is harder look-alikes and a second seed to check the thresholds were not fitted to seed 7.
 - Master weights matter: with recency weighted 0.3 the clean original wins about 64% / 48% of groups; recency is random noise in the synthetic data.

@@ -148,7 +148,7 @@ Real incidents are chains of ATT&CK tactics. Four incidents of each kind:
 - `malware_lateral`: malware on a laptop, privilege escalation, a move to a file server, then a large transfer.
 - `mfa_fatigue`: repeated multi-factor authentication (MFA) prompts, a successful login, then a cloud download.
 - `slow_burn`: low-severity alerts on one account spread over several days, each ignorable alone.
-- `missing_entity_link`: an incident where one alert lacks its user, so only context links it.
+- `missing_entity_link`: an incident where one alert lost its user field but shares the attacker's address and names the mailbox in its description, so grouping must still attach it and account risk must still count it for the right user.
 
 Benign look-alikes, each a burst of alerts that forms a benign group:
 - Benign true positives: `benign_admin_tool`, `benign_travel` (impossible travel from real travel), `benign_pentest` (an authorized security test) and `benign_backup` (a backup that looks like data leaving).
@@ -161,7 +161,7 @@ Traps for the individual stages:
 The rest is background: lone benign alerts.
 
 ### Size
-About 200 employees and 1,200 alerts. About 20 real incidents (80 to 150 alerts in all), each on a different compromised account, and about 20 benign groups. Roughly 1 in 8 alerts belongs to a real incident. Every scenario has enough copies to grade, with rates reported per scenario as in the matching experiment.
+About 200 employees and 1,050 alerts. About 21 real incidents (about 85 alerts in all), each on a different compromised account, and about 20 benign groups. Roughly 1 in 12 alerts belongs to a real incident. Every scenario has enough copies to grade, with rates reported per scenario as in the matching experiment.
 
 ## Pipeline
 Each script reads the files the previous stage wrote. Jev answers are saved, so rules and thresholds can change with no new Jev calls.

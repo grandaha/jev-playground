@@ -59,7 +59,7 @@ def build(table):
         n = norm[i]
         return {"raw": {f: recs[i][f] for f in FIELDS[table]}, "norm": {f: n[f] for f in NORM[table]},
                 "keys": {k: v for k, v in n.items() if k.startswith("k_") and v}}
-    return {"fields": FIELDS[table], "norm_fields": NORM[table], "records": {i: rec(i) for i in used}, "pairs": pairs}
+    return {"fields": FIELDS[table], "norm_fields": NORM[table], "records": {i: rec(i) for i in sorted(used)}, "pairs": pairs}
 
 
 PAGE = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

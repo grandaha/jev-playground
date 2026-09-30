@@ -9,7 +9,7 @@ From the repo root:
 experiments/customer-matching/run_all.sh     # builds data/ from scratch, about 120 Jev requests (one per ambiguous pair)
 ```
 
-Then open `data/reports/report.html` (every pair decision) and `data/reports/golden_report.html` (golden records and their lineage). Another dataset: `SEED=23 ROUND=1 MATCH_DATA=data_other experiments/customer-matching/run_all.sh`.
+To rebuild every result from the saved Jev answers with no API key, run `experiments/customer-matching/replay.sh`. Then open `data/reports/report.html` (every pair decision) and `data/reports/golden_report.html` (golden records and their lineage). Another dataset: `SEED=23 ROUND=1 MATCH_DATA=data_other experiments/customer-matching/run_all.sh`.
 
 ## Layout
 ```

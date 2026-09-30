@@ -7,15 +7,19 @@ From the repo root:
 
 ```
 experiments/customer-matching/run_all.sh     # builds data/ from scratch, about 120 Jev requests (one per ambiguous pair)
+experiments/customer-matching/replay.sh      # rebuilds every result from the saved Jev answers: no API key, no network
 ```
 
-To rebuild every result from the saved Jev answers with no API key, run `experiments/customer-matching/replay.sh`. Then open `data/reports/report.html` (every pair decision) and `data/reports/golden_report.html` (golden records and their lineage). Another dataset: `SEED=23 ROUND=1 MATCH_DATA=data_other experiments/customer-matching/run_all.sh`.
+Then open `data/reports/report.html` (every pair decision) and `data/reports/golden_report.html` (golden records and their lineage). Another dataset: `SEED=23 ROUND=1 MATCH_DATA=data_other experiments/customer-matching/run_all.sh`.
 
 ## Layout
 ```
 experiments/customer-matching/
-  spec.md            this file
-  run_all.sh         runs every script in order
+  README.md          the short introduction
+  spec.md            this file: the full design
+  LICENSE            MIT
+  run_all.sh         runs every script in order, asking Jev
+  replay.sh          runs the same steps from the saved Jev answers, with no API key
   scripts/           generate, normalize, block, match, cluster, master, golden, evaluate, sweep, report, golden_report, paths
   data/
     source/          generated inputs: accounts.csv, contacts.csv, answer_key.csv (hidden truth, used only for grading)

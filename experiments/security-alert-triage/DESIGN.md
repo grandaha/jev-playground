@@ -99,7 +99,13 @@ shared_entity_is_coincidence (Noul)
   Is the shared user, host or address a coincidence, for example a shared office or guest network address used by many people?
 ```
 
-**What code does with the answers.** A pair links when the `same_incident` Score is 1.6 or more and the coincidence probability is below 0.5. Linked pairs cluster into incidents. A pair with no answer is not linked, and each of its alerts still gets its own decision.
+**What code does with the answers.** A pair links when the `same_incident` Score is 1.8 or more and the coincidence probability is below 0.5. Linked pairs cluster into incidents. A pair with no answer is not linked, and each of its alerts still gets its own decision.
+
+**Result on seed 101.** We asked Jev about 1,376 of the 1,393 candidate pairs, with 0 errors. Code settled the other 17.
+
+Jev links 279 alert pairs into 917 groups. It gets 216 of the 225 true pairs, so recall is 96% and precision is 77%, against 4% for the baseline. One group holds two different real incidents, down from six. It joins two `benign_pentest` incidents that Jev scored 1.8 to 1.97 as the same event. The `shared_address` strangers are not linked at all. The 9 missed links are all `benign_backup`.
+
+The threshold started at 1.6. At 1.6 the `two_incidents_one_user` pairs (one user's travel alerts and phishing alerts) scored up to 1.78 and merged. We moved it to 1.8 after seeing this data. That is a value tuned on one seed, so a fresh seed has to test it. Recall falls to 77% at 1.9.
 
 **Why Jev here.** Sharing an entity is weak evidence. Many unrelated users sit behind one guest-network address, and unrelated incidents touch the same server. In the other direction, a real incident's alert can lose its user field. Telling these apart means reading the two descriptions together and asking whether one is the next step of the other. The coincidence question exists so that a shared address does not link strangers.
 

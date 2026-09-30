@@ -2,7 +2,8 @@
 
 Run from the experiment folder:
   ../../.venv/bin/python scripts/ask.py alerts [--limit N]
-Writes data/work/answers_alerts.csv. Rules and thresholds can change later with no new Jev calls.
+  ../../.venv/bin/python scripts/ask.py links [--limit N]
+Writes data/work/answers_alerts.csv and answers_links.csv. Rules and thresholds can change later with no new Jev calls.
 """
 import argparse
 import sys
@@ -13,6 +14,7 @@ from dotenv import load_dotenv
 from typesafe_sdk import Choice, Noul, Score, TypeSafeClient
 
 import rules
+from group import candidate_pairs, obvious_link
 from paths import REPO, path
 from schema import DISPOSITIONS, TACTIC_DESCRIPTIONS
 from tables import read_alerts, write_csv
@@ -108,16 +110,68 @@ def ask_alerts(alerts, client, workers=8):
         return list(pool.map(one, alerts))
 
 
+LINK_QUESTIONS = {
+    "same_incident": Score(
+        instructions="Are these two alerts part of the same attack or event?",
+        criteria=["They are unrelated events that only share a name or address.",
+                  "They might be related, but the evidence is thin.",
+                  "They are clearly steps of the same attack or the same event."]),
+    "shared_entity_is_coincidence": Noul(
+        instructions="Is the shared user, host or address a coincidence, for example a shared office or guest network address used by many people?"),
+}
+LINK_COLUMNS = ["alert_a", "alert_b", "asked", "score", "p_coincidence", "error"]
+
+
+def link_state(a, b, shared):
+    return {"alert_a": {k: a[k] for k in ALERT_FIELDS if a.get(k)},
+            "alert_b": {k: b[k] for k in ALERT_FIELDS if b.get(k)},
+            "shared_entities": list(shared)}
+
+
+def parse_link(resp):
+    """Turn a Jev response into (score, p_coincidence). Raises on a malformed response."""
+    score = resp.answers["same_incident"].score
+    coincidence = resp.answers["shared_entity_is_coincidence"].noul
+    if score is None or coincidence is None:
+        raise ValueError("response has an empty same_incident score or shared_entity_is_coincidence")
+    return score, coincidence
+
+
+def ask_link(a, b, shared, client, attempts=4):
+    row = {"alert_a": a["alert_id"], "alert_b": b["alert_id"], "asked": "yes", "score": "", "p_coincidence": "", "error": ""}
+    for attempt in range(attempts):
+        try:
+            row["score"], row["p_coincidence"] = parse_link(client.system_one(state=link_state(a, b, shared), questions=LINK_QUESTIONS))
+            return row
+        except Exception as e:
+            if attempt == attempts - 1:
+                return {**row, "score": "", "p_coincidence": "", "error": f"{type(e).__name__}: {e}"[:200]}
+            time.sleep(2 ** attempt)
+
+
+def ask_links(pairs, alerts_by_id, client, workers=8):
+    """Ask about every candidate pair that the obvious-link rule does not already settle."""
+    todo = [(a, b, s) for (a, b), s in pairs.items() if not obvious_link(alerts_by_id[a], alerts_by_id[b])]
+    with ThreadPoolExecutor(workers) as pool:
+        return list(pool.map(lambda t: ask_link(alerts_by_id[t[0]], alerts_by_id[t[1]], t[2], client), todo))
+
+
 def main(argv):
     ap = argparse.ArgumentParser()
-    ap.add_argument("what", choices=["alerts"])
+    ap.add_argument("what", choices=["alerts", "links"])
     ap.add_argument("--limit", type=int)
     args = ap.parse_args(argv)
-    alerts = read_alerts(path("alerts.csv"))[: args.limit]
-    rows = ask_alerts(alerts, make_client())
-    write_csv(path("answers_alerts.csv"), rows, ANSWER_COLUMNS)
-    asked = [r for r in rows if r["asked"] == "yes"]
-    print(f"{len(rows)} alerts, {len(asked)} asked Jev, {sum(1 for r in asked if r['error'])} errors")
+    alerts = read_alerts(path("alerts.csv"))
+    if args.what == "alerts":
+        rows = ask_alerts(alerts[: args.limit], make_client())
+        write_csv(path("answers_alerts.csv"), rows, ANSWER_COLUMNS)
+        asked = [r for r in rows if r["asked"] == "yes"]
+        print(f"{len(rows)} alerts, {len(asked)} asked Jev, {sum(1 for r in asked if r['error'])} errors")
+    else:
+        pairs = dict(list(candidate_pairs(alerts).items())[: args.limit])
+        rows = ask_links(pairs, {a["alert_id"]: a for a in alerts}, make_client())
+        write_csv(path("answers_links.csv"), rows, LINK_COLUMNS)
+        print(f"{len(pairs)} candidate pairs, {len(rows)} asked Jev, {sum(1 for r in rows if r['error'])} errors")
 
 
 if __name__ == "__main__":

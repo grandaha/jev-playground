@@ -48,3 +48,53 @@ def test_obvious_link_needs_same_user_and_host_within_thirty_minutes():
 def test_cluster_joins_chains_and_numbers_groups_in_order():
     groups = group.cluster(["A", "B", "C", "D"], [("A", "B"), ("B", "C")])
     assert groups == {"A": "GRP-0001", "B": "GRP-0001", "C": "GRP-0001", "D": "GRP-0002"}
+
+
+def pair_alerts():
+    a = alert("A", "2026-03-02T00:00:00Z", user="u@example.com", host="H", src="203.0.113.5")
+    b = alert("B", "2026-03-02T05:00:00Z", user="u@example.com", host="K", src="203.0.113.5")
+    return {"A": a, "B": b}
+
+
+def test_decide_links_uses_the_obvious_rule_without_an_answer():
+    a = alert("A", "2026-03-02T00:00:00Z", user="u@example.com", host="H")
+    b = alert("B", "2026-03-02T00:10:00Z", user="u@example.com", host="H")
+    rows = group.decide_links({("A", "B"): ["host:H"]}, {"A": a, "B": b}, {})
+    assert rows[0]["link"] == "yes" and rows[0]["rule"] == "obvious_link"
+
+
+def test_decide_links_follows_jev_and_rejects_coincidences():
+    alerts = pair_alerts()
+    pairs = {("A", "B"): ["ip:203.0.113.5"]}
+    yes = group.decide_links(pairs, alerts, {("A", "B"): {"score": "1.9", "p_coincidence": "0.1", "error": ""}})
+    no = group.decide_links(pairs, alerts, {("A", "B"): {"score": "1.9", "p_coincidence": "0.8", "error": ""}})
+    unrelated = group.decide_links(pairs, alerts, {("A", "B"): {"score": "0.3", "p_coincidence": "0.1", "error": ""}})
+    assert yes[0]["link"] == "yes" and yes[0]["rule"] == "jev_link"
+    assert no[0]["link"] == "no" and unrelated[0]["link"] == "no"
+
+
+def test_an_unanswered_pair_is_not_linked_and_says_so():
+    rows = group.decide_links({("A", "B"): ["ip:x"]}, pair_alerts(), {})
+    assert rows[0]["link"] == "no" and rows[0]["rule"] == "no_jev_answer"
+
+
+def test_an_errored_pair_is_not_linked():
+    bad = {("A", "B"): {"score": "", "p_coincidence": "", "error": "boom"}}
+    assert group.decide_links({("A", "B"): ["ip:x"]}, pair_alerts(), bad)[0]["rule"] == "no_jev_answer"
+
+
+def test_jev_groups_follow_the_linked_pairs():
+    alerts = list(pair_alerts().values())
+    linked = [{"alert_a": "A", "alert_b": "B", "link": "yes"}]
+    assert group.jev_groups(alerts, linked) == {"A": "GRP-0001", "B": "GRP-0001"}
+    assert group.jev_groups(alerts, [{"alert_a": "A", "alert_b": "B", "link": "no"}]) == {"A": "GRP-0001", "B": "GRP-0002"}
+
+
+def test_incident_table_takes_the_strongest_action_and_severity_in_a_group():
+    alerts = [alert("A", "2026-03-02T00:00:00Z", user="u@example.com"), alert("B", "2026-03-02T01:00:00Z", user="u@example.com")]
+    decisions = [
+        {"alert_id": "A", "action": "close", "p_true_positive": "0.02", "p_benign": "0.98", "impact": "0.4"},
+        {"alert_id": "B", "action": "escalate", "p_true_positive": "0.9", "p_benign": "0.1", "impact": "2.8"}]
+    rows = group.incident_table(alerts, {"A": "GRP-0001", "B": "GRP-0001"}, decisions)
+    assert rows == [{"group_id": "GRP-0001", "alerts": 2, "action": "escalate", "severity": "critical",
+                     "users": "u@example.com", "max_p_true_positive": 0.9}]

@@ -64,13 +64,15 @@ def test_every_value_in_card_goes_through_esc():
     """Rule: each ${...} in the card function is esc(...), ev(...) (a helper that calls esc), or a
     ternary of string literals (conditions like x.ok or x.v=='a', branches all quoted literals)."""
     import re
+    start = report.PAGE.index("function alertHtml(")
+    card = report.PAGE[start:report.PAGE.index("const byId", start)]
     start = report.PAGE.index("function card(")
-    card = report.PAGE[start:report.PAGE.index("function render(", start)]
+    card += report.PAGE[start:report.PAGE.index("function render(", start)]
     cond = r"x\.\w+(?:=='[^']*')?"
     literal_ternary = re.compile(rf"^(?:{cond}\?'[^']*':)+'[^']*'$")
     exprs = _interpolations(card)
     assert len(exprs) > 20
-    bad = [e for e in exprs if not (e.startswith(("esc(", "ev(")) or literal_ternary.match(e))]
+    bad = [e for e in exprs if not (e.startswith(("esc(", "ev(", "sub(", "alertHtml(")) or literal_ternary.match(e))]
     assert bad == []
 
 
@@ -80,3 +82,9 @@ def test_embedded_data_cannot_close_the_script_tag():
     html = report.render(report.build(t))
     assert html.count("</script>") == 1          # only the page's own closing tag
     assert "<\\/script>" in html
+
+
+def test_incident_and_account_cards_expand_to_their_alerts():
+    page = report.PAGE
+    assert "<details>" in page and "byGroup" in page and "sub(byGroup.get(x.group_id)" in page
+    assert "sub((x.alert_ids" in page

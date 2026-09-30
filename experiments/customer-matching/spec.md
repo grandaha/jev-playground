@@ -67,3 +67,10 @@ Fixed after reading the seed 23 results (so seed 23 stopped being a clean holdou
 
 Open finding: the 2 contact true duplicates in review (seeds 11 and 23) are people whose accounts were never merged (an account pair left unmerged, e.g. a moved business), so the `different_account` penalty (-2) applies to two records that share a company email domain and often a phone. A company-domain signal would fix them, but adding it now would be tuning on these sets again, so it is left for a decision.
 - The master-record proxy is still low (recency 0.3 on random dates). Still open.
+
+## Round 2: new scenarios, fresh seed 41 (`data_round2/`)
+`ROUND=2 MATCH_DATA=data_round2 SEED=41 experiments/customer-matching/run_all.sh`. `ROUND=2` only adds scenarios; the seed 11, 23 and 37 data are unchanged (checked with git). Rule: never edit data to make a result pass, so all fixes below are to rules.
+New contact scenarios: `shared_personal_email` (spouses sharing one gmail, DISTINCT), `namesake_identical_email` (same name, company and work email, different phone and title, DISTINCT per the generator, ambiguous on purpose), `phone_only_shared` (two people, one phone, no account, DISTINCT), `account_vs_no_account` (one record lacks its account, DUP).
+- `account_vs_no_account`: 8 of 8 merged. `phone_only_shared`: all 6 pairs go to review, none merged.
+- `shared_personal_email` first merged 1 of 6 spouse pairs: the same-email rule's name check accepted "same first initial and last-name sound" (Maria Lopez and Marcus Lopez). Fixed in the rule: an initial only matches when one side is a bare initial; otherwise first names must sound alike or be swapped. Now all 6 go to review. No change on seeds 11, 23, 37.
+- `namesake_identical_email`: all 6 merge on same email, which the generator counts as false merges. Open question, not a rule change: is identical work email + same name + same company one person?

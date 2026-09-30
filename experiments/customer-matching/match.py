@@ -21,6 +21,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 from typesafe_sdk import Noul, Score, TypeSafeClient
 
+import normalize
+
 DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 load_dotenv(DATA.parents[2] / ".env")
 WORKERS = 8
@@ -61,13 +63,22 @@ PUBLIC = {"accounts": ["name", "website", "phone", "address", "city", "state", "
           "contacts": ["first_name", "last_name", "email", "phone", "title", "address", "city", "state", "zip", "source_system", "updated_at"]}
 
 
+def names_compatible(a, b):
+    """Same person's name across records: nickname/typo (sound-alike first and last), swapped order, or a bare initial."""
+    fa, fb, la, lb = a["first_norm"], b["first_norm"], a["last_norm"], b["last_norm"]
+    sx = normalize.soundex
+    if sx(la) == sx(lb) and (sx(fa) == sx(fb) or ((len(fa) == 1 or len(fb) == 1) and fa[:1] == fb[:1])):
+        return True
+    return sx(fa) == sx(lb) and sx(la) == sx(fb)  # first and last swapped
+
+
 def hard_rule(table, a, b):
     """(decision, rule) for pairs that need no judgment, else None."""
     if table == "accounts" and a["k_phone"] and a["k_phone"] == b["k_phone"] and a["k_domain"] and a["k_domain"] == b["k_domain"]:
         return "merge", "same_phone_and_domain"
     if table == "contacts" and a["k_email"] and a["k_email"] == b["k_email"]:
         # one mailbox and a compatible name (nickname, initial or swapped order): phones and titles change, so they do not veto
-        if {a["name_a"], a["name_b"]} & {b["name_a"], b["name_b"]}:
+        if names_compatible(a, b):
             return "merge", "same_email"
     return None
 

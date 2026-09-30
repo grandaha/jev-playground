@@ -69,6 +69,14 @@ CONTACT_SCENARIOS = {
     "unrelated": 80,             # single records
 }
 
+if os.environ.get("ROUND") == "2":  # round 2 adds scenarios; earlier rounds are left exactly as they were
+    CONTACT_SCENARIOS.update({
+        "shared_personal_email": 6,     # DISTINCT: two different people (spouses) sharing one gmail, no account
+        "namesake_identical_email": 6,  # DISTINCT per the generator: same name, company and work email, different phone/title. Ambiguous on purpose.
+        "phone_only_shared": 6,         # DISTINCT: two different people sharing a phone number, no account
+        "account_vs_no_account": 8,     # DUP: one record has its account, the other has none (personal email, same phone)
+    })
+
 
 def typo(s):
     i = rng.randrange(1, len(s) - 1)
@@ -227,7 +235,7 @@ def make_contacts(accounts, dup_accounts):
         addr = c["addr"] or {k: "" for k in ADDR}
         if variant and c["addr"] and rng.random() < 0.5:
             addr = {**addr, "address": abbreviate(addr["address"]).upper()}
-        rows.append((c["true_id"], scn, kind, c["acct"], pick, {
+        rows.append((c["true_id"], scn, kind, None if o.get("no_account") else c["acct"], pick, {
             "first_name": o.get("first", c["first"]), "last_name": o.get("last", c["last"]),
             "email": o["email"] if "email" in o else corp_email(c, acct),
             "phone": "" if o.get("drop_phone") else fmt_phone(c["phone"]),
@@ -277,6 +285,21 @@ def make_contacts(accounts, dup_accounts):
             emit("shared_mailbox", base_contact(accounts, acct=acct), email=box, drop_phone=(i == 1 and rng.random() < 0.6))
     for _ in range(n["unrelated"]):
         emit("unrelated", base_contact(accounts, acct="any" if rng.random() > 0.05 else None))
+    # round 2 scenarios (zero groups unless ROUND=2), drawn after everything else so earlier rounds are unchanged
+    for _ in range(n.get("shared_personal_email", 0)):
+        a = base_contact(accounts, acct=None, addr=None); b = base_contact(accounts, last=a["last"], acct=None, addr=None)
+        while b["first"] == a["first"]:
+            b = base_contact(accounts, last=a["last"], acct=None, addr=None)
+        emit("shared_personal_email", a, email=personal_email(a)); emit("shared_personal_email", b, email=personal_email(a))
+    for _ in range(n.get("namesake_identical_email", 0)):
+        a = base_contact(accounts); b = base_contact(accounts, first=a["first"], last=a["last"], acct=a["acct"])
+        emit("namesake_identical_email", a); emit("namesake_identical_email", b)
+    for _ in range(n.get("phone_only_shared", 0)):
+        a = base_contact(accounts, acct=None, addr=None); b = base_contact(accounts, acct=None, addr=None, phone=a["phone"])
+        emit("phone_only_shared", a, email=personal_email(a)); emit("phone_only_shared", b, email=personal_email(b))
+    for _ in range(n.get("account_vs_no_account", 0)):
+        c = base_contact(accounts); emit("account_vs_no_account", c)
+        emit("account_vs_no_account", c, "variant", email=personal_email(c), no_account=True)
     return rows
 
 

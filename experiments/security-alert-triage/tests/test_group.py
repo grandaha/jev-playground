@@ -83,6 +83,13 @@ def test_an_errored_pair_is_not_linked():
     assert group.decide_links({("A", "B"): ["ip:x"]}, pair_alerts(), bad)[0]["rule"] == "no_jev_answer"
 
 
+def test_a_half_answered_or_non_numeric_pair_is_unanswered():
+    for bad in ({"score": "2", "p_coincidence": ""}, {"score": "nan", "p_coincidence": "0.1"},
+                {"score": "2", "p_coincidence": "nan"}, {"score": "x", "p_coincidence": "0.1"}):
+        rows = group.decide_links({("A", "B"): ["ip:x"]}, pair_alerts(), {("A", "B"): {**bad, "error": ""}})
+        assert rows[0]["link"] == "no" and rows[0]["rule"] == "no_jev_answer", bad
+
+
 def test_jev_groups_follow_the_linked_pairs():
     alerts = list(pair_alerts().values())
     linked = [{"alert_a": "A", "alert_b": "B", "link": "yes"}]

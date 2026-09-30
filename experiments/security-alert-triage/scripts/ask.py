@@ -68,7 +68,15 @@ def alert_state(alert):
 def choice_probs(answer, options):
     """Probability of each option, whether the SDK keys them by option name or by position."""
     p = dict(answer.probabilities)
-    return {o: float(p.get(o, p.get(i, p.get(str(i), 0.0)))) for i, o in enumerate(options)}
+    out = {}
+    for i, o in enumerate(options):
+        for k in (o, i, str(i)):
+            if k in p:
+                out[o] = float(p[k])
+                break
+        else:
+            raise ValueError(f"response has no probability for option {o}")
+    return out
 
 
 def parse_answers(resp):

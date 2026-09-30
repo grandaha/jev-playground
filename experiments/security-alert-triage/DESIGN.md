@@ -23,7 +23,7 @@ Jev is called at two points: once for each alert, and once for each pair of aler
 **Why a model at all.** The difference between an attack and its harmless look-alike sits in the words of the alert, not in a field a rule can test. "Sign-in from a country never seen for this user, on an unregistered device, right after a password reset" is an attack. "First sign-in from a new country on the user's registered laptop, and the calendar shows a flight that day" is a trip. Both arrive under the same kind of rule at the same detector severity. A rules-only baseline can use the severity and two lists, so it escalates the trip and misses the quiet attacks. Jev reads the evidence and returns probabilities. Code then decides how cautious to be.
 
 ### Call 1: judge one alert
-**When it runs.** Once for every alert, except alerts the allowlist already closes. Alerts on the never-suppress list are still asked, because Jev decides whether they escalate or only get investigated.
+**When it runs.** Once for every alert, except alerts the allowlist already closes. The allowlist has two entries (a port scan from 192.0.2.200 and one from 198.51.100.250). The first matches no generated alert. The second matches exactly the 6 `benign_pentest` port scans that the allowlist closes, which is 6 of that scenario's 12 alerts. Alerts on the never-suppress list are still asked, because Jev decides whether they escalate or only get investigated.
 
 **What goes in.** The alert's own fields: time, detector, rule name, description, the detector's severity, user, host, source and destination address, and the tactic the detector claims. Two items of context go with it: the asset's criticality and the user's access level. A note says the detector's severity and tactic are its own guesses and are sometimes wrong. No field from the answer key is ever sent.
 
@@ -103,9 +103,9 @@ shared_entity_is_coincidence (Noul)
 
 **Result on seed 101.** We asked Jev about 1,376 of the 1,393 candidate pairs, with 0 errors. Code settled the other 17.
 
-Jev links 279 alert pairs into 917 groups. It gets 216 of the 225 true pairs, so recall is 96% and precision is 77%, against 4% for the baseline. One group holds more than one real incident, down from six. It joins two `benign_pentest` incidents that Jev scored 1.8 to 1.97 as the same event. The `shared_address` strangers are not linked at all. The 9 missed links are all `benign_backup`.
+Jev links 279 alert pairs into 917 groups. The 279 counts every pair that ends up in the same group, chained pairs included. Direct links are 203: 17 from the obvious-link rule and 186 from Jev. It gets 216 of the 225 true pairs, so recall is 96% and precision is 77%, against 4% for the baseline. No group holds more than one real incident, down from one for the baseline. Separately, Jev does join `benign_pentest` incidents, which are benign, because it scored them 1.8 to 1.97 as the same event. The `shared_address` strangers are not linked at all. The 9 missed links are all `benign_backup`.
 
-The threshold started at 1.6. At 1.6 the `two_incidents_one_user` pairs (one user's travel alerts and phishing alerts) scored up to 1.78 and merged. We moved it to 1.8 after seeing this data. That is a value tuned on one seed, so a fresh seed has to test it. Recall falls to 77% at 1.9.
+The threshold started at 1.6. At 1.6 the `two_incidents_one_user` pairs (one user's travel alerts and phishing alerts) scored up to 1.78 and merged. We moved it to 1.8 after seeing this data. That is a value tuned on one seed, so a fresh seed has to test it. At 1.9 recall falls to 79% and precision rises to 87%.
 
 **Why Jev here.** Sharing an entity is weak evidence. Many unrelated users sit behind one guest-network address, and unrelated incidents touch the same server. In the other direction, a real incident's alert can lose its user field. Telling these apart means reading the two descriptions together and asking whether one is the next step of the other. The coincidence question exists so that a shared address does not link strangers.
 
@@ -176,7 +176,7 @@ Each script reads the files the previous stage wrote. Jev answers are saved, so 
 
 1. **Generate** the alerts and the answer key.
 2. **Enrich** each alert with entity keys, asset context and time windows.
-3. **Rules (code).** The never-suppress list never closes an alert. Such an alert is at least investigated, and it escalates when Jev judges it a likely true positive. An allowlist closes known-harmless alerts with a reason, such as a scheduled backup or an approved scanner. The detector's severity is an input, never the answer.
+3. **Rules (code).** The never-suppress list never closes an alert. Such an alert is at least investigated, and it escalates when Jev judges it a likely true positive. An allowlist closes known-harmless alerts with a reason, such as a port scan from an approved scanner. The detector's severity is an input, never the answer.
 4. **Ask Jev about each alert** (Call 1 in [Where Jev is used, and why](#where-jev-is-used-and-why)). The four questions, their inputs and their use are listed there, and nowhere else.
 5. **Decide each alert.** Code closes, investigates or escalates, and leans toward escalating. The exact conditions, and the thresholds, are in Call 1.
 6. **Group into incidents.** Alerts that share a user, host or address within 72 hours become candidate pairs. Code settles the obvious links (the same user and host within 30 minutes). Jev (Call 2) judges the ambiguous ones. The linked pairs cluster into incidents. An incident's severity and disposition come from its alerts. Alerts on one user that do not fit together stay separate.
@@ -195,7 +195,7 @@ Each stage also runs as plain rules on the same alerts:
 - Grouping: shared entity inside a time window.
 - Account risk: the same score and window, with the detector's severity as the impact and a fixed confidence of 0.5. It has no grouping step, so an alert with no user is skipped and every alert counts in full, with no corroboration factor. Its `group_ids` column is only a pointer taken from the Jev groups.
 
-The grouping baseline is the floor Jev has to beat. On the current data it finds 1,393 candidate pairs and puts the 1,042 alerts into 363 groups. It links 5,451 alert pairs and gets all 225 true pairs, so recall is 100% and precision is 4%. Six groups each hold more than one real incident. Most of the wrong links join unrelated alerts that share a busy server or address (3,326 across scenarios, 1,760 in background noise).
+The grouping baseline is the floor Jev has to beat. On the current data it finds 1,393 candidate pairs and puts the 1,042 alerts into 363 groups. It links 5,451 alert pairs and gets all 225 true pairs, so recall is 100% and precision is 4%. One group holds more than one real incident. Most of the wrong links join unrelated alerts that share a busy server or address (3,326 across scenarios, 1,760 in background noise).
 
 The account ranking is graded, not tuned. The score weights are this design's own version of the approach and were not adjusted after seeing results. Of the 21 compromised accounts, Jev's ranking puts 10 in the top 10 and 19 in the top 20. Its first hit is at rank 1. The detector-severity ranking puts 6 in the top 10 and 10 in the top 20. Its first hit is at rank 2.
 
@@ -241,7 +241,7 @@ Each phase is checked before the next starts.
 Baseline floor (seed 101): the rules-only baseline misses 30 of 84 real alerts and 6 of 21 real incidents (no alert surfaced). 9 incidents have no escalated alert. 495 of 1042 alerts reach a person (52% fewer), and 517 of 958 benign alerts are closed. The misses are `slow_burn` (all 24 closed), `low_severity_real` (all 3) and `mfa_fatigue` (3 of 9). The benign look-alikes `benign_admin_tool` and `benign_backup` are all escalated.
 
 ## Results
-The rules were frozen (git tag `triage-rules-frozen`) before seed 202 ran. Seed 202 ran once, into `data_holdout/`, with no change to a rule, threshold, question or weight afterward.
+The rules were frozen (git tag `triage-rules-frozen`, which marks the rules at commit e42e04a) before seed 202 ran. Later commits changed only a metric count (real incidents merged in a group), guards against malformed answers, and docs. A replay shows no decision, group or score changed. Seed 202 ran once, into `data_holdout/`, with no change to a rule, threshold, question or weight afterward.
 
 **Seed 101 is the tuning seed.** The escalate and close thresholds and the link threshold (1.8) were chosen while looking at it. Its numbers are not a clean test. **Seed 202 is the only clean check.** The scenarios are the same kinds with new random draws. It tests the thresholds on new data, not the scenario list on new kinds of attack.
 
@@ -252,7 +252,7 @@ The rules were frozen (git tag `triage-rules-frozen`) before seed 202 ran. Seed 
 | Real incidents with no escalated alert | 9 | 0 |
 | Alerts that reach a person (of 1,042) | 495 | 656 |
 | Grouping precision / recall | 4% / 100% | 77% / 96% |
-| Groups holding more than one real incident | 6 | 1 |
+| Groups holding more than one real incident | 1 | 0 |
 | Compromised accounts in top 10 / top 20 (of 21) | 6 / 10 | 10 / 19 |
 
 | Seed 202 (clean check) | Baseline | Jev |
@@ -262,15 +262,15 @@ The rules were frozen (git tag `triage-rules-frozen`) before seed 202 ran. Seed 
 | Real incidents with no escalated alert | 9 | 0 |
 | Alerts that reach a person (of 1,042) | 502 | 674 |
 | Grouping precision / recall | 5% / 100% | 67% / 96% |
-| Groups holding more than one real incident | 4 | 2 |
+| Groups holding more than one real incident | 2 | 1 |
 | Compromised accounts in top 10 / top 20 (of 21) | 4 / 8 | 10 / 19 |
 
 **Seed 202 held on the headline.** Jev closed no real alert and every real incident got an escalated alert. The baseline missed 30 alerts and left 6 incidents with no surfaced alert.
 
 **Where Jev did worse than the baseline on seed 202.**
 - The queue is bigger: 674 alerts reach a person against 502, and Jev closes 368 of 958 benign alerts against 510. The design leans toward escalating, and this is the price. In `background` noise Jev escalates 113 false positives.
-- Stage accuracy: Jev's `stage` answer matches the true tactic on 60 of 84 real alerts, the detector's claimed tactic on 78.
-- Grouping precision fell from 77% to 67%, and two groups each hold more than one real incident (one on seed 101). The baseline is still far worse at 5%. Jev's 322 linked pairs include 48 wrong links among `benign_pentest` alerts and 36 across scenarios. The 9 missed links are all `benign_backup`, as on seed 101.
+- Stage accuracy: Jev's `stage` answer matches the true tactic on 60 of 84 real alerts, the detector's claimed tactic on 78. The generator sets the claimed tactic: it copies the true tactic for every real alert except the low-severity ones and one blank per `slow_burn` copy. So 78 is a stated baseline, not a measured detector.
+- Grouping precision fell from 77% to 67%, and one group holds more than one real incident (none on seed 101). The baseline is still far worse at 5%. Jev's 322 linked pairs include 48 wrong links among `benign_pentest` alerts and 36 across scenarios. The 9 missed links are all `benign_backup`, as on seed 101.
 - `slow_burn`: Jev escalates only 4 of 24 alerts and investigates 20. Nothing closes, so no incident is missed, but a person sees most of these alerts as "investigate", not "escalate". `mfa_fatigue` escalates 3 of 9 and investigates 6.
 - `low_severity_real`: no account reaches the top 10 for either ranking, and Jev places 1 of 3 in the top 20 (the baseline 0).
 

@@ -72,7 +72,8 @@ def grouping_metrics(key, groups):
     linked = {pair for members in by_group.values() for pair in combinations(sorted(members), 2)}
     truth = {pair for members in by_incident.values() for pair in combinations(sorted(members), 2)}
     correct = linked & truth
-    merged = sum(1 for members in by_group.values() if len({incident[a] for a in members if incident[a]}) > 1)
+    real = {k["alert_id"] for k in key if k["disposition"] == "true_positive"}
+    merged = sum(1 for members in by_group.values() if len({incident[a] for a in members if a in real and incident[a]}) > 1)
     scenario = {k["alert_id"]: k.get("scenario", "") for k in key}
     by_scenario = defaultdict(lambda: {"wrong_links": 0, "missed_links": 0})
     for label, pairs in (("wrong_links", linked - truth), ("missed_links", truth - linked)):

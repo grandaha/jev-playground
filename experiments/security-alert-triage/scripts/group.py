@@ -3,6 +3,7 @@
 Run from the experiment folder: ../../.venv/bin/python scripts/group.py baseline
 Writes data/work/candidate_pairs.csv and data/work/groups_baseline.csv.
 """
+import math
 import sys
 from collections import defaultdict
 from dataclasses import dataclass
@@ -72,6 +73,14 @@ class LinkPolicy:
     coincidence_p: float = 0.5   # a shared entity judged a coincidence at or above this does not link
 
 
+def _numbers(row, *fields):
+    """True when every field holds a finite number (a half-answered or malformed pair counts as unanswered)."""
+    try:
+        return all(math.isfinite(float(row[f])) for f in fields)
+    except (ValueError, TypeError, KeyError):
+        return False
+
+
 def decide_links(pairs, alerts_by_id, answers, policy=LinkPolicy()):
     rows = []
     for (a, b), shared in sorted(pairs.items()):
@@ -80,7 +89,7 @@ def decide_links(pairs, alerts_by_id, answers, policy=LinkPolicy()):
             rows.append({**row, "link": "yes", "rule": "obvious_link", "detail": "same user and host within 30 minutes"})
             continue
         ans = answers.get((a, b))
-        if not ans or ans.get("error") or ans.get("score", "") == "":
+        if not ans or ans.get("error") or not _numbers(ans, "score", "p_coincidence"):
             rows.append({**row, "link": "no", "rule": "no_jev_answer",
                          "detail": "unanswered pairs are not linked; each alert still gets its own decision"})
             continue

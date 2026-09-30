@@ -4,6 +4,7 @@ Run from the experiment folder: ../../.venv/bin/python scripts/decide.py
 Reads data/source/alerts.csv and data/work/answers_alerts.csv; writes data/work/decisions_alerts.csv.
 Closing is the risky choice, so every doubt resolves toward investigating.
 """
+import math
 from collections import defaultdict
 from dataclasses import dataclass
 
@@ -34,11 +35,15 @@ def _view(row):
     if not row or row.get("asked") != "yes" or row.get("error"):
         return None
     try:
-        return {"p_tp": float(row["p_true_positive"]),
-                "p_benign": float(row["p_false_positive"]) + float(row["p_benign_true_positive"]),
-                "expl": float(row["p_benign_explanation"]), "impact": float(row["impact"])}
+        p_tp, p_fp, p_btp = (float(row[k]) for k in ("p_true_positive", "p_false_positive", "p_benign_true_positive"))
+        expl, impact = float(row["p_benign_explanation"]), float(row["impact"])
     except (ValueError, TypeError):  # a malformed answer counts as no answer
         return None
+    if not all(math.isfinite(x) and 0 <= x <= 1 for x in (p_tp, p_fp, p_btp, expl)):
+        return None
+    if not (math.isfinite(impact) and 0 <= impact <= 3):   # impact is a 0 to 3 Score
+        return None
+    return {"p_tp": p_tp, "p_benign": p_fp + p_btp, "expl": expl, "impact": impact}
 
 
 def decide_alerts(alerts, answers, policy=Policy()):

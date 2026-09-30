@@ -44,8 +44,11 @@ def test_stage_accuracy_compares_jev_and_the_detector_on_real_alerts():
 
 
 def test_grouping_metrics_precision_recall_and_merged_incidents():
-    key = [{"alert_id": "A", "incident_id": "I1", "scenario": "s1"}, {"alert_id": "B", "incident_id": "I1", "scenario": "s1"},
-           {"alert_id": "C", "incident_id": "", "scenario": "s1"}, {"alert_id": "D", "incident_id": "I2", "scenario": "s2"}]
+    tp = "true_positive"
+    key = [{"alert_id": "A", "incident_id": "I1", "scenario": "s1", "disposition": tp},
+           {"alert_id": "B", "incident_id": "I1", "scenario": "s1", "disposition": tp},
+           {"alert_id": "C", "incident_id": "", "scenario": "s1", "disposition": "false_positive"},
+           {"alert_id": "D", "incident_id": "I2", "scenario": "s2", "disposition": tp}]
     perfect = evaluate.grouping_metrics(key, {"A": "G1", "B": "G1", "C": "G2", "D": "G3"})
     assert perfect["precision"] == 1.0 and perfect["recall"] == 1.0 and perfect["merged_incidents"] == 0
     assert perfect["by_scenario"] == {}
@@ -54,6 +57,16 @@ def test_grouping_metrics_precision_recall_and_merged_incidents():
     assert lumped["merged_incidents"] == 1   # one group holds two different real incidents
     assert lumped["by_scenario"]["s1"] == {"wrong_links": 2, "missed_links": 0}
     assert lumped["by_scenario"]["cross-scenario"] == {"wrong_links": 3, "missed_links": 0}
+
+
+def test_a_group_of_two_benign_incidents_is_not_a_merged_real_incident():
+    bp = "benign_true_positive"
+    key = [{"alert_id": "A", "incident_id": "I1", "scenario": "s1", "disposition": bp},
+           {"alert_id": "B", "incident_id": "I2", "scenario": "s1", "disposition": bp}]
+    assert evaluate.grouping_metrics(key, {"A": "G1", "B": "G1"})["merged_incidents"] == 0
+    tp = "true_positive"
+    real = [{**k, "disposition": tp} for k in key]
+    assert evaluate.grouping_metrics(real, {"A": "G1", "B": "G1"})["merged_incidents"] == 1
 
 
 def test_ranking_metrics_counts_compromised_accounts_in_the_top_k():

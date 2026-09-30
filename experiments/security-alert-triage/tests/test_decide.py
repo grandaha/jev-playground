@@ -75,3 +75,13 @@ def test_an_alert_with_no_entities_is_decided_alone():
 def test_malformed_answer_is_treated_as_no_answer():
     out = run([alert("A1")], [answer("A1", p_true_positive="")])
     assert out["A1"]["action"] == "investigate" and "no Jev answer" in out["A1"]["reason"]
+
+
+def test_nan_out_of_range_or_infinite_values_count_as_no_answer():
+    bad = [dict(p_true_positive="nan", p_false_positive="nan", p_benign_true_positive="nan",
+                impact="nan", p_benign_explanation="nan"),
+           dict(p_true_positive="-5"), dict(p_true_positive="1.5"), dict(impact="7"), dict(impact="-1"),
+           dict(p_benign_explanation="inf"), dict(p_false_positive="2")]
+    for over in bad:
+        out = run([alert("A1")], [answer("A1", **over)])
+        assert out["A1"]["action"] == "investigate" and "no Jev answer" in out["A1"]["reason"], over

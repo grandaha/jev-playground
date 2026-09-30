@@ -8,6 +8,10 @@ Finds duplicate customers in two messy, linked files, explains every decision, a
 
 Start with [experiments/customer-matching/README.md](experiments/customer-matching/README.md).
 
+## Security alert triage
+
+Triages synthetic security alerts, groups them into incidents and ranks accounts, with a rules-only baseline beside every stage. See [experiments/security-alert-triage/README.md](experiments/security-alert-triage/README.md).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

@@ -154,3 +154,13 @@ def test_probe_runs_write_to_a_separate_file():
     assert ask.answers_filename("links", None) == "answers_links.csv"
     assert ask.answers_filename("alerts", 5) == "answers_alerts_probe.csv"
     assert ask.answers_filename("links", 5) == "answers_links_probe.csv"
+
+
+def test_a_missing_disposition_option_raises_instead_of_counting_as_zero():
+    import pytest
+    with pytest.raises(ValueError):
+        ask.choice_probs(NS(probabilities={"a": 0.6}), ["a", "b"])
+    resp = fake_response()
+    resp.answers["disposition"] = NS(probabilities={"true_positive": 0.8, "false_positive": 0.2})
+    with pytest.raises(ValueError):
+        ask.parse_answers(resp)

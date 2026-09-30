@@ -22,7 +22,7 @@ python3.13 -m venv .venv
 experiments/security-alert-triage/replay.sh
 ```
 
-Then open `experiments/security-alert-triage/data/reports/triage_report.html`. The second dataset, `data_holdout/`, has its own report in the same place.
+Then open `experiments/security-alert-triage/data/reports/triage_report.html`. To rebuild the second dataset (seed 202) the same way, run `TRIAGE_DATA=data_holdout experiments/security-alert-triage/replay.sh`. Its report is `data_holdout/reports/triage_report.html`.
 
 ## Run it yourself
 
@@ -59,17 +59,17 @@ Seed 101 is the tuning seed: the thresholds were chosen while looking at it. See
 | Real incidents with no surfaced alert (of 21) | 6 | 0 | 6 | 0 |
 | Alerts that reach a person (of 1,042) | 495 | 656 | 502 | 674 |
 | Grouping precision / recall | 4% / 100% | 77% / 96% | 5% / 100% | 67% / 96% |
-| Groups with more than one real incident | 6 | 1 | 4 | 2 |
+| Groups with more than one real incident | 1 | 0 | 2 | 1 |
 | Compromised accounts in top 10 / top 20 (of 21) | 6 / 10 | 10 / 19 | 4 / 8 | 10 / 19 |
 
 On the fresh seed Jev closed no real alert and every real incident got an escalated alert. The price is a bigger queue: 674 alerts reach a person against 502 for the rules. Grouping precision fell from 77% to 67%, though the baseline is far lower at 5%.
 
-Jev's attack-stage answer matched the true stage on 60 of 84 real alerts, and the detector's own claim matched on 78. Seed 101 took 2,412 requests and seed 202 took 2,486, with no errors. [DESIGN.md](DESIGN.md#results) has the full tables and every scenario where Jev did worse than the baseline.
+Jev's attack-stage answer matched the true stage on 60 of 84 real alerts, and the detector's own claim matched on 78. The data generator sets the claimed tactic. It copies the true tactic for every real alert except the low-severity ones and one blank per `slow_burn` copy. So 78 is a stated baseline, not a measured detector. Seed 101 took 2,412 requests and seed 202 took 2,486, with no errors. [DESIGN.md](DESIGN.md#results) has the full tables and every scenario where Jev did worse than the baseline.
 
 ## What the tests found
 
 - The rules-only baseline closes every `slow_burn` alert and every `low_severity_real` alert, because each looks ignorable alone. That is where Jev's gain is largest.
-- Jev's first link threshold (1.6) merged one user's travel alerts with that user's phishing alerts. The threshold moved to 1.8 on seed 101. The fresh seed still shows two merged groups, both worth a look.
+- Jev's first link threshold (1.6) merged one user's travel alerts with that user's phishing alerts. The threshold moved to 1.8 on seed 101. The fresh seed still shows one group that holds two real incidents, which is worth a look. Jev also joins `benign_pentest` incidents to each other, which are benign.
 - Jev over-calls real attacks on noise: many false positives in the background score as likely true. That is why the queue stays large.
 - Five odd inputs each have a test. They are an alert with no entities, a failed Jev call, and alerts exactly at the 72-hour and 30-minute limits. The other two are one user with hundreds of findings and an empty `alerts.csv`. A failed Jev call becomes "investigate", never "close".
 

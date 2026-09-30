@@ -54,3 +54,13 @@ def test_grouping_metrics_precision_recall_and_merged_incidents():
     assert lumped["merged_incidents"] == 1   # one group holds two different real incidents
     assert lumped["by_scenario"]["s1"] == {"wrong_links": 2, "missed_links": 0}
     assert lumped["by_scenario"]["cross-scenario"] == {"wrong_links": 3, "missed_links": 0}
+
+
+def test_ranking_metrics_counts_compromised_accounts_in_the_top_k():
+    key = [{"compromised_user": "a", "scenario": "s1"}, {"compromised_user": "b", "scenario": "s2"},
+           {"compromised_user": "", "scenario": "s3"}]
+    ranked = [("x", 90.0), ("a", 80.0), ("y", 70.0), ("b", 60.0)]
+    m = evaluate.ranking_metrics(ranked, key, ks=(2, 4))
+    assert m["compromised"] == 2 and m["top_k"] == {2: 1, 4: 2} and m["first_hit_rank"] == 2
+    assert m["by_scenario"] == {"s1": {"compromised": 1, "top_2": 1, "top_4": 1},
+                                "s2": {"compromised": 1, "top_2": 0, "top_4": 1}}

@@ -197,6 +197,19 @@ Each stage also runs as plain rules on the same alerts:
 
 The grouping baseline is the floor Jev has to beat. On the current data it finds 1,393 candidate pairs and puts the 1,042 alerts into 363 groups. It links 5,451 alert pairs and gets all 225 true pairs, so recall is 100% and precision is 4%. Six groups each hold two different real incidents. Most of the wrong links join unrelated alerts that share a busy server or address (3,326 across scenarios, 1,760 in background noise).
 
+The account ranking is graded, not tuned. The score weights are this design's own version of the approach and were not adjusted after seeing results. Of the 21 compromised accounts, Jev's ranking puts 10 in the top 10 and 19 in the top 20. Its first hit is at rank 1. The detector-severity ranking puts 6 in the top 10 and 10 in the top 20. Its first hit is at rank 2.
+
+Each scenario has three compromised accounts. The pairs below are accounts in the top 10 and top 20, Jev first, then the baseline:
+- `low_severity_real`: 0 and 2, against 0 and 1.
+- `malware_lateral`: 3 and 3, against 0 and 2.
+- `mfa_fatigue`: 0 and 3, against 1 and 1.
+- `missing_entity_link`: 3 and 3, against 2 and 2.
+- `phish_to_exfil`: 2 and 3, against 2 and 2.
+- `slow_burn`: 1 and 2, against 0 and 0.
+- `two_incidents_one_user`: 1 and 3, against 1 and 2.
+
+Jev's weakest spots are `low_severity_real` and `mfa_fatigue`, where no account reaches the top 10.
+
 ## Metrics
 - Missed attacks: real alerts the pipeline closed, and real incidents with no escalated alert.
 - Queue: items a human must read, with an incident counting as one item, against alerts in.

@@ -85,8 +85,23 @@ def grouping_metrics(key, groups):
             "by_scenario": {s: dict(v) for s, v in by_scenario.items()}}
 
 
+def ranking_metrics(ranked, key, ks=(10, 20)):
+    scenario_of = {k["compromised_user"]: k["scenario"] for k in key if k["compromised_user"]}
+    compromised = set(scenario_of)
+    users = [u for u, _ in ranked]
+    hits = {k: sum(1 for u in users[:k] if u in compromised) for k in ks}
+    first = next((i for i, u in enumerate(users, 1) if u in compromised), None)
+    by_scenario = {}
+    for user, scenario in scenario_of.items():
+        row = by_scenario.setdefault(scenario, {"compromised": 0, **{f"top_{k}": 0 for k in ks}})
+        row["compromised"] += 1
+        for k in ks:
+            row[f"top_{k}"] += 1 if user in users[:k] else 0
+    return {"compromised": len(compromised), "top_k": hits, "first_hit_rank": first, "by_scenario": by_scenario}
+
+
 def main():
-    key = read_csv(path("answer_key.csv"))
+    key =read_csv(path("answer_key.csv"))
     sections = {}
     for name, file in (("Rules-only baseline", "decisions_alerts_baseline.csv"), ("Jev policy", "decisions_alerts.csv")):
         if os.path.exists(path(file)):
@@ -107,6 +122,15 @@ def main():
                   f"groups that hold two different real incidents: {g['merged_incidents']}")
             for s, v in sorted(g["by_scenario"].items()):
                 print(f"    {s:<26} wrong links {v['wrong_links']}, missed links {v['missed_links']}")
+    for name, file in (("Account risk with Jev", "output_account_risk.csv"),
+                       ("Account risk, detector severity only", "output_account_risk_baseline.csv")):
+        if os.path.exists(path(file)):
+            ranked = [(r["user"], float(r["score"])) for r in read_csv(path(file))]
+            m = ranking_metrics(ranked, key)
+            print(f"\n{name}: {m['compromised']} compromised accounts; "
+                  + ", ".join(f"top {k}: {n}" for k, n in m["top_k"].items()) + f"; first hit at rank {m['first_hit_rank']}")
+            for s, v in sorted(m["by_scenario"].items()):
+                print(f"    {s:<26} " + ", ".join(f"{label} {n}" for label, n in v.items()))
     for name, table in sections.items():
         print(f"\nBy scenario, {name}: disposition/action counts")
         for scenario in sorted(table):

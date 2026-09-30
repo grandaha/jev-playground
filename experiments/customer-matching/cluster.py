@@ -7,12 +7,13 @@ and status: `review_group` when two records in a group were a candidate pair tha
 (rejected or sent to review). Like Oracle's auto-merge, a group with any dissent needs a person.
 After accounts are clustered, re-run normalize.py: contacts then use the merged account id.
 """
+import os
 import csv
 import sys
 from collections import defaultdict
 from pathlib import Path
 
-DATA = Path(__file__).parent / "data"
+DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 
 
 def main(table):

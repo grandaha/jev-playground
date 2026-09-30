@@ -5,6 +5,7 @@ Writes data/masters_<table>.csv (one row per group) and data/master_scores_<tabl
 (one row per record: raw Jev answers, recency, final score). Re-weighting needs no new Jev calls:
 edit WEIGHTS and run with --reuse.
 """
+import os
 import argparse
 import csv
 import time
@@ -17,7 +18,7 @@ from typesafe_sdk import Noul, Score, TypeSafeClient
 
 from match import PUBLIC, view
 
-DATA = Path(__file__).parent / "data"
+DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 load_dotenv(DATA.parents[2] / ".env")
 
 WEIGHTS = {"completeness": 0.4, "clean_format": 0.3, "recency": 0.3}

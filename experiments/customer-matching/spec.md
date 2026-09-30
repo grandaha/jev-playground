@@ -52,3 +52,9 @@ Run 1 (random 1,000/3,000 set, single score) is tagged `run-1-single-score`; run
 - Two real bugs the scenarios found, both fixed: (1) "R. Smith" vs "Robert Smith" was never proposed as a pair, so contacts now also block on first initial + last-name sound + master account (`k_initial_acct`); (2) the same-email hard rule merged three different people sharing `info@`, so role mailboxes (info, sales, office, admin, support, contact, billing, hello, accounts, team) are no longer treated as identifiers.
 - Both policies (signals and single score) score the same on this set, so it cannot yet say which is better. The set is small (about 50 duplicate pairs per table) and was shaped while reading results, so a second seed is still needed before trusting it.
 - One contact in `dup_account` is never proposed: its account's two records were never merged (an unprovable moved account), so the contacts do not share a master account. That is the two-step flow working as designed, and a consequence of the account miss.
+
+## Holdout run (seed 23, `data_seed2/`)
+Run with `MATCH_DATA=data_seed2 SEED=23 experiments/customer-matching/run_all.sh` and no change to thresholds or rules. The seed 11 data in `data/` is untouched; the two sets are never mixed.
+- Accounts and contacts: 0 false merges and 100% recall on provable pairs (43 of 43 each), the same as seed 11. Siblings, twins and same-name-same-company are rejected; franchise accounts (6) and some junior/senior pairs (2) go to review.
+- What this does and does not show: the thresholds and rules are not tied to seed 11's random values. It does not show they cope with kinds of cases we have not written, because seed 23 uses the same scenarios with different random draws.
+- The master-record proxy fell (clean original chosen in 14 of 33 account groups, 21 of 43 contact groups) because recency is weighted 0.3 and is random noise in the data. Still open.

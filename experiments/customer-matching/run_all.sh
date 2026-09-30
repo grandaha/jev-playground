@@ -2,7 +2,7 @@
 # Full pipeline from the repo root. Makes about 2,000 Jev calls.
 set -e
 P=.venv/bin/python; D=experiments/customer-matching
-$P $D/generate.py; rm -f $D/data/groups_accounts.csv
+$P $D/generate.py
 $P $D/normalize.py >/dev/null; $P $D/block.py
 # step 1: accounts -> groups -> master account for each group
 $P $D/match.py ask accounts; $P $D/match.py decide accounts; $P $D/cluster.py accounts; $P $D/master.py accounts

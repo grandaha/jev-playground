@@ -3,13 +3,14 @@
 Run from repo root: .venv/bin/python experiments/customer-matching/evaluate.py
 Reads the decisions/groups/masters files written by the earlier stages. No Jev calls.
 """
+import os
 import csv
 from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 from itertools import combinations
 from pathlib import Path
 
-DATA = Path(__file__).parent / "data"
+DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 BASELINE_NAME_SIM = 0.88  # fuzzy-name baseline: merge any candidate pair whose names are at least this similar
 
 

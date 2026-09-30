@@ -10,6 +10,7 @@ Run from repo root:
   .venv/bin/python experiments/customer-matching/match.py ask accounts|contacts [--limit N]
   .venv/bin/python experiments/customer-matching/match.py decide accounts|contacts [--merge 5 --reject 1]
 """
+import os
 import argparse
 import csv
 import time
@@ -20,7 +21,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from typesafe_sdk import Noul, Score, TypeSafeClient
 
-DATA = Path(__file__).parent / "data"
+DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 load_dotenv(DATA.parents[2] / ".env")
 WORKERS = 8
 

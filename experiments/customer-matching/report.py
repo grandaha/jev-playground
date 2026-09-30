@@ -4,6 +4,7 @@ Run from repo root: .venv/bin/python experiments/customer-matching/report.py
 Open data/report.html in a browser. Shows both records side by side, what Jev and the rules said,
 and (because the data is synthetic) whether the decision was right, from the answer key.
 """
+import os
 import csv
 import json
 from itertools import combinations
@@ -12,7 +13,7 @@ from pathlib import Path
 
 from evaluate import corroborated
 
-DATA = Path(__file__).parent / "data"
+DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 FIELDS = {"accounts": ["name", "website", "phone", "address", "city", "state", "zip", "industry", "source_system", "updated_at"],
           "contacts": ["first_name", "last_name", "email", "phone", "title", "address", "city", "state", "zip", "account_id", "source_system", "updated_at"]}
 NORM = {"accounts": ["name_norm", "phone_norm", "address_norm"],

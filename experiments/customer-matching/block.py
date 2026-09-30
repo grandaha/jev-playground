@@ -4,12 +4,13 @@ Run from repo root: .venv/bin/python experiments/customer-matching/block.py
 Writes data/candidates_accounts.csv and data/candidates_contacts.csv
 (columns: id_a, id_b, block_keys = the k_* keys the two records share).
 """
+import os
 import csv
 from collections import defaultdict
 from itertools import combinations
 from pathlib import Path
 
-DATA = Path(__file__).parent / "data"
+DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 MAX_BLOCK = 50  # ponytail: oversized blocks are skipped (too generic to mean anything); raise or sub-block if recall needs it
 
 

@@ -4,14 +4,15 @@ Run from repo root: .venv/bin/python experiments/customer-matching/generate.py
 Writes data/accounts.csv, data/contacts.csv, data/answer_key.csv (table, record_id, true_id, kind, scenario).
 Scenarios marked DUP are the same entity appearing more than once; DISTINCT are look-alikes that must NOT merge.
 """
+import os
 import csv
 import random
 import re
 from datetime import date, timedelta
 from pathlib import Path
 
-SEED = 11
-OUT = Path(__file__).parent / "data"
+SEED = int(os.environ.get("SEED", 11))
+OUT = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")
 rng = random.Random(SEED)
 
 NICKS = {"Robert": ["Bob", "Rob"], "William": ["Bill", "Will"], "Elizabeth": ["Liz", "Beth"],
@@ -279,6 +280,8 @@ def write(path, rows):
 
 def main():
     OUT.mkdir(exist_ok=True)
+    for stale in ("groups_accounts.csv", "masters_accounts.csv"):  # derived files from an earlier run must not leak into this one
+        (OUT / stale).unlink(missing_ok=True)
     arows, accounts = make_accounts()
     rng.shuffle(arows)
     a_records, a_out, key = {}, [], []

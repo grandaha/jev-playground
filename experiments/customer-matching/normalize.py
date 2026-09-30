@@ -5,13 +5,14 @@ Reads data/accounts.csv, data/contacts.csv; writes data/accounts_norm.csv, data/
 Contacts also get master_account_id (from the account cluster + master steps), which feeds k_name_acct.
 Each k_* column is a match key. Records sharing a non-empty k_* value become candidates in block.py.
 """
+import os
 import csv
 import re
 from pathlib import Path
 
 from generate import NICKS  # nickname table (nickname -> canonical name, inverted below)
 
-DATA = Path(__file__).parent / "data"
+DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 CANON = {n.lower(): full.lower() for full, ns in NICKS.items() for n in ns}
 COMPANY_NOISE = {"inc", "incorporated", "llc", "co", "corp", "corporation", "ltd", "group", "company"}
 STREET = {"street": "st", "avenue": "ave", "road": "rd", "boulevard": "blvd", "drive": "dr"}

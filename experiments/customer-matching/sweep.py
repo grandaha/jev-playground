@@ -4,6 +4,7 @@ Run from repo root: .venv/bin/python experiments/customer-matching/sweep.py
 For each table: merge threshold vs precision/recall, and reject threshold vs review-queue size.
 Recall is measured on provable pairs (true duplicates that share evidence beyond the name).
 """
+import os
 import csv
 from collections import defaultdict
 from itertools import combinations
@@ -12,7 +13,7 @@ from pathlib import Path
 from evaluate import corroborated
 from match import decide_one
 
-DATA = Path(__file__).parent / "data"
+DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
 MERGES = [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7]
 REJECTS = [-1, 0, 0.5, 1, 1.5, 2, 3]
 

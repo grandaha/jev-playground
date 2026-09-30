@@ -22,7 +22,7 @@ python3.13 -m venv .venv
 experiments/security-alert-triage/replay.sh
 ```
 
-Then open `experiments/security-alert-triage/data/reports/triage_report.html`. To rebuild the second dataset (seed 202) the same way, run `TRIAGE_DATA=data_holdout experiments/security-alert-triage/replay.sh`. Its report is `data_holdout/reports/triage_report.html`.
+Then open `experiments/security-alert-triage/data/reports/triage_report.html`. To rebuild the other datasets the same way, run `TRIAGE_DATA=data_holdout experiments/security-alert-triage/replay.sh` (seed 202) or `TRIAGE_DATA=data_holdout_303 experiments/security-alert-triage/replay.sh` (seed 303). Each report is in that folder's `reports/triage_report.html`.
 
 ## Run it yourself
 
@@ -32,7 +32,7 @@ Create a key at [console.typesafe.ai](https://console.typesafe.ai/) and put it i
 TYPESAFE_API_KEY=your-key
 ```
 
-Then run `experiments/security-alert-triage/run_all.sh`. It builds the dataset from scratch and sends Jev about 2,400 requests: one per alert and one per ambiguous pair of alerts. To build a different dataset, run `SEED=202 TRIAGE_DATA=data_holdout experiments/security-alert-triage/run_all.sh`.
+Then run `experiments/security-alert-triage/run_all.sh`. It builds the dataset from scratch and sends Jev about 2,400 requests: one per alert and one per ambiguous pair of alerts. To build another dataset, run `SEED=202 TRIAGE_DATA=data_holdout experiments/security-alert-triage/run_all.sh`.
 
 ## How it works
 
@@ -51,25 +51,25 @@ The exact questions, what goes in, what code does with each answer, why a model 
 
 ## Results
 
-Seed 101 is the tuning seed: the thresholds were chosen while looking at it. Seed 202 was generated after the rules were frozen and run once. It is the only clean check.
+Seed 101 is the tuning seed: the thresholds were chosen while looking at it. Seeds 202 and 303 were generated after the rules were frozen and each ran once. They are the clean checks.
 
-| | Seed 101 baseline | Seed 101 Jev | Seed 202 baseline | Seed 202 Jev |
-|---|---|---|---|---|
-| Missed real alerts (of 84) | 30 | 0 | 30 | 0 |
-| Real incidents with no surfaced alert (of 21) | 6 | 0 | 6 | 0 |
-| Alerts that reach a person (of 1,042) | 495 | 656 | 502 | 674 |
-| Grouping precision / recall | 4% / 100% | 77% / 96% | 5% / 100% | 67% / 96% |
-| Groups with more than one real incident | 1 | 0 | 2 | 1 |
-| Compromised accounts in top 10 / top 20 (of 21) | 6 / 10 | 10 / 19 | 4 / 8 | 10 / 19 |
+| | Seed 101 baseline | Seed 101 Jev | Seed 202 baseline | Seed 202 Jev | Seed 303 baseline | Seed 303 Jev |
+|---|---|---|---|---|---|---|
+| Missed real alerts (of 84) | 30 | 0 | 30 | 0 | 30 | 0 |
+| Real incidents with no surfaced alert (of 21) | 6 | 0 | 6 | 0 | 6 | 0 |
+| Alerts that reach a person (of 1,042) | 495 | 656 | 502 | 674 | 484 | 647 |
+| Grouping precision / recall | 4% / 100% | 77% / 96% | 5% / 100% | 67% / 96% | 3% / 100% | 82% / 96% |
+| Groups with more than one real incident | 1 | 0 | 2 | 1 | 1 | 0 |
+| Compromised accounts in top 10 / top 20 (of 21) | 6 / 10 | 10 / 19 | 4 / 8 | 10 / 19 | 3 / 8 | 10 / 17 |
 
-On the fresh seed Jev closed no real alert and every real incident got an escalated alert. The price is a bigger queue: 674 alerts reach a person against 502 for the rules. Grouping precision fell from 77% to 67%, though the baseline is far lower at 5%.
+On both fresh seeds Jev closed no real alert and every real incident got an escalated alert. The price is a bigger queue. On seed 202, 674 alerts reach a person against 502 for the rules. On seed 303 it is 647 against 484. Grouping precision was 67% on seed 202 and 82% on seed 303, against 77% on seed 101. The baseline is far lower at 3% to 5%. On seed 303 Jev places 17 of 21 compromised accounts in the top 20, where it placed 19 on the other two.
 
-Jev's attack-stage answer matched the true stage on 60 of 84 real alerts, and the detector's own claim matched on 78. The data generator sets the claimed tactic. It copies the true tactic for every real alert except the low-severity ones and one blank per `slow_burn` copy. So 78 is a stated baseline, not a measured detector. Seed 101 took 2,412 requests and seed 202 took 2,486, with no errors. [DESIGN.md](DESIGN.md#results) has the full tables and every scenario where Jev did worse than the baseline.
+Jev's attack-stage answer matched the true stage on 60 of 84 real alerts, and the detector's own claim matched on 78. The data generator sets the claimed tactic. It copies the true tactic for every real alert except the low-severity ones and one blank per `slow_burn` copy. So 78 is a stated baseline, not a measured detector. Seed 101 took 2,412 requests, seed 202 took 2,486 and seed 303 took 2,444, with no errors. [DESIGN.md](DESIGN.md#results) has the full tables and every scenario where Jev did worse than the baseline.
 
 ## What the tests found
 
 - The rules-only baseline closes every `slow_burn` alert and every `low_severity_real` alert, because each looks ignorable alone. That is where Jev's gain is largest.
-- Jev's first link threshold (1.6) merged one user's travel alerts with that user's phishing alerts. The threshold moved to 1.8 on seed 101. The fresh seed still shows one group that holds two real incidents, which is worth a look. Jev also joins `benign_pentest` incidents to each other, which are benign.
+- Jev's first link threshold (1.6) merged one user's travel alerts with that user's phishing alerts. The threshold moved to 1.8 on seed 101. Seed 202 still shows one group that holds two real incidents, which is worth a look. Seed 303 shows none. Jev also joins `benign_pentest` incidents to each other, which are benign.
 - Jev over-calls real attacks on noise: many false positives in the background score as likely true. That is why the queue stays large.
 - Five odd inputs each have a test. They are an alert with no entities, a failed Jev call, and alerts exactly at the 72-hour and 30-minute limits. The other two are one user with hundreds of findings and an empty `alerts.csv`. A failed Jev call becomes "investigate", never "close".
 
@@ -77,7 +77,7 @@ Jev's attack-stage answer matched the true stage on 60 of 84 real alerts, and th
 
 - The author wrote both the scenarios and the rules, so the results flatter the design. A real alert stream has cases nobody thought of.
 - The set is small: 21 real incidents per seed, three of each scenario kind. One missed incident would change the headline.
-- Thresholds were tuned on seed 101. Seed 202 checks them once, and a second round with a new seed would be the next check.
+- Thresholds were tuned on seed 101. Seeds 202 and 303 check them, once each.
 - The account ranking is an input for a human and never a verdict. It is about people, and a high score means "look here first", not "this person is compromised".
 
 The full write-up is in [DESIGN.md](DESIGN.md).

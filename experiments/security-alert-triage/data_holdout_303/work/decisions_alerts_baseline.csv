@@ -1,0 +1,1043 @@
+alert_id,action,reason
+ALT-00001,close,detector severity low
+ALT-00002,investigate,detector severity medium
+ALT-00003,close,detector severity low
+ALT-00004,close,detector severity low
+ALT-00005,investigate,detector severity medium
+ALT-00006,investigate,detector severity medium
+ALT-00007,close,detector severity low
+ALT-00008,close,detector severity low
+ALT-00009,close,detector severity low
+ALT-00010,close,detector severity low
+ALT-00011,investigate,detector severity medium
+ALT-00012,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00013,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00014,close,detector severity low
+ALT-00015,investigate,detector severity medium
+ALT-00016,investigate,detector severity medium
+ALT-00017,investigate,detector severity medium
+ALT-00018,close,detector severity low
+ALT-00019,investigate,detector severity medium
+ALT-00020,investigate,detector severity medium
+ALT-00021,close,detector severity low
+ALT-00022,investigate,detector severity medium
+ALT-00023,close,detector severity low
+ALT-00024,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00025,investigate,detector severity medium
+ALT-00026,investigate,detector severity medium
+ALT-00027,investigate,detector severity medium
+ALT-00028,close,detector severity low
+ALT-00029,close,detector severity low
+ALT-00030,investigate,detector severity medium
+ALT-00031,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00032,close,detector severity low
+ALT-00033,close,detector severity low
+ALT-00034,close,detector severity low
+ALT-00035,investigate,detector severity medium
+ALT-00036,close,detector severity low
+ALT-00037,close,detector severity low
+ALT-00038,close,detector severity low
+ALT-00039,investigate,detector severity medium
+ALT-00040,close,detector severity low
+ALT-00041,close,detector severity low
+ALT-00042,close,detector severity low
+ALT-00043,close,detector severity low
+ALT-00044,investigate,detector severity medium
+ALT-00045,investigate,detector severity medium
+ALT-00046,investigate,detector severity medium
+ALT-00047,close,detector severity low
+ALT-00048,close,detector severity low
+ALT-00049,close,detector severity low
+ALT-00050,close,detector severity low
+ALT-00051,close,detector severity low
+ALT-00052,investigate,detector severity medium
+ALT-00053,close,detector severity low
+ALT-00054,investigate,detector severity medium
+ALT-00055,close,detector severity low
+ALT-00056,close,detector severity low
+ALT-00057,investigate,detector severity medium
+ALT-00058,investigate,detector severity medium
+ALT-00059,close,detector severity low
+ALT-00060,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00061,close,detector severity low
+ALT-00062,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00063,investigate,detector severity medium
+ALT-00064,close,detector severity low
+ALT-00065,investigate,detector severity medium
+ALT-00066,close,detector severity low
+ALT-00067,investigate,detector severity medium
+ALT-00068,investigate,detector severity medium
+ALT-00069,close,detector severity low
+ALT-00070,investigate,detector severity medium
+ALT-00071,close,detector severity low
+ALT-00072,close,detector severity low
+ALT-00073,close,detector severity low
+ALT-00074,investigate,detector severity medium
+ALT-00075,close,detector severity low
+ALT-00076,close,detector severity low
+ALT-00077,investigate,detector severity medium
+ALT-00078,investigate,detector severity medium
+ALT-00079,close,detector severity low
+ALT-00080,investigate,detector severity medium
+ALT-00081,close,detector severity low
+ALT-00082,close,detector severity low
+ALT-00083,close,detector severity low
+ALT-00084,close,detector severity low
+ALT-00085,close,detector severity low
+ALT-00086,investigate,detector severity medium
+ALT-00087,close,detector severity low
+ALT-00088,close,detector severity low
+ALT-00089,investigate,detector severity medium
+ALT-00090,close,detector severity low
+ALT-00091,investigate,detector severity medium
+ALT-00092,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00093,close,detector severity low
+ALT-00094,close,detector severity low
+ALT-00095,investigate,detector severity medium
+ALT-00096,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00097,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00098,close,detector severity low
+ALT-00099,investigate,detector severity medium
+ALT-00100,close,detector severity low
+ALT-00101,close,detector severity low
+ALT-00102,close,detector severity low
+ALT-00103,close,detector severity informational
+ALT-00104,close,detector severity informational
+ALT-00105,investigate,detector severity medium
+ALT-00106,investigate,detector severity medium
+ALT-00107,investigate,detector severity medium
+ALT-00108,close,detector severity low
+ALT-00109,investigate,detector severity medium
+ALT-00110,investigate,detector severity medium
+ALT-00111,close,detector severity low
+ALT-00112,close,detector severity low
+ALT-00113,investigate,detector severity medium
+ALT-00114,close,detector severity low
+ALT-00115,close,detector severity low
+ALT-00116,close,detector severity low
+ALT-00117,investigate,detector severity medium
+ALT-00118,investigate,detector severity medium
+ALT-00119,close,detector severity low
+ALT-00120,investigate,detector severity medium
+ALT-00121,close,detector severity low
+ALT-00122,close,detector severity low
+ALT-00123,close,detector severity low
+ALT-00124,investigate,detector severity medium
+ALT-00125,close,detector severity low
+ALT-00126,investigate,detector severity medium
+ALT-00127,investigate,detector severity medium
+ALT-00128,close,detector severity low
+ALT-00129,close,detector severity low
+ALT-00130,close,allowlist: authorized test host scans
+ALT-00131,close,detector severity low
+ALT-00132,close,allowlist: authorized test host scans
+ALT-00133,investigate,detector severity medium
+ALT-00134,escalate,detector severity high
+ALT-00135,escalate,detector severity high
+ALT-00136,investigate,detector severity medium
+ALT-00137,close,detector severity low
+ALT-00138,close,detector severity low
+ALT-00139,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00140,close,detector severity low
+ALT-00141,investigate,detector severity medium
+ALT-00142,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00143,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00144,close,detector severity low
+ALT-00145,close,detector severity low
+ALT-00146,close,detector severity low
+ALT-00147,investigate,detector severity medium
+ALT-00148,close,detector severity low
+ALT-00149,investigate,detector severity medium
+ALT-00150,close,detector severity low
+ALT-00151,close,detector severity low
+ALT-00152,investigate,detector severity medium
+ALT-00153,close,detector severity low
+ALT-00154,close,detector severity low
+ALT-00155,close,detector severity low
+ALT-00156,close,detector severity low
+ALT-00157,close,detector severity low
+ALT-00158,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00159,close,detector severity low
+ALT-00160,close,detector severity low
+ALT-00161,close,detector severity low
+ALT-00162,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00163,close,detector severity low
+ALT-00164,investigate,detector severity medium
+ALT-00165,investigate,detector severity medium
+ALT-00166,investigate,detector severity medium
+ALT-00167,investigate,detector severity medium
+ALT-00168,close,detector severity low
+ALT-00169,close,detector severity low
+ALT-00170,close,detector severity low
+ALT-00171,close,detector severity low
+ALT-00172,close,detector severity low
+ALT-00173,close,detector severity low
+ALT-00174,close,detector severity low
+ALT-00175,close,detector severity low
+ALT-00176,close,detector severity low
+ALT-00177,close,detector severity low
+ALT-00178,close,detector severity informational
+ALT-00179,close,detector severity low
+ALT-00180,close,detector severity low
+ALT-00181,investigate,detector severity medium
+ALT-00182,close,detector severity informational
+ALT-00183,investigate,detector severity medium
+ALT-00184,close,detector severity low
+ALT-00185,close,detector severity low
+ALT-00186,close,detector severity low
+ALT-00187,close,detector severity low
+ALT-00188,investigate,detector severity medium
+ALT-00189,close,detector severity low
+ALT-00190,close,detector severity low
+ALT-00191,close,detector severity low
+ALT-00192,close,detector severity low
+ALT-00193,investigate,detector severity medium
+ALT-00194,close,detector severity low
+ALT-00195,close,detector severity low
+ALT-00196,close,detector severity low
+ALT-00197,close,detector severity low
+ALT-00198,close,detector severity low
+ALT-00199,investigate,detector severity medium
+ALT-00200,investigate,detector severity medium
+ALT-00201,close,detector severity low
+ALT-00202,close,detector severity low
+ALT-00203,close,detector severity low
+ALT-00204,investigate,detector severity medium
+ALT-00205,close,detector severity low
+ALT-00206,investigate,detector severity medium
+ALT-00207,close,detector severity low
+ALT-00208,close,detector severity low
+ALT-00209,close,detector severity low
+ALT-00210,investigate,detector severity medium
+ALT-00211,investigate,detector severity medium
+ALT-00212,close,detector severity low
+ALT-00213,close,detector severity low
+ALT-00214,close,detector severity low
+ALT-00215,close,detector severity low
+ALT-00216,investigate,detector severity medium
+ALT-00217,close,detector severity low
+ALT-00218,close,detector severity low
+ALT-00219,close,detector severity low
+ALT-00220,investigate,detector severity medium
+ALT-00221,close,detector severity low
+ALT-00222,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00223,investigate,detector severity medium
+ALT-00224,close,detector severity low
+ALT-00225,close,detector severity low
+ALT-00226,close,detector severity low
+ALT-00227,investigate,detector severity medium
+ALT-00228,close,detector severity low
+ALT-00229,investigate,detector severity medium
+ALT-00230,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00231,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00232,close,detector severity low
+ALT-00233,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00234,close,detector severity low
+ALT-00235,close,detector severity low
+ALT-00236,close,detector severity low
+ALT-00237,close,detector severity low
+ALT-00238,close,detector severity low
+ALT-00239,close,detector severity low
+ALT-00240,close,detector severity low
+ALT-00241,investigate,detector severity medium
+ALT-00242,close,detector severity low
+ALT-00243,investigate,detector severity medium
+ALT-00244,close,detector severity low
+ALT-00245,close,detector severity low
+ALT-00246,investigate,detector severity medium
+ALT-00247,close,detector severity low
+ALT-00248,close,detector severity low
+ALT-00249,close,detector severity low
+ALT-00250,close,detector severity low
+ALT-00251,close,detector severity low
+ALT-00252,investigate,detector severity medium
+ALT-00253,investigate,detector severity medium
+ALT-00254,investigate,detector severity medium
+ALT-00255,close,detector severity low
+ALT-00256,close,detector severity low
+ALT-00257,close,detector severity low
+ALT-00258,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00259,investigate,detector severity medium
+ALT-00260,close,detector severity low
+ALT-00261,close,detector severity low
+ALT-00262,investigate,detector severity medium
+ALT-00263,escalate,detector severity high
+ALT-00264,investigate,detector severity medium
+ALT-00265,close,detector severity low
+ALT-00266,close,detector severity low
+ALT-00267,investigate,detector severity medium
+ALT-00268,investigate,detector severity medium
+ALT-00269,investigate,detector severity medium
+ALT-00270,close,detector severity low
+ALT-00271,investigate,detector severity medium
+ALT-00272,escalate,detector severity high; never-suppress: claimed tactic privilege_escalation
+ALT-00273,investigate,detector severity medium
+ALT-00274,investigate,detector severity medium
+ALT-00275,close,detector severity low
+ALT-00276,close,detector severity low
+ALT-00277,close,detector severity low
+ALT-00278,investigate,detector severity medium
+ALT-00279,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00280,investigate,detector severity medium
+ALT-00281,close,detector severity low
+ALT-00282,investigate,detector severity medium
+ALT-00283,close,detector severity low
+ALT-00284,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00285,investigate,detector severity medium
+ALT-00286,close,detector severity low
+ALT-00287,investigate,detector severity medium
+ALT-00288,close,detector severity low
+ALT-00289,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00290,close,detector severity low
+ALT-00291,close,detector severity low
+ALT-00292,close,detector severity low
+ALT-00293,close,detector severity low
+ALT-00294,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00295,investigate,detector severity medium
+ALT-00296,close,detector severity low
+ALT-00297,close,detector severity low
+ALT-00298,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00299,close,detector severity low
+ALT-00300,investigate,detector severity medium
+ALT-00301,close,detector severity low
+ALT-00302,close,detector severity low
+ALT-00303,close,detector severity low
+ALT-00304,close,detector severity low
+ALT-00305,investigate,detector severity medium
+ALT-00306,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00307,investigate,detector severity medium
+ALT-00308,investigate,detector severity medium
+ALT-00309,close,detector severity low
+ALT-00310,close,detector severity low
+ALT-00311,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00312,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00313,close,detector severity low
+ALT-00314,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00315,investigate,detector severity medium
+ALT-00316,investigate,detector severity medium
+ALT-00317,escalate,detector severity high
+ALT-00318,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00319,close,detector severity low
+ALT-00320,investigate,detector severity medium
+ALT-00321,investigate,detector severity medium
+ALT-00322,investigate,detector severity medium
+ALT-00323,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00324,investigate,detector severity medium
+ALT-00325,close,detector severity low
+ALT-00326,close,detector severity low
+ALT-00327,close,detector severity low
+ALT-00328,close,detector severity low
+ALT-00329,investigate,detector severity medium
+ALT-00330,close,detector severity low
+ALT-00331,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00332,investigate,detector severity medium
+ALT-00333,close,detector severity low
+ALT-00334,close,detector severity low
+ALT-00335,close,detector severity low
+ALT-00336,close,detector severity informational
+ALT-00337,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00338,investigate,detector severity medium
+ALT-00339,close,detector severity informational
+ALT-00340,investigate,detector severity medium
+ALT-00341,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00342,investigate,detector severity medium
+ALT-00343,close,detector severity low
+ALT-00344,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00345,close,detector severity low
+ALT-00346,investigate,detector severity medium
+ALT-00347,close,detector severity low
+ALT-00348,investigate,detector severity medium
+ALT-00349,close,detector severity low
+ALT-00350,close,detector severity low
+ALT-00351,investigate,detector severity medium
+ALT-00352,close,detector severity low
+ALT-00353,investigate,detector severity medium
+ALT-00354,close,detector severity low
+ALT-00355,close,detector severity low
+ALT-00356,investigate,detector severity medium
+ALT-00357,close,detector severity low
+ALT-00358,investigate,detector severity medium
+ALT-00359,investigate,detector severity medium
+ALT-00360,investigate,detector severity medium
+ALT-00361,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00362,close,detector severity low
+ALT-00363,close,detector severity low
+ALT-00364,investigate,detector severity medium
+ALT-00365,close,detector severity low
+ALT-00366,close,detector severity low
+ALT-00367,investigate,detector severity medium
+ALT-00368,close,detector severity low
+ALT-00369,investigate,detector severity medium
+ALT-00370,close,detector severity low
+ALT-00371,investigate,detector severity medium
+ALT-00372,close,detector severity low
+ALT-00373,close,detector severity low
+ALT-00374,investigate,detector severity medium
+ALT-00375,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00376,close,detector severity low
+ALT-00377,investigate,detector severity medium
+ALT-00378,investigate,detector severity medium
+ALT-00379,close,detector severity low
+ALT-00380,close,detector severity low
+ALT-00381,close,detector severity low
+ALT-00382,investigate,detector severity medium
+ALT-00383,close,detector severity low
+ALT-00384,close,detector severity low
+ALT-00385,close,detector severity low
+ALT-00386,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00387,close,detector severity low
+ALT-00388,escalate,detector severity high
+ALT-00389,escalate,detector severity high
+ALT-00390,escalate,detector severity high
+ALT-00391,escalate,detector severity high
+ALT-00392,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00393,investigate,detector severity medium
+ALT-00394,escalate,detector severity high
+ALT-00395,close,detector severity low
+ALT-00396,close,detector severity low
+ALT-00397,close,detector severity low
+ALT-00398,close,detector severity low
+ALT-00399,close,detector severity low
+ALT-00400,close,detector severity low
+ALT-00401,investigate,detector severity medium
+ALT-00402,close,detector severity low
+ALT-00403,investigate,detector severity medium
+ALT-00404,escalate,detector severity high
+ALT-00405,close,detector severity low
+ALT-00406,close,detector severity low
+ALT-00407,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00408,close,detector severity low
+ALT-00409,close,detector severity low
+ALT-00410,investigate,detector severity medium
+ALT-00411,investigate,detector severity medium
+ALT-00412,close,detector severity low
+ALT-00413,investigate,detector severity medium
+ALT-00414,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00415,close,detector severity low
+ALT-00416,close,detector severity low
+ALT-00417,close,detector severity low
+ALT-00418,close,detector severity low
+ALT-00419,close,detector severity low
+ALT-00420,close,detector severity low
+ALT-00421,investigate,detector severity medium
+ALT-00422,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00423,close,detector severity low
+ALT-00424,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00425,investigate,detector severity medium
+ALT-00426,close,detector severity low
+ALT-00427,investigate,detector severity medium
+ALT-00428,close,detector severity low
+ALT-00429,close,detector severity low
+ALT-00430,investigate,detector severity medium
+ALT-00431,close,detector severity low
+ALT-00432,close,detector severity low
+ALT-00433,close,detector severity low
+ALT-00434,close,detector severity low
+ALT-00435,close,detector severity low
+ALT-00436,close,detector severity low
+ALT-00437,investigate,detector severity medium
+ALT-00438,investigate,detector severity medium
+ALT-00439,close,detector severity low
+ALT-00440,investigate,detector severity medium
+ALT-00441,investigate,detector severity medium
+ALT-00442,close,detector severity low
+ALT-00443,investigate,detector severity medium
+ALT-00444,close,detector severity low
+ALT-00445,close,detector severity low
+ALT-00446,close,detector severity low
+ALT-00447,close,detector severity low
+ALT-00448,investigate,detector severity medium
+ALT-00449,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00450,close,detector severity low
+ALT-00451,escalate,detector severity high
+ALT-00452,escalate,detector severity high
+ALT-00453,close,detector severity low
+ALT-00454,escalate,detector severity high
+ALT-00455,investigate,detector severity medium
+ALT-00456,close,detector severity low
+ALT-00457,escalate,detector severity high
+ALT-00458,close,detector severity low
+ALT-00459,close,detector severity low
+ALT-00460,investigate,detector severity medium
+ALT-00461,close,detector severity low
+ALT-00462,close,detector severity low
+ALT-00463,investigate,detector severity medium
+ALT-00464,close,detector severity low
+ALT-00465,close,detector severity low
+ALT-00466,investigate,detector severity medium
+ALT-00467,close,detector severity low
+ALT-00468,close,detector severity low
+ALT-00469,close,detector severity low
+ALT-00470,close,detector severity low
+ALT-00471,investigate,detector severity medium
+ALT-00472,investigate,detector severity medium
+ALT-00473,escalate,detector severity high
+ALT-00474,investigate,detector severity medium
+ALT-00475,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00476,close,detector severity low
+ALT-00477,close,detector severity low
+ALT-00478,investigate,detector severity medium
+ALT-00479,close,detector severity low
+ALT-00480,escalate,detector severity high
+ALT-00481,investigate,detector severity medium
+ALT-00482,investigate,detector severity medium
+ALT-00483,close,detector severity low
+ALT-00484,investigate,detector severity medium
+ALT-00485,close,detector severity low
+ALT-00486,close,detector severity low
+ALT-00487,investigate,detector severity medium
+ALT-00488,close,detector severity low
+ALT-00489,close,detector severity low
+ALT-00490,investigate,detector severity medium
+ALT-00491,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00492,investigate,detector severity medium
+ALT-00493,close,detector severity low
+ALT-00494,close,detector severity low
+ALT-00495,investigate,detector severity medium
+ALT-00496,escalate,detector severity high
+ALT-00497,close,detector severity low
+ALT-00498,investigate,detector severity medium
+ALT-00499,close,detector severity low
+ALT-00500,close,detector severity low
+ALT-00501,close,detector severity low
+ALT-00502,investigate,detector severity medium
+ALT-00503,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00504,close,detector severity low
+ALT-00505,close,detector severity low
+ALT-00506,close,detector severity low
+ALT-00507,close,detector severity low
+ALT-00508,close,detector severity low
+ALT-00509,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00510,investigate,detector severity medium
+ALT-00511,close,detector severity low
+ALT-00512,close,detector severity low
+ALT-00513,investigate,detector severity medium
+ALT-00514,close,detector severity low
+ALT-00515,close,detector severity low
+ALT-00516,close,detector severity low
+ALT-00517,close,detector severity low
+ALT-00518,investigate,detector severity medium
+ALT-00519,close,detector severity informational
+ALT-00520,close,detector severity low
+ALT-00521,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00522,close,detector severity low
+ALT-00523,close,detector severity low
+ALT-00524,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00525,close,detector severity low
+ALT-00526,investigate,detector severity medium
+ALT-00527,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00528,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00529,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00530,investigate,detector severity medium
+ALT-00531,investigate,detector severity medium
+ALT-00532,investigate,detector severity medium
+ALT-00533,close,detector severity low
+ALT-00534,close,detector severity low
+ALT-00535,investigate,detector severity medium
+ALT-00536,investigate,detector severity medium
+ALT-00537,close,detector severity low
+ALT-00538,close,detector severity low
+ALT-00539,investigate,detector severity medium
+ALT-00540,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00541,close,detector severity low
+ALT-00542,close,detector severity low
+ALT-00543,close,detector severity low
+ALT-00544,investigate,detector severity medium
+ALT-00545,close,detector severity low
+ALT-00546,close,detector severity low
+ALT-00547,investigate,detector severity medium
+ALT-00548,close,detector severity low
+ALT-00549,investigate,detector severity medium
+ALT-00550,close,detector severity low
+ALT-00551,investigate,detector severity medium
+ALT-00552,close,detector severity low
+ALT-00553,investigate,detector severity medium
+ALT-00554,close,detector severity low
+ALT-00555,close,detector severity low
+ALT-00556,investigate,detector severity medium
+ALT-00557,investigate,detector severity medium
+ALT-00558,close,detector severity low
+ALT-00559,close,detector severity low
+ALT-00560,investigate,detector severity medium
+ALT-00561,investigate,detector severity medium
+ALT-00562,investigate,detector severity medium
+ALT-00563,close,detector severity low
+ALT-00564,close,detector severity low
+ALT-00565,close,detector severity low
+ALT-00566,close,detector severity low
+ALT-00567,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00568,investigate,detector severity medium
+ALT-00569,close,detector severity low
+ALT-00570,close,detector severity low
+ALT-00571,escalate,detector severity high
+ALT-00572,investigate,detector severity medium
+ALT-00573,close,detector severity low
+ALT-00574,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00575,investigate,detector severity medium
+ALT-00576,close,detector severity low
+ALT-00577,close,detector severity low
+ALT-00578,investigate,detector severity medium
+ALT-00579,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00580,investigate,detector severity medium
+ALT-00581,investigate,detector severity medium
+ALT-00582,investigate,detector severity medium
+ALT-00583,close,detector severity low
+ALT-00584,investigate,detector severity medium
+ALT-00585,close,detector severity informational
+ALT-00586,close,detector severity low
+ALT-00587,investigate,detector severity medium
+ALT-00588,close,detector severity low
+ALT-00589,close,detector severity low
+ALT-00590,close,detector severity low
+ALT-00591,close,detector severity low
+ALT-00592,investigate,detector severity medium
+ALT-00593,investigate,detector severity medium
+ALT-00594,investigate,detector severity medium
+ALT-00595,close,detector severity low
+ALT-00596,close,detector severity low
+ALT-00597,close,detector severity low
+ALT-00598,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00599,close,detector severity low
+ALT-00600,close,detector severity low
+ALT-00601,close,detector severity low
+ALT-00602,investigate,detector severity medium
+ALT-00603,investigate,detector severity medium
+ALT-00604,investigate,detector severity medium
+ALT-00605,investigate,detector severity medium
+ALT-00606,close,detector severity low
+ALT-00607,investigate,detector severity medium
+ALT-00608,close,detector severity low
+ALT-00609,investigate,detector severity medium
+ALT-00610,close,detector severity low
+ALT-00611,investigate,detector severity medium
+ALT-00612,close,detector severity low
+ALT-00613,close,detector severity low
+ALT-00614,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00615,close,detector severity low
+ALT-00616,investigate,detector severity medium
+ALT-00617,investigate,detector severity medium
+ALT-00618,close,detector severity low
+ALT-00619,close,detector severity low
+ALT-00620,investigate,detector severity medium
+ALT-00621,close,detector severity low
+ALT-00622,close,detector severity low
+ALT-00623,investigate,detector severity medium
+ALT-00624,investigate,detector severity medium
+ALT-00625,close,detector severity low
+ALT-00626,close,detector severity low
+ALT-00627,investigate,detector severity medium
+ALT-00628,close,detector severity low
+ALT-00629,investigate,detector severity medium
+ALT-00630,close,detector severity low
+ALT-00631,close,detector severity low
+ALT-00632,investigate,detector severity medium
+ALT-00633,investigate,detector severity medium
+ALT-00634,close,detector severity low
+ALT-00635,investigate,detector severity medium
+ALT-00636,close,detector severity low
+ALT-00637,close,detector severity low
+ALT-00638,investigate,detector severity medium
+ALT-00639,close,detector severity low
+ALT-00640,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00641,close,detector severity low
+ALT-00642,close,detector severity low
+ALT-00643,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00644,close,detector severity low
+ALT-00645,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00646,investigate,detector severity medium
+ALT-00647,investigate,detector severity medium
+ALT-00648,investigate,detector severity medium
+ALT-00649,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00650,close,detector severity low
+ALT-00651,close,detector severity low
+ALT-00652,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00653,investigate,detector severity medium
+ALT-00654,close,detector severity low
+ALT-00655,close,detector severity low
+ALT-00656,close,detector severity low
+ALT-00657,close,detector severity low
+ALT-00658,close,detector severity low
+ALT-00659,close,detector severity low
+ALT-00660,close,detector severity low
+ALT-00661,close,detector severity low
+ALT-00662,close,detector severity low
+ALT-00663,investigate,detector severity medium
+ALT-00664,investigate,detector severity medium
+ALT-00665,investigate,detector severity medium
+ALT-00666,investigate,detector severity medium
+ALT-00667,close,detector severity low
+ALT-00668,close,detector severity low
+ALT-00669,close,detector severity low
+ALT-00670,investigate,detector severity medium
+ALT-00671,close,detector severity low
+ALT-00672,close,detector severity low
+ALT-00673,close,detector severity low
+ALT-00674,investigate,detector severity medium
+ALT-00675,close,detector severity low
+ALT-00676,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00677,investigate,detector severity medium
+ALT-00678,close,detector severity low
+ALT-00679,escalate,detector severity high
+ALT-00680,close,detector severity low
+ALT-00681,close,detector severity low
+ALT-00682,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00683,close,detector severity low
+ALT-00684,investigate,detector severity medium
+ALT-00685,close,allowlist: authorized test host scans
+ALT-00686,close,allowlist: authorized test host scans
+ALT-00687,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00688,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00689,escalate,detector severity high
+ALT-00690,close,detector severity low
+ALT-00691,escalate,detector severity high
+ALT-00692,close,detector severity low
+ALT-00693,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00694,close,detector severity low
+ALT-00695,close,detector severity low
+ALT-00696,investigate,detector severity medium
+ALT-00697,investigate,detector severity medium
+ALT-00698,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00699,investigate,detector severity medium
+ALT-00700,investigate,detector severity medium
+ALT-00701,close,detector severity low
+ALT-00702,close,detector severity low
+ALT-00703,investigate,detector severity medium
+ALT-00704,close,detector severity low
+ALT-00705,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00706,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00707,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00708,investigate,detector severity medium
+ALT-00709,close,detector severity low
+ALT-00710,investigate,detector severity medium
+ALT-00711,close,detector severity low
+ALT-00712,close,detector severity low
+ALT-00713,close,detector severity low
+ALT-00714,close,detector severity low
+ALT-00715,investigate,detector severity medium
+ALT-00716,close,detector severity low
+ALT-00717,investigate,detector severity medium
+ALT-00718,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00719,close,detector severity low
+ALT-00720,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00721,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00722,close,detector severity low
+ALT-00723,close,detector severity low
+ALT-00724,close,detector severity low
+ALT-00725,close,detector severity low
+ALT-00726,close,detector severity low
+ALT-00727,close,detector severity low
+ALT-00728,investigate,detector severity medium
+ALT-00729,close,detector severity low
+ALT-00730,investigate,detector severity medium
+ALT-00731,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00732,investigate,detector severity medium
+ALT-00733,close,detector severity low
+ALT-00734,investigate,detector severity medium
+ALT-00735,close,detector severity informational
+ALT-00736,investigate,detector severity medium
+ALT-00737,close,detector severity low
+ALT-00738,investigate,detector severity medium
+ALT-00739,close,detector severity low
+ALT-00740,close,detector severity low
+ALT-00741,investigate,detector severity medium
+ALT-00742,close,detector severity low
+ALT-00743,close,detector severity low
+ALT-00744,investigate,detector severity medium
+ALT-00745,investigate,detector severity medium
+ALT-00746,close,detector severity low
+ALT-00747,close,detector severity low
+ALT-00748,investigate,detector severity medium
+ALT-00749,escalate,detector severity high
+ALT-00750,escalate,detector severity high
+ALT-00751,close,detector severity low
+ALT-00752,escalate,detector severity high
+ALT-00753,escalate,detector severity high
+ALT-00754,close,detector severity low
+ALT-00755,close,detector severity low
+ALT-00756,escalate,detector severity high
+ALT-00757,escalate,detector severity high
+ALT-00758,investigate,detector severity medium
+ALT-00759,investigate,detector severity medium
+ALT-00760,investigate,detector severity medium
+ALT-00761,close,detector severity low
+ALT-00762,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00763,close,detector severity low
+ALT-00764,close,detector severity low
+ALT-00765,close,detector severity low
+ALT-00766,close,detector severity low
+ALT-00767,close,detector severity low
+ALT-00768,close,detector severity low
+ALT-00769,investigate,detector severity medium
+ALT-00770,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00771,close,detector severity low
+ALT-00772,close,detector severity low
+ALT-00773,investigate,detector severity medium
+ALT-00774,close,detector severity low
+ALT-00775,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00776,close,detector severity low
+ALT-00777,investigate,detector severity medium
+ALT-00778,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00779,investigate,detector severity medium
+ALT-00780,close,detector severity low
+ALT-00781,escalate,detector severity high
+ALT-00782,investigate,detector severity medium
+ALT-00783,close,detector severity low
+ALT-00784,investigate,detector severity medium
+ALT-00785,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00786,close,detector severity low
+ALT-00787,investigate,detector severity medium
+ALT-00788,investigate,detector severity medium
+ALT-00789,investigate,detector severity medium
+ALT-00790,close,detector severity low
+ALT-00791,close,detector severity low
+ALT-00792,close,detector severity low
+ALT-00793,investigate,detector severity medium
+ALT-00794,close,detector severity low
+ALT-00795,close,detector severity low
+ALT-00796,close,detector severity low
+ALT-00797,close,detector severity low
+ALT-00798,close,detector severity low
+ALT-00799,investigate,detector severity medium
+ALT-00800,investigate,detector severity medium
+ALT-00801,close,detector severity low
+ALT-00802,investigate,detector severity medium
+ALT-00803,close,detector severity low
+ALT-00804,close,detector severity low
+ALT-00805,investigate,detector severity medium
+ALT-00806,close,detector severity low
+ALT-00807,close,detector severity low
+ALT-00808,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00809,investigate,detector severity medium
+ALT-00810,investigate,detector severity medium
+ALT-00811,investigate,detector severity medium
+ALT-00812,close,detector severity low
+ALT-00813,close,detector severity low
+ALT-00814,investigate,detector severity medium
+ALT-00815,close,detector severity low
+ALT-00816,close,detector severity low
+ALT-00817,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00818,close,detector severity low
+ALT-00819,close,detector severity low
+ALT-00820,close,detector severity low
+ALT-00821,investigate,detector severity medium
+ALT-00822,investigate,detector severity medium
+ALT-00823,investigate,detector severity medium
+ALT-00824,investigate,detector severity medium
+ALT-00825,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00826,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00827,close,detector severity low
+ALT-00828,close,detector severity low
+ALT-00829,investigate,detector severity medium
+ALT-00830,investigate,detector severity medium
+ALT-00831,close,detector severity low
+ALT-00832,investigate,detector severity medium
+ALT-00833,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00834,investigate,detector severity medium
+ALT-00835,close,detector severity low
+ALT-00836,close,detector severity low
+ALT-00837,close,detector severity low
+ALT-00838,close,detector severity low
+ALT-00839,close,detector severity low
+ALT-00840,close,detector severity low
+ALT-00841,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00842,close,detector severity low
+ALT-00843,investigate,detector severity medium
+ALT-00844,close,detector severity low
+ALT-00845,close,detector severity low
+ALT-00846,close,detector severity low
+ALT-00847,close,detector severity low
+ALT-00848,investigate,detector severity medium
+ALT-00849,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00850,close,detector severity low
+ALT-00851,close,detector severity low
+ALT-00852,close,detector severity low
+ALT-00853,close,detector severity low
+ALT-00854,close,detector severity low
+ALT-00855,investigate,detector severity medium
+ALT-00856,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00857,close,detector severity low
+ALT-00858,close,detector severity low
+ALT-00859,investigate,detector severity medium
+ALT-00860,close,detector severity low
+ALT-00861,close,detector severity low
+ALT-00862,close,detector severity low
+ALT-00863,investigate,detector severity medium
+ALT-00864,close,detector severity low
+ALT-00865,investigate,detector severity medium
+ALT-00866,investigate,detector severity medium
+ALT-00867,investigate,detector severity medium
+ALT-00868,close,detector severity low
+ALT-00869,close,detector severity low
+ALT-00870,close,detector severity low
+ALT-00871,investigate,detector severity medium
+ALT-00872,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00873,close,detector severity low
+ALT-00874,investigate,detector severity medium
+ALT-00875,close,detector severity low
+ALT-00876,close,detector severity low
+ALT-00877,close,detector severity low
+ALT-00878,investigate,detector severity medium
+ALT-00879,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00880,close,detector severity low
+ALT-00881,close,detector severity low
+ALT-00882,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00883,close,detector severity low
+ALT-00884,close,detector severity low
+ALT-00885,investigate,detector severity medium
+ALT-00886,close,detector severity low
+ALT-00887,investigate,detector severity medium
+ALT-00888,investigate,detector severity medium
+ALT-00889,close,detector severity low
+ALT-00890,escalate,detector severity high; never-suppress: claimed tactic privilege_escalation
+ALT-00891,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00892,close,detector severity low
+ALT-00893,investigate,detector severity medium
+ALT-00894,investigate,detector severity medium
+ALT-00895,close,detector severity low
+ALT-00896,close,detector severity low
+ALT-00897,close,detector severity low
+ALT-00898,investigate,detector severity medium
+ALT-00899,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00900,investigate,detector severity medium
+ALT-00901,investigate,detector severity medium
+ALT-00902,close,detector severity low
+ALT-00903,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00904,escalate,detector severity high
+ALT-00905,investigate,detector severity medium
+ALT-00906,investigate,detector severity medium
+ALT-00907,close,detector severity low
+ALT-00908,close,detector severity low
+ALT-00909,investigate,detector severity medium
+ALT-00910,close,detector severity low
+ALT-00911,close,detector severity low
+ALT-00912,close,detector severity low
+ALT-00913,close,detector severity low
+ALT-00914,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00915,investigate,detector severity medium
+ALT-00916,close,detector severity low
+ALT-00917,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00918,close,detector severity low
+ALT-00919,close,detector severity low
+ALT-00920,investigate,detector severity medium
+ALT-00921,investigate,detector severity medium
+ALT-00922,investigate,detector severity medium
+ALT-00923,close,detector severity low
+ALT-00924,close,detector severity low
+ALT-00925,close,detector severity low
+ALT-00926,close,detector severity low
+ALT-00927,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00928,close,detector severity low
+ALT-00929,close,detector severity low
+ALT-00930,close,detector severity low
+ALT-00931,close,detector severity low
+ALT-00932,close,detector severity low
+ALT-00933,investigate,detector severity medium
+ALT-00934,investigate,detector severity medium
+ALT-00935,escalate,detector severity high
+ALT-00936,close,detector severity low
+ALT-00937,investigate,detector severity medium
+ALT-00938,investigate,detector severity medium
+ALT-00939,investigate,detector severity medium
+ALT-00940,escalate,detector severity high
+ALT-00941,close,detector severity low
+ALT-00942,investigate,detector severity medium
+ALT-00943,close,detector severity low
+ALT-00944,close,detector severity low
+ALT-00945,investigate,detector severity medium
+ALT-00946,close,detector severity low
+ALT-00947,close,detector severity low
+ALT-00948,close,detector severity low
+ALT-00949,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00950,close,detector severity low
+ALT-00951,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00952,investigate,detector severity medium
+ALT-00953,investigate,detector severity medium
+ALT-00954,investigate,detector severity medium
+ALT-00955,close,detector severity low
+ALT-00956,escalate,detector severity high
+ALT-00957,close,detector severity low
+ALT-00958,close,detector severity low
+ALT-00959,investigate,detector severity medium
+ALT-00960,close,detector severity low
+ALT-00961,close,detector severity low
+ALT-00962,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-00963,investigate,detector severity medium
+ALT-00964,close,detector severity low
+ALT-00965,investigate,detector severity medium
+ALT-00966,close,detector severity low
+ALT-00967,close,allowlist: authorized test host scans
+ALT-00968,investigate,detector severity medium
+ALT-00969,close,allowlist: authorized test host scans
+ALT-00970,close,detector severity low
+ALT-00971,investigate,detector severity medium
+ALT-00972,escalate,detector severity high
+ALT-00973,close,detector severity low
+ALT-00974,escalate,detector severity high
+ALT-00975,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00976,close,detector severity low
+ALT-00977,close,detector severity low
+ALT-00978,investigate,detector severity medium
+ALT-00979,close,detector severity low
+ALT-00980,close,detector severity low
+ALT-00981,close,detector severity low
+ALT-00982,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00983,investigate,detector severity medium
+ALT-00984,escalate,detector severity high
+ALT-00985,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00986,close,detector severity low
+ALT-00987,investigate,detector severity medium
+ALT-00988,close,detector severity low
+ALT-00989,investigate,detector severity medium
+ALT-00990,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00991,close,detector severity low
+ALT-00992,investigate,detector severity medium
+ALT-00993,close,detector severity low
+ALT-00994,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00995,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00996,close,detector severity low
+ALT-00997,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-00998,investigate,detector severity medium
+ALT-00999,close,detector severity low
+ALT-01000,close,detector severity low
+ALT-01001,close,detector severity low
+ALT-01002,close,detector severity low
+ALT-01003,close,detector severity low
+ALT-01004,close,detector severity low
+ALT-01005,close,detector severity low
+ALT-01006,close,detector severity low
+ALT-01007,investigate,detector severity medium
+ALT-01008,close,detector severity low
+ALT-01009,close,detector severity low
+ALT-01010,investigate,detector severity medium
+ALT-01011,close,detector severity low
+ALT-01012,investigate,detector severity medium
+ALT-01013,close,detector severity low
+ALT-01014,close,detector severity low
+ALT-01015,close,detector severity low
+ALT-01016,investigate,detector severity medium
+ALT-01017,close,detector severity low
+ALT-01018,close,detector severity low
+ALT-01019,investigate,detector severity medium
+ALT-01020,close,detector severity low
+ALT-01021,escalate,detector severity high
+ALT-01022,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-01023,investigate,detector severity medium
+ALT-01024,investigate,detector severity medium
+ALT-01025,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-01026,close,detector severity low
+ALT-01027,investigate,detector severity medium
+ALT-01028,investigate,detector severity medium
+ALT-01029,investigate,detector severity medium
+ALT-01030,investigate,detector severity medium
+ALT-01031,escalate,detector severity high; never-suppress: rule name mentions 'large upload'
+ALT-01032,investigate,detector severity medium
+ALT-01033,close,detector severity low
+ALT-01034,close,detector severity low
+ALT-01035,investigate,detector severity medium
+ALT-01036,escalate,detector severity high; never-suppress: claimed tactic exfiltration
+ALT-01037,investigate,detector severity medium
+ALT-01038,escalate,detector severity high; never-suppress: claimed tactic privilege_escalation
+ALT-01039,investigate,detector severity medium
+ALT-01040,close,detector severity low
+ALT-01041,investigate,detector severity medium
+ALT-01042,escalate,detector severity high; never-suppress: claimed tactic exfiltration

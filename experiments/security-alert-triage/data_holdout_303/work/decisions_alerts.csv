@@ -1,0 +1,1043 @@
+alert_id,action,reason,p_true_positive,p_benign,p_benign_explanation,impact,neighbor_doubt
+ALT-00001,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.21,True
+ALT-00002,close,Jev: benign 1.00 and an ordinary explanation fits 0.82,0.0,1.0,0.82,0.65,False
+ALT-00003,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.18,False
+ALT-00004,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.71,False
+ALT-00005,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00006,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.46,1.11,
+ALT-00007,close,Jev: benign 0.98 and an ordinary explanation fits 0.85,0.02,0.98,0.85,1.02,False
+ALT-00008,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.85",0.13,0.87,0.85,0.13,
+ALT-00009,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.67,False
+ALT-00010,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.53,False
+ALT-00011,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.49,1.07,
+ALT-00012,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.22,
+ALT-00013,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.27,
+ALT-00014,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.22,False
+ALT-00015,close,Jev: benign 1.00 and an ordinary explanation fits 0.86,0.0,1.0,0.86,0.74,False
+ALT-00016,close,Jev: benign 1.00 and an ordinary explanation fits 0.86,0.0,1.0,0.86,0.78,False
+ALT-00017,close,Jev: benign 1.00 and an ordinary explanation fits 0.86,0.0,1.0,0.86,0.79,False
+ALT-00018,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.66,False
+ALT-00019,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.86,0.82,True
+ALT-00020,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.86,0.81,True
+ALT-00021,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.84,0.16,
+ALT-00022,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.64,False
+ALT-00023,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.61,False
+ALT-00024,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.39,
+ALT-00025,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.89,0.93,True
+ALT-00026,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.44,1.64,
+ALT-00027,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.63,False
+ALT-00028,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.38,False
+ALT-00029,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.83",0.13,0.87,0.83,0.17,
+ALT-00030,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00031,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.21,
+ALT-00032,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.17,False
+ALT-00033,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.62,False
+ALT-00034,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.55,False
+ALT-00035,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00036,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.72,False
+ALT-00037,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.73,False
+ALT-00038,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.34,True
+ALT-00039,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00040,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.47,False
+ALT-00041,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.84,0.19,
+ALT-00042,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.73,False
+ALT-00043,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.72,False
+ALT-00044,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.81,0.94,True
+ALT-00045,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.95,True
+ALT-00046,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.48,1.17,
+ALT-00047,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.38,False
+ALT-00048,investigate,Jev: true positive 0.18 >= 0.15,0.18,0.82,0.71,1.12,
+ALT-00049,investigate,Jev: true positive 0.22 >= 0.15,0.22,0.78,0.7,1.13,
+ALT-00050,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.17,False
+ALT-00051,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.71,1.04,
+ALT-00052,close,Jev: benign 1.00 and an ordinary explanation fits 0.81,0.0,1.0,0.81,0.83,False
+ALT-00053,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.36,True
+ALT-00054,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.43,1.17,
+ALT-00055,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.19,False
+ALT-00056,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.66,False
+ALT-00057,close,Jev: benign 1.00 and an ordinary explanation fits 0.82,0.0,1.0,0.82,0.68,False
+ALT-00058,escalate,Jev: true positive 0.78 >= 0.6,0.78,0.22,0.46,1.13,
+ALT-00059,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.59,True
+ALT-00060,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.37,
+ALT-00061,investigate,Jev: true positive 0.17 >= 0.15,0.17,0.83,0.84,0.17,
+ALT-00062,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.2,
+ALT-00063,close,Jev: benign 1.00 and an ordinary explanation fits 0.86,0.0,1.0,0.86,0.79,False
+ALT-00064,close,Jev: benign 0.91 and an ordinary explanation fits 0.85,0.09,0.91,0.85,0.13,False
+ALT-00065,close,Jev: benign 1.00 and an ordinary explanation fits 0.86,0.0,1.0,0.86,0.8,False
+ALT-00066,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.3,True
+ALT-00067,close,Jev: benign 1.00 and an ordinary explanation fits 0.85,0.0,1.0,0.85,0.8,False
+ALT-00068,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.86,0.75,True
+ALT-00069,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.83",0.13,0.87,0.83,0.17,
+ALT-00070,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.84,False
+ALT-00071,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.2,False
+ALT-00072,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.21,True
+ALT-00073,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.64,False
+ALT-00074,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.6,False
+ALT-00075,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,1.07,False
+ALT-00076,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.34,False
+ALT-00077,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.48,1.15,
+ALT-00078,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.44,1.13,
+ALT-00079,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.66,True
+ALT-00080,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.98,False
+ALT-00081,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.5,False
+ALT-00082,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.2,False
+ALT-00083,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.21,False
+ALT-00084,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.19,False
+ALT-00085,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.56,False
+ALT-00086,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.97,False
+ALT-00087,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.59,False
+ALT-00088,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.63,False
+ALT-00089,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.46,1.09,
+ALT-00090,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.34,False
+ALT-00091,escalate,Jev: true positive 0.85 >= 0.6,0.85,0.15,0.43,1.16,
+ALT-00092,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00093,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.72,True
+ALT-00094,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.15,False
+ALT-00095,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,0.99,True
+ALT-00096,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.24,
+ALT-00097,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.27,
+ALT-00098,investigate,Jev: true positive 0.18 >= 0.15,0.18,0.82,0.82,0.59,
+ALT-00099,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.45,1.17,
+ALT-00100,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.17,False
+ALT-00101,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.31,False
+ALT-00102,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.83",0.13,0.87,0.83,0.2,
+ALT-00103,investigate,Jev: true positive 0.27 >= 0.15,0.27,0.73,0.7,1.06,
+ALT-00104,investigate,Jev: true positive 0.25 >= 0.15,0.25,0.75,0.7,1.05,
+ALT-00105,close,Jev: benign 0.99 and an ordinary explanation fits 0.83,0.01,0.99,0.83,0.66,False
+ALT-00106,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.47,1.14,
+ALT-00107,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.96,False
+ALT-00108,investigate,Jev: true positive 0.35 >= 0.15,0.35,0.65,0.71,0.96,
+ALT-00109,escalate,Jev: true positive 0.93 >= 0.6,0.93,0.07,0.53,1.19,
+ALT-00110,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.81,0.84,True
+ALT-00111,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.18,True
+ALT-00112,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.39,False
+ALT-00113,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,1.09,False
+ALT-00114,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.64,False
+ALT-00115,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.15,True
+ALT-00116,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.31,True
+ALT-00117,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.61,False
+ALT-00118,investigate,Jev: true positive 0.49 >= 0.15,0.49,0.51,0.63,1.85,
+ALT-00119,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.83",0.11,0.89,0.83,0.46,
+ALT-00120,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.93,False
+ALT-00121,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.15,False
+ALT-00122,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.82",0.14,0.86,0.82,0.14,
+ALT-00123,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.71,True
+ALT-00124,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.67,False
+ALT-00125,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.17,
+ALT-00126,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.98,True
+ALT-00127,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.63,True
+ALT-00128,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.58,False
+ALT-00129,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.34,False
+ALT-00130,close,allowlist: authorized test host scans,,,,,
+ALT-00131,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.3,False
+ALT-00132,close,allowlist: authorized test host scans,,,,,
+ALT-00133,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,0.94,True
+ALT-00134,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.83,False
+ALT-00135,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.79,False
+ALT-00136,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.82,0.64,True
+ALT-00137,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.57,False
+ALT-00138,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.33,False
+ALT-00139,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.2,
+ALT-00140,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.17,True
+ALT-00141,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.8,0.86,True
+ALT-00142,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.22,
+ALT-00143,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.51,
+ALT-00144,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.57,False
+ALT-00145,investigate,Jev: true positive 0.30 >= 0.15,0.3,0.7,0.78,1.08,
+ALT-00146,investigate,Jev: true positive 0.37 >= 0.15,0.37,0.63,0.78,1.06,
+ALT-00147,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.82,0.63,True
+ALT-00148,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.37,True
+ALT-00149,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.44,1.15,
+ALT-00150,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.37,True
+ALT-00151,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.72,False
+ALT-00152,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.96,False
+ALT-00153,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.65,False
+ALT-00154,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.2,False
+ALT-00155,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.68,True
+ALT-00156,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.58,False
+ALT-00157,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.74,False
+ALT-00158,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.25,
+ALT-00159,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.64,False
+ALT-00160,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.83",0.13,0.87,0.83,0.17,
+ALT-00161,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.83",0.14,0.86,0.83,0.2,
+ALT-00162,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.23,
+ALT-00163,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.84",0.12,0.88,0.84,0.17,
+ALT-00164,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.47,1.11,
+ALT-00165,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.46,1.12,
+ALT-00166,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.46,1.12,
+ALT-00167,close,Jev: benign 1.00 and an ordinary explanation fits 0.82,0.0,1.0,0.82,0.6,False
+ALT-00168,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.6,False
+ALT-00169,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.38,3.0,
+ALT-00170,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.84,0.18,
+ALT-00171,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.85",0.11,0.89,0.85,0.17,
+ALT-00172,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.68,False
+ALT-00173,investigate,nearby alerts on the same user or host cast doubt,0.03,0.97,0.84,1.06,True
+ALT-00174,investigate,nearby alerts on the same user or host cast doubt,0.02,0.98,0.85,1.06,True
+ALT-00175,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.51,False
+ALT-00176,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.53,True
+ALT-00177,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.6,False
+ALT-00178,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.81,0.6,True
+ALT-00179,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.2,True
+ALT-00180,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.65,False
+ALT-00181,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.42,1.63,
+ALT-00182,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.83,0.66,True
+ALT-00183,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.97,False
+ALT-00184,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.61,False
+ALT-00185,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.52,False
+ALT-00186,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.6,False
+ALT-00187,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.36,False
+ALT-00188,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.95,True
+ALT-00189,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.3,False
+ALT-00190,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.66,True
+ALT-00191,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.19,
+ALT-00192,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.37,True
+ALT-00193,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.95,False
+ALT-00194,close,Jev: benign 0.99 and an ordinary explanation fits 0.85,0.01,0.99,0.85,1.01,False
+ALT-00195,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.85",0.14,0.86,0.85,0.18,
+ALT-00196,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.58,False
+ALT-00197,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.7,False
+ALT-00198,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.58,False
+ALT-00199,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00200,escalate,Jev: true positive 0.85 >= 0.6,0.85,0.15,0.41,1.63,
+ALT-00201,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.51,True
+ALT-00202,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.81,0.47,
+ALT-00203,investigate,nearby alerts on the same user or host cast doubt,0.03,0.97,0.85,1.05,True
+ALT-00204,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.91,False
+ALT-00205,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.59,False
+ALT-00206,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.98,False
+ALT-00207,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.63,True
+ALT-00208,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.75,True
+ALT-00209,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.34,False
+ALT-00210,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.82,0.67,True
+ALT-00211,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.81,0.7,True
+ALT-00212,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.4,False
+ALT-00213,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.42,True
+ALT-00214,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.57,False
+ALT-00215,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.89,0.7,True
+ALT-00216,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.94,False
+ALT-00217,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.57,True
+ALT-00218,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,1.56,False
+ALT-00219,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.17,True
+ALT-00220,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.93,True
+ALT-00221,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.82",0.12,0.88,0.82,0.19,
+ALT-00222,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.22,
+ALT-00223,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.46,1.09,
+ALT-00224,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.17,False
+ALT-00225,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.66,False
+ALT-00226,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.59,False
+ALT-00227,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.99,False
+ALT-00228,investigate,nearby alerts on the same user or host cast doubt,0.02,0.98,0.87,0.75,True
+ALT-00229,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.72,False
+ALT-00230,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.92,0.96,
+ALT-00231,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.93,1.06,
+ALT-00232,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.67,False
+ALT-00233,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.92,1.13,
+ALT-00234,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.82",0.14,0.86,0.82,0.16,
+ALT-00235,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.61,False
+ALT-00236,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.35,False
+ALT-00237,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.69,False
+ALT-00238,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.83,0.16,
+ALT-00239,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.69,False
+ALT-00240,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.17,False
+ALT-00241,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.95,False
+ALT-00242,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.16,False
+ALT-00243,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.45,1.11,
+ALT-00244,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.63,True
+ALT-00245,escalate,Jev: true positive 0.60 >= 0.6,0.6,0.4,0.67,1.03,
+ALT-00246,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.96,False
+ALT-00247,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.38,True
+ALT-00248,investigate,Jev: true positive 0.56 >= 0.15,0.56,0.44,0.69,1.04,
+ALT-00249,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.59,True
+ALT-00250,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.68,False
+ALT-00251,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.2,False
+ALT-00252,close,Jev: benign 1.00 and an ordinary explanation fits 0.84,0.0,1.0,0.84,0.67,False
+ALT-00253,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.46,1.13,
+ALT-00254,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.47,1.16,
+ALT-00255,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.65,False
+ALT-00256,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.57,False
+ALT-00257,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.2,True
+ALT-00258,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.22,
+ALT-00259,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.46,1.12,
+ALT-00260,close,Jev: benign 1.00 and an ordinary explanation fits 0.95,0.0,1.0,0.95,0.6,False
+ALT-00261,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.83",0.14,0.86,0.83,0.17,
+ALT-00262,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.58,1.27,
+ALT-00263,escalate,Jev: true positive 0.90 >= 0.6,0.9,0.1,0.48,1.29,
+ALT-00264,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.43,1.59,
+ALT-00265,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.46,False
+ALT-00266,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.19,True
+ALT-00267,escalate,Jev: true positive 0.91 >= 0.6,0.91,0.09,0.49,1.74,
+ALT-00268,close,Jev: benign 1.00 and an ordinary explanation fits 0.84,0.0,1.0,0.84,0.61,False
+ALT-00269,escalate,Jev: true positive 0.91 >= 0.6,0.91,0.09,0.42,1.05,
+ALT-00270,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.71,False
+ALT-00271,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.92,False
+ALT-00272,investigate,never-suppress (claimed tactic privilege_escalation); Jev true positive 0.56,0.56,0.44,0.51,1.08,
+ALT-00273,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.58,True
+ALT-00274,close,Jev: benign 1.00 and an ordinary explanation fits 0.84,0.0,1.0,0.84,0.67,False
+ALT-00275,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.22,True
+ALT-00276,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.7,False
+ALT-00277,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.34,False
+ALT-00278,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.65,True
+ALT-00279,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.39,0.39,0.61,0.63,1.72,
+ALT-00280,escalate,Jev: true positive 0.70 >= 0.6,0.7,0.3,0.62,2.14,
+ALT-00281,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.61,False
+ALT-00282,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.96,False
+ALT-00283,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.72,True
+ALT-00284,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.86,0.51,
+ALT-00285,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.65,True
+ALT-00286,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.19,True
+ALT-00287,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.96,False
+ALT-00288,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.21,False
+ALT-00289,escalate,Jev: true positive 0.67 >= 0.6,0.67,0.33,0.51,2.56,
+ALT-00290,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.63,False
+ALT-00291,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.69,True
+ALT-00292,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.34,False
+ALT-00293,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,1.62,True
+ALT-00294,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.25,
+ALT-00295,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.82,0.64,True
+ALT-00296,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.57,False
+ALT-00297,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.17,True
+ALT-00298,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.21,
+ALT-00299,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.57,True
+ALT-00300,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.44,1.14,
+ALT-00301,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.63,True
+ALT-00302,investigate,Jev: true positive 0.17 >= 0.15,0.17,0.83,0.83,0.16,
+ALT-00303,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.55,False
+ALT-00304,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.6,False
+ALT-00305,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.81,0.84,True
+ALT-00306,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.22,
+ALT-00307,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.46,1.13,
+ALT-00308,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.46,1.15,
+ALT-00309,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.67,True
+ALT-00310,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.62,True
+ALT-00311,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.93,0.98,
+ALT-00312,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.92,1.03,
+ALT-00313,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.35,True
+ALT-00314,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.93,0.97,
+ALT-00315,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.49,1.12,
+ALT-00316,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.82,0.63,True
+ALT-00317,investigate,"not confident enough to close: benign 0.91, ordinary explanation 0.77",0.09,0.91,0.77,1.26,
+ALT-00318,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00319,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.72,True
+ALT-00320,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.64,True
+ALT-00321,investigate,nearby alerts on the same user or host cast doubt,0.08,0.92,0.8,1.05,True
+ALT-00322,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.47,1.13,
+ALT-00323,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.24,
+ALT-00324,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,1.0,False
+ALT-00325,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.61,True
+ALT-00326,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.64,False
+ALT-00327,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.33,False
+ALT-00328,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,1.41,True
+ALT-00329,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.66,True
+ALT-00330,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.7,False
+ALT-00331,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.24,
+ALT-00332,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.46,1.17,
+ALT-00333,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.83",0.13,0.87,0.83,0.19,
+ALT-00334,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.18,True
+ALT-00335,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.6,False
+ALT-00336,investigate,Jev: true positive 0.30 >= 0.15,0.3,0.7,0.73,1.16,
+ALT-00337,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00338,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.8,0.87,True
+ALT-00339,investigate,Jev: true positive 0.25 >= 0.15,0.25,0.75,0.75,1.19,
+ALT-00340,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.42,1.63,
+ALT-00341,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.23,
+ALT-00342,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.51,1.13,
+ALT-00343,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.17,True
+ALT-00344,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.22,
+ALT-00345,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.19,True
+ALT-00346,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.94,True
+ALT-00347,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.84",0.13,0.87,0.84,0.18,
+ALT-00348,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.46,1.13,
+ALT-00349,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.83",0.14,0.86,0.83,0.16,
+ALT-00350,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.16,True
+ALT-00351,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.82,0.81,True
+ALT-00352,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.81,0.2,
+ALT-00353,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.41,1.84,
+ALT-00354,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.83",0.13,0.87,0.83,0.19,
+ALT-00355,investigate,Jev: true positive 0.20 >= 0.15,0.2,0.8,0.83,0.16,
+ALT-00356,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.94,False
+ALT-00357,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.62,False
+ALT-00358,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,0.93,True
+ALT-00359,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00360,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.94,False
+ALT-00361,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.19,
+ALT-00362,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.72,False
+ALT-00363,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.34,False
+ALT-00364,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.65,False
+ALT-00365,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.15,False
+ALT-00366,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.71,False
+ALT-00367,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.96,False
+ALT-00368,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.83",0.12,0.88,0.83,0.2,
+ALT-00369,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.99,True
+ALT-00370,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.6,False
+ALT-00371,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.65,True
+ALT-00372,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.84",0.13,0.87,0.84,0.17,
+ALT-00373,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.19,True
+ALT-00374,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.89,0.97,True
+ALT-00375,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00376,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.2,False
+ALT-00377,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.44,1.62,
+ALT-00378,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.48,1.14,
+ALT-00379,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.6,False
+ALT-00380,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.7,False
+ALT-00381,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.2,
+ALT-00382,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,1.0,False
+ALT-00383,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.2,True
+ALT-00384,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.17,True
+ALT-00385,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.83",0.11,0.89,0.83,0.17,
+ALT-00386,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00387,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.32,False
+ALT-00388,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,1.67,True
+ALT-00389,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,1.57,False
+ALT-00390,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,2.75,True
+ALT-00391,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,1.52,True
+ALT-00392,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.41,
+ALT-00393,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.47,1.19,
+ALT-00394,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.39,False
+ALT-00395,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.51,False
+ALT-00396,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.6,True
+ALT-00397,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.80",0.12,0.88,0.8,1.08,
+ALT-00398,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.19,False
+ALT-00399,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.80",0.12,0.88,0.8,1.1,
+ALT-00400,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.84",0.12,0.88,0.84,0.17,
+ALT-00401,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.95,True
+ALT-00402,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.58,True
+ALT-00403,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.86,1.1,True
+ALT-00404,investigate,"not confident enough to close: benign 0.92, ordinary explanation 0.79",0.08,0.92,0.79,1.92,
+ALT-00405,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.83",0.13,0.87,0.83,0.13,
+ALT-00406,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,1.06,False
+ALT-00407,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.38,
+ALT-00408,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.83",0.13,0.87,0.83,0.18,
+ALT-00409,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.72,False
+ALT-00410,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.77",0.14,0.86,0.77,1.86,
+ALT-00411,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.47,1.11,
+ALT-00412,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.5,False
+ALT-00413,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.66,False
+ALT-00414,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.19,
+ALT-00415,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.3,True
+ALT-00416,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.56,False
+ALT-00417,investigate,nearby alerts on the same user or host cast doubt,0.09,0.91,0.84,0.14,True
+ALT-00418,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.31,False
+ALT-00419,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.3,False
+ALT-00420,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.57,False
+ALT-00421,close,Jev: benign 1.00 and an ordinary explanation fits 0.80,0.0,1.0,0.8,0.84,False
+ALT-00422,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.19,
+ALT-00423,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.36,False
+ALT-00424,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.36,
+ALT-00425,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.44,1.14,
+ALT-00426,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.59,False
+ALT-00427,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,0.99,True
+ALT-00428,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.17,False
+ALT-00429,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.35,False
+ALT-00430,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.43,1.62,
+ALT-00431,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.3,True
+ALT-00432,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.82,0.16,
+ALT-00433,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.16,True
+ALT-00434,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.36,False
+ALT-00435,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.35,False
+ALT-00436,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.84",0.12,0.88,0.84,0.17,
+ALT-00437,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.41,1.73,
+ALT-00438,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.47,1.11,
+ALT-00439,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.32,True
+ALT-00440,close,Jev: benign 1.00 and an ordinary explanation fits 0.84,0.0,1.0,0.84,0.63,False
+ALT-00441,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.47,1.15,
+ALT-00442,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.18,True
+ALT-00443,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.47,1.16,
+ALT-00444,close,Jev: benign 0.98 and an ordinary explanation fits 0.87,0.02,0.98,0.87,0.69,False
+ALT-00445,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.19,True
+ALT-00446,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.83,0.16,
+ALT-00447,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.71,False
+ALT-00448,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.44,1.12,
+ALT-00449,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.19,
+ALT-00450,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.18,True
+ALT-00451,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,1.57,True
+ALT-00452,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,1.54,False
+ALT-00453,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.53,True
+ALT-00454,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,2.76,True
+ALT-00455,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.44,1.12,
+ALT-00456,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.33,True
+ALT-00457,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,1.52,True
+ALT-00458,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.33,False
+ALT-00459,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.57,True
+ALT-00460,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.48,1.11,
+ALT-00461,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.59,False
+ALT-00462,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.56,True
+ALT-00463,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.64,False
+ALT-00464,escalate,Jev: true positive 0.60 >= 0.6,0.6,0.4,0.66,1.02,
+ALT-00465,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.71,False
+ALT-00466,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,0.92,True
+ALT-00467,escalate,Jev: true positive 0.63 >= 0.6,0.63,0.37,0.67,1.03,
+ALT-00468,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.83,0.17,
+ALT-00469,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.36,True
+ALT-00470,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.22,False
+ALT-00471,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,0.91,True
+ALT-00472,close,Jev: benign 1.00 and an ordinary explanation fits 0.84,0.0,1.0,0.84,0.64,False
+ALT-00473,investigate,"not confident enough to close: benign 0.93, ordinary explanation 0.78",0.07,0.93,0.78,1.19,
+ALT-00474,investigate,nearby alerts on the same user or host cast doubt,0.1,0.9,0.8,1.05,True
+ALT-00475,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.44,
+ALT-00476,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.32,True
+ALT-00477,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.68,False
+ALT-00478,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.59,1.23,
+ALT-00479,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.61,True
+ALT-00480,escalate,Jev: true positive 0.92 >= 0.6,0.92,0.08,0.48,1.27,
+ALT-00481,escalate,Jev: true positive 0.92 >= 0.6,0.92,0.08,0.47,1.63,
+ALT-00482,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.95,True
+ALT-00483,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.76,True
+ALT-00484,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.89,0.97,True
+ALT-00485,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.35,False
+ALT-00486,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.16,True
+ALT-00487,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,0.99,True
+ALT-00488,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.16,
+ALT-00489,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.35,False
+ALT-00490,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.93,False
+ALT-00491,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.44,0.44,0.56,0.64,1.76,
+ALT-00492,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.82,0.68,True
+ALT-00493,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.55,True
+ALT-00494,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.39,False
+ALT-00495,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.6,1.26,
+ALT-00496,escalate,Jev: true positive 0.90 >= 0.6,0.9,0.1,0.47,1.32,
+ALT-00497,escalate,Jev: true positive 0.85 >= 0.6,0.85,0.15,0.43,3.0,
+ALT-00498,escalate,Jev: true positive 0.93 >= 0.6,0.93,0.07,0.5,1.62,
+ALT-00499,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.38,True
+ALT-00500,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.37,True
+ALT-00501,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.84",0.11,0.89,0.84,0.19,
+ALT-00502,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.46,1.13,
+ALT-00503,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.24,
+ALT-00504,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.21,False
+ALT-00505,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.17,
+ALT-00506,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.67,False
+ALT-00507,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.57,False
+ALT-00508,investigate,"not confident enough to close: benign 0.98, ordinary explanation 0.78",0.02,0.98,0.78,1.05,
+ALT-00509,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.41,0.41,0.59,0.63,1.77,
+ALT-00510,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.47,1.12,
+ALT-00511,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.58,True
+ALT-00512,investigate,"not confident enough to close: benign 0.99, ordinary explanation 0.78",0.01,0.99,0.78,1.09,
+ALT-00513,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.46,1.12,
+ALT-00514,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.62,False
+ALT-00515,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.83",0.14,0.86,0.83,0.14,
+ALT-00516,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.84",0.12,0.88,0.84,0.15,
+ALT-00517,close,Jev: benign 0.98 and an ordinary explanation fits 0.84,0.02,0.98,0.84,1.35,False
+ALT-00518,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.99,True
+ALT-00519,investigate,Jev: true positive 0.22 >= 0.15,0.22,0.78,0.71,1.04,
+ALT-00520,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.72,False
+ALT-00521,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.34,
+ALT-00522,investigate,Jev: true positive 0.17 >= 0.15,0.17,0.83,0.82,0.2,
+ALT-00523,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.83,0.17,
+ALT-00524,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00525,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.33,False
+ALT-00526,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.99,False
+ALT-00527,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.19,
+ALT-00528,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.19,
+ALT-00529,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00530,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.62,True
+ALT-00531,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.64,True
+ALT-00532,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.46,1.14,
+ALT-00533,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.17,False
+ALT-00534,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.6,True
+ALT-00535,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.61,True
+ALT-00536,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.45,1.15,
+ALT-00537,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.82",0.11,0.89,0.82,0.44,
+ALT-00538,investigate,Jev: true positive 0.28 >= 0.15,0.28,0.72,0.78,1.08,
+ALT-00539,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.46,1.12,
+ALT-00540,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.21,
+ALT-00541,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.19,
+ALT-00542,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.71,True
+ALT-00543,investigate,nearby alerts on the same user or host cast doubt,0.02,0.98,0.87,0.71,True
+ALT-00544,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.95,True
+ALT-00545,investigate,nearby alerts on the same user or host cast doubt,0.06,0.94,0.83,0.36,True
+ALT-00546,investigate,nearby alerts on the same user or host cast doubt,0.02,0.98,0.85,1.04,True
+ALT-00547,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.68,True
+ALT-00548,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.36,False
+ALT-00549,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.95,False
+ALT-00550,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.2,False
+ALT-00551,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.44,1.15,
+ALT-00552,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.66,False
+ALT-00553,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.58,True
+ALT-00554,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.18,False
+ALT-00555,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,1.07,False
+ALT-00556,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.97,True
+ALT-00557,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.94,False
+ALT-00558,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.17,False
+ALT-00559,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.74,True
+ALT-00560,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.47,1.13,
+ALT-00561,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.94,False
+ALT-00562,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.45,1.13,
+ALT-00563,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.64,True
+ALT-00564,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.35,True
+ALT-00565,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.22,False
+ALT-00566,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.71,False
+ALT-00567,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.24,
+ALT-00568,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.53,1.99,
+ALT-00569,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.55,True
+ALT-00570,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.36,False
+ALT-00571,escalate,Jev: true positive 0.92 >= 0.6,0.92,0.08,0.44,2.25,
+ALT-00572,escalate,Jev: true positive 0.93 >= 0.6,0.93,0.07,0.44,1.89,
+ALT-00573,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.16,False
+ALT-00574,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.23,
+ALT-00575,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.45,1.17,
+ALT-00576,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.39,False
+ALT-00577,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.84",0.11,0.89,0.84,0.17,
+ALT-00578,escalate,Jev: true positive 0.77 >= 0.6,0.77,0.23,0.43,1.11,
+ALT-00579,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.55,0.55,0.45,0.6,2.11,
+ALT-00580,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.62,True
+ALT-00581,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.96,False
+ALT-00582,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.66,True
+ALT-00583,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.36,True
+ALT-00584,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.96,False
+ALT-00585,investigate,nearby alerts on the same user or host cast doubt,0.01,0.98,0.82,0.65,True
+ALT-00586,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.3,True
+ALT-00587,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.96,True
+ALT-00588,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.61,True
+ALT-00589,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,1.04,False
+ALT-00590,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.61,True
+ALT-00591,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.61,True
+ALT-00592,close,Jev: benign 0.99 and an ordinary explanation fits 0.81,0.01,0.99,0.81,0.85,False
+ALT-00593,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.92,True
+ALT-00594,escalate,Jev: true positive 0.79 >= 0.6,0.79,0.21,0.48,1.12,
+ALT-00595,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.63,False
+ALT-00596,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.81,0.45,
+ALT-00597,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.38,False
+ALT-00598,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.2,
+ALT-00599,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.17,False
+ALT-00600,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.85",0.13,0.87,0.85,0.21,
+ALT-00601,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.18,False
+ALT-00602,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.61,True
+ALT-00603,close,Jev: benign 1.00 and an ordinary explanation fits 0.86,0.0,1.0,0.86,0.82,False
+ALT-00604,close,Jev: benign 1.00 and an ordinary explanation fits 0.86,0.0,1.0,0.86,0.75,False
+ALT-00605,close,Jev: benign 1.00 and an ordinary explanation fits 0.86,0.0,1.0,0.86,0.97,False
+ALT-00606,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.53,False
+ALT-00607,close,Jev: benign 1.00 and an ordinary explanation fits 0.85,0.0,1.0,0.85,0.84,False
+ALT-00608,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.16,False
+ALT-00609,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.97,False
+ALT-00610,investigate,Jev: true positive 0.17 >= 0.15,0.17,0.83,0.83,0.17,
+ALT-00611,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.93,True
+ALT-00612,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.4,True
+ALT-00613,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,1.06,True
+ALT-00614,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.23,
+ALT-00615,close,Jev: benign 0.93 and an ordinary explanation fits 0.83,0.07,0.93,0.83,0.44,False
+ALT-00616,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.45,1.13,
+ALT-00617,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00618,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.18,True
+ALT-00619,investigate,Jev: true positive 0.20 >= 0.15,0.2,0.8,0.71,1.08,
+ALT-00620,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.43,1.18,
+ALT-00621,investigate,Jev: true positive 0.17 >= 0.15,0.17,0.83,0.74,1.09,
+ALT-00622,investigate,Jev: true positive 0.19 >= 0.15,0.19,0.81,0.74,1.1,
+ALT-00623,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.46,1.13,
+ALT-00624,investigate,"not confident enough to close: benign 0.99, ordinary explanation 0.79",0.01,0.99,0.79,0.86,
+ALT-00625,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.29,False
+ALT-00626,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.19,True
+ALT-00627,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,1.06,True
+ALT-00628,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.56,False
+ALT-00629,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.96,True
+ALT-00630,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.7,False
+ALT-00631,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.84",0.12,0.88,0.84,0.2,
+ALT-00632,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.45,1.13,
+ALT-00633,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,0.96,True
+ALT-00634,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.81",0.13,0.87,0.81,0.47,
+ALT-00635,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.96,True
+ALT-00636,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.71,True
+ALT-00637,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.18,True
+ALT-00638,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00639,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.68,False
+ALT-00640,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.23,
+ALT-00641,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.18,False
+ALT-00642,close,Jev: benign 0.99 and an ordinary explanation fits 0.86,0.01,0.99,0.86,0.7,False
+ALT-00643,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.26,
+ALT-00644,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.71,True
+ALT-00645,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.61,
+ALT-00646,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.45,1.6,
+ALT-00647,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.67,False
+ALT-00648,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.68,False
+ALT-00649,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.23,
+ALT-00650,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.32,False
+ALT-00651,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.34,True
+ALT-00652,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.9,0.24,
+ALT-00653,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.46,1.12,
+ALT-00654,investigate,Jev: true positive 0.57 >= 0.15,0.57,0.43,0.68,1.03,
+ALT-00655,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.57,False
+ALT-00656,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.73,True
+ALT-00657,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.31,True
+ALT-00658,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.83",0.11,0.89,0.83,0.14,
+ALT-00659,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.32,True
+ALT-00660,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.64,True
+ALT-00661,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.82",0.14,0.86,0.82,0.21,
+ALT-00662,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.83,0.18,
+ALT-00663,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.45,1.19,
+ALT-00664,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.45,1.15,
+ALT-00665,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.44,1.12,
+ALT-00666,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.81,0.84,True
+ALT-00667,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.53,True
+ALT-00668,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.46,False
+ALT-00669,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.71,False
+ALT-00670,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.87,1.08,True
+ALT-00671,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.18,False
+ALT-00672,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.71,True
+ALT-00673,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.33,True
+ALT-00674,escalate,Jev: true positive 0.85 >= 0.6,0.85,0.15,0.44,1.63,
+ALT-00675,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.17,False
+ALT-00676,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.22,
+ALT-00677,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.45,1.12,
+ALT-00678,investigate,Jev: true positive 0.18 >= 0.15,0.18,0.82,0.84,0.19,
+ALT-00679,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.39,False
+ALT-00680,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.59,False
+ALT-00681,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.51,False
+ALT-00682,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.3,
+ALT-00683,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.83",0.14,0.86,0.83,0.2,
+ALT-00684,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.48,1.15,
+ALT-00685,close,allowlist: authorized test host scans,,,,,
+ALT-00686,close,allowlist: authorized test host scans,,,,,
+ALT-00687,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.35,
+ALT-00688,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00689,close,Jev: benign 1.00 and an ordinary explanation fits 0.85,0.0,1.0,0.85,0.82,False
+ALT-00690,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.72,True
+ALT-00691,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.79,False
+ALT-00692,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.4,True
+ALT-00693,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.23,
+ALT-00694,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.71,False
+ALT-00695,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.39,False
+ALT-00696,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.98,False
+ALT-00697,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.93,False
+ALT-00698,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.26,
+ALT-00699,close,Jev: benign 1.00 and an ordinary explanation fits 0.82,0.0,1.0,0.82,0.66,False
+ALT-00700,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.95,True
+ALT-00701,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.84",0.13,0.87,0.84,0.17,
+ALT-00702,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.82",0.12,0.88,0.82,0.43,
+ALT-00703,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.64,False
+ALT-00704,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.69,False
+ALT-00705,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.42,
+ALT-00706,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.19,
+ALT-00707,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.19,
+ALT-00708,close,Jev: benign 0.99 and an ordinary explanation fits 0.82,0.01,0.99,0.82,0.66,False
+ALT-00709,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.75,True
+ALT-00710,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.65,False
+ALT-00711,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.84",0.14,0.86,0.84,0.17,
+ALT-00712,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.7,False
+ALT-00713,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.82",0.12,0.88,0.82,0.45,
+ALT-00714,investigate,nearby alerts on the same user or host cast doubt,0.02,0.98,0.87,0.75,True
+ALT-00715,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.96,False
+ALT-00716,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.61,True
+ALT-00717,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.68,True
+ALT-00718,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.92,1.08,
+ALT-00719,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.58,False
+ALT-00720,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.92,1.05,
+ALT-00721,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.00,0.0,1.0,0.92,0.98,
+ALT-00722,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.15,False
+ALT-00723,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.84,0.18,
+ALT-00724,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.55,True
+ALT-00725,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.17,False
+ALT-00726,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.19,
+ALT-00727,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.21,True
+ALT-00728,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.89,0.89,True
+ALT-00729,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.69,False
+ALT-00730,close,Jev: benign 1.00 and an ordinary explanation fits 0.81,0.0,1.0,0.81,0.8,False
+ALT-00731,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.22,
+ALT-00732,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.98,True
+ALT-00733,investigate,Jev: true positive 0.40 >= 0.15,0.4,0.6,0.65,1.6,
+ALT-00734,escalate,Jev: true positive 0.95 >= 0.6,0.95,0.05,0.52,2.09,
+ALT-00735,investigate,Jev: true positive 0.23 >= 0.15,0.23,0.77,0.75,1.19,
+ALT-00736,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.62,True
+ALT-00737,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.17,True
+ALT-00738,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.94,False
+ALT-00739,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.62,False
+ALT-00740,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.38,False
+ALT-00741,investigate,Jev: true positive 0.59 >= 0.15,0.59,0.41,0.6,2.12,
+ALT-00742,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.21,True
+ALT-00743,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.59,True
+ALT-00744,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.94,False
+ALT-00745,investigate,"not confident enough to close: benign 0.99, ordinary explanation 0.79",0.01,0.99,0.79,0.98,
+ALT-00746,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.35,False
+ALT-00747,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.33,True
+ALT-00748,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.93,False
+ALT-00749,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,1.49,True
+ALT-00750,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,1.47,True
+ALT-00751,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.17,False
+ALT-00752,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,2.78,True
+ALT-00753,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,1.44,True
+ALT-00754,investigate,Jev: true positive 0.19 >= 0.15,0.19,0.81,0.83,0.19,
+ALT-00755,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.71,True
+ALT-00756,investigate,"not confident enough to close: benign 0.92, ordinary explanation 0.78",0.08,0.92,0.78,1.25,
+ALT-00757,investigate,"not confident enough to close: benign 0.90, ordinary explanation 0.77",0.1,0.9,0.77,1.25,
+ALT-00758,close,Jev: benign 0.94 and an ordinary explanation fits 0.80,0.06,0.94,0.8,1.06,False
+ALT-00759,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.64,False
+ALT-00760,investigate,nearby alerts on the same user or host cast doubt,0.06,0.94,0.8,1.06,True
+ALT-00761,close,Jev: benign 0.99 and an ordinary explanation fits 0.89,0.01,0.99,0.89,0.69,False
+ALT-00762,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.19,
+ALT-00763,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.35,True
+ALT-00764,close,Jev: benign 0.98 and an ordinary explanation fits 0.85,0.02,0.98,0.85,1.01,False
+ALT-00765,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.49,False
+ALT-00766,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.33,False
+ALT-00767,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.59,False
+ALT-00768,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.34,True
+ALT-00769,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.47,1.09,
+ALT-00770,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.87,0.21,
+ALT-00771,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.19,False
+ALT-00772,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.84",0.11,0.89,0.84,0.16,
+ALT-00773,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.95,False
+ALT-00774,close,Jev: benign 1.00 and an ordinary explanation fits 0.95,0.0,1.0,0.95,0.57,False
+ALT-00775,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.2,
+ALT-00776,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.84",0.11,0.89,0.84,0.17,
+ALT-00777,close,Jev: benign 1.00 and an ordinary explanation fits 0.82,0.0,1.0,0.82,0.65,False
+ALT-00778,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.26,
+ALT-00779,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.91,False
+ALT-00780,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.6,False
+ALT-00781,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.77",0.11,0.89,0.77,1.2,
+ALT-00782,investigate,"not confident enough to close: benign 0.90, ordinary explanation 0.79",0.1,0.9,0.79,1.05,
+ALT-00783,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.24,True
+ALT-00784,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,1.06,False
+ALT-00785,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.2,
+ALT-00786,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.72,False
+ALT-00787,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.47,1.09,
+ALT-00788,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.46,1.15,
+ALT-00789,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.92,False
+ALT-00790,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.18,False
+ALT-00791,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.72,False
+ALT-00792,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.19,True
+ALT-00793,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.95,True
+ALT-00794,investigate,nearby alerts on the same user or host cast doubt,0.09,0.91,0.81,1.06,True
+ALT-00795,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.18,False
+ALT-00796,close,Jev: benign 1.00 and an ordinary explanation fits 0.89,0.0,1.0,0.89,0.31,False
+ALT-00797,close,Jev: benign 0.90 and an ordinary explanation fits 0.83,0.1,0.9,0.83,0.41,False
+ALT-00798,close,Jev: benign 0.96 and an ordinary explanation fits 0.84,0.04,0.96,0.84,1.08,False
+ALT-00799,close,Jev: benign 0.99 and an ordinary explanation fits 0.82,0.01,0.99,0.82,0.68,False
+ALT-00800,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.47,1.13,
+ALT-00801,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.61,True
+ALT-00802,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.82,0.66,True
+ALT-00803,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.32,False
+ALT-00804,investigate,Jev: true positive 0.19 >= 0.15,0.19,0.81,0.83,0.17,
+ALT-00805,escalate,Jev: true positive 0.78 >= 0.6,0.78,0.22,0.46,1.15,
+ALT-00806,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.62,False
+ALT-00807,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.18,True
+ALT-00808,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.21,
+ALT-00809,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.64,True
+ALT-00810,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.86,1.11,True
+ALT-00811,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.98,False
+ALT-00812,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.35,False
+ALT-00813,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.58,True
+ALT-00814,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.71,False
+ALT-00815,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.61,False
+ALT-00816,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.17,False
+ALT-00817,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.19,
+ALT-00818,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.35,False
+ALT-00819,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.37,False
+ALT-00820,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.53,False
+ALT-00821,escalate,Jev: true positive 0.85 >= 0.6,0.85,0.15,0.47,1.16,
+ALT-00822,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.8,0.86,True
+ALT-00823,close,Jev: benign 1.00 and an ordinary explanation fits 0.84,0.0,1.0,0.84,0.67,False
+ALT-00824,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.96,False
+ALT-00825,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.2,
+ALT-00826,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.24,
+ALT-00827,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.84",0.14,0.86,0.84,0.16,
+ALT-00828,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.24,False
+ALT-00829,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.95,False
+ALT-00830,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.84,0.63,True
+ALT-00831,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.58,True
+ALT-00832,escalate,Jev: true positive 0.86 >= 0.6,0.86,0.14,0.48,1.13,
+ALT-00833,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.2,
+ALT-00834,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,1.0,False
+ALT-00835,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.58,False
+ALT-00836,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.36,False
+ALT-00837,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.95,0.6,True
+ALT-00838,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,1.02,False
+ALT-00839,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.61,True
+ALT-00840,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.7,False
+ALT-00841,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.86,0.45,
+ALT-00842,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.59,True
+ALT-00843,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.68,False
+ALT-00844,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.84",0.14,0.86,0.84,0.18,
+ALT-00845,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.84",0.1,0.89,0.84,0.2,
+ALT-00846,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.82",0.13,0.87,0.82,0.46,
+ALT-00847,escalate,Jev: true positive 0.62 >= 0.6,0.62,0.38,0.68,1.02,
+ALT-00848,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.47,1.19,
+ALT-00849,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.27,
+ALT-00850,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.71,True
+ALT-00851,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.83,0.19,
+ALT-00852,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,1.08,True
+ALT-00853,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.83",0.12,0.88,0.83,0.16,
+ALT-00854,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.58,True
+ALT-00855,escalate,Jev: true positive 0.78 >= 0.6,0.78,0.22,0.42,1.15,
+ALT-00856,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.22,
+ALT-00857,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.39,False
+ALT-00858,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.18,True
+ALT-00859,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,1.07,False
+ALT-00860,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.15,False
+ALT-00861,investigate,Jev: true positive 0.17 >= 0.15,0.17,0.83,0.84,0.18,
+ALT-00862,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.37,True
+ALT-00863,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.45,1.11,
+ALT-00864,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.65,False
+ALT-00865,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.38,1.82,
+ALT-00866,close,Jev: benign 1.00 and an ordinary explanation fits 0.82,0.0,1.0,0.82,0.65,False
+ALT-00867,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.43,1.13,
+ALT-00868,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.38,False
+ALT-00869,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.2,True
+ALT-00870,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.48,True
+ALT-00871,close,Jev: benign 1.00 and an ordinary explanation fits 0.80,0.0,1.0,0.8,0.82,False
+ALT-00872,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.25,
+ALT-00873,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.62,False
+ALT-00874,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.65,False
+ALT-00875,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.31,True
+ALT-00876,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.34,False
+ALT-00877,investigate,Jev: true positive 0.34 >= 0.15,0.34,0.66,0.72,0.96,
+ALT-00878,escalate,Jev: true positive 0.92 >= 0.6,0.92,0.08,0.55,1.24,
+ALT-00879,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.21,
+ALT-00880,investigate,"not confident enough to close: benign 0.98, ordinary explanation 0.78",0.02,0.98,0.78,1.05,
+ALT-00881,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.56,False
+ALT-00882,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.2,
+ALT-00883,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.84,0.22,
+ALT-00884,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.71,True
+ALT-00885,investigate,Jev: true positive 0.48 >= 0.15,0.48,0.52,0.64,1.85,
+ALT-00886,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.15,True
+ALT-00887,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.94,False
+ALT-00888,escalate,Jev: true positive 0.93 >= 0.6,0.93,0.07,0.41,1.05,
+ALT-00889,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.85",0.11,0.89,0.85,0.13,
+ALT-00890,investigate,never-suppress (claimed tactic privilege_escalation); Jev true positive 0.58,0.58,0.42,0.53,1.06,
+ALT-00891,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00892,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.72,False
+ALT-00893,escalate,Jev: true positive 0.66 >= 0.6,0.66,0.34,0.63,2.15,
+ALT-00894,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.67,False
+ALT-00895,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,1.02,False
+ALT-00896,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.2,False
+ALT-00897,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.72,False
+ALT-00898,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.46,1.12,
+ALT-00899,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.2,
+ALT-00900,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.44,1.16,
+ALT-00901,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.54,1.94,
+ALT-00902,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.35,False
+ALT-00903,escalate,Jev: true positive 0.65 >= 0.6,0.65,0.35,0.54,2.56,
+ALT-00904,escalate,Jev: true positive 0.90 >= 0.6,0.9,0.1,0.45,2.25,
+ALT-00905,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.64,True
+ALT-00906,escalate,Jev: true positive 0.92 >= 0.6,0.92,0.08,0.52,1.74,
+ALT-00907,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.19,False
+ALT-00908,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.71,False
+ALT-00909,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.47,1.12,
+ALT-00910,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.71,True
+ALT-00911,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.73,1.12,
+ALT-00912,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.72,1.12,
+ALT-00913,investigate,Jev: true positive 0.18 >= 0.15,0.18,0.82,0.71,1.17,
+ALT-00914,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.49,0.49,0.51,0.59,2.09,
+ALT-00915,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,1.09,False
+ALT-00916,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.32,False
+ALT-00917,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.46,
+ALT-00918,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.29,False
+ALT-00919,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.52,False
+ALT-00920,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.46,1.15,
+ALT-00921,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.46,1.12,
+ALT-00922,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.88,0.9,True
+ALT-00923,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.2,True
+ALT-00924,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,1.03,False
+ALT-00925,escalate,Jev: true positive 0.84 >= 0.6,0.84,0.16,0.42,3.0,
+ALT-00926,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.84",0.12,0.88,0.84,0.19,
+ALT-00927,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.24,
+ALT-00928,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.84",0.13,0.87,0.84,0.17,
+ALT-00929,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.83",0.12,0.88,0.83,0.17,
+ALT-00930,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.18,
+ALT-00931,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.71,False
+ALT-00932,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.57,True
+ALT-00933,escalate,Jev: true positive 0.82 >= 0.6,0.82,0.18,0.47,1.16,
+ALT-00934,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.59,1.26,
+ALT-00935,escalate,Jev: true positive 0.92 >= 0.6,0.92,0.08,0.47,1.28,
+ALT-00936,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.62,False
+ALT-00937,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.59,1.28,
+ALT-00938,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.45,1.11,
+ALT-00939,escalate,Jev: true positive 0.90 >= 0.6,0.9,0.1,0.5,1.61,
+ALT-00940,escalate,Jev: true positive 0.90 >= 0.6,0.9,0.1,0.48,1.26,
+ALT-00941,investigate,Jev: true positive 0.18 >= 0.15,0.18,0.82,0.81,0.47,
+ALT-00942,escalate,Jev: true positive 0.91 >= 0.6,0.91,0.09,0.52,1.65,
+ALT-00943,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.33,False
+ALT-00944,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.94,0.67,True
+ALT-00945,close,Jev: benign 0.99 and an ordinary explanation fits 0.82,0.01,0.99,0.82,0.63,False
+ALT-00946,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.62,False
+ALT-00947,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.67,False
+ALT-00948,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.55,False
+ALT-00949,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.43,0.43,0.57,0.62,1.74,
+ALT-00950,investigate,"not confident enough to close: benign 0.87, ordinary explanation 0.85",0.13,0.87,0.85,0.16,
+ALT-00951,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.44,0.44,0.56,0.61,1.74,
+ALT-00952,escalate,Jev: true positive 0.86 >= 0.6,0.86,0.14,0.48,1.07,
+ALT-00953,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.59,1.28,
+ALT-00954,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.46,1.16,
+ALT-00955,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.67,False
+ALT-00956,escalate,Jev: true positive 0.90 >= 0.6,0.9,0.1,0.46,1.31,
+ALT-00957,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.7,True
+ALT-00958,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.88,0.72,True
+ALT-00959,escalate,Jev: true positive 0.93 >= 0.6,0.93,0.07,0.46,1.66,
+ALT-00960,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.64,True
+ALT-00961,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.34,False
+ALT-00962,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.40,0.4,0.6,0.63,1.73,
+ALT-00963,close,Jev: benign 1.00 and an ordinary explanation fits 0.82,0.0,1.0,0.82,0.67,False
+ALT-00964,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.84,0.19,
+ALT-00965,escalate,Jev: true positive 0.77 >= 0.6,0.77,0.23,0.45,1.11,
+ALT-00966,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.92,0.51,True
+ALT-00967,close,allowlist: authorized test host scans,,,,,
+ALT-00968,close,Jev: benign 1.00 and an ordinary explanation fits 0.80,0.0,1.0,0.8,1.01,False
+ALT-00969,close,allowlist: authorized test host scans,,,,,
+ALT-00970,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.91,0.55,True
+ALT-00971,close,Jev: benign 0.99 and an ordinary explanation fits 0.81,0.01,0.99,0.81,0.84,False
+ALT-00972,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.82,False
+ALT-00973,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.9,0.17,True
+ALT-00974,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,0.84,False
+ALT-00975,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.32,
+ALT-00976,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.17,False
+ALT-00977,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.17,False
+ALT-00978,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.44,1.1,
+ALT-00979,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.83,0.16,
+ALT-00980,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.59,False
+ALT-00981,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.87,0.72,True
+ALT-00982,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.2,
+ALT-00983,close,Jev: benign 1.00 and an ordinary explanation fits 0.83,0.0,1.0,0.83,0.67,False
+ALT-00984,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.34,False
+ALT-00985,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.22,
+ALT-00986,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.19,False
+ALT-00987,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-00988,close,Jev: benign 1.00 and an ordinary explanation fits 0.95,0.0,1.0,0.95,0.54,False
+ALT-00989,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.47,1.14,
+ALT-00990,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-00991,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.93,0.31,True
+ALT-00992,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.46,1.2,
+ALT-00993,investigate,"not confident enough to close: benign 0.89, ordinary explanation 0.85",0.11,0.89,0.85,0.18,
+ALT-00994,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.19,
+ALT-00995,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.25,
+ALT-00996,investigate,nearby alerts on the same user or host cast doubt,0.02,0.98,0.86,0.73,True
+ALT-00997,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.23,
+ALT-00998,escalate,Jev: true positive 0.83 >= 0.6,0.83,0.17,0.45,1.12,
+ALT-00999,investigate,Jev: true positive 0.16 >= 0.15,0.16,0.84,0.83,0.2,
+ALT-01000,investigate,nearby alerts on the same user or host cast doubt,0.02,0.98,0.85,1.31,True
+ALT-01001,investigate,nearby alerts on the same user or host cast doubt,0.01,0.99,0.86,0.71,True
+ALT-01002,close,Jev: benign 0.99 and an ordinary explanation fits 0.87,0.01,0.99,0.87,0.7,False
+ALT-01003,investigate,"not confident enough to close: benign 0.88, ordinary explanation 0.84",0.12,0.88,0.84,0.15,
+ALT-01004,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.58,False
+ALT-01005,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.16,False
+ALT-01006,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.34,False
+ALT-01007,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.97,False
+ALT-01008,investigate,Jev: true positive 0.15 >= 0.15,0.15,0.85,0.84,0.17,
+ALT-01009,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.65,False
+ALT-01010,close,Jev: benign 1.00 and an ordinary explanation fits 0.87,0.0,1.0,0.87,1.04,False
+ALT-01011,close,Jev: benign 1.00 and an ordinary explanation fits 0.91,0.0,1.0,0.91,0.17,False
+ALT-01012,escalate,Jev: true positive 0.80 >= 0.6,0.8,0.2,0.45,1.12,
+ALT-01013,investigate,nearby alerts on the same user or host cast doubt,0.02,0.98,0.85,1.02,True
+ALT-01014,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.36,False
+ALT-01015,close,Jev: benign 0.99 and an ordinary explanation fits 0.88,0.01,0.99,0.88,0.69,False
+ALT-01016,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.96,False
+ALT-01017,close,Jev: benign 1.00 and an ordinary explanation fits 0.94,0.0,1.0,0.94,0.61,False
+ALT-01018,investigate,"not confident enough to close: benign 0.86, ordinary explanation 0.84",0.14,0.86,0.84,0.15,
+ALT-01019,escalate,Jev: true positive 0.97 >= 0.6,0.97,0.03,0.63,1.28,
+ALT-01020,close,Jev: benign 0.98 and an ordinary explanation fits 0.84,0.02,0.98,0.84,1.05,False
+ALT-01021,escalate,Jev: true positive 0.90 >= 0.6,0.9,0.1,0.49,1.26,
+ALT-01022,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.24,
+ALT-01023,escalate,Jev: true positive 0.89 >= 0.6,0.89,0.11,0.55,1.79,
+ALT-01024,escalate,Jev: true positive 0.77 >= 0.6,0.77,0.23,0.45,1.08,
+ALT-01025,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.88,0.21,
+ALT-01026,investigate,"not confident enough to close: benign 0.90, ordinary explanation 0.83",0.1,0.9,0.83,0.4,
+ALT-01027,escalate,Jev: true positive 0.78 >= 0.6,0.78,0.22,0.46,1.1,
+ALT-01028,investigate,nearby alerts on the same user or host cast doubt,0.0,1.0,0.83,0.65,True
+ALT-01029,close,Jev: benign 1.00 and an ordinary explanation fits 0.82,0.0,1.0,0.82,0.67,False
+ALT-01030,escalate,Jev: true positive 0.78 >= 0.6,0.78,0.22,0.46,1.13,
+ALT-01031,investigate,never-suppress (rule name mentions 'large upload'); Jev true positive 0.00,0.0,1.0,0.89,0.16,
+ALT-01032,escalate,Jev: true positive 0.81 >= 0.6,0.81,0.19,0.43,1.17,
+ALT-01033,close,Jev: benign 1.00 and an ordinary explanation fits 0.93,0.0,1.0,0.93,0.35,False
+ALT-01034,close,Jev: benign 1.00 and an ordinary explanation fits 0.92,0.0,1.0,0.92,0.51,False
+ALT-01035,close,Jev: benign 1.00 and an ordinary explanation fits 0.88,0.0,1.0,0.88,0.93,False
+ALT-01036,investigate,never-suppress (claimed tactic exfiltration); Jev true positive 0.42,0.42,0.58,0.63,1.79,
+ALT-01037,escalate,Jev: true positive 0.93 >= 0.6,0.93,0.07,0.4,1.05,
+ALT-01038,investigate,never-suppress (claimed tactic privilege_escalation); Jev true positive 0.53,0.53,0.47,0.53,1.06,
+ALT-01039,close,Jev: benign 0.99 and an ordinary explanation fits 0.82,0.01,0.99,0.82,0.65,False
+ALT-01040,close,Jev: benign 1.00 and an ordinary explanation fits 0.90,0.0,1.0,0.9,0.55,False
+ALT-01041,escalate,Jev: true positive 0.69 >= 0.6,0.69,0.31,0.61,2.14,
+ALT-01042,escalate,Jev: true positive 0.76 >= 0.6,0.76,0.24,0.48,2.52,

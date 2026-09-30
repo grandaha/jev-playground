@@ -148,7 +148,7 @@ Real incidents are chains of ATT&CK tactics. Three incidents of each kind:
 - `malware_lateral`: malware on a laptop, privilege escalation, a move to a file server, then a large transfer.
 - `mfa_fatigue`: repeated multi-factor authentication (MFA) prompts, a successful login, then a cloud download.
 - `slow_burn`: low-severity alerts on one account spread over several days, each ignorable alone.
-- `missing_entity_link`: an incident where one alert lost its user field but shares the attacker's address and names the mailbox in its description, so grouping must still attach it and account risk must still count it for the right user.
+- `missing_entity_link`: an incident where one alert lost its user field but shares the attacker's address and names the mailbox in its description. Grouping must still attach it, and account risk must still count it for the right user.
 
 Benign look-alikes, each a burst of alerts that forms a benign group:
 - Benign true positives: `benign_admin_tool`, `benign_travel` (impossible travel from real travel), `benign_pentest` (an authorized security test) and `benign_backup` (a backup that looks like data leaving).
@@ -213,6 +213,8 @@ Each phase is checked before the next starts.
 3. Group into incidents: the baseline first, then Jev on the ambiguous links.
 4. Score accounts: the baseline against the Jev version. Build the reports.
 5. Freeze the rules, then run a fresh seed once. Write the README.
+
+Baseline floor (seed 101): the rules-only baseline misses 30 of 84 real alerts and 6 of 21 real incidents (no alert surfaced). 9 incidents have no escalated alert. 495 of 1042 alerts reach a person (52% fewer), and 517 of 958 benign alerts are closed. The misses are `slow_burn` (all 24 closed), `low_severity_real` (all 3) and `mfa_fatigue` (3 of 9). The benign look-alikes `benign_admin_tool` and `benign_backup` are all escalated.
 
 ## Risks
 - **Flattering results.** The same person writes the stories and the rules. Hard look-alike scenarios, added in new rounds, and a plain caveat in the README are the answer.

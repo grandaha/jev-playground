@@ -189,6 +189,8 @@ Each stage also runs as plain rules on the same alerts:
 - Grouping: shared entity inside a time window.
 - Account risk: the same formula, with the detector's severity and a fixed confidence.
 
+The grouping baseline is the floor Jev has to beat. On the current data it finds 1,393 candidate pairs and puts the 1,042 alerts into 363 groups. It links 5,451 alert pairs and gets all 225 true pairs, so recall is 100% and precision is 4%. Six groups each hold two different real incidents. Most of the wrong links join unrelated alerts that share a busy server or address (3,326 across scenarios, 1,760 in background noise).
+
 ## Metrics
 - Missed attacks: real alerts the pipeline closed, and real incidents with no escalated alert.
 - Queue: items a human must read, with an incident counting as one item, against alerts in.

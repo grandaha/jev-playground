@@ -4,6 +4,7 @@ Run from the experiment folder: ../../.venv/bin/python scripts/evaluate.py
 """
 import os
 from collections import Counter, defaultdict
+from itertools import combinations
 
 from paths import path
 from tables import read_csv
@@ -60,6 +61,30 @@ def _print_alert_section(name, key, decisions):
     return scenario_table(key, decisions)
 
 
+def grouping_metrics(key, groups):
+    incident = {k["alert_id"]: k["incident_id"] for k in key}
+    by_group, by_incident = defaultdict(list), defaultdict(list)
+    for aid, g in groups.items():
+        by_group[g].append(aid)
+    for aid, inc in incident.items():
+        if inc:
+            by_incident[inc].append(aid)
+    linked = {pair for members in by_group.values() for pair in combinations(sorted(members), 2)}
+    truth = {pair for members in by_incident.values() for pair in combinations(sorted(members), 2)}
+    correct = linked & truth
+    merged = sum(1 for members in by_group.values() if len({incident[a] for a in members if incident[a]}) > 1)
+    scenario = {k["alert_id"]: k.get("scenario", "") for k in key}
+    by_scenario = defaultdict(lambda: {"wrong_links": 0, "missed_links": 0})
+    for label, pairs in (("wrong_links", linked - truth), ("missed_links", truth - linked)):
+        for a, b in pairs:
+            owner = scenario[a] if scenario[a] == scenario[b] else "cross-scenario"
+            by_scenario[owner][label] += 1
+    return {"pairs_linked": len(linked), "true_pairs": len(truth), "correct_pairs": len(correct),
+            "precision": len(correct) / len(linked) if linked else 1.0,
+            "recall": len(correct) / len(truth) if truth else 1.0, "merged_incidents": merged,
+            "by_scenario": {s: dict(v) for s, v in by_scenario.items()}}
+
+
 def main():
     key = read_csv(path("answer_key.csv"))
     sections = {}
@@ -71,6 +96,17 @@ def main():
         s = stage_accuracy(key, read_csv(path("alerts.csv")), answers)
         print(f"\nStage accuracy on {s['real_alerts']} real alerts: Jev {s['jev_correct']}, "
               f"the detector's claimed tactic {s['detector_correct']}")
+    for name, file in (("Baseline grouping (shared entity, 72 hours)", "groups_baseline.csv"),
+                       ("Jev grouping", "groups_jev.csv")):
+        if os.path.exists(path(file)):
+            groups = {r["alert_id"]: r["group_id"] for r in read_csv(path(file))}
+            g = grouping_metrics(key, groups)
+            print(f"\n{name}: {len(set(groups.values()))} groups; linked pairs {g['pairs_linked']}, "
+                  f"correct {g['correct_pairs']} of {g['true_pairs']} true pairs "
+                  f"(precision {g['precision']:.0%}, recall {g['recall']:.0%}); "
+                  f"groups that hold two different real incidents: {g['merged_incidents']}")
+            for s, v in sorted(g["by_scenario"].items()):
+                print(f"    {s:<26} wrong links {v['wrong_links']}, missed links {v['missed_links']}")
     for name, table in sections.items():
         print(f"\nBy scenario, {name}: disposition/action counts")
         for scenario in sorted(table):

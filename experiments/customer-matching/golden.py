@@ -1,6 +1,7 @@
 """Golden records: one row per final entity, built from every record in its group. No Jev calls.
 
 Run from repo root: .venv/bin/python experiments/customer-matching/golden.py accounts|contacts
+A golden record is keyed by its master's own record id (golden_id = master_id), so every id in the output is a real source id.
 Writes, in data/:
   golden_<table>.csv         one row per entity (groups of one included): the master's value for each field,
                              with blanks filled from the next-best record; `filled_from` says which fields came from where
@@ -56,14 +57,14 @@ def main(table):
     groups = defaultdict(list)
     for r in read(f"groups_{table}.csv"):
         groups[r["group_id"]].append(r["record_id"])
-    acct_group = {r["record_id"]: r["group_id"] for r in read("groups_accounts.csv")} if table == "contacts" else {}
     rank = lambda i: SOURCE_RANK.index(norm[i]["source_system"]) if norm[i]["source_system"] in SOURCE_RANK else len(SOURCE_RANK)
 
     golden, phones, emails = [], [], []
     for gid, ids in sorted(groups.items()):
         order = sorted(ids, key=lambda i: (rank(i), -int(norm[i]["updated_at"].replace("-", "")), i))
         master, filled = order[0], []
-        row = {"golden_id": gid, "master_id": master, "member_ids": " ".join(order), "member_count": len(ids)}
+        # the golden record is keyed by its master's own record id, not a new number
+        row = {"golden_id": master, "group_id": gid, "master_id": master, "member_ids": " ".join(order), "member_count": len(ids)}
         for f in FIELDS[table]:
             src = next((i for i in order if norm[i][f]), None)
             row[f] = norm[src][f] if src else ""
@@ -76,15 +77,15 @@ def main(table):
             filled.append(f"address<-{src}")
         if table == "contacts":
             src = next((i for i in order if norm[i]["account_id"]), None)
-            row["golden_account_id"] = acct_group[norm[src]["account_id"]] if src else ""
+            row["golden_account_id"] = norm[src]["master_account_id"] if src else ""  # the master account record's own id
             if src and src != master:
                 filled.append(f"account<-{src}")
-            ev = multi_values(gid, order, norm, "email", "email_norm")
+            ev = multi_values(master, order, norm, "email", "email_norm")
             emails += ev
             row["primary_email"] = next((e["value"] for e in ev if e["is_primary"]), "")
             if ev and ev[0]["record_ids"].split()[0] != master:
                 filled.append(f"email<-{ev[0]['record_ids'].split()[0]}")
-        pv = multi_values(gid, order, norm, "phone", "phone_norm")
+        pv = multi_values(master, order, norm, "phone", "phone_norm")
         phones += pv
         row["primary_phone"] = next((p["value"] for p in pv if p["is_primary"]), "")
         if pv and pv[0]["record_ids"].split()[0] != master:

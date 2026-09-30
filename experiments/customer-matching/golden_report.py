@@ -75,8 +75,8 @@ def build(table):
             "incomplete: true duplicates are in another golden record" if incomplete else "correct"
         cards.append({
             "id": g["golden_id"], "title": " ".join(x for x in (g.get("name"), g.get("first_name"), g.get("last_name")) if x),
-            "master": g["master_id"], "reason": masters.get(g["golden_id"], "single record, nothing to merge"),
-            "filled": g["filled_from"], "status": status[g["golden_id"]], "check": check,
+            "master": g["master_id"], "reason": masters.get(g["group_id"], "single record, nothing to merge"),
+            "filled": g["filled_from"], "status": status[g["group_id"]], "check": check,
             "scenarios": sorted({truth[i]["scenario"] for i in ids}),
             "fields": fields,
             "phones": [{k: p[k] for k in ("value", "is_primary", "source_systems", "record_ids")} for p in phones[g["golden_id"]]],

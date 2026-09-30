@@ -143,7 +143,7 @@ Hidden, and used only for grading:
 - `true_tactic`, and which accounts are compromised.
 
 ### Scenarios
-Real incidents are chains of ATT&CK tactics. Four incidents of each kind:
+Real incidents are chains of ATT&CK tactics. Three incidents of each kind:
 - `phish_to_exfil`: credential phishing, a login from a new location, a mail forwarding rule, then data sent outside.
 - `malware_lateral`: malware on a laptop, privilege escalation, a move to a file server, then a large transfer.
 - `mfa_fatigue`: repeated multi-factor authentication (MFA) prompts, a successful login, then a cloud download.

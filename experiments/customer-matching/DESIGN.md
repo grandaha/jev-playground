@@ -19,7 +19,6 @@ Then open `data/reports/report.html` (every pair decision) and `data/reports/gol
 experiments/customer-matching/
   README.md          the short introduction
   DESIGN.md          this file: the full design
-  LICENSE            MIT
   run_all.sh         runs every script in order, asking Jev
   replay.sh          runs the same steps from the saved Jev answers, with no API key
   scripts/           generate, normalize, block, match, cluster, master, golden, evaluate, sweep, report, golden_report, paths

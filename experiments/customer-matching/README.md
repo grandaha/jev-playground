@@ -67,6 +67,6 @@ Three rule gaps turned up, and each got a fix in the rules:
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT. See [LICENSE](../../LICENSE) at the repo root.
 
 Start with [DESIGN.md](DESIGN.md) for the full design: the scenarios, the rules and the decisions behind them.

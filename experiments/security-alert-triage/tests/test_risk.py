@@ -61,6 +61,21 @@ def test_many_findings_for_one_user_stay_fast():
     assert time.time() - start < 2
 
 
+def test_evidence_is_the_alert_ids_of_the_worst_window():
+    def f(aid, day, detection):
+        return {"user": "v", "ts": risk.parse_ts(f"2026-03-{day:02d}T00:00:00Z"), "detection": detection,
+                "risk": 100.0, "alert_id": aid}
+    fs = [f("1", 1, "a"), f("2", 4, "b"), f("3", 5, "c"), f("4", 20, "d")]
+    assert risk.account_evidence(fs) == {"v": ["1", "2", "3"]}
+
+
+def test_written_rows_carry_alert_and_group_ids(tmp_path, monkeypatch):
+    monkeypatch.setattr(risk, "path", lambda name: str(tmp_path / name))
+    risk._write("r.csv", {"u": 50.0}, {"u": ["A", "B"]}, {"A": "G1", "B": "G1"})
+    row = risk.read_csv(str(tmp_path / "r.csv"))[0]
+    assert row["alert_ids"] == "A B" and row["group_ids"] == "G1" and row["rank"] == "1"
+
+
 def test_rank_orders_by_score_then_name():
     assert risk.rank({"b": 50.0, "a": 50.0, "c": 70.0}) == [("c", 70.0), ("a", 50.0), ("b", 50.0)]
 

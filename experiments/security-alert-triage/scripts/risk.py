@@ -61,38 +61,55 @@ def score_window(fs):
     return 100 * (0.4 * min(total / 150, 1) + 0.3 * min(worst / 100, 1) + 0.2 * min(serious / 3, 1) + 0.1 * min(kinds / 4, 1))
 
 
-def account_scores(fs, window_days=WINDOW_DAYS):
+def _worst_windows(fs, window_days):
+    """{user: (best score, findings in that window, in time order)}, one two-pointer scan per user."""
     by_user = defaultdict(list)
     for f in fs:
         by_user[f["user"]].append(f)
     out = {}
     for user, items in by_user.items():
         items.sort(key=lambda f: f["ts"])
-        best, left = 0.0, 0
+        best, best_items, left = 0.0, items[:1], 0
         for right, end in enumerate(items):
             while items[left]["ts"] <= end["ts"] - timedelta(days=window_days):
                 left += 1
-            best = max(best, score_window(items[left: right + 1]))
-        out[user] = round(best, 2)
+            score = score_window(items[left: right + 1])
+            if score > best:
+                best, best_items = score, items[left: right + 1]
+        out[user] = (best, best_items)
     return out
+
+
+def account_scores(fs, window_days=WINDOW_DAYS):
+    return {u: round(s, 2) for u, (s, _) in _worst_windows(fs, window_days).items()}
+
+
+def account_evidence(fs, window_days=WINDOW_DAYS):
+    """{user: alert ids inside the worst window, in time order}."""
+    return {u: [f["alert_id"] for f in items] for u, (_, items) in _worst_windows(fs, window_days).items()}
 
 
 def rank(scores):
     return sorted(scores.items(), key=lambda kv: (-kv[1], kv[0]))
 
 
-def _write(filename, scores):
-    write_csv(path(filename), [{"rank": i, "user": u, "score": s} for i, (u, s) in enumerate(rank(scores), 1)],
-              ["rank", "user", "score"])
+def _write(filename, scores, evidence, groups):
+    rows = []
+    for i, (u, s) in enumerate(rank(scores), 1):
+        ids = evidence[u]
+        rows.append({"rank": i, "user": u, "score": s, "alert_ids": " ".join(ids),
+                     "group_ids": " ".join(sorted({groups[a] for a in ids if a in groups}))})
+    write_csv(path(filename), rows, ["rank", "user", "score", "alert_ids", "group_ids"])
 
 
 def main():
     alerts = read_alerts(path("alerts.csv"))
     decisions = read_csv(path("decisions_alerts.csv"))
     groups = {r["alert_id"]: r["group_id"] for r in read_csv(path("groups_jev.csv"))}
-    jev, base = account_scores(findings(alerts, decisions, groups)), account_scores(baseline_findings(alerts))
-    _write("output_account_risk.csv", jev)
-    _write("output_account_risk_baseline.csv", base)
+    jev_fs, base_fs = findings(alerts, decisions, groups), baseline_findings(alerts)
+    jev, base = account_scores(jev_fs), account_scores(base_fs)
+    _write("output_account_risk.csv", jev, account_evidence(jev_fs), groups)
+    _write("output_account_risk_baseline.csv", base, account_evidence(base_fs), groups)
     print(f"account risk: {len(jev)} accounts scored with Jev, {len(base)} with detector severity")
 
 

@@ -186,14 +186,14 @@ Each script reads the files the previous stage wrote. Jev answers are saved, so 
 ## Account risk
 - A finding's risk equals impact times confidence divided by 100. Jev's impact Score supplies the impact, scaled to 0 to 100. Jev's probability of a true positive supplies the confidence.
 - An account's score is a rolling 7-day number from 0 to 100. The incidents are spread over two weeks, so each account takes its worst seven-day window. The score combines the total risk, the worst single finding, the count of serious findings and the count of different detections.
-- Alerts inside confirmed incidents count in full, and benign alerts count for little.
-- The output is a ranked list, and each account shows the incidents and alerts behind its score.
+- An alert counts in full when Jev put it in a group of three or more alerts, and at half weight otherwise. Benign alerts add little because their probability of a true positive is low. A real incident that produces only one or two alerts counts at half weight, which is a known weakness.
+- The output is a ranked list. Each account row lists the alert ids inside its worst seven-day window (`alert_ids`) and the Jev group ids of those alerts (`group_ids`).
 
 ## Baselines
 Each stage also runs as plain rules on the same alerts:
 - Triage: escalate high and critical detector severities, close low and informational ones, and apply the allowlist and never-suppress list.
 - Grouping: shared entity inside a time window.
-- Account risk: the same formula, with the detector's severity and a fixed confidence.
+- Account risk: the same score and window, with the detector's severity as the impact and a fixed confidence of 0.5. It has no grouping step, so an alert with no user is skipped and every alert counts in full, with no corroboration factor. Its `group_ids` column is only a pointer taken from the Jev groups.
 
 The grouping baseline is the floor Jev has to beat. On the current data it finds 1,393 candidate pairs and puts the 1,042 alerts into 363 groups. It links 5,451 alert pairs and gets all 225 true pairs, so recall is 100% and precision is 4%. Six groups each hold two different real incidents. Most of the wrong links join unrelated alerts that share a busy server or address (3,326 across scenarios, 1,760 in background noise).
 
@@ -208,7 +208,7 @@ Each scenario has three compromised accounts. The pairs below are accounts in th
 - `slow_burn`: 1 and 2, against 0 and 0.
 - `two_incidents_one_user`: 1 and 3, against 1 and 2.
 
-Jev's weakest spots are `low_severity_real` and `mfa_fatigue`, where no account reaches the top 10.
+Jev is worse than the baseline on one cell: `mfa_fatigue` in the top 10, where the baseline places 1 compromised account and Jev places 0. In the top 20 for that scenario Jev places 3 against the baseline's 1. In every other scenario Jev matches or beats the baseline in both columns. Jev's other weak spot is `low_severity_real`, where no account reaches the top 10 for either ranking.
 
 ## Metrics
 - Missed attacks: real alerts the pipeline closed, and real incidents with no escalated alert.

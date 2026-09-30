@@ -1,198 +1,198 @@
-rank,user,score
-1,avery.grant@example.com,63.5
-2,blake.chen@example.com,63.5
-3,casey.diaz@example.com,63.5
-4,devon.chen@example.com,63.5
-5,finley.chen@example.com,63.5
-6,finley.lopez@example.com,63.5
-7,finley.reyes@example.com,63.5
-8,jordan.chen@example.com,63.5
-9,jordan.hayes@example.com,63.5
-10,kai.grant@example.com,63.5
-11,kai.hayes@example.com,63.5
-12,kai.novak@example.com,63.5
-13,morgan.chen@example.com,63.5
-14,morgan.grant@example.com,63.5
-15,morgan.reyes@example.com,63.5
-16,morgan.silva@example.com,63.5
-17,noel.evans@example.com,63.5
-18,noel.grant@example.com,63.5
-19,parker.brooks@example.com,63.5
-20,parker.chen@example.com,63.5
-21,quinn.fox@example.com,63.5
-22,reese.adler@example.com,63.5
-23,reese.ortiz@example.com,63.5
-24,sage.ito@example.com,63.5
-25,sage.jones@example.com,63.5
-26,sage.novak@example.com,63.5
-27,sage.walsh@example.com,63.5
-28,taylor.grant@example.com,63.5
-29,taylor.jones@example.com,63.5
-30,wren.lopez@example.com,63.5
-31,sage.adler@example.com,61.0
-32,blake.moore@example.com,59.5
-33,devon.lopez@example.com,59.5
-34,jordan.adler@example.com,59.5
-35,reese.lopez@example.com,59.5
-36,riley.adler@example.com,59.5
-37,avery.evans@example.com,59.0
-38,devon.fox@example.com,59.0
-39,reese.ito@example.com,59.0
-40,taylor.ortiz@example.com,59.0
-41,quinn.moore@example.com,57.0
-42,casey.reyes@example.com,56.5
-43,casey.patel@example.com,55.5
-44,harper.ortiz@example.com,55.5
-45,logan.jones@example.com,55.5
-46,avery.jones@example.com,55.0
-47,finley.evans@example.com,55.0
-48,blake.jones@example.com,53.0
-49,noel.ortiz@example.com,52.5
-50,wren.ito@example.com,52.5
-51,harper.lopez@example.com,51.5
-52,harper.moore@example.com,51.5
-53,morgan.hayes@example.com,51.5
-54,reese.brooks@example.com,51.5
-55,taylor.diaz@example.com,51.5
-56,taylor.fox@example.com,51.5
-57,wren.jones@example.com,51.5
-58,zion.adler@example.com,51.5
-59,devon.adler@example.com,51.0
-60,kai.reyes@example.com,51.0
-61,morgan.khan@example.com,51.0
-62,noel.brooks@example.com,51.0
-63,noel.walsh@example.com,51.0
-64,sage.grant@example.com,51.0
-65,sage.khan@example.com,51.0
-66,wren.ortiz@example.com,51.0
-67,blake.walsh@example.com,50.5
-68,riley.ito@example.com,50.5
-69,sage.lopez@example.com,50.5
-70,finley.novak@example.com,49.0
-71,kai.jones@example.com,49.0
-72,noel.hayes@example.com,49.0
-73,harper.ito@example.com,48.5
-74,avery.lopez@example.com,47.5
-75,kai.lopez@example.com,47.5
-76,reese.silva@example.com,47.5
-77,devon.brooks@example.com,47.0
-78,harper.khan@example.com,47.0
-79,logan.evans@example.com,47.0
-80,logan.moore@example.com,47.0
-81,parker.grant@example.com,47.0
-82,quinn.silva@example.com,47.0
-83,reese.patel@example.com,47.0
-84,reese.tran@example.com,47.0
-85,zion.patel@example.com,47.0
-86,noel.reyes@example.com,46.5
-87,casey.brooks@example.com,45.0
-88,casey.lopez@example.com,45.0
-89,emery.khan@example.com,45.0
-90,harper.chen@example.com,45.0
-91,logan.grant@example.com,45.0
-92,parker.silva@example.com,45.0
-93,sage.patel@example.com,45.0
-94,zion.novak@example.com,45.0
-95,emery.lopez@example.com,44.5
-96,riley.hayes@example.com,44.5
-97,riley.ortiz@example.com,44.5
-98,avery.hayes@example.com,43.0
-99,casey.fox@example.com,43.0
-100,morgan.ortiz@example.com,43.0
-101,parker.fox@example.com,43.0
-102,quinn.brooks@example.com,43.0
-103,reese.fox@example.com,43.0
-104,taylor.moore@example.com,43.0
-105,zion.fox@example.com,43.0
-106,emery.novak@example.com,42.5
-107,sage.ortiz@example.com,42.5
-108,casey.moore@example.com,41.0
-109,finley.adler@example.com,41.0
-110,kai.moore@example.com,41.0
-111,logan.khan@example.com,41.0
-112,parker.patel@example.com,41.0
-113,quinn.ito@example.com,41.0
-114,blake.lopez@example.com,40.5
-115,logan.diaz@example.com,40.5
-116,quinn.lopez@example.com,40.5
-117,taylor.tran@example.com,40.5
-118,blake.ortiz@example.com,38.5
-119,devon.silva@example.com,38.5
-120,kai.diaz@example.com,38.5
-121,kai.walsh@example.com,38.5
-122,zion.grant@example.com,38.0
-123,avery.moore@example.com,36.5
-124,emery.brooks@example.com,36.5
-125,emery.chen@example.com,36.5
-126,harper.walsh@example.com,36.5
-127,noel.tran@example.com,36.5
-128,parker.ito@example.com,36.5
-129,quinn.novak@example.com,36.5
-130,taylor.brooks@example.com,36.5
-131,harper.fox@example.com,34.5
-132,parker.diaz@example.com,34.5
-133,blake.evans@example.com,34.0
-134,emery.moore@example.com,34.0
-135,jordan.walsh@example.com,34.0
-136,avery.diaz@example.com,32.5
-137,avery.silva@example.com,32.5
-138,blake.khan@example.com,32.5
-139,casey.ito@example.com,32.5
-140,finley.jones@example.com,32.5
-141,harper.reyes@example.com,32.5
-142,jordan.diaz@example.com,32.5
-143,kai.ito@example.com,32.5
-144,kai.patel@example.com,32.5
-145,logan.fox@example.com,32.5
-146,noel.adler@example.com,32.5
-147,riley.evans@example.com,32.5
-148,zion.walsh@example.com,32.5
-149,morgan.walsh@example.com,30.5
-150,blake.reyes@example.com,30.0
-151,emery.ortiz@example.com,30.0
-152,kai.adler@example.com,30.0
-153,logan.ito@example.com,30.0
-154,sage.brooks@example.com,30.0
-155,avery.khan@example.com,28.0
-156,casey.silva@example.com,28.0
-157,kai.khan@example.com,28.0
-158,jordan.patel@example.com,27.5
-159,zion.evans@example.com,27.5
-160,avery.novak@example.com,26.0
-161,casey.grant@example.com,26.0
-162,casey.novak@example.com,26.0
-163,devon.ito@example.com,26.0
-164,emery.hayes@example.com,26.0
-165,finley.ito@example.com,26.0
-166,finley.moore@example.com,26.0
-167,finley.ortiz@example.com,26.0
-168,kai.brooks@example.com,26.0
-169,noel.silva@example.com,26.0
-170,quinn.jones@example.com,26.0
-171,quinn.khan@example.com,26.0
-172,riley.fox@example.com,26.0
-173,taylor.chen@example.com,26.0
-174,taylor.ito@example.com,26.0
-175,wren.brooks@example.com,26.0
-176,wren.grant@example.com,25.5
-177,blake.silva@example.com,24.0
-178,logan.hayes@example.com,24.0
-179,blake.novak@example.com,19.5
-180,devon.reyes@example.com,19.5
-181,finley.grant@example.com,19.5
-182,avery.reyes@example.com,17.5
-183,emery.tran@example.com,17.5
-184,finley.silva@example.com,17.5
-185,jordan.ito@example.com,17.5
-186,kai.silva@example.com,17.5
-187,noel.ito@example.com,17.5
-188,riley.walsh@example.com,17.5
-189,zion.ito@example.com,17.5
-190,devon.tran@example.com,15.0
-191,wren.novak@example.com,15.0
-192,emery.fox@example.com,11.0
-193,emery.walsh@example.com,11.0
-194,finley.khan@example.com,11.0
-195,noel.patel@example.com,11.0
-196,quinn.reyes@example.com,11.0
-197,wren.fox@example.com,11.0
+rank,user,score,alert_ids,group_ids
+1,avery.grant@example.com,63.5,ALT-00153 ALT-00228 ALT-00632 ALT-00638,GRP-0130 GRP-0200 GRP-0550
+2,blake.chen@example.com,63.5,ALT-00372 ALT-00374 ALT-00383 ALT-00670 ALT-00728,GRP-0318 GRP-0585 GRP-0638
+3,casey.diaz@example.com,63.5,ALT-00008 ALT-00099 ALT-00127 ALT-00128 ALT-00137,GRP-0006 GRP-0085 GRP-0107
+4,devon.chen@example.com,63.5,ALT-00081 ALT-00100 ALT-00183 ALT-00456 ALT-00548 ALT-00569,GRP-0070 GRP-0086 GRP-0156 GRP-0389 GRP-0472 GRP-0491
+5,finley.chen@example.com,63.5,ALT-00418 ALT-00812 ALT-00814 ALT-00815 ALT-00827,GRP-0352 GRP-0715
+6,finley.lopez@example.com,63.5,ALT-00031 ALT-00174 ALT-00221 ALT-00269 ALT-00420 ALT-00490,GRP-0026 GRP-0193 GRP-0354 GRP-0418
+7,finley.reyes@example.com,63.5,ALT-00035 ALT-00101 ALT-00102 ALT-00104 ALT-00111,GRP-0030 GRP-0092
+8,jordan.chen@example.com,63.5,ALT-00438 ALT-00588 ALT-00605 ALT-00618 ALT-00809 ALT-00811 ALT-00817 ALT-00997,GRP-0371 GRP-0508 GRP-0524 GRP-0536 GRP-0713 GRP-0877
+9,jordan.hayes@example.com,63.5,ALT-00238 ALT-00320 ALT-00329 ALT-00547 ALT-00792,GRP-0210 GRP-0276 GRP-0284 GRP-0471 GRP-0698
+10,kai.grant@example.com,63.5,ALT-00399 ALT-00400 ALT-00401 ALT-00402 ALT-00445 ALT-00598 ALT-00899,GRP-0339 GRP-0378 GRP-0517 GRP-0788
+11,kai.hayes@example.com,63.5,ALT-00015 ALT-00017 ALT-00019 ALT-00020 ALT-00095 ALT-00168 ALT-00308,GRP-0013 GRP-0081 GRP-0145 GRP-0268
+12,kai.novak@example.com,63.5,ALT-00067 ALT-00344 ALT-00347 ALT-00354 ALT-00363,GRP-0058 GRP-0296
+13,morgan.chen@example.com,63.5,ALT-00422 ALT-00425 ALT-00530 ALT-00543 ALT-00920,GRP-0356 GRP-0455 GRP-0467 GRP-0807
+14,morgan.grant@example.com,63.5,ALT-00435 ALT-00506 ALT-00651 ALT-00842 ALT-00844 ALT-00979,GRP-0368 GRP-0434 GRP-0567 GRP-0740 GRP-0859
+15,morgan.reyes@example.com,63.5,ALT-00049 ALT-00051 ALT-00058 ALT-00062,GRP-0044
+16,morgan.silva@example.com,63.5,ALT-00389 ALT-00699 ALT-00702 ALT-00865 ALT-00868,GRP-0331 GRP-0613 GRP-0759
+17,noel.evans@example.com,63.5,ALT-00291 ALT-00475 ALT-00477 ALT-00492 ALT-00630 ALT-00732,GRP-0251 GRP-0405 GRP-0420 GRP-0548 GRP-0642
+18,noel.grant@example.com,63.5,ALT-00274 ALT-00324 ALT-00487 ALT-00583 ALT-00645 ALT-00712,GRP-0234 GRP-0280 GRP-0415 GRP-0503 GRP-0561 GRP-0623
+19,parker.brooks@example.com,63.5,ALT-00352 ALT-00513 ALT-00528 ALT-00570 ALT-00580 ALT-00895,GRP-0303 GRP-0440 GRP-0453 GRP-0492 GRP-0500 GRP-0784
+20,parker.chen@example.com,63.5,ALT-00277 ALT-00281 ALT-00357 ALT-00474 ALT-00497 ALT-00518 ALT-00660,GRP-0237 GRP-0241 GRP-0307 GRP-0404 GRP-0425 GRP-0445 GRP-0576
+21,quinn.fox@example.com,63.5,ALT-00516 ALT-00846 ALT-00885 ALT-00933 ALT-01002 ALT-01021,GRP-0443 GRP-0743 GRP-0774 GRP-0820 GRP-0882 GRP-0897
+22,reese.adler@example.com,63.5,ALT-00453 ALT-00521 ALT-00546 ALT-00781 ALT-00855 ALT-00859,GRP-0386 GRP-0448 GRP-0470 GRP-0687
+23,reese.ortiz@example.com,63.5,ALT-00105 ALT-00109 ALT-00249 ALT-00250 ALT-00252,GRP-0088 GRP-0218
+24,sage.ito@example.com,63.5,ALT-00215 ALT-00483 ALT-00561 ALT-00750 ALT-00752,GRP-0187 GRP-0411 GRP-0483 GRP-0660
+25,sage.jones@example.com,63.5,ALT-00054 ALT-00057 ALT-00142 ALT-00260 ALT-00261 ALT-00265,GRP-0048 GRP-0119
+26,sage.novak@example.com,63.5,ALT-00353 ALT-00417 ALT-00491 ALT-00599 ALT-00627 ALT-00633 ALT-00769 ALT-00861,GRP-0304 GRP-0351 GRP-0419 GRP-0518 GRP-0545 GRP-0551 GRP-0676 GRP-0756
+27,sage.walsh@example.com,63.5,ALT-00083 ALT-00084 ALT-00088 ALT-00106,GRP-0072
+28,taylor.grant@example.com,63.5,ALT-00197 ALT-00272 ALT-00275 ALT-00578 ALT-00606,GRP-0170 GRP-0232 GRP-0235 GRP-0498 GRP-0525
+29,taylor.jones@example.com,63.5,ALT-00535 ALT-00643 ALT-00671 ALT-00765 ALT-00930,GRP-0460 GRP-0559 GRP-0586 GRP-0672 GRP-0817
+30,wren.lopez@example.com,63.5,ALT-00175 ALT-00176 ALT-00177 ALT-00179 ALT-00237 ALT-00240 ALT-00322,GRP-0151 GRP-0209 GRP-0278
+31,sage.adler@example.com,61.0,ALT-00376 ALT-00485 ALT-00576 ALT-00796 ALT-00915,GRP-0320 GRP-0413 GRP-0701 GRP-0803
+32,blake.moore@example.com,59.5,ALT-00010 ALT-00045 ALT-00146 ALT-00198 ALT-00263 ALT-00539,GRP-0008 GRP-0040 GRP-0123 GRP-0171 GRP-0226 GRP-0463
+33,devon.lopez@example.com,59.5,ALT-00065 ALT-00068 ALT-00070 ALT-00145 ALT-00384,GRP-0056 GRP-0122 GRP-0327
+34,jordan.adler@example.com,59.5,ALT-00502 ALT-00537 ALT-00900 ALT-00943 ALT-01003,GRP-0430 GRP-0462 GRP-0789 GRP-0830 GRP-0883
+35,reese.lopez@example.com,59.5,ALT-00030 ALT-00042 ALT-00079 ALT-00246 ALT-00457,GRP-0025 GRP-0037 GRP-0068 GRP-0215 GRP-0390
+36,riley.adler@example.com,59.5,ALT-00060 ALT-00508 ALT-00517 ALT-00545,GRP-0052 GRP-0436 GRP-0444 GRP-0469
+37,avery.evans@example.com,59.0,ALT-00430 ALT-00500 ALT-00505 ALT-00529 ALT-00587 ALT-00642 ALT-00674 ALT-00804 ALT-00829,GRP-0363 GRP-0428 GRP-0433 GRP-0454 GRP-0507 GRP-0558 GRP-0589 GRP-0709 GRP-0728
+38,devon.fox@example.com,59.0,ALT-00458 ALT-00507 ALT-00625 ALT-00714 ALT-00754 ALT-00907,GRP-0391 GRP-0435 GRP-0543 GRP-0625 GRP-0662 GRP-0796
+39,reese.ito@example.com,59.0,ALT-00244 ALT-00293 ALT-00447 ALT-00584 ALT-00646 ALT-00744 ALT-00748,GRP-0015 GRP-0253 GRP-0380 GRP-0504 GRP-0562 GRP-0654 GRP-0658
+40,taylor.ortiz@example.com,59.0,ALT-00531 ALT-00639 ALT-00952 ALT-00957 ALT-00968 ALT-00975 ALT-01040,GRP-0456 GRP-0555 GRP-0834 GRP-0839 GRP-0855 GRP-0915
+41,quinn.moore@example.com,57.0,ALT-00056 ALT-00171 ALT-00488 ALT-00511,GRP-0050 GRP-0148 GRP-0416
+42,casey.reyes@example.com,56.5,ALT-00294 ALT-00391 ALT-00496 ALT-00542 ALT-00749 ALT-00807,GRP-0254 GRP-0333 GRP-0424 GRP-0466 GRP-0659 GRP-0711
+43,casey.patel@example.com,55.5,ALT-00757 ALT-00838 ALT-01023 ALT-01024,GRP-0665 GRP-0736 GRP-0899
+44,harper.ortiz@example.com,55.5,ALT-00103 ALT-00208 ALT-00303 ALT-00312 ALT-00393,GRP-0087 GRP-0181 GRP-0263 GRP-0271 GRP-0334
+45,logan.jones@example.com,55.5,ALT-00603 ALT-00668 ALT-00762 ALT-00912 ALT-00969,GRP-0522 GRP-0583 GRP-0669 GRP-0801 GRP-0849
+46,avery.jones@example.com,55.0,ALT-00302 ALT-00342 ALT-00380 ALT-00397 ALT-00467 ALT-00538 ALT-00565 ALT-00596 ALT-00664 ALT-00703,GRP-0262 GRP-0324 GRP-0487
+47,finley.evans@example.com,55.0,ALT-00243 ALT-00619 ALT-00708 ALT-00709 ALT-00716,GRP-0213 GRP-0537 GRP-0620
+48,blake.jones@example.com,53.0,ALT-00647 ALT-00843 ALT-00944 ALT-01036,GRP-0563 GRP-0741 GRP-0831 GRP-0911
+49,noel.ortiz@example.com,52.5,ALT-00185 ALT-00306 ALT-00369 ALT-00465 ALT-00563 ALT-00636,GRP-0158 GRP-0266 GRP-0316 GRP-0397 GRP-0485
+50,wren.ito@example.com,52.5,ALT-00163 ALT-00286 ALT-00360 ALT-00421 ALT-00667,GRP-0140 GRP-0246 GRP-0355 GRP-0582
+51,harper.lopez@example.com,51.5,ALT-00444 ALT-00449 ALT-00655 ALT-00983,GRP-0377 GRP-0382 GRP-0571 GRP-0863
+52,harper.moore@example.com,51.5,ALT-00740 ALT-00746 ALT-00910 ALT-01019,GRP-0650 GRP-0656 GRP-0799 GRP-0895
+53,morgan.hayes@example.com,51.5,ALT-00141 ALT-00202 ALT-00279 ALT-00442 ALT-00677,GRP-0118 GRP-0175 GRP-0239 GRP-0375 GRP-0592
+54,reese.brooks@example.com,51.5,ALT-00266 ALT-00285 ALT-00378 ALT-00608,GRP-0228 GRP-0245 GRP-0322 GRP-0527
+55,taylor.diaz@example.com,51.5,ALT-00386 ALT-00482 ALT-00737 ALT-00836,GRP-0329 GRP-0410 GRP-0647 GRP-0734
+56,taylor.fox@example.com,51.5,ALT-00350 ALT-00631 ALT-00821 ALT-00876,GRP-0301 GRP-0549 GRP-0721 GRP-0766
+57,wren.jones@example.com,51.5,ALT-00680 ALT-00770 ALT-00818 ALT-00831 ALT-00832,GRP-0595 GRP-0677 GRP-0718 GRP-0730
+58,zion.adler@example.com,51.5,ALT-00165 ALT-00226 ALT-00387 ALT-00388,GRP-0142 GRP-0198 GRP-0330
+59,devon.adler@example.com,51.0,ALT-00184 ALT-00334 ALT-00335 ALT-00398 ALT-00735,GRP-0157 GRP-0289 GRP-0338 GRP-0645
+60,kai.reyes@example.com,51.0,ALT-00089 ALT-00370 ALT-00407 ALT-00484 ALT-00571,GRP-0076 GRP-0317 GRP-0344 GRP-0412 GRP-0493
+61,morgan.khan@example.com,51.0,ALT-00191 ALT-00579 ALT-00594 ALT-00711 ALT-00736,GRP-0164 GRP-0499 GRP-0514 GRP-0622 GRP-0646
+62,noel.brooks@example.com,51.0,ALT-00544 ALT-00697 ALT-00766 ALT-00789 ALT-00982,GRP-0468 GRP-0611 GRP-0673 GRP-0695 GRP-0862
+63,noel.walsh@example.com,51.0,ALT-00143 ALT-00296 ALT-00339 ALT-00621 ALT-00701,GRP-0120 GRP-0256 GRP-0292 GRP-0539 GRP-0615
+64,sage.grant@example.com,51.0,ALT-00276 ALT-00534 ALT-00597 ALT-00683 ALT-00713,GRP-0236 GRP-0459 GRP-0516 GRP-0624
+65,sage.khan@example.com,51.0,ALT-00411 ALT-00429 ALT-00628 ALT-00730 ALT-00790 ALT-00801 ALT-00962,GRP-0347 GRP-0362 GRP-0546 GRP-0640 GRP-0696 GRP-0706 GRP-0843
+66,wren.ortiz@example.com,51.0,ALT-00315 ALT-00460 ALT-00466 ALT-00661 ALT-00707 ALT-00795,GRP-0273 GRP-0393 GRP-0398 GRP-0577 GRP-0619 GRP-0700
+67,blake.walsh@example.com,50.5,ALT-00121 ALT-00140 ALT-00227 ALT-00270 ALT-00310 ALT-00392 ALT-00403 ALT-00463 ALT-00524 ALT-00575 ALT-00610,GRP-0101 GRP-0117 GRP-0199 GRP-0340
+68,riley.ito@example.com,50.5,ALT-00567 ALT-00759 ALT-01000,GRP-0489 GRP-0666 GRP-0880
+69,sage.lopez@example.com,50.5,ALT-00479 ALT-00898 ALT-00971,GRP-0408 GRP-0787 GRP-0851
+70,finley.novak@example.com,49.0,ALT-00022 ALT-00194 ALT-00217 ALT-00439,GRP-0017 GRP-0167 GRP-0189 GRP-0372
+71,kai.jones@example.com,49.0,ALT-00522 ALT-00568 ALT-00848 ALT-00909,GRP-0449 GRP-0490 GRP-0745 GRP-0798
+72,noel.hayes@example.com,49.0,ALT-00446 ALT-00461 ALT-00593 ALT-00688 ALT-00960,GRP-0379 GRP-0394 GRP-0513 GRP-0602 GRP-0841
+73,harper.ito@example.com,48.5,ALT-00014 ALT-00063 ALT-00072 ALT-00426 ALT-00515,GRP-0012 GRP-0054 GRP-0061 GRP-0359 GRP-0442
+74,avery.lopez@example.com,47.5,ALT-00214 ALT-00311 ALT-00356 ALT-00653,GRP-0186 GRP-0270 GRP-0306 GRP-0569
+75,kai.lopez@example.com,47.5,ALT-00367 ALT-00371 ALT-00602 ALT-00882,GRP-0315 GRP-0521 GRP-0772
+76,reese.silva@example.com,47.5,ALT-00566 ALT-00581 ALT-00902 ALT-00955,GRP-0488 GRP-0501 GRP-0791 GRP-0837
+77,devon.brooks@example.com,47.0,ALT-00090 ALT-00150 ALT-00519 ALT-00591 ALT-00601,GRP-0077 GRP-0127 GRP-0446 GRP-0511 GRP-0520
+78,harper.khan@example.com,47.0,ALT-00071 ALT-00110 ALT-00224 ALT-00381 ALT-00395,GRP-0060 GRP-0091 GRP-0196 GRP-0325 GRP-0336
+79,logan.evans@example.com,47.0,ALT-00041 ALT-00117 ALT-00292 ALT-00419 ALT-00501,GRP-0036 GRP-0097 GRP-0252 GRP-0353 GRP-0429
+80,logan.moore@example.com,47.0,ALT-00394 ALT-00554 ALT-00557 ALT-00559 ALT-00813 ALT-00958,GRP-0335 GRP-0477 GRP-0481 GRP-0716 GRP-0840
+81,parker.grant@example.com,47.0,ALT-00098 ALT-00164 ALT-00166 ALT-00512 ALT-00555,GRP-0084 GRP-0141 GRP-0143 GRP-0439 GRP-0478
+82,quinn.silva@example.com,47.0,ALT-00205 ALT-00229 ALT-00325 ALT-00404 ALT-00623,GRP-0178 GRP-0201 GRP-0281 GRP-0341 GRP-0541
+83,reese.patel@example.com,47.0,ALT-00600 ALT-00733 ALT-00808 ALT-00840,GRP-0519 GRP-0643 GRP-0712 GRP-0738
+84,reese.tran@example.com,47.0,ALT-00066 ALT-00245 ALT-00271 ALT-00368 ALT-00433,GRP-0057 GRP-0214 GRP-0231 GRP-0366
+85,zion.patel@example.com,47.0,ALT-00377 ALT-00823 ALT-00856 ALT-00889,GRP-0321 GRP-0723 GRP-0752 GRP-0778
+86,noel.reyes@example.com,46.5,ALT-00118 ALT-00125 ALT-00151,GRP-0098 GRP-0105 GRP-0128
+87,casey.brooks@example.com,45.0,ALT-00349 ALT-00656 ALT-00747,GRP-0300 GRP-0572 GRP-0657
+88,casey.lopez@example.com,45.0,ALT-00210 ALT-00648 ALT-00692,GRP-0183 GRP-0564 GRP-0606
+89,emery.khan@example.com,45.0,ALT-00225 ALT-00441 ALT-00526,GRP-0197 GRP-0374 GRP-0451
+90,harper.chen@example.com,45.0,ALT-00679 ALT-00877 ALT-01011,GRP-0594 GRP-0767 GRP-0888
+91,logan.grant@example.com,45.0,ALT-00480 ALT-00784 ALT-00785 ALT-00860,GRP-0409 GRP-0690 GRP-0691 GRP-0755
+92,parker.silva@example.com,45.0,ALT-00351 ALT-00382 ALT-00471 ALT-00786,GRP-0302 GRP-0326 GRP-0401 GRP-0692
+93,sage.patel@example.com,45.0,ALT-00161 ALT-00549 ALT-00681,GRP-0138 GRP-0473 GRP-0596
+94,zion.novak@example.com,45.0,ALT-00033 ALT-00149 ALT-00235,GRP-0028 GRP-0126 GRP-0207
+95,emery.lopez@example.com,44.5,ALT-00025 ALT-00120 ALT-00178 ALT-00469,GRP-0020 GRP-0100 GRP-0152 GRP-0399
+96,riley.hayes@example.com,44.5,ALT-00124 ALT-00201 ALT-00408 ALT-00428,GRP-0104 GRP-0174 GRP-0345 GRP-0361
+97,riley.ortiz@example.com,44.5,ALT-00470 ALT-00573 ALT-00767 ALT-00773,GRP-0400 GRP-0495 GRP-0674
+98,avery.hayes@example.com,43.0,ALT-00427 ALT-00436 ALT-00440 ALT-00906,GRP-0360 GRP-0369 GRP-0373 GRP-0795
+99,casey.fox@example.com,43.0,ALT-00241 ALT-00327 ALT-00523 ALT-00695 ALT-00774,GRP-0062 GRP-0282 GRP-0450 GRP-0609 GRP-0680
+100,morgan.ortiz@example.com,43.0,ALT-00162 ALT-00309 ALT-00572 ALT-00617,GRP-0139 GRP-0269 GRP-0494 GRP-0535
+101,parker.fox@example.com,43.0,ALT-00247 ALT-00410 ALT-00437 ALT-00704 ALT-00734,GRP-0216 GRP-0346 GRP-0370 GRP-0616 GRP-0644
+102,quinn.brooks@example.com,43.0,ALT-00218 ALT-00451 ALT-00533 ALT-00635,GRP-0190 GRP-0384 GRP-0458 GRP-0553
+103,reese.fox@example.com,43.0,ALT-00280 ALT-00341 ALT-00390 ALT-00673,GRP-0240 GRP-0294 GRP-0332 GRP-0588
+104,taylor.moore@example.com,43.0,ALT-00064 ALT-00195 ALT-00365 ALT-00550 ALT-00556,GRP-0055 GRP-0168 GRP-0313 GRP-0474 GRP-0479
+105,zion.fox@example.com,43.0,ALT-00003 ALT-00011 ALT-00130 ALT-00337 ALT-00338,GRP-0003 GRP-0009 GRP-0109 GRP-0291
+106,emery.novak@example.com,42.5,ALT-00304 ALT-00431 ALT-00450 ALT-00558 ALT-00718 ALT-00788 ALT-00798,GRP-0264 GRP-0364 GRP-0383 GRP-0480 GRP-0628 GRP-0694 GRP-0703
+107,sage.ortiz@example.com,42.5,ALT-00173 ALT-00211 ALT-00262 ALT-00278 ALT-00326 ALT-00409 ALT-00481 ALT-00525 ALT-00553,GRP-0150 GRP-0238
+108,casey.moore@example.com,41.0,ALT-00216 ALT-00343 ALT-00629,GRP-0188 GRP-0295 GRP-0547
+109,finley.adler@example.com,41.0,ALT-00761 ALT-00884 ALT-00919,GRP-0668 GRP-0773 GRP-0806
+110,kai.moore@example.com,41.0,ALT-00514 ALT-00658 ALT-00985,GRP-0441 GRP-0574 GRP-0865
+111,logan.khan@example.com,41.0,ALT-00192 ALT-00434 ALT-00706,GRP-0165 GRP-0367 GRP-0618
+112,parker.patel@example.com,41.0,ALT-00219 ALT-00472 ALT-00705,GRP-0191 GRP-0402 GRP-0617
+113,quinn.ito@example.com,41.0,ALT-00148 ALT-00154 ALT-00328,GRP-0125 GRP-0131 GRP-0283
+114,blake.lopez@example.com,40.5,ALT-00346 ALT-00616 ALT-00777 ALT-00905,GRP-0298 GRP-0534 GRP-0683 GRP-0794
+115,logan.diaz@example.com,40.5,ALT-00590 ALT-00669 ALT-00698 ALT-00908,GRP-0510 GRP-0584 GRP-0612 GRP-0797
+116,quinn.lopez@example.com,40.5,ALT-00123 ALT-00273 ALT-00468 ALT-00495,GRP-0103 GRP-0233 GRP-0423
+117,taylor.tran@example.com,40.5,ALT-00560 ALT-00649 ALT-00693 ALT-00939,GRP-0482 GRP-0565 GRP-0607 GRP-0826
+118,blake.ortiz@example.com,38.5,ALT-00059 ALT-00087 ALT-00264,GRP-0051 GRP-0075 GRP-0227
+119,devon.silva@example.com,38.5,ALT-00039 ALT-00052,GRP-0034 GRP-0046
+120,kai.diaz@example.com,38.5,ALT-00187 ALT-00540 ALT-00574,GRP-0160 GRP-0464 GRP-0496
+121,kai.walsh@example.com,38.5,ALT-00731 ALT-00932,GRP-0641 GRP-0819
+122,zion.grant@example.com,38.0,ALT-00209 ALT-00364 ALT-00552,GRP-0182 GRP-0312 GRP-0476
+123,avery.moore@example.com,36.5,ALT-00536 ALT-00687 ALT-00929,GRP-0461 GRP-0601 GRP-0816
+124,emery.brooks@example.com,36.5,ALT-00443 ALT-00622 ALT-00686 ALT-00918,GRP-0376 GRP-0540 GRP-0600 GRP-0805
+125,emery.chen@example.com,36.5,ALT-00046 ALT-00230 ALT-00232 ALT-00499,GRP-0041 GRP-0202 GRP-0204 GRP-0427
+126,harper.walsh@example.com,36.5,ALT-00188 ALT-00251 ALT-00665,GRP-0161 GRP-0219 GRP-0580
+127,noel.tran@example.com,36.5,ALT-00826 ALT-00834 ALT-00976,GRP-0726 GRP-0732 GRP-0856
+128,parker.ito@example.com,36.5,ALT-00085 ALT-00091 ALT-00448,GRP-0073 GRP-0381
+129,quinn.novak@example.com,36.5,ALT-00412 ALT-00486 ALT-00862,GRP-0348 GRP-0414 GRP-0757
+130,taylor.brooks@example.com,36.5,ALT-00527 ALT-00685 ALT-00970,GRP-0452 GRP-0599 GRP-0850
+131,harper.fox@example.com,34.5,ALT-00498 ALT-00942,GRP-0426 GRP-0829
+132,parker.diaz@example.com,34.5,ALT-00242 ALT-00452,GRP-0212 GRP-0385
+133,blake.evans@example.com,34.0,ALT-00332 ALT-00641 ALT-00710,GRP-0287 GRP-0557 GRP-0621
+134,emery.moore@example.com,34.0,ALT-00879 ALT-00897 ALT-01033,GRP-0769 GRP-0786 GRP-0908
+135,jordan.walsh@example.com,34.0,ALT-00662 ALT-00724 ALT-00931,GRP-0578 GRP-0634 GRP-0818
+136,avery.diaz@example.com,32.5,ALT-00321 ALT-00620 ALT-00691,GRP-0277 GRP-0538 GRP-0605
+137,avery.silva@example.com,32.5,ALT-00301 ALT-00366 ALT-00793,GRP-0261 GRP-0314 GRP-0699
+138,blake.khan@example.com,32.5,ALT-00637 ALT-00719 ALT-00875,GRP-0554 GRP-0629 GRP-0765
+139,casey.ito@example.com,32.5,ALT-00585 ALT-00678 ALT-00841,GRP-0505 GRP-0593 GRP-0739
+140,finley.jones@example.com,32.5,ALT-00138 ALT-00562 ALT-00654,GRP-0115 GRP-0484 GRP-0570
+141,harper.reyes@example.com,32.5,ALT-00541 ALT-00799 ALT-00881,GRP-0465 GRP-0704 GRP-0771
+142,jordan.diaz@example.com,32.5,ALT-00854 ALT-00956 ALT-01032,GRP-0751 GRP-0838 GRP-0907
+143,kai.ito@example.com,32.5,ALT-00190 ALT-00290 ALT-00595,GRP-0163 GRP-0250 GRP-0515
+144,kai.patel@example.com,32.5,ALT-00167 ALT-00254 ALT-00696,GRP-0144 GRP-0221 GRP-0610
+145,logan.fox@example.com,32.5,ALT-00233 ALT-00348 ALT-00359,GRP-0205 GRP-0299 GRP-0309
+146,noel.adler@example.com,32.5,ALT-00134 ALT-00385 ALT-00592,GRP-0112 GRP-0328 GRP-0512
+147,riley.evans@example.com,32.5,ALT-00298 ALT-00455 ALT-00459,GRP-0258 GRP-0388 GRP-0392
+148,zion.walsh@example.com,32.5,ALT-00577 ALT-00833 ALT-00893,GRP-0497 GRP-0731 GRP-0782
+149,morgan.walsh@example.com,30.5,ALT-00172 ALT-00305 ALT-00582 ALT-00672,GRP-0149 GRP-0265 GRP-0502 GRP-0587
+150,blake.reyes@example.com,30.0,ALT-00288 ALT-00551,GRP-0248 GRP-0475
+151,emery.ortiz@example.com,30.0,ALT-00231 ALT-00234 ALT-00624,GRP-0203 GRP-0206 GRP-0542
+152,kai.adler@example.com,30.0,ALT-00112 ALT-00473,GRP-0093 GRP-0403
+153,logan.ito@example.com,30.0,ALT-00189 ALT-00212,GRP-0162 GRP-0184
+154,sage.brooks@example.com,30.0,ALT-00331 ALT-00835 ALT-00839,GRP-0286 GRP-0733 GRP-0737
+155,avery.khan@example.com,28.0,ALT-00116 ALT-00206 ALT-00520 ALT-00564,GRP-0096 GRP-0179 GRP-0447 GRP-0486
+156,casey.silva@example.com,28.0,ALT-00239 ALT-00432 ALT-00510 ALT-00745,GRP-0211 GRP-0365 GRP-0438 GRP-0655
+157,kai.khan@example.com,28.0,ALT-00026,GRP-0021
+158,jordan.patel@example.com,27.5,ALT-00256 ALT-00729,GRP-0223 GRP-0639
+159,zion.evans@example.com,27.5,ALT-00612 ALT-00995,GRP-0530 GRP-0875
+160,avery.novak@example.com,26.0,ALT-00462 ALT-00756,GRP-0395 GRP-0664
+161,casey.grant@example.com,26.0,ALT-00405 ALT-00810,GRP-0342 GRP-0714
+162,casey.novak@example.com,26.0,ALT-00935 ALT-00996,GRP-0822 GRP-0876
+163,devon.ito@example.com,26.0,ALT-00223 ALT-00358,GRP-0195 GRP-0308
+164,emery.hayes@example.com,26.0,ALT-00464 ALT-00739,GRP-0396 GRP-0649
+165,finley.ito@example.com,26.0,ALT-00170 ALT-00255,GRP-0147 GRP-0222
+166,finley.moore@example.com,26.0,ALT-00803 ALT-00911,GRP-0708 GRP-0800
+167,finley.ortiz@example.com,26.0,ALT-00093 ALT-00406,GRP-0079 GRP-0343
+168,kai.brooks@example.com,26.0,ALT-00267 ALT-00830,GRP-0229 GRP-0729
+169,noel.silva@example.com,26.0,ALT-00778 ALT-00851,GRP-0684 GRP-0748
+170,quinn.jones@example.com,26.0,ALT-00864 ALT-00892,GRP-0758 GRP-0781
+171,quinn.khan@example.com,26.0,ALT-00135 ALT-00136,GRP-0113 GRP-0114
+172,riley.fox@example.com,26.0,ALT-00607 ALT-00853,GRP-0526 GRP-0750
+173,taylor.chen@example.com,26.0,ALT-00289 ALT-00333,GRP-0249 GRP-0288
+174,taylor.ito@example.com,26.0,ALT-00336 ALT-00652,GRP-0290 GRP-0568
+175,wren.brooks@example.com,26.0,ALT-00307 ALT-00509,GRP-0267 GRP-0437
+176,wren.grant@example.com,25.5,ALT-00423 ALT-00634 ALT-00666 ALT-00872,GRP-0357 GRP-0552 GRP-0581 GRP-0763
+177,blake.silva@example.com,24.0,ALT-00323 ALT-00494 ALT-00887,GRP-0279 GRP-0422 GRP-0776
+178,logan.hayes@example.com,24.0,ALT-00156 ALT-00609 ALT-00611,GRP-0133 GRP-0528 GRP-0529
+179,blake.novak@example.com,19.5,ALT-00694,GRP-0608
+180,devon.reyes@example.com,19.5,ALT-00013,GRP-0011
+181,finley.grant@example.com,19.5,ALT-00196,GRP-0169
+182,avery.reyes@example.com,17.5,ALT-00424 ALT-00852,GRP-0358 GRP-0749
+183,emery.tran@example.com,17.5,ALT-00002 ALT-00295,GRP-0002 GRP-0255
+184,finley.silva@example.com,17.5,ALT-00454 ALT-00991,GRP-0387 GRP-0871
+185,jordan.ito@example.com,17.5,ALT-00213 ALT-00503,GRP-0185 GRP-0431
+186,kai.silva@example.com,17.5,ALT-00764 ALT-00837,GRP-0671 GRP-0735
+187,noel.ito@example.com,17.5,ALT-00682 ALT-00783,GRP-0597 GRP-0689
+188,riley.walsh@example.com,17.5,ALT-00169 ALT-00504,GRP-0146 GRP-0432
+189,zion.ito@example.com,17.5,ALT-00258 ALT-00489,GRP-0225 GRP-0417
+190,devon.tran@example.com,15.0,ALT-00115 ALT-00415,GRP-0095 GRP-0350
+191,wren.novak@example.com,15.0,ALT-00589 ALT-00722,GRP-0509 GRP-0632
+192,emery.fox@example.com,11.0,ALT-00476,GRP-0406
+193,emery.walsh@example.com,11.0,ALT-00903,GRP-0792
+194,finley.khan@example.com,11.0,ALT-00615,GRP-0533
+195,noel.patel@example.com,11.0,ALT-00092,GRP-0078
+196,quinn.reyes@example.com,11.0,ALT-00248,GRP-0217
+197,wren.fox@example.com,11.0,ALT-00676,GRP-0591

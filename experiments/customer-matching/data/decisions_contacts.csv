@@ -1,752 +1,756 @@
 id_a,id_b,block_keys,decision,rule,detail,score,confidence,p_diff,p_maybe,p_same,p_lookalike
-C00002,C01616,k_phone,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.10 < 0.5,1.91,0.86,0.01,0.08,0.91,0.1
+C00002,C01616,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.10 < 0.5,1.92,0.87,0.0,0.08,0.92,0.1
 C00005,C02070,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.99,0.0,0.01,0.99,0.09
 C00007,C00202,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00008,C00274,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.38 < 1.6,1.38,0.4,0.01,0.6,0.39,0.14
+C00008,C00274,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.44 < 1.6,1.44,0.31,0.01,0.54,0.45,0.14
 C00010,C01038,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00010,C01609,k_phone+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.09 < 0.5,1.98,0.97,0.0,0.02,0.98,0.09
-C00013,C00719,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15802984107 vs +16383370469,1.93,0.9,0.0,0.07,0.93,0.17
+C00010,C01609,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.98,0.0,0.01,0.99,0.09
+C00013,C00719,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15802984107 vs +16383370469,1.93,0.9,0.0,0.06,0.94,0.18
 C00014,C01535,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00017,C01910,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.92,0.0,0.05,0.95,0.09
-C00019,C02518,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.9,0.0,0.06,0.9400000000000001,0.07
-C00021,C02144,k_phone+k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
-C00024,C01111,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
-C00024,C01312,k_phone+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.10 < 0.5,1.94,0.91,0.01,0.04,0.95,0.1
-C00025,C02453,k_email,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.09 < 0.5,1.86,0.78,0.03,0.08,0.89,0.09
-C00028,C01132,k_phone+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.06 < 0.5,1.9,0.85,0.03,0.03,0.9400000000000001,0.06
-C00029,C00599,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.95,0.0,0.03,0.97,0.1
+C00019,C02518,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.89,0.0,0.07,0.93,0.08
+C00021,C02144,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.94,0.0,0.04,0.96,0.09
+C00024,C01111,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
+C00024,C01312,k_phone+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.09 < 0.5,1.94,0.92,0.01,0.04,0.95,0.09
+C00025,C02453,k_email,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.09 < 0.5,1.85,0.78,0.03,0.08,0.89,0.09
+C00028,C01132,k_phone+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.06 < 0.5,1.92,0.88,0.03,0.03,0.94,0.06
+C00029,C00599,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.12 < 0.5,1.96,0.94,0.0,0.03,0.97,0.12
 C00031,C00560,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00031,C00964,k_name_street+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.10 < 0.5,1.88,0.82,0.0,0.11,0.89,0.1
+C00031,C00964,k_name_street+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.11 < 0.5,1.89,0.83,0.0,0.11,0.89,0.11
 C00035,C00239,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
-C00036,C00120,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.05 < 0.5,1.98,0.97,0.0,0.02,0.98,0.05
+C00036,C00120,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
 C00038,C02679,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00041,C01926,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00041,C02523,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C00042,C02561,k_name_acct,review,jev_score_mid,0.6 < score 1.34 < 1.6,1.34,0.18,0.1,0.46,0.44,0.41
-C00045,C01728,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.09 < 0.5,1.89,0.83,0.0,0.11,0.89,0.09
-C00049,C01723,k_name_street,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.9,0.0,0.06,0.94,0.07
+C00041,C01926,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
+C00041,C02523,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.0,1.0,0.08
+C00042,C02561,k_name_acct,review,jev_score_mid,0.6 < score 1.31 < 1.6,1.31,0.25,0.1,0.5,0.4,0.4
+C00045,C01728,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.08 < 0.5,1.88,0.82,0.0,0.12,0.88,0.08
+C00049,C01723,k_name_street,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.89,0.0,0.07,0.93,0.07
 C00050,C02136,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00051,C01907,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.50 < 1.6,1.5,0.25,0.01,0.49,0.5,0.11
-C00054,C01680,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00054,C02943,k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.99,1.0,0.0,0.0,0.68
-C00055,C02224,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C00059,C01989,k_name_street,merge,jev_score_high,score 1.87 >= 1.6 and lookalike 0.11 < 0.5,1.87,0.8,0.0,0.12,0.88,0.11
+C00051,C01907,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.56 < 1.6,1.56,0.35,0.0,0.43,0.57,0.11
+C00054,C01680,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
+C00054,C02943,k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,0.99,1.0,0.0,0.0,0.72
+C00055,C02224,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
+C00059,C01989,k_name_street,merge,jev_score_high,score 1.84 >= 1.6 and lookalike 0.11 < 0.5,1.84,0.76,0.01,0.15,0.84,0.11
 C00060,C01564,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.04,0.96,0.08
 C00061,C02448,k_email+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
 C00063,C02475,k_email+k_phone+k_name_domain+k_name_swap,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00065,C02510,k_name_domain+k_name_street,no_match,jev_score_low,score 0.08 <= 0.6,0.08,0.88,0.95,0.02,0.03,0.63
-C00067,C01692,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00069,C02965,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.01,0.06,0.93,0.08
-C00070,C02479,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.98,0.0,0.01,0.99,0.07
-C00072,C01227,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
+C00065,C02510,k_name_domain+k_name_street,no_match,jev_score_low,score 0.06 <= 0.6,0.06,0.91,0.96,0.02,0.02,0.65
+C00067,C01692,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C00069,C02965,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.01,0.07,0.92,0.08
+C00070,C02479,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
+C00072,C01227,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00072,C01464,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,0.99,0.0,0.0,1.0,0.04
-C00072,C02036,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.13 < 0.5,1.92,0.89,0.0,0.07,0.93,0.13
-C00072,C02752,k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.02,0.98,0.08
-C00074,C01577,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.89,0.0,0.07,0.93,0.08
+C00072,C02036,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.13 < 0.5,1.92,0.88,0.0,0.08,0.92,0.13
+C00072,C02752,k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.97,0.0,0.02,0.98,0.08
+C00074,C01577,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.87,0.0,0.08,0.92,0.08
 C00075,C02589,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00077,C02990,k_name_acct,merge,jev_score_high,score 1.69 >= 1.6 and lookalike 0.24 < 0.5,1.69,0.54,0.02,0.27,0.71,0.24
-C00080,C00722,k_name_acct,merge,jev_score_high,score 1.84 >= 1.6 and lookalike 0.15 < 0.5,1.84,0.76,0.03,0.11,0.86,0.15
+C00077,C02990,k_name_acct,merge,jev_score_high,score 1.70 >= 1.6 and lookalike 0.24 < 0.5,1.7,0.54,0.02,0.27,0.71,0.24
+C00080,C00722,k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.15 < 0.5,1.82,0.73,0.03,0.11,0.86,0.15
 C00083,C00657,k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.01,0.99,0.08
-C00083,C02391,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C00087,C01601,k_name_domain+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.48 < 1.6,1.48,0.27,0.0,0.52,0.48,0.18
+C00083,C02391,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.96,0.0,0.02,0.98,0.08
+C00087,C01601,k_name_domain+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.49 < 1.6,1.49,0.25,0.0,0.51,0.49,0.2
 C00089,C00590,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C00091,C01932,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
-C00093,C00211,k_email+k_name_domain+k_name_street+k_name_swap,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15952235043 vs +17926759072,1.95,0.93,0.0,0.05,0.95,0.07
-C00095,C02427,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.11 < 0.5,1.91,0.87,0.0,0.09,0.91,0.11
-C00101,C00451,k_name_street+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.06 < 0.5,1.92,0.88,0.0,0.08,0.92,0.06
-C00101,C02469,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.04 < 0.5,1.94,0.91,0.0,0.06,0.94,0.04
+C00093,C00211,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15952235043 vs +17926759072,1.96,0.94,0.0,0.04,0.96,0.07
+C00095,C02427,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.09 < 0.5,1.9,0.85,0.0,0.1,0.9,0.09
+C00101,C00451,k_name_street+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.06 < 0.5,1.91,0.87,0.0,0.09,0.91,0.06
+C00101,C02469,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.05 < 0.5,1.94,0.91,0.0,0.06,0.94,0.05
 C00104,C02329,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
 C00105,C00855,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00106,C00517,k_email,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.03,0.97,0.07
-C00108,C01493,k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.11 < 0.5,1.86,0.79,0.0,0.13,0.87,0.11
-C00109,C01455,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00121,C02601,k_name_domain+k_name_swap,merge,jev_score_high,score 1.70 >= 1.6 and lookalike 0.22 < 0.5,1.7,0.54,0.01,0.29,0.7,0.22
-C00121,C02880,k_name_domain+k_name_swap,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.11 < 0.5,1.89,0.84,0.0,0.1,0.9,0.11
-C00122,C01272,k_phone+k_name_street,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.08 < 0.5,1.94,0.91,0.0,0.06,0.94,0.08
-C00123,C00352,k_email+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.93,0.01,0.02,0.97,0.07
-C00125,C02414,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
-C00126,C01709,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.0,1.0,0.08
+C00106,C00517,k_email,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
+C00108,C01493,k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.11 < 0.5,1.85,0.77,0.0,0.15,0.85,0.11
+C00109,C01455,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C00121,C02601,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.70 >= 1.6 and lookalike 0.21 < 0.5,1.7,0.54,0.01,0.29,0.7,0.21
+C00121,C02880,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.10 < 0.5,1.92,0.89,0.0,0.07,0.93,0.1
+C00122,C01272,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.93,0.0,0.04,0.96,0.07
+C00122,C02669,k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.92,0.0,0.05,0.95,0.08
+C00123,C00352,k_email+k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.9,0.02,0.03,0.95,0.07
+C00125,C02414,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C00126,C01709,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
 C00127,C00380,k_email+k_phone+k_name_domain+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00139,C02217,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.02,0.98,0.08
-C00139,C02792,k_phone,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.10 < 0.5,1.94,0.9,0.01,0.05,0.94,0.1
-C00142,C02271,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
+C00139,C02217,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.96,0.0,0.02,0.98,0.09
+C00139,C02792,k_phone,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.11 < 0.5,1.94,0.91,0.01,0.04,0.95,0.11
+C00142,C02271,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
 C00145,C02258,k_phone+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00145,C02590,k_phone+k_name_street,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.09 < 0.5,1.9,0.86,0.0,0.09,0.91,0.09
+C00145,C02590,k_phone+k_name_street,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.86,0.0,0.09,0.91,0.08
 C00149,C02122,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00154,C00195,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.01,0.99,0.08
+C00154,C00195,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.08 < 0.5,2.0,0.99,0.0,0.0,1.0,0.08
 C00155,C01131,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00159,C00172,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.95,0.01,0.02,0.97,0.09
-C00160,C02353,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,1.0,1.0,0.0,0.0,0.67
-C00163,C00961,k_email+k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.44 < 1.6,1.44,0.32,0.0,0.55,0.45,0.21
-C00163,C01266,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00164,C02209,k_email+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.11 < 0.5,1.82,0.74,0.0,0.17,0.83,0.11
-C00165,C00479,k_email,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
+C00159,C00172,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.01,0.02,0.97,0.08
+C00160,C02353,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,1.0,1.0,0.0,0.0,0.69
+C00163,C00961,k_email+k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.48 < 1.6,1.48,0.27,0.0,0.52,0.48,0.2
+C00163,C01266,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C00164,C02209,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.83 >= 1.6 and lookalike 0.11 < 0.5,1.83,0.74,0.0,0.17,0.83,0.11
+C00165,C00479,k_email,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
 C00166,C01745,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00167,C01960,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.98,0.0,0.01,0.99,0.08
-C00168,C02235,k_phone+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.05 < 0.5,1.96,0.94,0.01,0.02,0.97,0.05
-C00169,C01330,k_email,review,jev_score_mid,0.6 < score 1.43 < 1.6,1.43,0.34,0.01,0.55,0.44,0.37
-C00170,C01604,k_email+k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.59 < 1.6,1.59,0.38,0.01,0.4,0.59,0.13
-C00171,C01958,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,0.99,0.0,0.0,1.0,0.04
+C00167,C01960,k_phone+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.98,0.0,0.01,0.99,0.08
+C00168,C02235,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.06 < 0.5,1.95,0.92,0.01,0.03,0.96,0.06
+C00169,C01330,k_email,review,jev_score_mid,0.6 < score 1.44 < 1.6,1.44,0.32,0.01,0.54,0.45,0.37
+C00170,C01604,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13318132082 vs +15578860858,1.67,0.5,0.0,0.33,0.67,0.11
+C00171,C01958,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
 C00171,C02848,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00173,C02859,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.03,0.97,0.07
-C00174,C00786,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.91,0.0,0.06,0.94,0.07
+C00174,C00786,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.92,0.0,0.05,0.95,0.07
 C00175,C01474,k_phone+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C00175,C01778,k_name_street,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.11 < 0.5,1.89,0.83,0.0,0.1,0.9,0.11
-C00176,C00290,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.08 < 0.5,1.85,0.77,0.0,0.15,0.85,0.08
-C00176,C00955,k_name_street,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.10 < 0.5,1.96,0.95,0.0,0.03,0.97,0.1
-C00176,C02095,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.05 < 0.5,1.94,0.91,0.0,0.06,0.94,0.05
-C00178,C01785,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.96,0.0,0.02,0.98,0.09
+C00175,C01778,k_name_street,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.11 < 0.5,1.88,0.82,0.0,0.11,0.89,0.11
+C00176,C00290,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.09 < 0.5,1.8,0.69,0.0,0.2,0.8,0.09
+C00176,C00955,k_name_street,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.03,0.97,0.08
+C00176,C02095,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.05 < 0.5,1.96,0.94,0.0,0.04,0.96,0.05
+C00178,C01785,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
 C00180,C00880,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
-C00183,C00581,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.96,0.0,0.02,0.98,0.09
-C00186,C01171,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C00191,C02129,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.09 < 0.5,1.94,0.91,0.0,0.06,0.94,0.09
-C00198,C02152,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.0,0.09,0.91,0.08
-C00204,C02180,k_phone+k_name_acct,merge,jev_score_high,score 1.69 >= 1.6 and lookalike 0.19 < 0.5,1.69,0.53,0.01,0.3,0.69,0.19
+C00183,C00581,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.09 < 0.5,1.98,0.96,0.0,0.02,0.98,0.09
+C00186,C01171,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
+C00190,C01113,k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.13 < 0.5,1.85,0.77,0.0,0.15,0.85,0.13
+C00191,C02129,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.09 < 0.5,1.92,0.88,0.0,0.07,0.93,0.09
+C00198,C02152,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.86,0.0,0.09,0.91,0.08
+C00204,C02180,k_phone+k_name_acct,merge,jev_score_high,score 1.74 >= 1.6 and lookalike 0.19 < 0.5,1.74,0.6,0.0,0.26,0.74,0.19
 C00205,C01560,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00206,C01743,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00210,C02860,k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.12 < 0.5,1.91,0.87,0.01,0.06,0.93,0.12
-C00213,C01398,k_email+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C00219,C00248,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C00206,C01743,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C00210,C02860,k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.11 < 0.5,1.91,0.86,0.02,0.06,0.92,0.11
+C00213,C01398,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
+C00219,C00248,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00220,C01406,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00221,C02882,k_phone+k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.02,0.98,0.08
-C00222,C02568,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.16 < 0.5,1.97,0.96,0.0,0.03,0.97,0.16
+C00221,C02882,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
+C00222,C02568,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.15 < 0.5,1.98,0.97,0.0,0.02,0.98,0.15
 C00226,C02751,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C00227,C00907,k_phone+k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.24 < 0.5,1.8,0.7,0.02,0.16,0.82,0.24
-C00228,C00863,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.09 < 0.5,1.91,0.86,0.0,0.09,0.91,0.09
+C00227,C00907,k_phone+k_name_acct,merge,jev_score_high,score 1.76 >= 1.6 and lookalike 0.23 < 0.5,1.76,0.65,0.02,0.19,0.79,0.23
+C00228,C00863,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.10 < 0.5,1.89,0.83,0.0,0.11,0.89,0.1
 C00228,C01259,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00229,C01886,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
-C00231,C00612,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.05 < 0.5,1.95,0.93,0.01,0.03,0.96,0.05
-C00232,C00283,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.11 < 0.5,1.81,0.71,0.03,0.13,0.84,0.11
-C00240,C00671,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00240,C02002,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.96,0.0,0.02,0.98,0.1
-C00242,C02847,k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.10 < 0.5,1.96,0.95,0.01,0.02,0.97,0.1
-C00245,C02623,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C00249,C01567,k_phone+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00251,C00381,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C00251,C01941,k_email+k_phone+k_name_domain+k_name_street+k_name_swap,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00253,C01040,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.97,0.0,0.02,0.98,0.08
+C00229,C01886,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
+C00231,C00612,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.05 < 0.5,1.97,0.95,0.0,0.02,0.98,0.05
+C00232,C00283,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.12 < 0.5,1.8,0.7,0.04,0.12,0.84,0.12
+C00240,C00671,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C00240,C02002,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.95,0.0,0.03,0.97,0.1
+C00242,C02847,k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.11 < 0.5,1.96,0.94,0.01,0.02,0.97,0.11
+C00245,C02623,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.98,0.0,0.01,0.99,0.07
+C00249,C01567,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
+C00251,C00381,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C00251,C01941,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
+C00253,C01040,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.09 < 0.5,1.98,0.96,0.0,0.02,0.98,0.09
 C00254,C00860,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
-C00259,C02154,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.12 < 0.5,1.93,0.89,0.01,0.05,0.94,0.12
+C00259,C02154,k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.12 < 0.5,1.94,0.9,0.01,0.04,0.95,0.12
 C00266,C02445,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00270,C00393,k_phone,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.09 < 0.5,1.9,0.85,0.01,0.07,0.92,0.09
+C00270,C00393,k_phone+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.09 < 0.5,1.9,0.85,0.01,0.08,0.91,0.09
 C00272,C02356,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00273,C00744,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C00273,C01701,k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.07 < 0.5,1.89,0.84,0.02,0.07,0.91,0.07
-C00277,C02145,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.41 < 1.6,1.41,0.36,0.01,0.57,0.42,0.16
-C00279,C02930,k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.15 < 0.5,1.92,0.89,0.01,0.06,0.93,0.15
-C00284,C01660,k_name_street+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.12 < 0.5,1.88,0.83,0.0,0.11,0.89,0.12
-C00290,C00955,k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15506600203 vs +12116732541,1.76,0.63,0.0,0.24,0.76,0.12
-C00290,C02095,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15506600203 vs +12116732541,1.86,0.79,0.0,0.14,0.86,0.08
-C00292,C00882,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00293,C00823,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.0,0.05,0.95,0.07
-C00294,C01254,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.43 < 1.6,1.43,0.34,0.01,0.55,0.44,0.12
-C00297,C01543,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.12 < 0.5,1.99,0.99,0.0,0.01,0.99,0.12
+C00273,C01701,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.9,0.01,0.05,0.94,0.07
+C00277,C02145,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.36 < 1.6,1.36,0.44,0.01,0.62,0.37,0.15
+C00279,C02930,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.14 < 0.5,1.93,0.9,0.01,0.05,0.94,0.14
+C00284,C01660,k_name_street+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.11 < 0.5,1.88,0.81,0.0,0.12,0.88,0.11
+C00290,C00955,k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15506600203 vs +12116732541,1.81,0.72,0.0,0.18,0.82,0.12
+C00290,C02095,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15506600203 vs +12116732541,1.88,0.83,0.0,0.11,0.89,0.08
+C00292,C00882,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C00293,C00823,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.06 < 0.5,1.94,0.91,0.0,0.06,0.94,0.06
+C00294,C01254,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.52 < 1.6,1.52,0.28,0.0,0.47,0.53,0.11
+C00297,C01543,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.13 < 0.5,1.99,0.98,0.0,0.01,0.99,0.13
 C00301,C02665,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.10 < 0.5,1.98,0.97,0.0,0.02,0.98,0.1
 C00302,C00762,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C00302,C01414,k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.12 < 0.5,1.91,0.86,0.02,0.05,0.93,0.12
+C00302,C01414,k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.11 < 0.5,1.91,0.87,0.01,0.06,0.93,0.11
 C00303,C01702,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00306,C01223,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.02,0.98,0.07
+C00306,C01223,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.03,0.97,0.07
 C00308,C02172,k_email+k_phone+k_name_domain+k_name_street,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00308,C02950,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
-C00312,C02544,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.96,0.0,0.02,0.98,0.06
+C00308,C02950,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.05 < 0.5,1.98,0.98,0.0,0.01,0.99,0.05
+C00312,C02544,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
 C00313,C02352,k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.9,0.01,0.04,0.95,0.08
-C00319,C02768,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.95,0.0,0.03,0.97,0.07
+C00319,C02768,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.02,0.98,0.07
 C00320,C02985,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00325,C02254,k_phone+k_name_swap,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.01,0.02,0.97,0.08
-C00327,C01868,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.11 < 0.5,1.97,0.96,0.0,0.03,0.97,0.11
-C00337,C02738,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C00325,C02254,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.93,0.01,0.03,0.96,0.09
+C00327,C01868,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.12 < 0.5,1.98,0.96,0.0,0.02,0.98,0.12
+C00337,C02738,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
 C00339,C02243,k_email+k_phone+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C00345,C01169,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00347,C02265,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.10 < 0.5,1.96,0.94,0.0,0.04,0.96,0.1
-C00348,C01869,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.45 < 1.6,1.45,0.32,0.01,0.54,0.45,0.12
+C00347,C02265,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.10 < 0.5,1.95,0.93,0.0,0.04,0.96,0.1
+C00348,C01869,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.45 < 1.6,1.45,0.31,0.01,0.53,0.46,0.12
 C00350,C01957,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00354,C01211,k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.96,0.0,0.02,0.98,0.06
+C00354,C01211,k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.02,0.98,0.07
 C00354,C02530,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
-C00355,C02038,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.98,0.0,0.02,0.98,0.08
-C00361,C01837,k_phone,merge,jev_score_high,score 1.83 >= 1.6 and lookalike 0.11 < 0.5,1.83,0.74,0.01,0.15,0.84,0.11
+C00355,C02038,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.10 < 0.5,1.98,0.97,0.0,0.02,0.98,0.1
+C00361,C01837,k_phone,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.11 < 0.5,1.86,0.79,0.01,0.12,0.87,0.11
 C00363,C00954,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
-C00364,C00452,k_email,review,jev_score_mid,0.6 < score 1.49 < 1.6,1.49,0.25,0.01,0.5,0.49,0.34
+C00364,C00452,k_email,review,jev_score_mid,0.6 < score 1.47 < 1.6,1.47,0.27,0.01,0.51,0.48,0.35
 C00364,C01214,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00371,C01790,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C00371,C01790,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
 C00375,C02596,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.91,0.0,0.06,0.94,0.07
-C00377,C01956,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C00381,C01941,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.09 < 0.5,1.92,0.88,0.0,0.08,0.92,0.09
-C00385,C01798,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C00377,C01956,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
+C00381,C01941,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.09 < 0.5,1.89,0.83,0.0,0.11,0.89,0.09
+C00385,C01798,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00385,C01808,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00388,C01035,k_phone,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.06 < 0.5,1.96,0.94,0.01,0.03,0.96,0.06
+C00388,C01035,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.95,0.01,0.02,0.97,0.06
 C00388,C01607,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00389,C02008,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C00389,C02312,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C00395,C00948,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C00397,C00827,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13479616684 vs +18938136553,1.98,0.97,0.0,0.02,0.98,0.07
-C00399,C01057,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C00400,C00617,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19384381264 vs +18159341342,1.67,0.5,0.0,0.32,0.68,0.12
+C00389,C02312,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C00395,C00948,k_phone+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C00397,C00827,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13479616684 vs +18938136553,1.99,0.98,0.0,0.01,0.99,0.07
+C00399,C01057,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
+C00400,C00617,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19384381264 vs +18159341342,1.65,0.48,0.0,0.34,0.66,0.11
 C00400,C01173,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00414,C02290,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
+C00410,C02921,k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.12 < 0.5,1.86,0.78,0.01,0.13,0.86,0.12
+C00414,C02290,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00423,C01832,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00426,C02649,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00428,C02890,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.38 < 1.6,1.38,0.4,0.01,0.6,0.39,0.16
+C00428,C02890,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.35 < 1.6,1.35,0.44,0.01,0.63,0.36,0.15
 C00431,C02605,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C00434,C02540,k_email+k_phone+k_name_domain+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00438,C02610,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C00438,C02610,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
 C00438,C02736,k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.11 < 0.5,1.96,0.94,0.0,0.04,0.96,0.11
 C00440,C01634,k_phone,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.09 < 0.5,1.91,0.87,0.0,0.08,0.92,0.09
-C00442,C01448,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.93,0.0,0.04,0.96,0.08
-C00443,C02763,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C00442,C01448,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.04,0.96,0.08
+C00443,C02763,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.0,1.0,0.05
 C00444,C01036,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00445,C00592,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.96,0.0,0.02,0.98,0.09
-C00445,C00713,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18163824998 vs +15933025080,1.68,0.52,0.0,0.32,0.68,0.11
+C00445,C00592,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.96,0.0,0.03,0.97,0.09
+C00445,C00713,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18163824998 vs +15933025080,1.7,0.54,0.0,0.3,0.7,0.11
 C00445,C00920,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C00447,C02881,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.50 < 1.6,1.5,0.25,0.01,0.49,0.5,0.16
-C00450,C02472,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00451,C02469,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C00452,C01214,k_email,review,jev_score_mid,0.6 < score 1.22 < 1.6,1.22,0.61,0.02,0.74,0.24,0.51
-C00454,C01992,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.10 < 0.5,1.93,0.9,0.0,0.06,0.94,0.1
-C00460,C00530,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00463,C01672,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.48 < 1.6,1.48,0.25,0.01,0.5,0.49,0.14
-C00464,C01212,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19093982552 vs +13646008068,1.98,0.97,0.0,0.02,0.98,0.06
+C00447,C02881,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.49 < 1.6,1.49,0.23,0.01,0.49,0.5,0.16
+C00450,C02472,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C00451,C02469,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C00452,C01214,k_email,review,jev_score_mid,0.6 < score 1.17 < 1.6,1.17,0.69,0.02,0.79,0.19,0.48
+C00454,C01992,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.10 < 0.5,1.93,0.9,0.0,0.06,0.9400000000000001,0.1
+C00460,C00530,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C00463,C01672,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.48 < 1.6,1.48,0.27,0.01,0.51,0.48,0.14
+C00464,C01212,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19093982552 vs +13646008068,1.98,0.96,0.0,0.02,0.98,0.06
 C00469,C00638,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00472,C02698,k_phone,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.11 < 0.5,1.94,0.91,0.0,0.06,0.94,0.11
-C00475,C02922,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.86,0.0,0.09,0.91,0.08
-C00483,C02711,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
-C00487,C00633,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18036231305 vs +18935953317,1.63,0.44,0.0,0.37,0.63,0.11
-C00487,C02927,k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18036231305 vs +18935953317,1.87,0.8,0.02,0.1,0.88,0.16
-C00489,C02100,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.10 < 0.5,1.94,0.91,0.0,0.06,0.94,0.1
-C00490,C00752,k_name_street+k_name_acct,review,jev_score_mid,0.6 < score 1.49 < 1.6,1.49,0.23,0.01,0.49,0.5,0.19
+C00472,C02698,k_phone,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.11 < 0.5,1.96,0.93,0.0,0.04,0.96,0.11
+C00475,C02922,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.08 < 0.5,1.89,0.84,0.0,0.1,0.9,0.08
+C00483,C02711,k_phone+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C00487,C00633,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.58 < 1.6,1.58,0.37,0.01,0.41,0.58,0.12
+C00487,C02927,k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18036231305 vs +18935953317,1.85,0.77,0.02,0.11,0.87,0.15
+C00489,C02100,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.10 < 0.5,1.95,0.93,0.0,0.05,0.95,0.1
+C00490,C00752,k_name_street+k_name_acct,review,jev_score_mid,0.6 < score 1.53 < 1.6,1.53,0.3,0.01,0.45,0.54,0.19
 C00490,C02982,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00495,C01638,k_name_street,review,jev_score_mid,0.6 < score 1.33 < 1.6,1.33,0.0,0.18,0.31,0.51,0.38
+C00495,C01638,k_name_street,review,jev_score_mid,0.6 < score 1.42 < 1.6,1.42,0.13,0.15,0.27,0.58,0.37
 C00495,C01977,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.97,0.0,0.02,0.98,0.08
 C00496,C00959,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00502,C02311,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.0,0.08,0.92,0.08
+C00502,C02311,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.92,0.0,0.05,0.95,0.08
 C00502,C02496,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00503,C00562,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.13 < 0.5,1.82,0.72,0.0,0.18,0.82,0.13
+C00503,C00562,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.13 < 0.5,1.82,0.72,0.0,0.18,0.82,0.13
 C00504,C01971,k_email+k_phone+k_name_domain,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C00505,C01321,k_email+k_name_domain+k_name_street,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.06 < 0.5,1.91,0.87,0.0,0.08,0.92,0.06
-C00507,C01243,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C00513,C02819,k_email,review,jev_score_mid,0.6 < score 1.12 < 1.6,1.12,0.7,0.04,0.8,0.16,0.47
+C00507,C01243,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.97,0.0,0.02,0.98,0.08
+C00513,C02819,k_email,review,jev_score_mid,0.6 < score 1.07 < 1.6,1.07,0.76,0.04,0.84,0.12,0.5
 C00516,C01848,k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.11 < 0.5,1.92,0.88,0.0,0.08,0.92,0.11
-C00516,C01850,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
+C00516,C01850,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00518,C00631,k_email+k_phone+k_name_domain+k_name_street,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C00523,C00894,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C00525,C02190,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
-C00526,C02236,k_name_domain+k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15665019125 vs +16793503033,1.84,0.77,0.0,0.15,0.85,0.14
-C00526,C02307,k_name_domain+k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.98,0.99,0.01,0.0,0.66
-C00526,C02334,k_name_domain+k_name_street,no_match,jev_score_low,score 0.04 <= 0.6,0.04,0.95,0.96,0.03,0.01,0.66
+C00525,C02190,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
+C00526,C02236,k_name_domain+k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15665019125 vs +16793503033,1.86,0.79,0.0,0.13,0.87,0.14
+C00526,C02307,k_name_domain+k_name_street,no_match,jev_score_low,score 0.02 <= 0.6,0.02,0.98,0.99,0.01,0.0,0.67
+C00526,C02334,k_name_domain+k_name_street,no_match,jev_score_low,score 0.03 <= 0.6,0.03,0.95,0.97,0.02,0.01,0.66
 C00527,C02614,k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.11 < 0.5,1.95,0.93,0.0,0.05,0.95,0.11
-C00534,C01422,k_email,review,jev_score_mid,0.6 < score 1.49 < 1.6,1.49,0.24,0.01,0.5,0.49,0.35
-C00536,C01555,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,0.99,0.0,0.0,1.0,0.04
+C00534,C01422,k_email,review,jev_score_mid,0.6 < score 1.45 < 1.6,1.45,0.3,0.01,0.53,0.46,0.34
+C00536,C01555,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
 C00539,C01367,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00539,C02075,k_email,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
+C00539,C02075,k_email,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.96,0.0,0.02,0.98,0.07
 C00540,C02234,k_email+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00542,C01621,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00544,C01345,k_email,review,jev_score_mid,0.6 < score 1.40 < 1.6,1.4,0.37,0.01,0.58,0.41,0.39
-C00546,C01836,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
-C00549,C02682,k_phone+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
+C00542,C01621,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C00544,C01345,k_email,review,jev_score_mid,0.6 < score 1.36 < 1.6,1.36,0.43,0.01,0.62,0.37,0.38
+C00546,C01836,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.98,0.0,0.01,0.99,0.08
+C00549,C02682,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
 C00554,C02878,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00555,C00859,k_name_domain+k_name_street,no_match,jev_score_low,score 0.08 <= 0.6,0.08,0.88,0.95,0.02,0.03,0.59
-C00555,C02957,k_name_domain+k_name_street,no_match,jev_score_low,score 0.05 <= 0.6,0.05,0.93,0.97,0.01,0.02,0.57
+C00555,C00859,k_name_domain+k_name_street,no_match,jev_score_low,score 0.07 <= 0.6,0.07,0.9,0.95,0.02,0.03,0.62
+C00555,C02957,k_name_domain+k_name_street,no_match,jev_score_low,score 0.05 <= 0.6,0.05,0.93,0.97,0.01,0.02,0.62
 C00556,C00817,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C00560,C00964,k_name_street+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.10 < 0.5,1.89,0.83,0.0,0.11,0.89,0.1
-C00561,C02382,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00562,C00584,k_phone,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.13 < 0.5,1.88,0.82,0.01,0.11,0.88,0.13
-C00564,C01944,k_email+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.12 < 0.5,1.86,0.79,0.0,0.14,0.86,0.12
-C00573,C01402,k_name_street+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.09 < 0.5,1.92,0.88,0.0,0.08,0.92,0.09
+C00560,C00964,k_name_street+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.09 < 0.5,1.89,0.84,0.0,0.1,0.9,0.09
+C00561,C02382,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,0.99,0.0,0.0,1.0,0.04
+C00562,C00584,k_phone,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.15 < 0.5,1.86,0.8,0.01,0.12,0.87,0.15
+C00564,C01944,k_email+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.87 >= 1.6 and lookalike 0.12 < 0.5,1.87,0.8,0.0,0.13,0.87,0.12
+C00573,C01402,k_name_street+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.09 < 0.5,1.92,0.88,0.0,0.07,0.93,0.09
 C00573,C02404,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00576,C00928,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.35 < 1.6,1.35,0.43,0.01,0.63,0.36,0.18
-C00576,C01684,k_name_domain+k_name_street,review,jev_score_mid,0.6 < score 1.12 < 1.6,1.12,0.61,0.07,0.74,0.19,0.3
-C00576,C01691,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.09 < 0.5,1.86,0.8,0.0,0.13,0.87,0.09
-C00578,C01341,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +12902125117 vs +16418180563,1.95,0.93,0.0,0.05,0.95,0.06
-C00579,C02952,k_phone+k_name_acct,merge,jev_score_high,score 1.74 >= 1.6 and lookalike 0.21 < 0.5,1.74,0.6,0.02,0.23,0.75,0.21
-C00583,C01172,k_phone+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.01,0.02,0.97,0.07
-C00585,C02342,k_name_street+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.11 < 0.5,1.88,0.82,0.0,0.12,0.88,0.11
-C00592,C00713,k_name_street+k_name_acct,review,jev_score_mid,0.6 < score 1.55 < 1.6,1.55,0.33,0.01,0.43,0.56,0.16
-C00592,C00920,k_name_street+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.09 < 0.5,1.94,0.92,0.0,0.05,0.95,0.09
-C00593,C02865,k_phone+k_name_domain+k_name_swap,merge,jev_score_high,score 1.78 >= 1.6 and lookalike 0.14 < 0.5,1.78,0.67,0.0,0.21,0.79,0.14
-C00595,C02574,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.15 < 0.5,1.93,0.89,0.01,0.06,0.9299999999999999,0.15
-C00598,C02845,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.04 < 0.5,1.99,0.99,0.0,0.01,0.99,0.04
-C00602,C00712,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
+C00576,C00928,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.33 < 1.6,1.33,0.46,0.02,0.64,0.34,0.18
+C00576,C01684,k_name_domain+k_name_street,review,jev_score_mid,0.6 < score 1.15 < 1.6,1.15,0.57,0.07,0.71,0.22,0.28
+C00576,C01691,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.09 < 0.5,1.88,0.81,0.0,0.12,0.88,0.09
+C00578,C01341,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +12902125117 vs +16418180563,1.96,0.94,0.0,0.03,0.97,0.06
+C00579,C02952,k_phone+k_name_acct,merge,jev_score_high,score 1.71 >= 1.6 and lookalike 0.23 < 0.5,1.71,0.57,0.02,0.24,0.74,0.23
+C00583,C01172,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.01,0.03,0.96,0.07
+C00585,C02342,k_name_street+k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.10 < 0.5,1.86,0.79,0.0,0.14,0.86,0.1
+C00592,C00713,k_name_street+k_name_acct,review,jev_score_mid,0.6 < score 1.49 < 1.6,1.49,0.24,0.01,0.48,0.51,0.17
+C00592,C00920,k_name_street+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.92,0.0,0.05,0.95,0.08
+C00593,C02865,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.76 >= 1.6 and lookalike 0.15 < 0.5,1.76,0.65,0.0,0.23,0.77,0.15
+C00595,C02574,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.14 < 0.5,1.93,0.89,0.01,0.05,0.94,0.14
+C00598,C02845,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
+C00602,C00712,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.04 < 0.5,1.99,0.98,0.0,0.01,0.99,0.04
 C00603,C00721,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00604,C02050,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C00604,C02192,k_phone+k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
-C00605,C00824,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.93,0.0,0.04,0.96,0.07
-C00609,C01489,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C00614,C00898,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.07 < 0.5,1.92,0.88,0.0,0.07,0.93,0.07
+C00605,C00824,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.06 < 0.5,1.93,0.89,0.0,0.07,0.93,0.06
+C00609,C01489,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.03,0.97,0.07
+C00614,C00898,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.91,0.0,0.05,0.95,0.07
 C00617,C01173,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18159341342 vs +19384381264,1.99,0.98,0.0,0.01,0.99,0.07
-C00619,C01377,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.10 < 0.5,1.99,0.99,0.0,0.01,0.99,0.1
-C00619,C01740,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.10 < 0.5,1.98,0.97,0.0,0.02,0.98,0.1
+C00619,C01377,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.99,0.0,0.01,0.99,0.09
+C00619,C01740,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.09 < 0.5,1.98,0.97,0.0,0.02,0.98,0.09
 C00620,C01147,k_email+k_phone+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C00622,C02366,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
-C00626,C01232,k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00628,C02516,k_name_acct,merge,jev_score_high,score 1.83 >= 1.6 and lookalike 0.09 < 0.5,1.83,0.75,0.0,0.17,0.83,0.09
-C00633,C02927,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.93,0.01,0.04,0.95,0.08
-C00636,C01365,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.0,0.07,0.93,0.08
-C00640,C00790,k_phone,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.10 < 0.5,1.81,0.71,0.04,0.11,0.85,0.1
-C00643,C01999,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.96,0.0,0.02,0.98,0.06
+C00626,C01232,k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C00628,C02516,k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.10 < 0.5,1.8,0.7,0.0,0.19,0.81,0.1
+C00633,C02927,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.93,0.01,0.03,0.96,0.08
+C00636,C01365,k_phone,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.08 < 0.5,1.9,0.85,0.01,0.09,0.9,0.08
+C00640,C00790,k_phone,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.10 < 0.5,1.85,0.77,0.03,0.09,0.88,0.1
+C00643,C01999,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
 C00645,C01807,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00647,C00862,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.9,0.0,0.07,0.93,0.08
-C00648,C01881,k_phone,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.09 < 0.5,1.88,0.82,0.02,0.08,0.9,0.09
-C00651,C02229,k_email+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.05 < 0.5,1.98,0.97,0.0,0.02,0.98,0.05
-C00653,C01939,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.35 < 1.6,1.35,0.45,0.01,0.63,0.36,0.17
+C00647,C00862,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.9,0.0,0.07,0.93,0.07
+C00648,C01881,k_phone,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.09 < 0.5,1.91,0.86,0.02,0.06,0.92,0.09
+C00651,C02229,k_email+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.05 < 0.5,1.97,0.95,0.0,0.03,0.97,0.05
+C00653,C01939,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.32 < 1.6,1.32,0.49,0.01,0.66,0.33,0.17
 C00657,C02391,k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
 C00666,C00998,k_email+k_phone+k_name_domain+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00671,C02002,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
+C00671,C02002,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
 C00674,C01533,k_phone+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
 C00675,C01117,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00676,C00922,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.93,0.0,0.05,0.95,0.09
-C00679,C01955,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.40 < 1.6,1.4,0.38,0.01,0.59,0.4,0.16
-C00682,C02400,k_name_swap+k_name_acct,merge,jev_score_high,score 1.75 >= 1.6 and lookalike 0.12 < 0.5,1.75,0.63,0.05,0.15,0.8,0.12
-C00683,C02388,k_name_street,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.03,0.97,0.08
+C00676,C00922,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.94,0.0,0.04,0.96,0.09
+C00679,C01955,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.43 < 1.6,1.43,0.32,0.01,0.55,0.44,0.15
+C00682,C02400,k_name_swap+k_name_acct,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.12 < 0.5,1.81,0.71,0.04,0.12,0.84,0.12
+C00683,C02388,k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.03,0.97,0.08
 C00684,C01324,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00687,C02650,k_name_domain+k_name_street,no_match,jev_score_low,score 0.03 <= 0.6,0.03,0.96,0.98,0.02,0.0,0.59
-C00688,C02328,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.14 < 0.5,1.92,0.88,0.0,0.08,0.92,0.14
-C00689,C02484,k_phone+k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.11 < 0.5,1.97,0.95,0.0,0.03,0.97,0.11
-C00691,C00919,k_name_street+k_name_acct,merge,jev_score_high,score 1.74 >= 1.6 and lookalike 0.17 < 0.5,1.74,0.61,0.0,0.25,0.75,0.17
-C00691,C01874,k_name_street+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.92,0.0,0.05,0.95,0.08
+C00687,C02650,k_name_domain+k_name_street,no_match,jev_score_low,score 0.04 <= 0.6,0.04,0.93,0.97,0.02,0.01,0.58
+C00688,C02328,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.14 < 0.5,1.93,0.89,0.0,0.07,0.93,0.14
+C00689,C02484,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.95,0.0,0.03,0.97,0.1
+C00691,C00919,k_name_street+k_name_acct,merge,jev_score_high,score 1.70 >= 1.6 and lookalike 0.18 < 0.5,1.7,0.55,0.0,0.29,0.71,0.18
+C00691,C01874,k_name_street+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.93,0.0,0.04,0.96,0.08
 C00693,C01005,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
-C00693,C02142,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C00693,C02142,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
 C00693,C02782,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00695,C01891,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.0,1.0,0.05
+C00695,C01891,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
 C00698,C02126,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
-C00699,C01420,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.02,0.98,0.08
+C00699,C01420,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.96,0.0,0.03,0.97,0.09
 C00702,C01912,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00704,C01106,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C00705,C02186,k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.01,0.03,0.96,0.07
-C00706,C01524,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.97,0.0,0.02,0.98,0.08
-C00708,C00873,k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.09 < 0.5,1.94,0.91,0.01,0.05,0.94,0.09
+C00704,C01106,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.98,0.0,0.01,0.99,0.06
+C00705,C02186,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.9,0.02,0.03,0.95,0.07
+C00706,C01524,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.96,0.0,0.02,0.98,0.09
+C00708,C00873,k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.94,0.0,0.03,0.97,0.09
 C00709,C01372,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C00713,C00920,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.74 >= 1.6 and lookalike 0.10 < 0.5,1.74,0.61,0.0,0.26,0.74,0.1
-C00717,C02897,k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.11 < 0.5,1.88,0.81,0.02,0.08,0.9,0.11
-C00718,C01426,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,0.99,0.0,0.0,1.0,0.04
+C00713,C00920,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.66 >= 1.6 and lookalike 0.11 < 0.5,1.66,0.49,0.0,0.34,0.66,0.11
+C00717,C02897,k_name_swap+k_name_acct,merge,jev_score_high,score 1.87 >= 1.6 and lookalike 0.11 < 0.5,1.87,0.8,0.03,0.08,0.89,0.11
+C00718,C01426,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.04 < 0.5,1.99,0.99,0.0,0.0,1.0,0.04
 C00722,C02079,k_email+k_phone+k_name_domain+k_name_street,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00722,C02197,k_name_domain+k_name_street,no_match,jev_score_low,score 0.53 <= 0.6,0.53,0.2,0.55,0.38,0.07,0.35
-C00723,C01283,k_phone,merge,jev_score_high,score 1.84 >= 1.6 and lookalike 0.12 < 0.5,1.84,0.76,0.05,0.06,0.89,0.12
+C00722,C02197,k_name_domain+k_name_street,no_match,jev_score_low,score 0.60 <= 0.6,0.6,0.1,0.49,0.42,0.09,0.31
+C00723,C01283,k_phone+k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.12 < 0.5,1.85,0.78,0.04,0.07,0.89,0.12
 C00739,C01973,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.0,1.0,0.05
-C00744,C01701,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.9,0.01,0.04,0.95,0.07
-C00746,C02509,k_email,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C00749,C01712,k_name_street,no_match,jev_score_low,score 0.31 <= 0.6,0.31,0.53,0.74,0.2,0.06,0.45
-C00749,C02656,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,0.99,1.0,0.0,0.0,0.68
+C00744,C01701,k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.08 < 0.5,1.94,0.91,0.01,0.04,0.95,0.08
+C00746,C02509,k_email,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.03,0.97,0.07
+C00749,C01712,k_name_street,no_match,jev_score_low,score 0.34 <= 0.6,0.34,0.49,0.73,0.21,0.06,0.43
+C00749,C02656,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,0.99,1.0,0.0,0.0,0.66
 C00750,C01925,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C00751,C00844,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00752,C02982,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +16777743934 vs +13143464917,1.71,0.56,0.0,0.29,0.71,0.13
-C00753,C02151,k_name_street,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.16 < 0.5,1.92,0.88,0.0,0.07,0.93,0.16
-C00759,C01053,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.96,0.0,0.02,0.98,0.06
-C00762,C01414,k_email+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.96,0.0,0.02,0.98,0.06
-C00764,C02733,k_phone+k_name_domain+k_name_swap,merge,jev_score_high,score 1.84 >= 1.6 and lookalike 0.15 < 0.5,1.84,0.76,0.0,0.15,0.85,0.15
+C00751,C00844,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C00752,C02982,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +16777743934 vs +13143464917,1.71,0.56,0.0,0.28,0.72,0.13
+C00753,C02151,k_name_street+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.16 < 0.5,1.91,0.87,0.0,0.09,0.91,0.16
+C00759,C01053,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.02,0.98,0.07
+C00762,C01414,k_email+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.02,0.98,0.07
+C00764,C02733,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.16 < 0.5,1.82,0.73,0.0,0.17,0.83,0.16
 C00765,C01187,k_name_street,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.04,0.96,0.08
-C00769,C00775,k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00771,C01164,k_email+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.98,0.0,0.01,0.99,0.09
-C00773,C01447,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00774,C01048,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00774,C01558,k_name_acct,merge,jev_score_high,score 1.72 >= 1.6 and lookalike 0.19 < 0.5,1.72,0.58,0.0,0.27,0.73,0.19
-C00774,C01794,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C00777,C01010,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.09 < 0.5,1.82,0.72,0.0,0.18,0.82,0.09
-C00779,C01196,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
+C00769,C00775,k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C00771,C01164,k_email+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.98,0.0,0.01,0.99,0.08
+C00773,C01447,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
+C00774,C01048,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
+C00774,C01558,k_name_acct,merge,jev_score_high,score 1.67 >= 1.6 and lookalike 0.19 < 0.5,1.67,0.5,0.0,0.32,0.68,0.19
+C00774,C01794,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.0,1.0,0.05
+C00777,C01010,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.87 >= 1.6 and lookalike 0.09 < 0.5,1.87,0.8,0.0,0.13,0.87,0.09
+C00779,C01196,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
 C00782,C01503,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.96,0.0,0.02,0.98,0.06
 C00788,C01920,k_email+k_phone+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00791,C02925,k_phone+k_name_street,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.04,0.96,0.08
-C00796,C01975,k_name_acct,merge,jev_score_high,score 1.71 >= 1.6 and lookalike 0.12 < 0.5,1.71,0.56,0.04,0.2,0.76,0.12
-C00796,C02458,k_name_acct,merge,jev_score_high,score 1.75 >= 1.6 and lookalike 0.13 < 0.5,1.75,0.63,0.02,0.2,0.78,0.13
-C00796,C02557,k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.06 < 0.5,1.94,0.92,0.02,0.02,0.96,0.06
+C00791,C02925,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.93,0.0,0.05,0.95,0.08
+C00796,C01975,k_name_acct,merge,jev_score_high,score 1.74 >= 1.6 and lookalike 0.12 < 0.5,1.74,0.61,0.04,0.18,0.78,0.12
+C00796,C02458,k_name_acct,merge,jev_score_high,score 1.66 >= 1.6 and lookalike 0.12 < 0.5,1.66,0.49,0.02,0.29,0.69,0.12
+C00796,C02557,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.06 < 0.5,1.93,0.89,0.02,0.03,0.95,0.06
 C00798,C01811,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00800,C01913,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.93,0.0,0.05,0.95,0.08
+C00800,C01913,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.92,0.0,0.05,0.95,0.09
 C00811,C01400,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C00814,C00949,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18045415511 vs +18472334329,1.81,0.71,0.0,0.19,0.81,0.1
-C00814,C01073,k_phone,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.09 < 0.5,1.91,0.87,0.0,0.08,0.92,0.09
-C00818,C01716,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18608739896 vs +12247868901,1.67,0.51,0.0,0.32,0.68,0.12
+C00814,C00949,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18045415511 vs +18472334329,1.79,0.69,0.0,0.2,0.8,0.11
+C00814,C01073,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.0,0.07,0.93,0.08
+C00818,C01716,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18608739896 vs +12247868901,1.66,0.49,0.0,0.33,0.67,0.11
 C00820,C00997,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00820,C02873,k_phone+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.9,0.01,0.04,0.95,0.08
+C00820,C02873,k_phone+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.07 < 0.5,1.92,0.88,0.02,0.04,0.94,0.07
 C00824,C02390,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00831,C00951,k_phone+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
-C00832,C01248,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.08 < 0.5,1.9,0.85,0.0,0.1,0.9,0.08
-C00837,C01599,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.98,0.0,0.01,0.99,0.09
-C00840,C01574,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
-C00843,C02178,k_name_acct,merge,jev_score_high,score 1.70 >= 1.6 and lookalike 0.17 < 0.5,1.7,0.55,0.0,0.29,0.71,0.17
-C00845,C01489,k_email,merge,jev_score_high,score 1.87 >= 1.6 and lookalike 0.14 < 0.5,1.87,0.81,0.01,0.11,0.88,0.14
-C00846,C01619,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00847,C02035,k_email+k_phone+k_name_domain+k_name_street+k_name_swap,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C00848,C02013,k_phone+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.89,0.0,0.07,0.93,0.08
+C00831,C00951,k_phone+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C00832,C01248,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.0,0.08,0.92,0.08
+C00837,C01599,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.98,0.0,0.01,0.99,0.09
+C00840,C01574,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
+C00843,C02178,k_name_acct,merge,jev_score_high,score 1.75 >= 1.6 and lookalike 0.16 < 0.5,1.75,0.63,0.0,0.24,0.76,0.16
+C00845,C01489,k_email,merge,jev_score_high,score 1.87 >= 1.6 and lookalike 0.14 < 0.5,1.87,0.81,0.01,0.12,0.87,0.14
+C00846,C01619,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
+C00847,C02035,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
+C00848,C02013,k_phone+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.09 < 0.5,1.93,0.89,0.0,0.07,0.93,0.09
 C00848,C02522,k_phone+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C00850,C02983,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.54 < 1.6,1.54,0.31,0.01,0.45,0.54,0.12
+C00850,C02983,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +16639277414 vs +17095790748,1.62,0.43,0.0,0.37,0.63,0.12
 C00854,C01883,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00857,C01442,k_phone,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.12 < 0.5,1.89,0.84,0.01,0.1,0.89,0.12
-C00859,C02957,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.26 < 1.6,1.26,0.56,0.02,0.7,0.28,0.17
-C00863,C01259,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.91,0.0,0.06,0.94,0.07
+C00857,C01442,k_phone,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.12 < 0.5,1.88,0.83,0.01,0.1,0.89,0.12
+C00859,C02957,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.17 < 1.6,1.17,0.69,0.02,0.79,0.19,0.17
+C00863,C01259,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.06 < 0.5,1.93,0.9,0.0,0.07,0.93,0.06
 C00864,C02164,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C00866,C02165,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00871,C01141,k_name_domain+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.96,0.0,0.02,0.98,0.06
-C00872,C01581,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.02,0.98,0.08
+C00871,C01141,k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C00872,C01581,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.98,0.0,0.01,0.99,0.08
 C00879,C01733,k_email+k_phone+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C00892,C01658,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C00895,C02023,k_phone+k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.95,0.0,0.03,0.97,0.09
-C00895,C02088,k_phone+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.95,0.0,0.03,0.97,0.08
-C00904,C01006,k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.09 < 0.5,1.91,0.86,0.02,0.06,0.92,0.09
-C00904,C01482,k_email+k_name_street+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.09 < 0.5,1.94,0.91,0.0,0.05,0.95,0.09
-C00906,C01674,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.01,0.99,0.08
+C00895,C02023,k_phone+k_name_street,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.93,0.0,0.04,0.96,0.09
+C00895,C02088,k_phone+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.94,0.0,0.04,0.96,0.09
+C00904,C01006,k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.02,0.05,0.93,0.08
+C00904,C01482,k_email+k_name_street+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.08 < 0.5,1.94,0.91,0.0,0.05,0.95,0.08
+C00906,C01674,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.0,1.0,0.08
 C00906,C02879,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C00910,C01084,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
-C00913,C00924,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.09 < 0.5,1.94,0.91,0.0,0.06,0.94,0.09
-C00913,C01532,k_phone,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.13 < 0.5,1.94,0.91,0.01,0.04,0.95,0.13
-C00915,C02125,k_phone,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.15 < 0.5,1.88,0.83,0.02,0.08,0.9,0.15
-C00915,C02508,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.19 < 1.6,1.19,0.61,0.03,0.74,0.23,0.19
-C00916,C01018,k_email,review,jev_score_mid,0.6 < score 1.35 < 1.6,1.35,0.44,0.01,0.63,0.36,0.38
-C00916,C01506,k_email,review,jev_score_mid,0.6 < score 1.27 < 1.6,1.27,0.55,0.01,0.7,0.29,0.38
-C00918,C01334,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00919,C01874,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.03,0.97,0.08
+C00910,C01084,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
+C00913,C00924,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.08 < 0.5,1.94,0.92,0.0,0.05,0.95,0.08
+C00913,C01532,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.12 < 0.5,1.95,0.92,0.01,0.04,0.95,0.12
+C00915,C02125,k_phone+k_name_acct,merge,jev_score_high,score 1.87 >= 1.6 and lookalike 0.16 < 0.5,1.87,0.81,0.02,0.09,0.89,0.16
+C00915,C02508,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.19 < 1.6,1.19,0.64,0.03,0.76,0.21,0.17
+C00916,C01018,k_email,review,jev_score_mid,0.6 < score 1.38 < 1.6,1.38,0.4,0.01,0.6,0.39,0.37
+C00916,C01506,k_email,review,jev_score_mid,0.6 < score 1.27 < 1.6,1.27,0.56,0.01,0.71,0.28,0.4
+C00918,C01334,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
+C00919,C01874,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
 C00923,C02289,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00924,C01532,k_phone,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.03,0.97,0.08
+C00924,C01532,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.93,0.0,0.04,0.96,0.08
 C00925,C02051,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C00927,C01225,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.01,0.99,0.08
+C00927,C01225,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.98,0.0,0.01,0.99,0.08
 C00928,C01684,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C00928,C01691,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.0,0.08,0.92,0.08
-C00928,C02168,k_phone,merge,jev_score_high,score 1.75 >= 1.6 and lookalike 0.14 < 0.5,1.75,0.63,0.01,0.24,0.75,0.14
-C00930,C01698,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13562781472 vs +17485048958,1.96,0.94,0.0,0.04,0.96,0.19
-C00931,C00962,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.59 < 1.6,1.59,0.39,0.0,0.4,0.6,0.1
-C00931,C02084,k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 0.99 < 1.6,0.99,0.08,0.31,0.39,0.3,0.4
-C00940,C01046,k_phone+k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.19 < 0.5,1.82,0.73,0.02,0.15,0.83,0.19
-C00945,C01714,k_email+k_name_street+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19637952879 vs +19452112269,1.71,0.57,0.0,0.29,0.71,0.11
-C00947,C01863,k_phone+k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.10 < 0.5,1.8,0.7,0.0,0.19,0.81,0.1
-C00952,C02584,k_name_street+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.13 < 0.5,1.92,0.88,0.0,0.08,0.92,0.13
-C00955,C02095,k_phone+k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.03,0.97,0.08
-C00957,C00984,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C00958,C02039,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.0,0.09,0.91,0.08
-C00958,C02619,k_phone+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.10 < 0.5,1.88,0.81,0.01,0.11,0.88,0.1
-C00961,C01266,k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.29 < 1.6,1.29,0.54,0.01,0.7,0.29,0.31
-C00962,C02084,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.16 < 0.5,1.89,0.83,0.02,0.08,0.9,0.16
-C00963,C02069,k_email+k_name_swap,merge,jev_score_high,score 1.83 >= 1.6 and lookalike 0.14 < 0.5,1.83,0.75,0.01,0.14,0.85,0.14
-C00965,C01472,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.10 < 0.5,1.95,0.92,0.01,0.04,0.95,0.1
-C00966,C02344,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.91,0.0,0.06,0.94,0.07
+C00928,C01691,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.08 < 0.5,1.9,0.86,0.0,0.09,0.91,0.08
+C00928,C02168,k_phone,merge,jev_score_high,score 1.73 >= 1.6 and lookalike 0.16 < 0.5,1.73,0.59,0.0,0.26,0.74,0.16
+C00930,C01698,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13562781472 vs +17485048958,1.96,0.95,0.0,0.03,0.97,0.19
+C00931,C00962,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19835289409 vs +16118002696,1.61,0.41,0.0,0.39,0.61,0.11
+C00931,C02084,k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 0.96 < 1.6,0.96,0.05,0.34,0.37,0.29,0.42
+C00940,C01046,k_phone+k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.18 < 0.5,1.85,0.78,0.01,0.12,0.87,0.18
+C00945,C01714,k_email+k_name_street+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19637952879 vs +19452112269,1.73,0.6,0.0,0.26,0.74,0.11
+C00947,C01863,k_phone+k_name_acct,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.11 < 0.5,1.81,0.71,0.0,0.19,0.81,0.11
+C00952,C02584,k_name_street+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.12 < 0.5,1.93,0.9,0.0,0.06,0.94,0.12
+C00955,C02095,k_phone+k_name_street,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.93,0.0,0.04,0.96,0.09
+C00957,C00984,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
+C00958,C02039,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.89,0.0,0.07,0.93,0.08
+C00958,C02619,k_phone+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.11 < 0.5,1.88,0.81,0.01,0.1,0.89,0.11
+C00961,C01266,k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.31 < 1.6,1.31,0.51,0.01,0.67,0.32,0.29
+C00962,C02084,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.15 < 0.5,1.9,0.86,0.02,0.06,0.92,0.15
+C00963,C02069,k_email+k_name_swap+k_name_acct,merge,jev_score_high,score 1.78 >= 1.6 and lookalike 0.15 < 0.5,1.78,0.68,0.01,0.19,0.8,0.15
+C00965,C01472,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.11 < 0.5,1.95,0.92,0.01,0.04,0.95,0.11
+C00966,C02344,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.9,0.0,0.07,0.93,0.07
 C00971,C02556,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.94,0.0,0.04,0.96,0.07
-C00974,C02442,k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.03,0.97,0.08
-C00976,C01109,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C00976,C01130,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.78 >= 1.6 and lookalike 0.17 < 0.5,1.78,0.67,0.0,0.22,0.78,0.17
-C00985,C02082,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
+C00974,C02442,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.02,0.98,0.07
+C00976,C01109,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
+C00976,C01130,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.18 < 0.5,1.8,0.7,0.0,0.19,0.81,0.18
+C00985,C02082,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.97,0.0,0.02,0.98,0.08
 C00988,C01209,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C00990,C01515,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.01,0.02,0.97,0.08
-C00992,C01671,k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.92,0.01,0.02,0.97,0.08
-C00996,C02600,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
-C00997,C02873,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.94,0.01,0.02,0.97,0.07
-C01002,C02421,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.9,0.01,0.05,0.94,0.07
-C01003,C02211,k_name_acct,merge,jev_score_high,score 1.78 >= 1.6 and lookalike 0.14 < 0.5,1.78,0.67,0.0,0.21,0.79,0.14
-C01005,C02142,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
-C01005,C02782,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
-C01006,C01482,k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.18 < 0.5,1.86,0.79,0.03,0.08,0.89,0.18
+C00990,C01515,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.01,0.02,0.97,0.07
+C00992,C01671,k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.01,0.02,0.97,0.07
+C00996,C02600,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C00997,C02873,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.92,0.01,0.03,0.96,0.07
+C01002,C02421,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.06 < 0.5,1.93,0.9,0.01,0.05,0.94,0.06
+C01003,C02211,k_name_acct,merge,jev_score_high,score 1.77 >= 1.6 and lookalike 0.14 < 0.5,1.77,0.65,0.0,0.22,0.78,0.14
+C01005,C02142,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
+C01005,C02782,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
+C01006,C01482,k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.17 < 0.5,1.86,0.8,0.02,0.09,0.89,0.17
 C01013,C02185,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19152172625 vs +16916225426,1.99,0.99,0.0,0.01,0.99,0.05
-C01018,C01506,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +12864711005 vs +12967583933,1.89,0.83,0.0,0.11,0.89,0.18
+C01018,C01506,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +12864711005 vs +12967583933,1.89,0.83,0.0,0.11,0.89,0.19
 C01022,C02729,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01023,C02361,k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.96,0.0,0.03,0.97,0.1
+C01023,C02361,k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.03,0.97,0.08
 C01025,C02987,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C01031,C01622,k_email,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.96,0.0,0.02,0.98,0.07
-C01031,C01767,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.10 < 0.5,1.94,0.91,0.0,0.06,0.94,0.1
-C01033,C01059,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
+C01031,C01622,k_email,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
+C01031,C01767,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.09 < 0.5,1.94,0.91,0.0,0.06,0.94,0.09
+C01033,C01059,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.02,0.98,0.07
 C01035,C01607,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.05 < 0.5,1.97,0.96,0.01,0.01,0.98,0.05
-C01038,C01609,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.99,0.0,0.01,0.99,0.09
-C01045,C02443,k_email+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.06 < 0.5,1.92,0.88,0.0,0.08,0.92,0.06
-C01048,C01558,k_name_domain+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.54 < 1.6,1.54,0.31,0.01,0.45,0.54,0.2
+C01038,C01609,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.99,0.0,0.01,0.99,0.09
+C01045,C02443,k_email+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.06 < 0.5,1.9,0.85,0.0,0.1,0.9,0.06
+C01048,C01558,k_name_domain+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.58 < 1.6,1.58,0.37,0.01,0.41,0.58,0.22
 C01048,C01794,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,0.99,0.0,0.0,1.0,0.04
 C01051,C02575,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01058,C02460,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.56 < 1.6,1.56,0.34,0.0,0.43,0.5700000000000001,0.12
+C01058,C02460,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.53 < 1.6,1.53,0.29,0.01,0.46,0.53,0.15
 C01060,C02368,k_email+k_phone+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01063,C01277,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C01065,C01308,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C01063,C01277,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,1.0,0.0,0.0,1.0,0.07
+C01065,C01308,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
 C01066,C02629,k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
-C01082,C02032,k_email,review,jev_score_mid,0.6 < score 1.47 < 1.6,1.47,0.27,0.01,0.51,0.48,0.42
-C01088,C01518,k_email,review,jev_score_mid,0.6 < score 1.38 < 1.6,1.38,0.4,0.01,0.6,0.39,0.41
-C01102,C01525,k_name_street,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.93,0.0,0.05,0.95,0.09
-C01107,C02156,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.10 < 0.5,1.96,0.94,0.0,0.04,0.96,0.1
-C01109,C01130,k_phone+k_name_domain+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.40 < 1.6,1.4,0.37,0.01,0.58,0.41,0.25
-C01110,C01862,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.94,0.0,0.04,0.96,0.09
-C01110,C02339,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.98,0.0,0.01,0.99,0.09
+C01082,C02032,k_email,review,jev_score_mid,0.6 < score 1.40 < 1.6,1.4,0.38,0.01,0.58,0.41,0.41
+C01088,C01518,k_email,review,jev_score_mid,0.6 < score 1.33 < 1.6,1.33,0.46,0.01,0.64,0.35,0.39
+C01102,C01525,k_name_street+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.10 < 0.5,1.95,0.92,0.0,0.05,0.95,0.1
+C01107,C02156,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.11 < 0.5,1.95,0.92,0.0,0.05,0.95,0.11
+C01109,C01130,k_phone+k_name_domain+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.44 < 1.6,1.44,0.31,0.01,0.54,0.45,0.25
+C01110,C01862,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.93,0.0,0.04,0.96,0.09
+C01110,C02339,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.99,0.0,0.01,0.99,0.09
 C01111,C01312,k_email+k_phone+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C01115,C01693,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.93,0.0,0.05,0.95,0.08
-C01133,C01948,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18282113599 vs +19215099641,1.89,0.84,0.0,0.11,0.89,0.09
-C01135,C01138,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.08 < 0.5,1.89,0.83,0.0,0.11,0.89,0.08
+C01133,C01948,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18282113599 vs +19215099641,1.91,0.86,0.0,0.09,0.91,0.08
+C01135,C01138,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.84 >= 1.6 and lookalike 0.09 < 0.5,1.84,0.76,0.0,0.16,0.84,0.09
 C01136,C01465,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01140,C02302,k_phone+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C01156,C02800,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +14957705503 vs +14367900853,1.77,0.66,0.0,0.22,0.78,0.08
-C01158,C02280,k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.94,0.01,0.03,0.96,0.07
+C01140,C02302,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
+C01156,C02800,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +14957705503 vs +14367900853,1.81,0.72,0.0,0.18,0.8200000000000001,0.09
+C01158,C02280,k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.02,0.98,0.07
 C01159,C01921,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01165,C01657,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C01168,C02728,k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.01,0.02,0.97,0.07
+C01165,C01657,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C01168,C02728,k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.01,0.02,0.97,0.07
 C01170,C01682,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C01174,C02657,k_phone,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.12 < 0.5,1.91,0.86,0.02,0.06,0.92,0.12
+C01174,C02657,k_phone+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.13 < 0.5,1.9,0.85,0.02,0.06,0.92,0.13
 C01179,C01392,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01179,C02788,k_phone+k_name_acct,merge,jev_score_high,score 1.76 >= 1.6 and lookalike 0.16 < 0.5,1.76,0.64,0.0,0.23,0.77,0.16
-C01180,C02811,k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.14 < 0.5,1.8,0.7,0.01,0.18,0.81,0.14
-C01185,C01679,k_phone,merge,jev_score_high,score 1.83 >= 1.6 and lookalike 0.12 < 0.5,1.83,0.75,0.01,0.14,0.85,0.12
-C01185,C01776,k_phone,merge,jev_score_high,score 1.75 >= 1.6 and lookalike 0.11 < 0.5,1.75,0.63,0.02,0.21,0.77,0.11
-C01195,C01546,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C01197,C02374,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.41 < 1.6,1.41,0.36,0.01,0.57,0.42,0.15
+C01179,C02788,k_phone+k_name_acct,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.15 < 0.5,1.81,0.71,0.0,0.19,0.81,0.15
+C01180,C02811,k_name_acct,merge,jev_score_high,score 1.73 >= 1.6 and lookalike 0.16 < 0.5,1.73,0.59,0.01,0.25,0.74,0.16
+C01185,C01679,k_phone,merge,jev_score_high,score 1.79 >= 1.6 and lookalike 0.15 < 0.5,1.79,0.69,0.02,0.17,0.81,0.15
+C01185,C01776,k_phone,merge,jev_score_high,score 1.70 >= 1.6 and lookalike 0.11 < 0.5,1.7,0.55,0.02,0.26,0.72,0.11
+C01195,C01546,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.0,1.0,0.05
+C01197,C02374,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.42 < 1.6,1.42,0.35,0.01,0.57,0.42,0.14
 C01197,C02539,k_email+k_phone+k_name_domain+k_name_street,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01198,C02241,k_phone+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.04 < 0.5,1.98,0.98,0.01,0.01,0.98,0.04
-C01199,C02238,k_phone,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.10 < 0.5,1.96,0.95,0.0,0.03,0.97,0.1
-C01201,C02549,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.9,0.01,0.05,0.94,0.08
-C01206,C02907,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.12 < 0.5,1.92,0.88,0.02,0.04,0.94,0.12
-C01210,C02825,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01211,C02530,k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C01215,C02602,k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.11 < 0.5,1.93,0.89,0.01,0.05,0.94,0.11
+C01198,C02241,k_phone+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.04 < 0.5,1.99,0.98,0.0,0.0,1.0,0.04
+C01199,C02238,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.11 < 0.5,1.95,0.93,0.0,0.04,0.96,0.11
+C01201,C02549,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.86,0.01,0.07,0.92,0.08
+C01206,C02907,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.11 < 0.5,1.93,0.9,0.02,0.03,0.95,0.11
+C01210,C02825,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C01211,C02530,k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
+C01215,C02602,k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.11 < 0.5,1.92,0.88,0.01,0.06,0.93,0.11
 C01227,C01464,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C01227,C02036,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.16 < 0.5,1.82,0.73,0.0,0.17,0.83,0.16
-C01227,C02752,k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.97,0.0,0.02,0.98,0.08
-C01234,C02166,k_name_domain+k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.98,0.99,0.01,0.0,0.62
-C01234,C02573,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.56 < 1.6,1.56,0.34,0.0,0.44,0.56,0.1
-C01238,C01647,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
-C01239,C01561,k_name_domain+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.56 < 1.6,1.56,0.34,0.0,0.44,0.56,0.19
-C01250,C02306,k_email,review,jev_score_mid,0.6 < score 1.36 < 1.6,1.36,0.42,0.02,0.61,0.37,0.35
-C01250,C02435,k_email,review,jev_score_mid,0.6 < score 1.36 < 1.6,1.36,0.43,0.01,0.62,0.37,0.36
-C01252,C02247,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
-C01256,C01593,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.61 >= 1.6 and lookalike 0.12 < 0.5,1.61,0.41,0.01,0.38,0.61,0.12
-C01260,C01676,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.29 < 1.6,1.29,0.52,0.01,0.6900000000000001,0.3,0.15
-C01260,C02592,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19762512390 vs +13005600999,1.75,0.63,0.0,0.25,0.75,0.1
-C01260,C02962,k_phone,merge,jev_score_high,score 1.72 >= 1.6 and lookalike 0.16 < 0.5,1.72,0.59,0.01,0.25,0.74,0.16
-C01262,C02504,k_email+k_name_domain+k_name_swap,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.13 < 0.5,1.88,0.82,0.0,0.12,0.88,0.13
+C01227,C02036,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.16 < 0.5,1.82,0.73,0.01,0.17,0.82,0.16
+C01227,C02752,k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.03,0.97,0.07
+C01234,C02166,k_name_domain+k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.99,1.0,0.0,0.0,0.61
+C01234,C02573,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.50 < 1.6,1.5,0.26,0.0,0.49,0.51,0.11
+C01238,C01647,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
+C01239,C01561,k_name_domain+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.51 < 1.6,1.51,0.27,0.0,0.48,0.52,0.22
+C01250,C02306,k_email,review,jev_score_mid,0.6 < score 1.41 < 1.6,1.41,0.34,0.02,0.56,0.42,0.34
+C01250,C02435,k_email,review,jev_score_mid,0.6 < score 1.36 < 1.6,1.36,0.43,0.01,0.62,0.37,0.37
+C01252,C02247,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
+C01256,C01593,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.64 >= 1.6 and lookalike 0.12 < 0.5,1.64,0.47,0.01,0.34,0.65,0.12
+C01260,C01676,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.31 < 1.6,1.31,0.5,0.01,0.67,0.32,0.15
+C01260,C02592,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19762512390 vs +13005600999,1.77,0.65,0.0,0.23,0.77,0.1
+C01260,C02962,k_phone,merge,jev_score_high,score 1.70 >= 1.6 and lookalike 0.17 < 0.5,1.7,0.55,0.02,0.27,0.71,0.17
+C01262,C02504,k_email+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.13 < 0.5,1.88,0.82,0.0,0.12,0.88,0.13
 C01263,C02320,k_phone+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C01265,C02431,k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.01,0.99,0.08
+C01265,C02431,k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
 C01269,C02042,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01270,C01703,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C01270,C01703,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.0,1.0,0.05
 C01272,C02669,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
 C01274,C02415,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
 C01276,C02182,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01284,C02355,k_phone+k_name_acct,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.15 < 0.5,1.81,0.72,0.02,0.15,0.83,0.15
-C01290,C01507,k_name_domain+k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.98,1.0,0.0,0.0,0.68
+C01284,C02355,k_phone+k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.16 < 0.5,1.82,0.73,0.02,0.15,0.83,0.16
+C01290,C01507,k_name_domain+k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.99,1.0,0.0,0.0,0.66
 C01296,C02742,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
 C01299,C02641,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01300,C02323,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C01304,C01325,k_email+k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.36 < 1.6,1.36,0.45,0.0,0.64,0.36,0.24
-C01306,C02201,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C01318,C02207,k_phone+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.09 < 0.5,1.89,0.83,0.0,0.11,0.89,0.09
-C01322,C01866,k_phone,merge,jev_score_high,score 1.83 >= 1.6 and lookalike 0.09 < 0.5,1.83,0.75,0.02,0.13,0.85,0.09
+C01300,C02323,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
+C01304,C01325,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.40 < 1.6,1.4,0.38,0.0,0.59,0.41,0.22
+C01306,C02201,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C01318,C02207,k_phone+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.09 < 0.5,1.9,0.85,0.0,0.1,0.9,0.09
+C01322,C01866,k_phone,merge,jev_score_high,score 1.84 >= 1.6 and lookalike 0.09 < 0.5,1.84,0.76,0.02,0.11,0.87,0.09
 C01328,C01735,k_email+k_phone+k_name_domain+k_name_street,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01335,C01782,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.14 < 0.5,1.93,0.9,0.0,0.06,0.94,0.14
+C01335,C01782,k_phone,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.14 < 0.5,1.96,0.94,0.0,0.04,0.96,0.14
 C01338,C01412,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C01346,C01612,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.94,0.0,0.04,0.96,0.07
+C01346,C01612,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.07 < 0.5,1.94,0.91,0.0,0.06,0.94,0.07
 C01347,C02397,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01347,C02852,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.27 < 1.6,1.27,0.53,0.02,0.69,0.29,0.16
-C01351,C01631,k_name_street,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.09 < 0.5,1.93,0.89,0.0,0.07,0.93,0.09
+C01347,C02852,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.20 < 1.6,1.2,0.61,0.03,0.74,0.23,0.17
+C01351,C01631,k_name_street+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.09 < 0.5,1.93,0.89,0.0,0.07,0.93,0.09
 C01353,C02251,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
 C01359,C02609,k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C01360,C02995,k_phone,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.13 < 0.5,1.96,0.94,0.0,0.04,0.96,0.13
+C01360,C02995,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.14 < 0.5,1.95,0.92,0.0,0.05,0.95,0.14
 C01363,C02230,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C01367,C02075,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
 C01371,C02915,k_email+k_phone+k_name_domain+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01373,C01572,k_phone+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.11 < 0.5,1.89,0.84,0.0,0.1,0.9,0.11
-C01376,C02949,k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
-C01377,C01740,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.13 < 0.5,1.99,0.98,0.0,0.01,0.99,0.13
-C01379,C02644,k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.08 < 0.5,1.94,0.9,0.01,0.05,0.94,0.08
-C01380,C01923,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.03,0.97,0.07
+C01373,C01572,k_phone+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.11 < 0.5,1.9,0.86,0.0,0.09,0.91,0.11
+C01376,C02949,k_name_street,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.93,0.0,0.04,0.96,0.09
+C01377,C01740,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.14 < 0.5,1.99,0.98,0.0,0.01,0.99,0.14
+C01379,C02644,k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.01,0.04,0.95,0.07
+C01380,C01923,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.95,0.0,0.03,0.97,0.06
 C01385,C02519,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C01386,C01844,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.96,0.0,0.02,0.98,0.06
-C01388,C01473,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.50 < 1.6,1.5,0.25,0.01,0.49,0.5,0.11
-C01392,C02788,k_phone,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.13 < 0.5,1.89,0.83,0.01,0.1,0.89,0.13
-C01393,C01603,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
+C01386,C01844,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.95,0.0,0.03,0.97,0.06
+C01388,C01473,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.59 < 1.6,1.59,0.38,0.01,0.4,0.59,0.11
+C01392,C02788,k_phone,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.14 < 0.5,1.89,0.83,0.0,0.1,0.9,0.14
+C01393,C01603,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
 C01393,C02369,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.95,0.0,0.03,0.97,0.09
-C01394,C02102,k_name_acct,review,jev_score_mid,0.6 < score 1.57 < 1.6,1.57,0.35,0.01,0.42,0.57,0.2
+C01394,C02102,k_name_acct,merge,jev_score_high,score 1.60 >= 1.6 and lookalike 0.20 < 0.5,1.6,0.4,0.01,0.39,0.6,0.2
 C01396,C01534,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01402,C02404,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.98,0.0,0.01,0.99,0.07
+C01402,C02404,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.01,0.99,0.07
 C01403,C01653,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C01408,C02173,k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.01,0.02,0.97,0.08
-C01409,C02855,k_phone+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.11 < 0.5,1.89,0.83,0.01,0.09,0.9,0.11
-C01413,C01643,k_phone,merge,jev_score_high,score 1.66 >= 1.6 and lookalike 0.17 < 0.5,1.66,0.49,0.02,0.3,0.68,0.17
-C01415,C02456,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C01421,C01887,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19704006285 vs +12024921733,1.91,0.87,0.0,0.09,0.91,0.06
-C01424,C02287,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C01424,C02349,k_name_street+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.09 < 0.5,1.89,0.84,0.0,0.11,0.89,0.09
-C01428,C01502,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.02,0.05,0.9299999999999999,0.08
-C01436,C01437,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.96,0.0,0.02,0.98,0.06
-C01450,C02690,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.55 < 1.6,1.55,0.33,0.01,0.44,0.55,0.12
+C01408,C02173,k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.01,0.01,0.98,0.08
+C01409,C02855,k_phone+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.11 < 0.5,1.89,0.84,0.01,0.09,0.9,0.11
+C01413,C01643,k_phone,merge,jev_score_high,score 1.63 >= 1.6 and lookalike 0.16 < 0.5,1.63,0.44,0.02,0.34,0.64,0.16
+C01415,C02456,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
+C01421,C01887,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19704006285 vs +12024921733,1.92,0.89,0.0,0.07,0.93,0.06
+C01424,C02287,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C01424,C02349,k_name_street+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.09 < 0.5,1.88,0.82,0.0,0.12,0.88,0.09
+C01428,C01502,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.89,0.02,0.04,0.94,0.08
+C01436,C01437,k_phone,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.06 < 0.5,1.96,0.94,0.01,0.03,0.96,0.06
+C01450,C02690,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +19386906781 vs +19972216569,1.62,0.44,0.0,0.37,0.63,0.12
 C01463,C02541,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01464,C02036,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.13 < 0.5,1.86,0.79,0.0,0.13,0.87,0.13
-C01464,C02752,k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C01466,C01820,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.07 < 0.5,1.92,0.88,0.02,0.05,0.93,0.07
-C01469,C02604,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.95,0.0,0.03,0.97,0.09
-C01472,C02995,k_email,review,jev_score_mid,0.6 < score 1.27 < 1.6,1.27,0.48,0.04,0.65,0.31,0.4
-C01474,C01778,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.05 < 0.5,1.97,0.95,0.0,0.03,0.97,0.05
-C01479,C02838,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.96,0.0,0.02,0.98,0.08
+C01464,C02036,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.83 >= 1.6 and lookalike 0.15 < 0.5,1.83,0.74,0.0,0.17,0.83,0.15
+C01464,C02752,k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.97,0.0,0.02,0.98,0.08
+C01466,C01820,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.07 < 0.5,1.93,0.89,0.01,0.04,0.95,0.07
+C01469,C02604,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.11 < 0.5,1.96,0.94,0.0,0.04,0.96,0.11
+C01472,C02995,k_email,review,jev_score_mid,0.6 < score 1.35 < 1.6,1.35,0.38,0.03,0.59,0.38,0.4
+C01474,C01778,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.95,0.0,0.03,0.97,0.06
+C01479,C02838,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.09 < 0.5,1.97,0.96,0.0,0.02,0.98,0.09
 C01484,C01591,k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C01487,C01962,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.94,0.0,0.04,0.96,0.09
-C01492,C01499,k_name_domain+k_name_street,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.93,0.0,0.04,0.96,0.07
-C01495,C01927,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C01487,C01962,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.95,0.0,0.03,0.97,0.1
+C01492,C01499,k_name_domain+k_name_street,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.03,0.97,0.07
+C01495,C01927,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
 C01509,C01683,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C01510,C02750,k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.07 < 0.5,1.88,0.82,0.01,0.09,0.9,0.07
-C01519,C01620,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C01522,C02072,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.27 < 1.6,1.27,0.55,0.01,0.7,0.29,0.18
-C01523,C02022,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13275591784 vs +15603491829,1.6,0.4,0.01,0.39,0.6,0.14
-C01526,C02353,k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.95,0.0,0.03,0.97,0.07
+C01510,C02750,k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.07 < 0.5,1.88,0.83,0.02,0.08,0.9,0.07
+C01519,C01620,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
+C01522,C02072,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.32 < 1.6,1.32,0.47,0.01,0.65,0.34,0.18
+C01523,C02022,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.59 < 1.6,1.59,0.39,0.01,0.39,0.6,0.14
+C01526,C02353,k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.03,0.97,0.07
 C01529,C02123,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01536,C02107,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13742912083 vs +18765864267,1.88,0.82,0.0,0.12,0.88,0.15
-C01537,C02591,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
-C01540,C02115,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.93,0.0,0.05,0.95,0.07
-C01542,C02577,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.11 < 0.5,1.92,0.88,0.01,0.06,0.93,0.11
-C01545,C02054,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.94,0.0,0.04,0.96,0.07
-C01545,C02793,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,1.0,1.0,0.0,0.0,0.7
-C01547,C02706,k_phone,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.10 < 0.5,1.94,0.92,0.0,0.05,0.95,0.1
-C01553,C02715,k_email+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.04 < 0.5,1.99,0.99,0.0,0.0,1.0,0.04
-C01558,C01794,k_name_acct,merge,jev_score_high,score 1.62 >= 1.6 and lookalike 0.12 < 0.5,1.62,0.43,0.01,0.36,0.63,0.12
-C01565,C01654,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.30 < 1.6,1.3,0.52,0.01,0.68,0.31,0.14
+C01536,C02107,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13742912083 vs +18765864267,1.93,0.9,0.0,0.07,0.93,0.17
+C01537,C02591,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.96,0.0,0.02,0.98,0.06
+C01540,C02115,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.0,0.05,0.95,0.07
+C01542,C02577,k_phone,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.11 < 0.5,1.86,0.8,0.02,0.1,0.88,0.11
+C01545,C02054,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.03,0.97,0.07
+C01545,C02793,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,1.0,1.0,0.0,0.0,0.71
+C01547,C02706,k_phone,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.09 < 0.5,1.94,0.91,0.0,0.06,0.94,0.09
+C01553,C02715,k_email+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
+C01558,C01794,k_name_acct,merge,jev_score_high,score 1.68 >= 1.6 and lookalike 0.10 < 0.5,1.68,0.52,0.01,0.31,0.6799999999999999,0.1
+C01565,C01654,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.21 < 1.6,1.21,0.64,0.01,0.76,0.23,0.16
 C01571,C02755,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
-C01596,C01966,k_email,review,jev_score_mid,0.6 < score 1.46 < 1.6,1.46,0.29,0.01,0.52,0.47,0.36
-C01603,C02369,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.11 < 0.5,1.97,0.96,0.0,0.03,0.97,0.11
-C01611,C01796,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.11 < 0.5,1.98,0.97,0.0,0.02,0.98,0.11
+C01596,C01966,k_email,review,jev_score_mid,0.6 < score 1.48 < 1.6,1.48,0.27,0.01,0.51,0.48,0.33
+C01603,C02369,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.96,0.0,0.03,0.97,0.1
+C01611,C01796,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.12 < 0.5,1.97,0.96,0.0,0.02,0.98,0.12
 C01633,C02829,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01637,C01664,k_email,merge,jev_score_high,score 1.87 >= 1.6 and lookalike 0.07 < 0.5,1.87,0.8,0.03,0.08,0.89,0.07
-C01638,C01977,k_name_domain+k_name_street,review,jev_score_mid,0.6 < score 0.93 < 1.6,0.93,0.0,0.42,0.23,0.35,0.43
+C01637,C01664,k_email,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.07 < 0.5,1.88,0.82,0.02,0.07,0.91,0.07
+C01638,C01977,k_name_domain+k_name_street,review,jev_score_mid,0.6 < score 0.88 < 1.6,0.88,0.0,0.44,0.24,0.32,0.47
 C01649,C02487,k_phone+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.94,0.0,0.04,0.96,0.07
 C01667,C02550,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C01674,C02879,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C01676,C02592,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +12387754023 vs +13005600999,1.71,0.56,0.0,0.29,0.71,0.09
-C01677,C02844,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.77 >= 1.6 and lookalike 0.14 < 0.5,1.77,0.65,0.0,0.23,0.77,0.14
-C01679,C01776,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
-C01680,C02943,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,1.0,1.0,0.0,0.0,0.71
-C01684,C01691,k_name_domain+k_name_street,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.08 < 0.5,1.86,0.78,0.0,0.14,0.86,0.08
-C01684,C02168,k_phone+k_name_acct,merge,jev_score_high,score 1.71 >= 1.6 and lookalike 0.16 < 0.5,1.71,0.57,0.0,0.28,0.72,0.16
-C01686,C02937,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.0,0.09,0.91,0.08
+C01676,C02592,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +12387754023 vs +13005600999,1.72,0.58,0.0,0.27,0.73,0.1
+C01677,C02844,k_phone+k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.13 < 0.5,1.8,0.7,0.0,0.2,0.8,0.13
+C01679,C01776,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C01680,C02943,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,1.0,1.0,0.0,0.0,0.73
+C01684,C01691,k_name_domain+k_name_street,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.09 < 0.5,1.88,0.82,0.0,0.12,0.88,0.09
+C01684,C02168,k_phone+k_name_acct,merge,jev_score_high,score 1.75 >= 1.6 and lookalike 0.15 < 0.5,1.75,0.62,0.0,0.25,0.75,0.15
+C01686,C02937,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.08 < 0.5,1.9,0.86,0.0,0.09,0.91,0.08
 C01694,C02399,k_phone+k_name_street,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.10 < 0.5,1.89,0.83,0.0,0.11,0.89,0.1
 C01696,C02948,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
-C01700,C02147,k_phone+k_name_street,review,jev_score_mid,0.6 < score 1.53 < 1.6,1.53,0.3,0.01,0.45,0.54,0.2
+C01700,C02147,k_phone+k_name_street,review,jev_score_mid,0.6 < score 1.57 < 1.6,1.57,0.36,0.0,0.42,0.58,0.19
 C01708,C01838,k_email+k_phone,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01712,C02656,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.98,0.0,0.01,0.99,0.08
+C01712,C02656,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.08 < 0.5,1.98,0.98,0.0,0.01,0.99,0.08
 C01717,C01817,k_email+k_phone+k_name_domain,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01727,C01855,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.44 < 1.6,1.44,0.32,0.01,0.54,0.45,0.16
-C01727,C02827,k_phone+k_name_swap,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.20 < 0.5,1.88,0.83,0.01,0.09,0.9,0.2
-C01737,C02021,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.01,0.99,0.08
+C01727,C01855,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.46 < 1.6,1.46,0.29,0.01,0.53,0.46,0.15
+C01727,C02827,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.19 < 0.5,1.88,0.81,0.01,0.1,0.89,0.19
+C01737,C02021,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.98,0.0,0.01,0.99,0.07
 C01746,C01864,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.03,0.97,0.07
-C01746,C02446,k_name_street+k_name_acct,merge,jev_score_high,score 1.84 >= 1.6 and lookalike 0.09 < 0.5,1.84,0.75,0.0,0.16,0.84,0.09
+C01746,C02446,k_name_street+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.09 < 0.5,1.89,0.83,0.0,0.11,0.89,0.09
 C01749,C02677,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C01769,C01990,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01774,C02607,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
-C01781,C02214,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C01769,C01990,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
+C01774,C02607,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
+C01781,C02214,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
 C01786,C02065,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C01789,C02495,k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.14 < 0.5,1.88,0.82,0.02,0.08,0.9,0.14
-C01793,C02773,k_name_acct,merge,jev_score_high,score 1.66 >= 1.6 and lookalike 0.19 < 0.5,1.66,0.5,0.0,0.33,0.67,0.19
-C01798,C01808,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C01789,C02495,k_name_swap+k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.13 < 0.5,1.85,0.77,0.02,0.11,0.87,0.13
+C01793,C02773,k_name_acct,merge,jev_score_high,score 1.61 >= 1.6 and lookalike 0.22 < 0.5,1.61,0.41,0.0,0.38,0.62,0.22
+C01798,C01808,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
 C01802,C01841,k_phone+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C01816,C02769,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.92,0.01,0.03,0.96,0.08
+C01816,C02769,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.01,0.03,0.96,0.07
 C01821,C02866,k_email+k_phone+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01822,C02622,k_name_swap,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.02,0.04,0.94,0.08
+C01822,C02622,k_name_swap+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.08 < 0.5,1.9,0.84,0.02,0.06,0.92,0.08
 C01839,C02843,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01848,C01850,k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.03,0.97,0.07
-C01855,C02827,k_name_swap,review,jev_score_mid,0.6 < score 1.32 < 1.6,1.32,0.0,0.16,0.37,0.47,0.41
-C01857,C02984,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
-C01862,C02339,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C01864,C02446,k_name_street+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.10 < 0.5,1.89,0.83,0.0,0.11,0.89,0.1
+C01848,C01850,k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
+C01855,C02827,k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.31 < 1.6,1.31,0.0,0.17,0.36,0.47,0.4
+C01857,C02984,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C01862,C02339,k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.96,0.0,0.02,0.98,0.07
+C01864,C02446,k_name_street+k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.10 < 0.5,1.85,0.78,0.0,0.14,0.86,0.1
 C01872,C02546,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.99,0.0,0.01,0.99,0.09
-C01878,C02955,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C01880,C02225,k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.04,0.96,0.08
-C01888,C02159,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.06 < 0.5,1.95,0.93,0.01,0.02,0.97,0.06
+C01878,C02955,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C01880,C02225,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
+C01888,C02159,k_phone+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.06 < 0.5,1.92,0.89,0.02,0.03,0.95,0.06
 C01893,C02700,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
 C01898,C01947,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
 C01901,C02939,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01911,C02630,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.11 < 0.5,1.95,0.93,0.0,0.04,0.96,0.11
+C01911,C02630,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.11 < 0.5,1.95,0.92,0.0,0.05,0.95,0.11
 C01914,C02696,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01917,C02318,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
-C01926,C02523,k_name_street+k_name_acct,merge,jev_score_high,score 1.73 >= 1.6 and lookalike 0.19 < 0.5,1.73,0.6,0.06,0.14,0.8,0.19
-C01930,C02622,k_phone+k_name_street,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.09 < 0.5,1.92,0.87,0.0,0.08,0.92,0.09
-C01938,C02597,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
-C01938,C02646,k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15267240578 vs +12528497816,1.83,0.75,0.0,0.16,0.84,0.12
-C01950,C02961,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.13 < 0.5,1.85,0.78,0.0,0.14,0.86,0.13
-C01951,C02433,k_phone+k_name_swap,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.06 < 0.5,1.96,0.95,0.01,0.03,0.96,0.06
-C01952,C02005,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
-C01958,C02848,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C01917,C02318,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C01926,C02523,k_name_street+k_name_acct,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.17 < 0.5,1.81,0.72,0.04,0.11,0.85,0.17
+C01930,C02622,k_phone+k_name_street,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.0,0.08,0.92,0.08
+C01938,C02597,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.96,0.0,0.03,0.97,0.06
+C01938,C02646,k_name_street+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15267240578 vs +12528497816,1.85,0.78,0.0,0.14,0.86,0.12
+C01950,C02961,k_name_domain+k_name_swap+k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.13 < 0.5,1.86,0.8,0.0,0.13,0.87,0.13
+C01951,C02433,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.02,0.98,0.07
+C01952,C02005,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
+C01958,C02848,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
 C01969,C02146,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
 C01975,C02393,k_email+k_phone+k_name_domain+k_name_street,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C01975,C02458,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C01975,C02557,k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.27 < 1.6,1.27,0.53,0.02,0.6900000000000001,0.29,0.16
-C01979,C02780,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C01987,C02436,k_phone+k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C01975,C02458,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C01975,C02557,k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.27 < 1.6,1.27,0.53,0.02,0.6900000000000001,0.29,0.17
+C01979,C02780,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
+C01987,C02436,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
 C01993,C02712,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C01998,C02861,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.01,0.99,0.06
-C02000,C02810,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.01,0.99,0.05
-C02001,C02044,k_phone,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.10 < 0.5,1.89,0.83,0.01,0.1,0.89,0.1
-C02004,C02787,k_email+k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.43 < 1.6,1.43,0.33,0.01,0.55,0.44,0.24
+C01998,C02861,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.98,0.0,0.01,0.99,0.06
+C02000,C02810,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.99,0.0,0.0,1.0,0.05
+C02001,C02044,k_phone,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.10 < 0.5,1.9,0.84,0.01,0.09,0.9,0.1
+C02004,C02787,k_email+k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.51 < 1.6,1.51,0.26,0.0,0.49,0.51,0.21
 C02008,C02312,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C02013,C02522,k_phone,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.01,0.07,0.92,0.08
+C02013,C02522,k_phone,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.09 < 0.5,1.89,0.83,0.01,0.09,0.9,0.09
 C02014,C02830,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C02015,C02963,k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C02017,C02261,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C02020,C02212,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.14 < 0.5,1.95,0.92,0.01,0.04,0.95,0.14
-C02023,C02088,k_phone,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.10 < 0.5,1.9,0.86,0.0,0.09,0.91,0.1
-C02026,C02138,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.0,0.05,0.95,0.07
-C02039,C02619,k_phone+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.08 < 0.5,1.94,0.91,0.01,0.04,0.95,0.08
-C02049,C02953,k_phone+k_name_street,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.13 < 0.5,1.92,0.88,0.0,0.08,0.92,0.13
-C02050,C02192,k_phone,merge,jev_score_high,score 1.78 >= 1.6 and lookalike 0.16 < 0.5,1.78,0.68,0.0,0.21,0.79,0.16
+C02017,C02261,k_phone+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C02020,C02212,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.15 < 0.5,1.95,0.92,0.01,0.04,0.95,0.15
+C02023,C02088,k_phone,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.10 < 0.5,1.89,0.84,0.0,0.11,0.89,0.1
+C02026,C02138,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.92,0.0,0.05,0.95,0.08
+C02039,C02619,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.08 < 0.5,1.95,0.92,0.01,0.04,0.95,0.08
+C02049,C02953,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.12 < 0.5,1.93,0.89,0.0,0.07,0.93,0.12
+C02050,C02192,k_phone,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.15 < 0.5,1.8,0.7,0.0,0.19,0.81,0.15
 C02054,C02793,k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.98,0.99,0.01,0.0,0.68
 C02064,C02999,k_email+k_phone+k_name_domain+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C02067,C02799,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
-C02071,C02493,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
-C02079,C02197,k_name_domain+k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.98,0.99,0.01,0.0,0.6
-C02085,C02425,k_phone,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.13 < 0.5,1.94,0.91,0.01,0.05,0.94,0.13
-C02085,C02877,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.98,0.0,0.01,0.99,0.08
-C02087,C02756,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.98,0.0,0.01,0.99,0.08
+C02071,C02493,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.02,0.98,0.07
+C02079,C02197,k_name_domain+k_name_street,no_match,jev_score_low,score 0.02 <= 0.6,0.02,0.97,0.99,0.01,0.0,0.64
+C02085,C02425,k_phone,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.15 < 0.5,1.91,0.87,0.01,0.07,0.92,0.15
+C02085,C02877,k_phone,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.08 < 0.5,1.99,0.99,0.0,0.01,0.99,0.08
+C02087,C02756,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.09 < 0.5,1.99,0.98,0.0,0.01,0.99,0.09
 C02090,C02279,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C02091,C02111,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13756983653 vs +18948961126,1.8,0.69,0.0,0.2,0.8,0.1
-C02091,C02468,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.89 >= 1.6 and lookalike 0.09 < 0.5,1.89,0.83,0.01,0.09,0.9,0.09
-C02097,C02940,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.95,0.0,0.02,0.98,0.06
-C02105,C02542,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
-C02105,C02624,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,1.0,0.0,0.0,1.0,0.07
+C02091,C02111,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13756983653 vs +18948961126,1.8,0.71,0.0,0.19,0.81,0.09
+C02091,C02468,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.88 >= 1.6 and lookalike 0.09 < 0.5,1.88,0.82,0.01,0.09,0.9,0.09
+C02097,C02940,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.06 < 0.5,1.96,0.94,0.01,0.02,0.97,0.06
+C02105,C02542,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.96,0.0,0.02,0.98,0.07
+C02105,C02624,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
 C02106,C02155,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C02107,C02413,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.96,0.0,0.03,0.97,0.1
+C02107,C02413,k_phone,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.10 < 0.5,1.98,0.97,0.0,0.02,0.98,0.1
 C02111,C02468,k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18948961126 vs +13756983653,1.82,0.73,0.01,0.15,0.84,0.12
-C02132,C02586,k_phone+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.96,0.0,0.02,0.98,0.07
-C02133,C02322,k_name_acct,merge,jev_score_high,score 1.82 >= 1.6 and lookalike 0.16 < 0.5,1.82,0.72,0.01,0.17,0.82,0.16
+C02125,C02508,k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15778290784 vs +14355455525,1.93,0.9,0.01,0.05,0.94,0.12
+C02132,C02586,k_phone+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.07 < 0.5,1.98,0.97,0.0,0.01,0.99,0.07
+C02133,C02322,k_name_acct,merge,jev_score_high,score 1.80 >= 1.6 and lookalike 0.16 < 0.5,1.8,0.7,0.01,0.19,0.8,0.16
 C02137,C02459,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C02142,C02782,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C02150,C02157,k_email+k_phone+k_name_domain+k_name_street+k_name_swap,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
+C02150,C02157,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C02163,C02401,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
-C02166,C02573,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,1.0,1.0,0.0,0.0,0.68
-C02172,C02950,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.93,0.01,0.03,0.96,0.07
-C02176,C02384,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.40 < 1.6,1.4,0.37,0.01,0.58,0.41,0.17
-C02189,C02707,k_phone,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.0,0.08,0.92,0.08
-C02193,C02430,k_name_street,merge,jev_score_high,score 1.91 >= 1.6 and lookalike 0.08 < 0.5,1.91,0.87,0.0,0.08,0.92,0.08
-C02217,C02792,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.0,1.0,0.07
-C02218,C02424,k_phone+k_name_acct,merge,jev_score_high,score 1.90 >= 1.6 and lookalike 0.13 < 0.5,1.9,0.85,0.0,0.1,0.9,0.13
+C02166,C02573,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,0.99,1.0,0.0,0.0,0.68
+C02172,C02950,k_phone+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.01,0.04,0.95,0.07
+C02176,C02384,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.34 < 1.6,1.34,0.44,0.01,0.63,0.36,0.18
+C02189,C02707,k_phone,merge,jev_score_high,score 1.93 >= 1.6 and lookalike 0.08 < 0.5,1.93,0.9,0.0,0.06,0.9400000000000001,0.08
+C02193,C02430,k_name_street+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.08 < 0.5,1.92,0.88,0.0,0.08,0.92,0.08
+C02217,C02792,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
+C02218,C02424,k_phone+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.12 < 0.5,1.92,0.88,0.0,0.08,0.92,0.12
 C02227,C02476,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
-C02236,C02307,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
-C02236,C02334,k_name_domain+k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +16793503033 vs +19634983304,1.85,0.77,0.0,0.15,0.85,0.16
-C02237,C02367,k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.93,0.01,0.02,0.97,0.07
-C02240,C02365,k_phone,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.11 < 0.5,1.97,0.96,0.0,0.03,0.97,0.11
-C02249,C02935,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
-C02256,C02608,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,1.0,0.0,0.0,1.0,0.06
-C02258,C02590,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.09 < 0.5,1.96,0.95,0.0,0.03,0.97,0.09
-C02264,C02337,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C02266,C02403,k_phone,merge,jev_score_high,score 1.62 >= 1.6 and lookalike 0.26 < 0.5,1.62,0.43,0.02,0.34,0.64,0.26
+C02236,C02307,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.98,0.0,0.01,0.99,0.06
+C02236,C02334,k_name_domain+k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +16793503033 vs +19634983304,1.86,0.79,0.0,0.13,0.87,0.15
+C02237,C02367,k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.07 < 0.5,1.96,0.94,0.01,0.02,0.97,0.07
+C02240,C02365,k_phone,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.11 < 0.5,1.96,0.95,0.0,0.03,0.97,0.11
+C02249,C02935,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.05 < 0.5,1.98,0.97,0.0,0.02,0.98,0.05
+C02256,C02608,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
+C02258,C02590,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.08 < 0.5,1.97,0.95,0.0,0.03,0.97,0.08
+C02264,C02337,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C02266,C02403,k_phone,merge,jev_score_high,score 1.65 >= 1.6 and lookalike 0.26 < 0.5,1.65,0.48,0.02,0.3,0.68,0.26
 C02273,C02359,k_email+k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C02276,C02970,k_name_street+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C02287,C02349,k_name_street+k_name_acct,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.09 < 0.5,1.81,0.72,0.0,0.18,0.8200000000000001,0.09
-C02288,C02888,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.08 < 0.5,2.0,0.99,0.0,0.0,1.0,0.08
-C02301,C02618,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.24 < 1.6,1.24,0.61,0.01,0.74,0.25,0.16
-C02306,C02435,k_email+k_name_street,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C02307,C02334,k_email+k_name_domain+k_name_street+k_name_swap,review,jev_score_mid,0.6 < score 1.38 < 1.6,1.38,0.4,0.01,0.6,0.39,0.2
+C02287,C02349,k_name_street+k_name_acct,merge,jev_score_high,score 1.81 >= 1.6 and lookalike 0.09 < 0.5,1.81,0.71,0.0,0.19,0.81,0.09
+C02288,C02888,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.08 < 0.5,2.0,1.0,0.0,0.0,1.0,0.08
+C02301,C02618,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.24 < 1.6,1.24,0.61,0.01,0.74,0.25,0.17
+C02306,C02435,k_email+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
+C02307,C02334,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.37 < 1.6,1.37,0.42,0.01,0.61,0.38,0.22
 C02311,C02496,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C02325,C02571,k_email,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.12 < 0.5,1.85,0.78,0.03,0.1,0.87,0.12
-C02374,C02539,k_email+k_name_domain+k_name_street,review,jev_score_mid,0.6 < score 1.34 < 1.6,1.34,0.43,0.02,0.62,0.36,0.16
-C02386,C02463,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.08 < 0.5,1.96,0.94,0.0,0.04,0.96,0.08
-C02393,C02458,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
-C02393,C02557,k_name_domain+k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18866896637 vs +19739520572,1.87,0.81,0.0,0.12,0.88,0.08
-C02397,C02852,k_name_street+k_name_acct,review,jev_score_mid,0.6 < score 1.36 < 1.6,1.36,0.42,0.01,0.61,0.38,0.15
-C02406,C02582,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.12 < 0.5,1.92,0.88,0.0,0.08,0.92,0.12
-C02407,C02974,k_name_domain+k_name_street,no_match,jev_score_low,score 0.00 <= 0.6,0.0,0.99,1.0,0.0,0.0,0.62
+C02325,C02571,k_email,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.12 < 0.5,1.86,0.79,0.02,0.1,0.88,0.12
+C02374,C02539,k_email+k_name_domain+k_name_street,review,jev_score_mid,0.6 < score 1.34 < 1.6,1.34,0.44,0.02,0.63,0.35,0.15
+C02386,C02463,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.07 < 0.5,1.97,0.95,0.0,0.03,0.97,0.07
+C02393,C02458,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.05 < 0.5,1.98,0.97,0.0,0.02,0.98,0.05
+C02393,C02557,k_name_domain+k_name_street,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +18866896637 vs +19739520572,1.88,0.82,0.0,0.11,0.89,0.08
+C02397,C02852,k_name_street+k_name_acct,review,jev_score_mid,0.6 < score 1.40 < 1.6,1.4,0.36,0.01,0.58,0.41,0.17
+C02406,C02582,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.94 >= 1.6 and lookalike 0.10 < 0.5,1.94,0.91,0.0,0.06,0.94,0.1
+C02407,C02974,k_name_domain+k_name_street,no_match,jev_score_low,score 0.01 <= 0.6,0.01,0.99,1.0,0.0,0.0,0.62
 C02411,C02883,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
-C02425,C02877,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.92,0.0,0.05,0.95,0.09
-C02447,C02779,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.48 < 1.6,1.48,0.27,0.01,0.51,0.48,0.15
+C02425,C02877,k_phone,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.10 < 0.5,1.95,0.93,0.0,0.05,0.95,0.1
+C02447,C02779,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.44 < 1.6,1.44,0.31,0.01,0.54,0.45,0.14
 C02458,C02557,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,jev_score_mid,0.6 < score 1.43 < 1.6,1.43,0.33,0.01,0.55,0.44,0.13
-C02483,C02565,k_email,review,jev_score_mid,0.6 < score 1.12 < 1.6,1.12,0.73,0.03,0.82,0.15,0.5
-C02517,C02885,k_name_swap+k_name_acct,merge,jev_score_high,score 1.83 >= 1.6 and lookalike 0.08 < 0.5,1.83,0.75,0.04,0.09,0.87,0.08
-C02532,C02760,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.01,0.99,0.06
-C02542,C02624,k_name_street+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.10 < 0.5,1.97,0.96,0.0,0.02,0.98,0.1
-C02548,C02954,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.84 >= 1.6 and lookalike 0.10 < 0.5,1.84,0.76,0.0,0.16,0.84,0.1
-C02560,C02762,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.06 < 0.5,1.96,0.95,0.0,0.03,0.97,0.06
+C02483,C02565,k_email,review,jev_score_mid,0.6 < score 1.14 < 1.6,1.14,0.71,0.03,0.8,0.17,0.51
+C02517,C02885,k_name_swap+k_name_acct,merge,jev_score_high,score 1.85 >= 1.6 and lookalike 0.07 < 0.5,1.85,0.77,0.03,0.08,0.89,0.07
+C02532,C02760,k_phone+k_name_domain+k_name_street,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.05 < 0.5,1.99,0.98,0.0,0.01,0.99,0.05
+C02542,C02624,k_name_street+k_name_acct,merge,jev_score_high,score 1.96 >= 1.6 and lookalike 0.10 < 0.5,1.96,0.94,0.0,0.03,0.97,0.1
+C02548,C02954,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.86 >= 1.6 and lookalike 0.10 < 0.5,1.86,0.79,0.0,0.14,0.86,0.1
+C02560,C02762,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.06 < 0.5,1.98,0.97,0.0,0.02,0.98,0.06
 C02576,C02905,k_name_acct,merge,jev_score_high,score 1.98 >= 1.6 and lookalike 0.09 < 0.5,1.98,0.97,0.0,0.01,0.99,0.09
-C02593,C02765,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.96,0.01,0.01,0.98,0.06
+C02593,C02765,k_phone+k_name_swap+k_name_acct,merge,jev_score_high,score 1.97 >= 1.6 and lookalike 0.06 < 0.5,1.97,0.95,0.01,0.02,0.97,0.06
 C02595,C02638,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.07 < 0.5,1.95,0.92,0.0,0.05,0.95,0.07
-C02597,C02646,k_email+k_name_domain+k_name_street+k_name_swap,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15267240578 vs +12528497816,1.94,0.92,0.0,0.05,0.95,0.07
+C02597,C02646,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +15267240578 vs +12528497816,1.94,0.91,0.0,0.06,0.94,0.07
 C02601,C02880,k_email+k_phone+k_name_domain+k_name_swap+k_name_acct,merge,same_email_and_phone,hard rule same_email_and_phone,,,,,,
 C02610,C02736,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.07 < 0.5,2.0,0.99,0.0,0.0,1.0,0.07
-C02635,C02820,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06
-C02642,C02776,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13433769232 vs +19777838463,1.85,0.78,0.0,0.14,0.86,0.23
+C02635,C02820,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,0.99,0.0,0.0,1.0,0.05
+C02642,C02776,k_email,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13433769232 vs +19777838463,1.84,0.76,0.0,0.15,0.85,0.21
 C02647,C02697,k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.05 < 0.5,2.0,1.0,0.0,0.0,1.0,0.05
-C02655,C02660,k_name_street+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.17 < 0.5,1.92,0.87,0.0,0.08,0.92,0.17
-C02658,C02717,k_name_domain+k_name_street,no_match,jev_score_low,score 0.07 <= 0.6,0.07,0.9,0.95,0.03,0.02,0.61
-C02692,C02699,k_email+k_name_domain+k_name_street+k_name_swap,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13663530841 vs +14005516596,1.84,0.76,0.0,0.16,0.84,0.09
-C02703,C02850,k_name_domain+k_name_street+k_name_swap,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.06 < 0.5,1.99,0.99,0.0,0.0,1.0,0.06
+C02655,C02660,k_name_street+k_name_acct,merge,jev_score_high,score 1.92 >= 1.6 and lookalike 0.15 < 0.5,1.92,0.88,0.0,0.07,0.93,0.15
+C02658,C02717,k_name_domain+k_name_street,no_match,jev_score_low,score 0.08 <= 0.6,0.08,0.88,0.95,0.03,0.02,0.64
+C02692,C02699,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,review,phone_conflict,Jev said merge (jev_score_high) but phones differ: +13663530841 vs +14005516596,1.89,0.83,0.0,0.11,0.89,0.08
+C02703,C02850,k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 1.99 >= 1.6 and lookalike 0.07 < 0.5,1.99,0.99,0.0,0.01,0.99,0.07
 C02731,C02824,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.04 < 0.5,2.0,1.0,0.0,0.0,1.0,0.04
 C02803,C02817,k_name_domain+k_name_street,merge,jev_score_high,score 1.95 >= 1.6 and lookalike 0.09 < 0.5,1.95,0.92,0.0,0.05,0.95,0.09
 C02813,C02837,k_phone+k_name_street+k_name_acct,merge,jev_score_high,score 2.00 >= 1.6 and lookalike 0.06 < 0.5,2.0,0.99,0.0,0.0,1.0,0.06

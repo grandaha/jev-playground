@@ -17,6 +17,15 @@ STREET = {"street": "st", "avenue": "ave", "road": "rd", "boulevard": "blvd", "d
 PERSONAL_DOMAINS = {"gmail.com", "yahoo.com", "outlook.com", "hotmail.com"}
 
 
+def account_groups():
+    """record -> merged account group, once cluster.py has run on accounts (else empty: raw ids are used)."""
+    f = DATA / "groups_accounts.csv"
+    return {r["record_id"]: r["group_id"] for r in csv.DictReader(open(f))} if f.exists() else {}
+
+
+GROUPS = account_groups()
+
+
 def words(s):
     return re.sub(r"[^a-z0-9 ]", " ", s.lower().replace("&", " and ")).split()
 
@@ -82,7 +91,7 @@ def norm_contact(r):
             "k_name_domain": f"{ini}{soundex(l)}|{dom}" if dom and ini and l else "",
             "k_name_street": f"{ini}{soundex(l)}|{street_key(r['address'], r['zip'])}" if ini and l and r["address"] else "",
             "k_name_swap": f"{names}|{dom}" if dom and ini and l else "",
-            "k_name_acct": f"{names}|{r['account_id']}" if r["account_id"] and ini and l else ""}
+            "k_name_acct": f"{names}|{GROUPS.get(r['account_id'], r['account_id'])}" if r["account_id"] and ini and l else ""}
 
 
 def run(src, dst, fn):

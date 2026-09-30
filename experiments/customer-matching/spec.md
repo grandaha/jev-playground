@@ -32,3 +32,15 @@ Every pair decision writes: `decision`, `rule` (e.g. `exact_email`, `conflicting
 ## Open defaults (change if wrong)
 - 1,000 / 3,000 read as total records per file, not true entities.
 - False merges treated as the costly error, so thresholds favor review over auto-merge.
+
+## Run order (from repo root, `.venv/bin/python experiments/customer-matching/<script>.py`)
+1. `generate`, `normalize`, `block`
+2. `match accounts`, `cluster accounts`
+3. `normalize`, `block` again (contacts now key on the merged account), then `match contacts`, `cluster contacts`
+4. `master accounts`, `master contacts` (`--reuse` re-weights saved Jev answers without new calls)
+5. `evaluate`
+
+## First results (seed 7)
+- Accounts: precision 100%, recall 92.1% (97.8% if the review queue is resolved correctly).
+- Contacts: precision 99.2%, recall 92.8% (93.8% with review resolved).
+- Master weights matter: with recency weighted 0.3, the clean original wins 66% / 53% of groups; with recency 0 it wins 86% / 91%. Recency is random noise in the synthetic data, so this is a generator artifact until we decide how recency should really count.

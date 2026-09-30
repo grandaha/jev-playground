@@ -72,7 +72,7 @@ Each script reads the files the previous stage wrote. Jev answers are saved, so 
 
 1. **Generate** the alerts and the answer key.
 2. **Enrich** each alert with entity keys, asset context and time windows.
-3. **Rules (code).** The never-suppress list always escalates. An allowlist closes known-harmless alerts with a reason, such as a scheduled backup or an approved scanner. The detector's severity is an input, never the answer.
+3. **Rules (code).** The never-suppress list never closes an alert. Such an alert is at least investigated, and it escalates when Jev judges it a likely true positive. An allowlist closes known-harmless alerts with a reason, such as a scheduled backup or an approved scanner. The detector's severity is an input, never the answer.
 4. **Ask Jev** once per remaining alert. It gets the alert with its asset and user context and answers:
    - Disposition (Choice): true positive, false positive or benign true positive.
    - Impact (Score): minimal, limited, serious or severe.
@@ -85,7 +85,7 @@ Each script reads the files the previous stage wrote. Jev answers are saved, so 
 
 ## Account risk
 - A finding's risk equals impact times confidence divided by 100. Jev's impact Score supplies the impact, scaled to 0 to 100. Jev's probability of a true positive supplies the confidence.
-- An account's score is a rolling 7-day number from 0 to 100. It combines the total risk, the worst single finding, the count of serious findings and the count of different detections.
+- An account's score is a rolling 7-day number from 0 to 100, taken at the account's worst seven-day window because the incidents are spread over two weeks. It combines the total risk, the worst single finding, the count of serious findings and the count of different detections.
 - Alerts inside confirmed incidents count in full, and benign alerts count for little.
 - The output is a ranked list, and each account shows the incidents and alerts behind its score.
 

@@ -67,6 +67,33 @@ def test_ask_one_retries_then_records_the_error(monkeypatch):
     assert "transient" in bad["error"] and bad["asked"] == "yes"
 
 
+def test_malformed_response_becomes_an_error_row(monkeypatch):
+    monkeypatch.setattr(ask.time, "sleep", lambda s: None)
+    no_stage = fake_response()
+    del no_stage.answers["stage"]
+    row = ask.ask_one(ALERT, FakeClient(response=no_stage))
+    assert row["asked"] == "yes" and "stage" in row["error"] and row["p_true_positive"] == ""
+    null_noul = fake_response()
+    null_noul.answers["benign_explanation"] = NS(noul=None)
+    row = ask.ask_one(ALERT, FakeClient(response=null_noul))
+    assert row["asked"] == "yes" and row["error"] and row["p_true_positive"] == ""
+
+
+def test_a_malformed_response_cannot_abort_a_run(monkeypatch):
+    monkeypatch.setattr(ask.time, "sleep", lambda s: None)
+    bad = fake_response()
+    del bad.answers["stage"]
+    bad_alert = {**ALERT, "alert_id": "A3"}  # same fields, but it gets the malformed response
+
+    class Mixed(FakeClient):
+        def system_one(self, state, questions):
+            self.calls.append(state)
+            return bad if state["alert"]["rule_name"] == "Bad rule" else self.response
+
+    rows = ask.ask_alerts([ALERT, {**bad_alert, "rule_name": "Bad rule"}], Mixed(), workers=1)
+    assert len(rows) == 2 and [bool(r["error"]) for r in rows] == [False, True]
+
+
 def test_ask_alerts_skips_allowlisted_alerts():
     client = FakeClient()
     rows = ask.ask_alerts([ALERT, SCAN], client, workers=1)

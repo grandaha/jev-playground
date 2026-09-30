@@ -69,26 +69,33 @@ def choice_probs(answer, options):
     return {o: float(p.get(o, p.get(i, p.get(str(i), 0.0)))) for i, o in enumerate(options)}
 
 
-def ask_one(alert, client, attempts=4):
-    row = {c: "" for c in ANSWER_COLUMNS}
-    row.update(alert_id=alert["alert_id"], asked="yes")
-    for attempt in range(attempts):  # the API occasionally returns a transient error even after SDK retries
-        try:
-            resp = client.system_one(state=alert_state(alert), questions=ALERT_QUESTIONS)
-            break
-        except Exception as e:
-            if attempt == attempts - 1:
-                row["error"] = str(e)[:200]
-                return row
-            time.sleep(2 ** attempt)
+def parse_answers(resp):
+    """Turn a Jev response into the answer columns. Raises on a malformed response."""
     disp = choice_probs(resp.answers["disposition"], DISPOSITIONS)
     stage = resp.answers["stage"]
     impact = resp.answers["impact"]
-    row.update(p_true_positive=disp["true_positive"], p_false_positive=disp["false_positive"],
-               p_benign_true_positive=disp["benign_true_positive"], impact=impact.score,
-               impact_confidence=impact.confidence, stage=stage.choice, stage_confidence=stage.confidence,
-               p_benign_explanation=resp.answers["benign_explanation"].noul)
-    return row
+    noul = resp.answers["benign_explanation"].noul
+    if impact.score is None or noul is None:
+        raise ValueError("response has an empty impact score or benign_explanation")
+    return dict(p_true_positive=disp["true_positive"], p_false_positive=disp["false_positive"],
+                p_benign_true_positive=disp["benign_true_positive"], impact=impact.score,
+                impact_confidence=impact.confidence, stage=stage.choice, stage_confidence=stage.confidence,
+                p_benign_explanation=noul)
+
+
+def ask_one(alert, client, attempts=4):
+    row = {c: "" for c in ANSWER_COLUMNS}
+    row.update(alert_id=alert["alert_id"], asked="yes")
+    for attempt in range(attempts):  # the API occasionally errors, or returns a malformed answer
+        try:
+            resp = client.system_one(state=alert_state(alert), questions=ALERT_QUESTIONS)
+            row.update(parse_answers(resp))
+            return row
+        except Exception as e:
+            if attempt == attempts - 1:
+                return {**{c: "" for c in ANSWER_COLUMNS}, "alert_id": alert["alert_id"], "asked": "yes",
+                        "error": f"{type(e).__name__}: {e}"[:200]}
+            time.sleep(2 ** attempt)
 
 
 def ask_alerts(alerts, client, workers=8):

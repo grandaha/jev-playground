@@ -40,6 +40,15 @@ def scenario_table(key, decisions):
     return {s: dict(c) for s, c in table.items()}
 
 
+def stage_accuracy(key, alerts, answers):
+    """For real alerts: how often Jev's stage, and the detector's claimed tactic, match the true tactic."""
+    claimed = {a["alert_id"]: a["claimed_tactic"] for a in alerts}
+    real = [k for k in key if k["disposition"] == "true_positive"]
+    jev = sum(1 for k in real if answers.get(k["alert_id"], {}).get("stage") == k["true_tactic"])
+    detector = sum(1 for k in real if claimed[k["alert_id"]] == k["true_tactic"])
+    return {"real_alerts": len(real), "jev_correct": jev, "detector_correct": detector}
+
+
 def _print_alert_section(name, key, decisions):
     m = alert_metrics(key, decisions)
     print(f"\n{name}")
@@ -57,6 +66,11 @@ def main():
     for name, file in (("Rules-only baseline", "decisions_alerts_baseline.csv"), ("Jev policy", "decisions_alerts.csv")):
         if os.path.exists(path(file)):
             sections[name] = _print_alert_section(name, key, read_csv(path(file)))
+    if os.path.exists(path("answers_alerts.csv")):
+        answers = {r["alert_id"]: r for r in read_csv(path("answers_alerts.csv"))}
+        s = stage_accuracy(key, read_csv(path("alerts.csv")), answers)
+        print(f"\nStage accuracy on {s['real_alerts']} real alerts: Jev {s['jev_correct']}, "
+              f"the detector's claimed tactic {s['detector_correct']}")
     for name, table in sections.items():
         print(f"\nBy scenario, {name}: disposition/action counts")
         for scenario in sorted(table):

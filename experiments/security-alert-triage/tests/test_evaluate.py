@@ -30,3 +30,14 @@ def test_scenario_table_counts_actions_by_disposition():
     t = evaluate.scenario_table(KEY, DEC)
     assert t["s"][("true_positive", "close")] == 2
     assert t["s"][("true_positive", "escalate")] == 1
+
+
+def test_stage_accuracy_compares_jev_and_the_detector_on_real_alerts():
+    key = [{"alert_id": "A1", "disposition": "true_positive", "true_tactic": "exfiltration"},
+           {"alert_id": "A2", "disposition": "true_positive", "true_tactic": "collection"},
+           {"alert_id": "A3", "disposition": "false_positive", "true_tactic": ""}]
+    alerts = [{"alert_id": "A1", "claimed_tactic": "exfiltration"}, {"alert_id": "A2", "claimed_tactic": ""},
+              {"alert_id": "A3", "claimed_tactic": "execution"}]
+    answers = {"A1": {"asked": "yes", "stage": "exfiltration"}, "A2": {"asked": "yes", "stage": "collection"},
+               "A3": {"asked": "yes", "stage": "execution"}}
+    assert evaluate.stage_accuracy(key, alerts, answers) == {"real_alerts": 2, "jev_correct": 2, "detector_correct": 1}

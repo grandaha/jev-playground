@@ -10,6 +10,8 @@ from itertools import combinations
 from collections import defaultdict
 from pathlib import Path
 
+from evaluate import corroborated
+
 DATA = Path(__file__).parent / "data"
 FIELDS = {"accounts": ["name", "website", "phone", "address", "city", "state", "zip", "industry", "source_system", "updated_at"],
           "contacts": ["first_name", "last_name", "email", "phone", "title", "address", "city", "state", "zip", "account_id", "source_system", "updated_at"]}
@@ -27,6 +29,7 @@ def build(table):
     for rid, k in key.items():
         by_true[k["true_id"]].append(rid)
     true_pairs = {p for ids in by_true.values() for p in combinations(sorted(ids), 2)}
+    norm = {x[idc]: x for x in read(f"{table}_norm.csv")}
     seen, pairs = set(), []
 
     def add(a, b, decision, rule, detail, score, look, keys):
@@ -34,7 +37,8 @@ def build(table):
         if decision == "merge":
             verdict = "right" if dup else "wrong"
         elif decision in ("no_match", "missed"):
-            verdict = "wrong" if dup else "right"
+            # a true duplicate with nothing but the name in common can't be proven from the data
+            verdict = "right" if not dup else "wrong" if corroborated(table, norm[a], norm[b]) else "unprovable"
         else:
             verdict = "review"
         pairs.append({"a": a, "b": b, "decision": decision, "rule": rule, "detail": detail, "score": score,
@@ -60,13 +64,13 @@ h1{font-size:16px;margin:0 0 8px}label{margin-right:12px;color:var(--mut)}select
 main{padding:16px;max-width:980px;margin:auto}.sum{color:var(--mut);margin:0 0 12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden}
 .top{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;padding:8px 12px;border-bottom:1px solid var(--line)}
-.tag{font-weight:600}.right{color:var(--ok)}.wrong{color:var(--bad)}.review{color:var(--rev)}.mut{color:var(--mut)}
+.tag{font-weight:600}.right{color:var(--ok)}.wrong{color:var(--bad)}.review,.unprovable{color:var(--rev)}.mut{color:var(--mut)}
 table{width:100%;border-collapse:collapse}td,th{padding:3px 12px;text-align:left;vertical-align:top;word-break:break-word}
 th{width:16%;color:var(--mut);font-weight:400}td.d{background:var(--diff)}.note{padding:6px 12px;color:var(--mut);border-top:1px solid var(--line);font-size:13px}
 button{font:inherit;padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:inherit;cursor:pointer}
 </style></head><body><header><h1>Match review</h1>
 <label>Table <select id="t"><option>accounts</option><option>contacts</option></select></label>
-<label>Show <select id="v"><option value="all">all</option><option value="wrong" selected>wrong only</option><option value="review">review queue</option><option value="right">right only</option></select></label>
+<label>Show <select id="v"><option value="all">all</option><option value="wrong" selected>wrong only</option><option value="review">review queue</option><option value="right">right only</option><option value="unprovable">unprovable (no shared evidence)</option></select></label>
 <label>Rule <select id="r"></select></label><label>Search id <input id="q" size="8"></label></header>
 <main><p class="sum" id="sum"></p><div id="list"></div><button id="more">Show more</button></main>
 <script>
@@ -78,15 +82,15 @@ function filtered(){const d=D[$('t').value],v=$('v').value,r=$('r').value,q=$('q
 function card(p,d){const A=d.records[p.a],B=d.records[p.b];
  const rows=d.fields.map(f=>{const x=A[f],y=B[f],diff=x!==y;return`<tr><th>${f}</th><td class="${diff?'d':''}">${esc(x)}</td><td class="${diff?'d':''}">${esc(y)}</td></tr>`}).join('');
  const truth=p.dup?'same entity':'different entities';
- const vtxt=p.verdict=='review'?`review: truth is ${truth}`:p.verdict=='right'?'right':'wrong';
+ const vtxt=p.verdict=='review'?`review: truth is ${truth}`:p.verdict=='unprovable'?'unprovable: same entity, but only the name matches':p.verdict=='right'?'right':'wrong';
  return`<div class="card"><div class="top"><span class="tag ${p.verdict}">${vtxt}</span><span>${LABEL[p.decision]}</span>
  <span class="mut">rule: ${p.rule}</span>${p.score?`<span class="mut">score ${(+p.score).toFixed(2)} of 2, lookalike ${(+p.look).toFixed(2)}</span>`:''}
  <span class="mut">truth: ${truth} (${p.kinds})</span></div>
  <table><tr><th>record</th><td><b>${p.a}</b></td><td><b>${p.b}</b></td></tr>${rows}</table>
  <div class="note">${esc(p.detail)}${p.keys?` · candidate because of: ${p.keys.split('+').join(', ')}`:''}</div></div>`}
 function render(reset){const d=D[$('t').value],f=filtered();if(reset){shown=0;$('list').innerHTML=''}
- const c={right:0,wrong:0,review:0};d.pairs.forEach(p=>c[p.verdict]++);
- $('sum').textContent=`${d.pairs.length} pairs: ${c.right} right, ${c.wrong} wrong, ${c.review} in the review queue. Showing ${Math.min(shown+PAGE,f.length)} of ${f.length} matching.`;
+ const c={right:0,wrong:0,review:0,unprovable:0};d.pairs.forEach(p=>c[p.verdict]++);
+ $('sum').textContent=`${d.pairs.length} pairs: ${c.right} right, ${c.wrong} wrong, ${c.unprovable} unprovable (true duplicates sharing only a name), ${c.review} in the review queue. Showing ${Math.min(shown+PAGE,f.length)} of ${f.length} matching.`;
  $('list').insertAdjacentHTML('beforeend',f.slice(shown,shown+PAGE).map(p=>card(p,d)).join(''));shown+=PAGE;$('more').style.display=shown<f.length?'':'none'}
 function rules(){const d=D[$('t').value];$('r').innerHTML='<option value="all">all</option>'+[...new Set(d.pairs.map(p=>p.rule))].sort().map(x=>`<option>${x}</option>`).join('')}
 $('t').onchange=()=>{rules();render(true)};['v','r'].forEach(i=>$(i).onchange=()=>render(true));$('q').oninput=()=>render(true);$('more').onclick=()=>render(false);
@@ -98,5 +102,5 @@ if __name__ == "__main__":
     html = PAGE.replace("__DATA__", json.dumps(data).replace("</", "<\\/"))
     (DATA / "report.html").write_text(html)
     for t, d in data.items():
-        print(t, len(d["pairs"]), "pairs,", sum(p["verdict"] == "wrong" for p in d["pairs"]), "wrong")
+        print(t, len(d["pairs"]), "pairs,", sum(p["verdict"] == "wrong" for p in d["pairs"]), "wrong,", sum(p["verdict"] == "unprovable" for p in d["pairs"]), "unprovable")
     print("wrote", DATA / "report.html")

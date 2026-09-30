@@ -41,6 +41,7 @@ Every pair decision writes: `decision`, `rule` (e.g. `exact_email`, `conflicting
 5. `evaluate`
 
 ## First results (seed 7)
-- Accounts: precision 100%, recall 92.1% (97.8% if the review queue is resolved correctly).
-- Contacts: precision 99.2%, recall 92.8% (93.8% with review resolved).
+- Some true duplicates share only a name (the generator moved the business or person and dropped other fields), so no method can prove them: 4 of 227 account pairs, 42 of 677 contact pairs. `evaluate.py` and the report list them as "unprovable" instead of counting them as misses.
+- Accounts: precision 100%, recall 93.3% on provable pairs (92.1% on all; 97.8% on all if the review queue is resolved correctly).
+- Contacts: precision 99.2%, recall 98.9% on provable pairs (92.8% on all).
 - Master weights matter: with recency weighted 0.3, the clean original wins 66% / 53% of groups; with recency 0 it wins 86% / 91%. Recency is random noise in the synthetic data, so this is a generator artifact until we decide how recency should really count.

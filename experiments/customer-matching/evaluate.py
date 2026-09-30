@@ -13,6 +13,14 @@ DATA = Path(__file__).parent / "data"
 BASELINE_NAME_SIM = 0.88  # fuzzy-name baseline: merge any candidate pair whose names are at least this similar
 
 
+# Identifiers beyond the name. A true duplicate pair sharing none of these can't be proven from the records.
+EVIDENCE = {"accounts": ["k_domain", "k_phone", "k_street"], "contacts": ["k_email", "k_phone", "k_name_street", "k_name_acct"]}
+
+
+def corroborated(table, a, b):
+    return any(a[k] and a[k] == b[k] for k in EVIDENCE[table])
+
+
 def read(name):
     return list(csv.DictReader(open(DATA / name)))
 
@@ -37,6 +45,10 @@ def main():
         print(f"\n=== {table} ({len(truth)} records, {len(by_true)} true entities, {len(true_pairs)} true duplicate pairs) ===")
 
         merged = {(d["id_a"], d["id_b"]) for d in dec if d["decision"] == "merge"}
+        provable = {p for p in true_pairs if corroborated(table, norm[p[0]], norm[p[1]])}
+        print(f"True duplicate pairs with shared evidence (phone, email, website or address): {len(provable)} of {len(true_pairs)}; "
+              f"the other {len(true_pairs) - len(provable)} share only a name, so no method could prove them.")
+        print("Pipeline on provable pairs only:", prf(len(merged & provable), len(merged - true_pairs), len(provable - merged)))
         print("Pipeline (hard rules + Jev):   ", prf(len(merged & true_pairs), len(merged - true_pairs), len(true_pairs - merged)))
         review = [d for d in dec if d["decision"] == "review"]
         rdup = sum(1 for d in review if (d["id_a"], d["id_b"]) in true_pairs)

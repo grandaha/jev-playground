@@ -88,3 +88,10 @@ def test_incident_and_account_cards_expand_to_their_alerts():
     page = report.PAGE
     assert "<details>" in page and "byGroup" in page and "sub(byGroup.get(x.group_id)" in page
     assert "sub((x.alert_ids" in page
+
+
+def test_incidents_can_be_filtered_by_action():
+    page = report.PAGE
+    for action in ("escalate", "investigate", "close"):
+        assert f"['{action}','{action}']" in page
+    assert "g.action==f" in page

@@ -58,11 +58,12 @@ button{font:inherit;padding:6px 12px;border-radius:6px;border:1px solid var(--li
 <script>
 const D=__DATA__;let shown=0;const PAGE=60,$=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const FILTERS={alerts:[['missed','missed real alerts'],['queue cost','benign alerts that reach a person'],['disagree','Jev and baseline disagree'],['all','all']],incidents:[['all','all']],accounts:[['compromised','compromised (answer key)'],['all','all']]};
+const FILTERS={alerts:[['missed','missed real alerts'],['queue cost','benign alerts that reach a person'],['disagree','Jev and baseline disagree'],['all','all']],incidents:[['escalate','escalate'],['investigate','investigate'],['close','close'],['all','all']],accounts:[['compromised','compromised (answer key)'],['all','all']]};
 const ev=(label,val)=>val?`<br><span class="mut">${label}: ${esc(val)}</span>`:'';
 function setFilters(){$('f').innerHTML=FILTERS[$('v').value].map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}
 function rows(){const q=$('q').value.trim().toLowerCase(),v=$('v').value,f=$('f').value;
  let r=D[v];if(v=='alerts'){r=r.filter(a=>f=='all'||(f=='disagree'?a.action!=a.baseline_action:a.verdict==f))}
+ if(v=='incidents'&&f!='all')r=r.filter(g=>g.action==f);
  if(v=='accounts'&&f=='compromised')r=r.filter(a=>a.compromised);
  return r.filter(x=>!q||JSON.stringify(x).toLowerCase().includes(q))}
 function alertHtml(x){return`<b>${esc(x.alert_id)}</b> ${esc(x.rule_name)} <span class="mut">${esc(x.timestamp)} · ${esc(x.detector)} · detector severity ${esc(x.source_severity)}</span><br>${esc(x.description)}<br>

@@ -39,7 +39,7 @@ Then run `experiments/customer-matching/run_all.sh`. It builds the dataset from 
 
 1. Normalize names, phones, emails, addresses and company names, and build match keys.
 2. Turn shared keys into candidate pairs.
-3. Decide each pair. Hard rules in code settle the clear cases, such as the same email with a compatible name. Jev answers four questions about every other pair. Is it the same entity? Do the names agree? Do the details conflict? Is it a look-alike? Code adds up the evidence and decides to merge, reject or send the pair to review.
+3. Decide each pair. Hard rules in code settle the clear cases, such as the same email with a compatible name. Jev answers four questions about every other pair. Is it the same entity? Do the names agree? Do the details conflict? Is it a look-alike? Code adds up the evidence and decides to merge, reject or send the pair to review. The exact questions and what each answer does are in [DESIGN.md](DESIGN.md#where-jev-is-used-and-why).
 4. Match the accounts first and pick a master account for each group. Each contact then gets its master account as a match key, so two contacts at duplicate accounts count as the same company.
 5. Pick a master record for each group: the most trusted source system, then the most recent update. Fill its blanks from the other records to make the golden record.
 

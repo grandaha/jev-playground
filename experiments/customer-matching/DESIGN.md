@@ -4,6 +4,74 @@ This document describes how the project works and what it found. The [README](RE
 
 The project finds duplicates in two messy, linked customer files (accounts and contacts). It explains every decision, picks a master record for each group, and builds one golden record for each real-world entity. Jev (TypeSafe System One) makes the judgment calls that code cannot, and plain Python does everything else. Jev returns typed answers with probabilities, not text. The data is synthetic, so an answer key can grade the result.
 
+## Where Jev is used, and why
+Jev is called once for each pair of records that the hard rules do not settle. Code does everything else: cleaning, blocking, the hard rules, clustering, master selection, golden records and grading. In the sample dataset the pipeline has 64 candidate account pairs and 112 candidate contact pairs. Rules settle 33 and 22 of them with no call. Jev answers for the other 31 account pairs and 90 contact pairs.
+
+**Why a model at all.** Exact identifiers are easy for code: the same email, or the same phone and website. The hard pairs have no shared identifier. "Bob" and "Robert", "R. Smith" and "Robert Smith", a last name typed first, and a business that moved and lost its phone number are language judgments. Against them stand look-alikes that must stay apart: twins, a father and son, franchises that share a website, and two people who share a name. A rules-only baseline that merges any candidate pair whose names are 88% similar reaches 75% precision for accounts. For contacts it reaches 62% precision and 72% recall. The full pipeline reaches 100% precision for both, with 89.6% recall for accounts and 91.2% for contacts, counting the unprovable pairs as misses. Jev reads both records together, including a contact's company, and code decides how far to trust each answer.
+
+**What goes in.** The two records, labeled `record_a` and `record_b`, with blank fields left out.
+- Accounts: name, website, phone, address, city, state, zip, industry, source system and last update.
+- Contacts: first name, last name, email, phone, title, address, city, state, zip, source system and last update. A contact also carries its master account's name, website, address, city and state.
+
+**The four questions, exactly as they appear in `scripts/match.py`.** Accounts and contacts get the same four questions, worded for the record type.
+
+For accounts:
+
+```
+same_entity (Score)
+  Do these two account records describe the same business?
+  0  The two records describe different businesses, for example a similar name in a different place or a different line of work.
+  1  The two records might describe one business, but details are missing or conflict and it could be two.
+  2  The two records describe one and the same business, allowing for typos, formatting and a changed address or phone.
+
+name_same (Noul)
+  Do the two business names refer to the same business, allowing for a different legal suffix (Inc, LLC), abbreviations, capitalisation and typos?
+
+details_conflict (Noul)
+  Do the website, phone or address directly conflict in a way one business would not have? A business can move or get a new number, so blank fields do not count as a conflict.
+
+lookalike (Noul)
+  Are these two different locations or sibling businesses that share a brand name, rather than one business?
+```
+
+For contacts:
+
+```
+same_entity (Score)
+  Do these two contact records describe the same person?
+  0  The two records describe different people, for example a different first name, or relatives who share a name.
+  1  The two records might describe one person, but details are missing or conflict and it could be two people.
+  2  The two records describe one and the same person, allowing for nicknames, typos, swapped names and changed contact details.
+
+name_same (Noul)
+  Do the two names refer to the same person, allowing for nicknames (Bob and Robert), initials, typos and first and last names written in swapped order?
+
+details_conflict (Noul)
+  Do the email, phone, title or address directly conflict in a way one person would not have? People change jobs and numbers, so blank fields do not count as a conflict.
+
+lookalike (Noul)
+  Are these two different people who are related or coincidentally share a name, such as a parent and child, twins, or namesakes at different companies?
+```
+
+**What comes back.** The Score returns a number from 0 to 2. Each Noul question returns a probability of yes. Everything is saved, so the policy can change with no new calls.
+
+**What code does with each answer.** Code turns each answer into evidence points and adds them up. Let *p* be a Noul probability and *s* the Score.
+- `name_same` adds 3.0 × (2*p* − 1), from −3 to +3. It carries the most weight because name agreement is the main evidence when identifiers are blank.
+- `same_entity` adds 1.5 × (*s* − 1), from −1.5 to +1.5. It is a holistic check that catches what the other answers miss.
+- `details_conflict` subtracts 2.0 × *p*. The weight is modest so that a business that moved still matches.
+- `lookalike` subtracts 3.0 × *p*. It carries the largest negative weight because a false merge is the costly mistake.
+
+Code adds its own signals to these:
+- Both records have a phone: the same phone adds 3, different phones subtract 2.
+- Accounts: the same website adds 3, a different website subtracts 1, and the same street adds 1.5.
+- Contacts: the same email adds 4. The same master account adds 2, and a different one subtracts 2. The same own address adds 1.5, and the same title adds 0.5.
+
+A pair merges at 4.0 points or more, is rejected at 0.0 or less, and goes to review in between. The weights are judgment calls. The two thresholds came from a sweep over the saved answers.
+
+**Why these questions.** Each one answers a different way a match can be wrong. `name_same` catches names that differ only in form. `details_conflict` separates real contradictions from a person who changed number or job. `lookalike` exists to stop false merges of twins, relatives, franchises and namesakes. `same_entity` is the overall judgment that holds the others together.
+
+**What Jev never decides.** Jev never decides a hard rule, a veto, a threshold, a cluster, a master record, a golden-record field or a grade. The veto that a differing phone never auto-merges, and the veto that a shared identifier never auto-rejects, are code.
+
 ## Run it
 From the repo root:
 
@@ -76,7 +144,7 @@ Each script reads the files the previous stage wrote. Accounts run first, and th
 1. `generate.py` writes the source files and the answer key. The scenario counts sit at the top of the file.
 2. `normalize.py` cleans names, phones, emails, addresses and company names, and builds match keys (the `k_*` columns).
 3. `block.py` turns shared keys into candidate pairs, and records which keys made each pair a candidate.
-4. `match.py ask` applies the hard rules, then sends every other pair to Jev once with all its questions. `match.py decide` applies a policy to the saved answers, so rules and thresholds can change with no new Jev calls.
+4. `match.py ask` applies the hard rules, then sends every other pair to Jev once with its four questions. `match.py decide` applies a policy to the saved answers, so rules and thresholds can change with no new Jev calls.
 5. `cluster.py` groups merged pairs (union-find) and flags any group that holds a pair the rules did not merge.
 6. `master.py` picks a master record for each group.
 7. The account steps end here. Running `normalize.py` and `block.py` again gives every contact a `master_account_id`, the record id of its account's master. That id is a match key (`k_name_acct` and `k_initial_acct`: name plus master account), a signal (same company), and the account context Jev sees. Master account alone is too broad a key, because it pairs every two colleagues, so it always comes with a name.
@@ -91,10 +159,10 @@ Each script reads the files the previous stage wrote. Accounts run first, and th
 - Contacts: different generational suffixes, such as Jr and Sr, are a hard no-match (`generational_suffix_differs`).
 
 ### Jev questions
-Jev answers four questions about each remaining pair. A Score asks whether it is the same entity (different, possibly the same, or the same). Three Noul questions, each a yes-or-no with a probability, ask whether the names agree, whether the details conflict, and whether the pair is a look-alike.
+The four questions, what goes in and how each answer is used are in [Where Jev is used, and why](#where-jev-is-used-and-why).
 
 ### Policy `signals` (main)
-- Code adds up evidence points. Jev's answers combine with code signals: a shared phone, website or email, the same master account, the same own address, and the same title.
+- Code adds up evidence points. Jev's answers combine with code signals, with the weights listed under Where Jev is used, and why.
 - Code merges a pair at 4.0 points or more, rejects it at 0.0 or less, and sends it to review in between. `sweep.py` produced these thresholds.
 - Every signal appears by name in the decision trace.
 - The alternative policy `single` (Jev's Score alone) stays in for comparison.

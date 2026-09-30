@@ -17,8 +17,8 @@ from tables import read_alerts, read_csv, write_csv
 class Policy:
     escalate_p: float = 0.60          # probability of a true positive at or above this escalates
     investigate_p: float = 0.15       # at or above this, the alert is at least investigated
-    close_p: float = 0.80             # probability of benign needed to close
-    benign_explanation_p: float = 0.60  # and an ordinary explanation must fit this well
+    close_p: float = 0.90             # probability of benign needed to close
+    benign_explanation_p: float = 0.80  # and an ordinary explanation must fit this well
     neighbor_hours: float = 72        # nearby alerts on the same user or host can block a close
 
 

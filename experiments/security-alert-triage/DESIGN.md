@@ -85,7 +85,7 @@ Each script reads the files the previous stage wrote. Jev answers are saved, so 
 
 ## Account risk
 - A finding's risk equals impact times confidence divided by 100. Jev's impact Score supplies the impact, scaled to 0 to 100. Jev's probability of a true positive supplies the confidence.
-- An account's score is a rolling 7-day number from 0 to 100, taken at the account's worst seven-day window because the incidents are spread over two weeks. It combines the total risk, the worst single finding, the count of serious findings and the count of different detections.
+- An account's score is a rolling 7-day number from 0 to 100. The incidents are spread over two weeks, so each account takes its worst seven-day window. The score combines the total risk, the worst single finding, the count of serious findings and the count of different detections.
 - Alerts inside confirmed incidents count in full, and benign alerts count for little.
 - The output is a ranked list, and each account shows the incidents and alerts behind its score.
 

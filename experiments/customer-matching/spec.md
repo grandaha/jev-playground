@@ -4,7 +4,7 @@ Goal: dedupe a messy synthetic customer file, explain every match, pick a master
 
 ## Decisions
 - Entities: businesses (accounts) and people (contacts), in separate linked files.
-- Scale: 6,000 records total (across both files; ~4,000 true entities, ~2,000 duplicate variants). Synthetic only, no real data, no PII concerns.
+- Scale: 1,000 account records and 3,000 contact records, counting duplicate variants (~800 true accounts, ~2,400 true contacts). Synthetic only, no real data, no PII concerns.
 - Output: scripts only (terminal report + CSV/JSON files). UI later.
 - Language: Python 3.13, `.venv`, `typesafe-sdk`.
 - Lives in `experiments/customer-matching/`. Run scripts from the repo root, e.g. `.venv/bin/python experiments/customer-matching/generate.py`.
@@ -30,5 +30,5 @@ Goal: dedupe a messy synthetic customer file, explain every match, pick a master
 Every pair decision writes: `decision`, `rule` (e.g. `exact_email`, `conflicting_id_block`, `jev_score`), `block_keys` that created the candidate, and for Jev decisions the raw Score, each Noul probability, confidence, and the threshold that fired. Every group merge traces back to the pairs, and each pair to its rule.
 
 ## Open defaults (change if wrong)
-- "6,000" read as total records, not true customers.
+- 1,000 / 3,000 read as total records per file, not true entities.
 - False merges treated as the costly error, so thresholds favor review over auto-merge.

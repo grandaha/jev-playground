@@ -61,6 +61,8 @@ def main():
                 if SequenceMatcher(None, name(norm[d["id_a"]]), name(norm[d["id_b"]])).ratio() >= BASELINE_NAME_SIM}
         print(f"Baseline (name similarity >= {BASELINE_NAME_SIM}, same candidates):", prf(len(base & true_pairs), len(base - true_pairs), len(true_pairs - base)))
 
+        single = {(d["id_a"], d["id_b"]) for d in read(f"decisions_{table}_single.csv") if d["decision"] == "merge"}
+        print("First design (one holistic score), same Jev answers:", prf(len(single & provable), len(single - true_pairs), len(provable - single)), "(provable pairs)")
         print("Merge precision by rule:")
         by_rule = defaultdict(lambda: [0, 0])
         for d in dec:
@@ -79,6 +81,10 @@ def main():
         for g in read(f"groups_{table}.csv"):
             groups[g["group_id"]].append(g["record_id"])
         impure = sum(1 for ids in groups.values() if len({truth[i] for i in ids}) > 1)
+        status = {g["group_id"]: g["status"] for g in read(f"groups_{table}.csv")}
+        flagged = {g for g, s in status.items() if s == "review_group"}
+        impure_flagged = sum(1 for g in flagged if len({truth[i] for i in groups[g]}) > 1)
+        print(f"Groups flagged for review (a pair inside was not merged): {len(flagged)}; {impure_flagged} of the {impure} mixed-entity groups are among them")
         gid = {i: g for g, ids in groups.items() for i in ids}
         split = sum(1 for ids in by_true.values() if len({gid[i] for i in ids}) > 1)
         print(f"Groups: {len(groups)} (truth {len(by_true)}); {impure} contain more than one true entity; {split} true entities split across groups")

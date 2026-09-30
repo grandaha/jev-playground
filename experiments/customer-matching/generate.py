@@ -147,15 +147,19 @@ def new_contact(i, acct, first=None, last=None):
     first, last = first or rng.choice(FIRST), last or rng.choice(LAST)
     return {"true_id": f"TC{i:04d}", "first": first, "last": last, "acct": acct, "title": rng.choice(TITLES),
             "phone": f"{rng.randrange(200, 999)}{rng.randrange(200, 999)}{rng.randrange(10000):04d}",
+            "addr": new_address() if rng.random() < 0.25 else None,  # contacts own an address only sometimes; it is not the account's
             "source_system": rng.choice(SOURCES), "updated_at": when()}
 
 
 def email_for(c, domain, variant):
     f, l = slug(c["first"]), slug(c["last"])
+    personal = f"{f}{l}{c['true_id'][2:]}@gmail.com"  # stable per person, unique across people
+    if domain == "gmail.com":
+        return personal
     style = rng.choice(["f.l", "fl", "first", "gmail"]) if variant else "f.l"
     tag = c.get("email_tag", "")  # a junior has their own mailbox, e.g. kevin.hall.jr@
     return {"f.l": f"{f}.{l}{tag}@{domain}", "fl": f"{f[0]}{l}{tag}@{domain}", "first": f"{f}{tag}@{domain}",
-            "gmail": f"{f}{l}{rng.randrange(100)}@gmail.com"}[style]
+            "gmail": personal}[style]
 
 
 def make_contacts(accts, acct_ids):
@@ -169,9 +173,9 @@ def make_contacts(accts, acct_ids):
     for _ in range(N_CONTACT_DECOYS):
         o = rng.choice([c for c in base if c["acct"]])
         kind = rng.choice(["junior", "twin", "namesake"])
-        d = new_contact(len(base), o["acct"] if kind != "namesake" else rng.choice(true_ids), o["first"], o["last"])
+        d = new_contact(len(base), o["acct"] if kind != "namesake" else rng.choice([t for t in true_ids if t != o["acct"]]), o["first"], o["last"])
         if kind == "twin":
-            d["first"] = rng.choice([n for n in FIRST if n[0] == o["first"][0]] or FIRST)
+            d["first"] = rng.choice([n for n in FIRST if n[0] == o["first"][0] and n != o["first"]] or [n for n in FIRST if n != o["first"]])
         d["decoy"], d["sibling"] = kind, o["true_id"]
         if kind == "junior":
             d["email_tag"] = ".jr"
@@ -183,8 +187,8 @@ def make_contacts(accts, acct_ids):
         domain = acct["website"][4:] if acct and acct["website"] else "gmail.com"
         first, last, phone = c["first"], c["last"], c["phone"]
         r = dict(address="", city="", state="", zip="", title=c["title"])
-        if acct:
-            r.update({k: acct[k] for k in ("address", "city", "state", "zip")})
+        if c["addr"]:
+            r.update(c["addr"])
         if variant:
             if rng.random() < 0.4 and first in NICKS:
                 first = rng.choice(NICKS[first])

@@ -15,6 +15,8 @@ from evaluate import corroborated
 DATA = Path(__file__).parent / "data"
 FIELDS = {"accounts": ["name", "website", "phone", "address", "city", "state", "zip", "industry", "source_system", "updated_at"],
           "contacts": ["first_name", "last_name", "email", "phone", "title", "address", "city", "state", "zip", "account_id", "source_system", "updated_at"]}
+NORM = {"accounts": ["name_norm", "phone_norm", "address_norm"],
+        "contacts": ["first_norm", "last_norm", "email_norm", "phone_norm", "address_norm"]}
 
 
 def read(name):
@@ -47,17 +49,24 @@ def build(table):
 
     for d in read(f"decisions_{table}.csv"):
         seen.add((d["id_a"], d["id_b"]))
-        add(d["id_a"], d["id_b"], d["decision"], d["rule"], d["detail"], d["score"], d["p_lookalike"], d["block_keys"])
+        ans = ""
+        if d["score"]:
+            ans = f"Jev: same-{table[:-1]} score {float(d['score']):.2f} of 2, name same {float(d['name_same']):.2f}, details conflict {float(d['details_conflict']):.2f}, lookalike {float(d['lookalike']):.2f}"
+        add(d["id_a"], d["id_b"], d["decision"], d["rule"], d["detail"], ans, d["lookalike"], d["block_keys"])
     for a, b in sorted(true_pairs - seen):  # true duplicates that blocking never proposed
         add(a, b, "missed", "not_a_candidate", "no shared match key, never sent to a rule or Jev", "", "", "")
     used = {i for p in pairs for i in (p["a"], p["b"])}
-    return {"fields": FIELDS[table], "records": {i: {f: recs[i][f] for f in FIELDS[table]} for i in used}, "pairs": pairs}
+    def rec(i):
+        n = norm[i]
+        return {"raw": {f: recs[i][f] for f in FIELDS[table]}, "norm": {f: n[f] for f in NORM[table]},
+                "keys": {k: v for k, v in n.items() if k.startswith("k_") and v}}
+    return {"fields": FIELDS[table], "norm_fields": NORM[table], "records": {i: rec(i) for i in used}, "pairs": pairs}
 
 
 PAGE = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Match review</title><style>
-:root{--bg:#fafaf9;--fg:#1c1917;--mut:#78716c;--card:#fff;--line:#e7e5e4;--ok:#15803d;--bad:#b91c1c;--rev:#b45309;--diff:#fef3c7}
-@media(prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#fafaf9;--mut:#a8a29e;--card:#292524;--line:#44403c;--ok:#4ade80;--bad:#f87171;--rev:#fbbf24;--diff:#4a3b12}}
+:root{--bg:#fafaf9;--fg:#1c1917;--mut:#78716c;--card:#fff;--line:#e7e5e4;--ok:#15803d;--bad:#b91c1c;--rev:#b45309;--diff:#fef3c7;--same:#dcfce7}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#fafaf9;--mut:#a8a29e;--card:#292524;--line:#44403c;--ok:#4ade80;--bad:#f87171;--rev:#fbbf24;--diff:#4a3b12;--same:#14532d}}
 body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,sans-serif}
 header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px;z-index:1}
 h1{font-size:16px;margin:0 0 8px}label{margin-right:12px;color:var(--mut)}select,input{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:3px 6px}
@@ -66,7 +75,7 @@ main{padding:16px;max-width:980px;margin:auto}.sum{color:var(--mut);margin:0 0 1
 .top{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;padding:8px 12px;border-bottom:1px solid var(--line)}
 .tag{font-weight:600}.right{color:var(--ok)}.wrong{color:var(--bad)}.review,.unprovable{color:var(--rev)}.mut{color:var(--mut)}
 table{width:100%;border-collapse:collapse}td,th{padding:3px 12px;text-align:left;vertical-align:top;word-break:break-word}
-th{width:16%;color:var(--mut);font-weight:400}td.d{background:var(--diff)}.note{padding:6px 12px;color:var(--mut);border-top:1px solid var(--line);font-size:13px}
+th{width:16%;color:var(--mut);font-weight:400}td.d{background:var(--diff)}td.s{background:var(--same)}tr.sec th{padding-top:10px;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.note{padding:6px 12px;color:var(--mut);border-top:1px solid var(--line);font-size:13px}
 button{font:inherit;padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:inherit;cursor:pointer}
 </style></head><body><header><h1>Match review</h1>
 <label>Table <select id="t"><option>accounts</option><option>contacts</option></select></label>
@@ -80,11 +89,15 @@ const LABEL={merge:'merged',no_match:'not a match',review:'sent to review',misse
 function filtered(){const d=D[$('t').value],v=$('v').value,r=$('r').value,q=$('q').value.trim().toUpperCase();
  return d.pairs.filter(p=>(v=='all'||p.verdict==v)&&(r=='all'||p.rule==r)&&(!q||p.a.includes(q)||p.b.includes(q)))}
 function card(p,d){const A=d.records[p.a],B=d.records[p.b];
- const rows=d.fields.map(f=>{const x=A[f],y=B[f],diff=x!==y;return`<tr><th>${f}</th><td class="${diff?'d':''}">${esc(x)}</td><td class="${diff?'d':''}">${esc(y)}</td></tr>`}).join('');
+ const row=(f,x,y,cls)=>{const diff=x!==y;return`<tr><th>${f}</th><td class="${cls||(diff?'d':'')}">${esc(x)}</td><td class="${cls||(diff?'d':'')}">${esc(y)}</td></tr>`};
+ const rows=d.fields.map(f=>row(f,A.raw[f],B.raw[f])).join('')
+  +`<tr class="sec"><th colspan="3">normalized</th></tr>`+d.norm_fields.map(f=>row(f,A.norm[f],B.norm[f])).join('')
+  +`<tr class="sec"><th colspan="3">match keys (green = shared, what made them candidates)</th></tr>`
+  +[...new Set([...Object.keys(A.keys),...Object.keys(B.keys)])].sort().map(k=>{const x=A.keys[k]||'',y=B.keys[k]||'';return row(k,x,y,x&&x===y?'s':'')}).join('');
  const truth=p.dup?'same entity':'different entities';
  const vtxt=p.verdict=='review'?`review: truth is ${truth}`:p.verdict=='unprovable'?'unprovable: same entity, but only the name matches':p.verdict=='right'?'right':'wrong';
  return`<div class="card"><div class="top"><span class="tag ${p.verdict}">${vtxt}</span><span>${LABEL[p.decision]}</span>
- <span class="mut">rule: ${p.rule}</span>${p.score?`<span class="mut">score ${(+p.score).toFixed(2)} of 2, lookalike ${(+p.look).toFixed(2)}</span>`:''}
+ <span class="mut">rule: ${p.rule}</span>${p.score?`<span class="mut">${esc(p.score)}</span>`:''}
  <span class="mut">truth: ${truth} (${p.kinds})</span></div>
  <table><tr><th>record</th><td><b>${p.a}</b></td><td><b>${p.b}</b></td></tr>${rows}</table>
  <div class="note">${esc(p.detail)}${p.keys?` · candidate because of: ${p.keys.split('+').join(', ')}`:''}</div></div>`}

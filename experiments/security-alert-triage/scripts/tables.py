@@ -16,6 +16,12 @@ def write_csv(p, rows, columns=None):
         w.writerows(rows)
 
 
+def require(p, hint):
+    if not Path(p).exists():
+        raise SystemExit(f"{Path(p).name} is missing; {hint}")
+    return p
+
+
 def read_alerts(p):
     rows = read_csv(p)
     if not rows:

@@ -11,7 +11,7 @@ from itertools import combinations
 from enrich import entities, hours_apart
 from paths import path
 from schema import ACTIONS
-from tables import read_alerts, read_csv, write_csv
+from tables import read_alerts, read_csv, require, write_csv
 
 WINDOW_HOURS = 72
 OBVIOUS_MINUTES = 30
@@ -68,7 +68,7 @@ def write_groups(groups, filename):
 
 @dataclass(frozen=True)
 class LinkPolicy:
-    link_score: float = 1.8      # Jev's same-incident Score runs 0 to 2; 1.6 merged the two_incidents_one_user pairs (they score up to 1.78)
+    link_score: float = 1.8      # same-incident Score (0 to 2) needed to link; see DESIGN.md "Call 2"
     coincidence_p: float = 0.5   # a shared entity judged a coincidence at or above this does not link
 
 
@@ -98,16 +98,16 @@ def jev_groups(alerts, link_rows):
     return cluster([a["alert_id"] for a in alerts], [(r["alert_a"], r["alert_b"]) for r in link_rows if r["link"] == "yes"])
 
 
-_SEVERITY_BY_IMPACT = ["low", "medium", "high", "critical"]   # Jev's impact Score 0-3 rounded to a level
+_SEVERITY_BY_IMPACT = ["low", "medium", "high", "critical"]   # even bands on Jev's 0-3 impact: <0.5, <1.5, <2.5, else
 _SEVERITY_RANK = {"informational": 0, "low": 1, "medium": 2, "high": 3, "critical": 4}
 
 
 def _severity(decision):
     if decision["impact"] == "":
         return "informational"
-    if float(decision["p_benign"]) >= 0.5:
+    if float(decision["p_benign"] or 0.0) >= 0.5:
         return "informational"
-    return _SEVERITY_BY_IMPACT[min(3, max(0, round(float(decision["impact"]))))]
+    return _SEVERITY_BY_IMPACT[min(3, max(0, int(float(decision["impact"]) + 0.5)))]
 
 
 def incident_table(alerts, groups, decisions):
@@ -140,7 +140,7 @@ def main(argv):
     elif argv == ["jev"]:
         by_id = {a["alert_id"]: a for a in alerts}
         pairs = candidate_pairs(alerts)
-        answers = {(r["alert_a"], r["alert_b"]): r for r in read_csv(path("answers_links.csv"))}
+        answers = {(r["alert_a"], r["alert_b"]): r for r in read_csv(require(path("answers_links.csv"), "run ask.py links first"))}
         link_rows = decide_links(pairs, by_id, answers)
         write_csv(path("decisions_links.csv"), link_rows, ["alert_a", "alert_b", "link", "rule", "detail"])
         groups = jev_groups(alerts, link_rows)

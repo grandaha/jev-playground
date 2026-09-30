@@ -147,3 +147,10 @@ def test_a_malformed_link_response_cannot_abort_ask_links(monkeypatch):
     pairs = {("A1", "A2"): ["user:a"], ("A1", "A3"): ["user:a"]}
     rows = ask.ask_links(pairs, {"A1": ALERT, "A2": SCAN, "A3": third}, Mixed(), workers=1)
     assert len(rows) == 2 and [bool(r["error"]) for r in rows] == [False, True]
+
+
+def test_probe_runs_write_to_a_separate_file():
+    assert ask.answers_filename("alerts", None) == "answers_alerts.csv"
+    assert ask.answers_filename("links", None) == "answers_links.csv"
+    assert ask.answers_filename("alerts", 5) == "answers_alerts_probe.csv"
+    assert ask.answers_filename("links", 5) == "answers_links_probe.csv"

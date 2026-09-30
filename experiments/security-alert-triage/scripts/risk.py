@@ -9,7 +9,7 @@ from datetime import timedelta
 
 from enrich import parse_ts
 from paths import path
-from tables import read_alerts, read_csv, write_csv
+from tables import read_alerts, read_csv, require, write_csv
 
 WINDOW_DAYS = 7
 BASELINE_IMPACT = {"informational": 10, "low": 30, "medium": 60, "high": 90, "critical": 100}
@@ -104,8 +104,8 @@ def _write(filename, scores, evidence, groups):
 
 def main():
     alerts = read_alerts(path("alerts.csv"))
-    decisions = read_csv(path("decisions_alerts.csv"))
-    groups = {r["alert_id"]: r["group_id"] for r in read_csv(path("groups_jev.csv"))}
+    decisions = read_csv(require(path("decisions_alerts.csv"), "run decide.py first"))
+    groups = {r["alert_id"]: r["group_id"] for r in read_csv(require(path("groups_jev.csv"), "run group.py jev first"))}
     jev_fs, base_fs = findings(alerts, decisions, groups), baseline_findings(alerts)
     jev, base = account_scores(jev_fs), account_scores(base_fs)
     _write("output_account_risk.csv", jev, account_evidence(jev_fs), groups)

@@ -98,3 +98,17 @@ def test_incident_table_takes_the_strongest_action_and_severity_in_a_group():
     rows = group.incident_table(alerts, {"A": "GRP-0001", "B": "GRP-0001"}, decisions)
     assert rows == [{"group_id": "GRP-0001", "alerts": 2, "action": "escalate", "severity": "critical",
                      "users": "u@example.com", "max_p_true_positive": 0.9}]
+
+
+def sev(impact, p_benign="0.1"):
+    return group._severity({"impact": impact, "p_benign": p_benign})
+
+
+def test_severity_bands_are_even_at_each_boundary():
+    assert [sev(x) for x in ("0.49", "0.5", "1.49", "1.5", "2.49", "2.5")] == [
+        "low", "medium", "medium", "high", "high", "critical"]
+
+
+def test_likely_benign_is_informational_and_empty_p_benign_counts_as_zero():
+    assert sev("2.8", "0.5") == "informational"
+    assert sev("2.8", "") == "critical"

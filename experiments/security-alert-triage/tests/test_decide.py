@@ -70,3 +70,8 @@ def test_a_missing_or_failed_jev_answer_is_investigated_never_closed():
 def test_an_alert_with_no_entities_is_decided_alone():
     a = alert("A1", user="", host="")
     assert run([a], [answer("A1")])["A1"]["action"] == "close"
+
+
+def test_malformed_answer_is_treated_as_no_answer():
+    out = run([alert("A1")], [answer("A1", p_true_positive="")])
+    assert out["A1"]["action"] == "investigate" and "no Jev answer" in out["A1"]["reason"]

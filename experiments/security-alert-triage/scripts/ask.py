@@ -156,6 +156,11 @@ def ask_links(pairs, alerts_by_id, client, workers=8):
         return list(pool.map(lambda t: ask_link(alerts_by_id[t[0]], alerts_by_id[t[1]], t[2], client), todo))
 
 
+def answers_filename(what, limit):
+    """A probe run (--limit) writes a separate file so it never overwrites the real answers."""
+    return f"answers_{what}_probe.csv" if limit else f"answers_{what}.csv"
+
+
 def main(argv):
     ap = argparse.ArgumentParser()
     ap.add_argument("what", choices=["alerts", "links"])
@@ -164,14 +169,18 @@ def main(argv):
     alerts = read_alerts(path("alerts.csv"))
     if args.what == "alerts":
         rows = ask_alerts(alerts[: args.limit], make_client())
-        write_csv(path("answers_alerts.csv"), rows, ANSWER_COLUMNS)
+        name = answers_filename("alerts", args.limit)
+        write_csv(path(name), rows, ANSWER_COLUMNS)
         asked = [r for r in rows if r["asked"] == "yes"]
-        print(f"{len(rows)} alerts, {len(asked)} asked Jev, {sum(1 for r in asked if r['error'])} errors")
+        print(f"{len(rows)} alerts, {len(asked)} asked Jev, {sum(1 for r in asked if r['error'])} errors"
+              + (f" (probe run, wrote {name})" if args.limit else ""))
     else:
         pairs = dict(list(candidate_pairs(alerts).items())[: args.limit])
         rows = ask_links(pairs, {a["alert_id"]: a for a in alerts}, make_client())
-        write_csv(path("answers_links.csv"), rows, LINK_COLUMNS)
-        print(f"{len(pairs)} candidate pairs, {len(rows)} asked Jev, {sum(1 for r in rows if r['error'])} errors")
+        name = answers_filename("links", args.limit)
+        write_csv(path(name), rows, LINK_COLUMNS)
+        print(f"{len(pairs)} candidate pairs, {len(rows)} asked Jev, {sum(1 for r in rows if r['error'])} errors"
+              + (f" (probe run, wrote {name})" if args.limit else ""))
 
 
 if __name__ == "__main__":

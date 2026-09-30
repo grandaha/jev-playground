@@ -101,7 +101,7 @@ def ranking_metrics(ranked, key, ks=(10, 20)):
 
 
 def main():
-    key =read_csv(path("answer_key.csv"))
+    key = read_csv(path("answer_key.csv"))
     sections = {}
     for name, file in (("Rules-only baseline", "decisions_alerts_baseline.csv"), ("Jev policy", "decisions_alerts.csv")):
         if os.path.exists(path(file)):

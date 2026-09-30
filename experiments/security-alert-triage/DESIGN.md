@@ -75,7 +75,7 @@ benign_explanation (Noul)
 
 The thresholds live in `decide.Policy`. A sweep over the saved answers picks them on one seed, and a fresh seed checks them.
 
-On seed 101 every sweep setting (escalate 0.4 to 0.7, close 0.8 to 0.95, explanation 0.6 to 0.9) missed no real alert, so the sweep could not choose between them. The defaults keep the stricter closing conditions (0.90 and 0.80) because the design leans toward escalating and closing is the risky choice. The queue is 656 of 1,042 alerts at these defaults, against 621 at the loosest setting. The escalate threshold does not change the queue. Real incidents with no escalated alert were 0 at escalate 0.4, 0.5 and 0.6, and 2 at 0.7. Benign alerts escalated were 114 at all four. A lower value reduces neither count below 0.60, so it stays at 0.60. The queue is large because Jev over-calls real attacks on this data: 161 alerts score above 0.60, and only 47 of them are real (the other 114 are false positives). Nothing here is evidence beyond "no real alert missed on one seed"; a fresh seed has to test it.
+On seed 101 every sweep setting (escalate 0.4 to 0.7, close 0.8 to 0.95, explanation 0.6 to 0.9) missed no real alert, so the sweep could not choose between them. The defaults keep the stricter closing conditions (0.90 and 0.80) because the design leans toward escalating and closing is the risky choice. The queue is 656 of 1,042 alerts at these defaults, against 621 at the loosest setting. The escalate threshold does not change the queue. Real incidents with no escalated alert were 0 at escalate 0.4, 0.5 and 0.6, and 2 at 0.7. Benign alerts escalated were 114 at all four. A lower value reduces neither count below 0.60, so it stays at 0.60. The queue is large because Jev over-calls real attacks on this data: 162 alerts score 0.60 or more, and only 48 of them are real (the other 114 are false positives). Nothing here is evidence beyond "no real alert missed on one seed"; a fresh seed has to test it.
 
 **Why these questions.** The disposition has three options because security teams treat "real but authorized" differently from "false alarm". The first is closed quietly. The second points at a detector that needs tuning. The impact question exists because detector severity is unreliable and account risk needs an honest measure of damage.
 
@@ -103,7 +103,7 @@ shared_entity_is_coincidence (Noul)
 
 **Result on seed 101.** We asked Jev about 1,376 of the 1,393 candidate pairs, with 0 errors. Code settled the other 17.
 
-Jev links 279 alert pairs into 917 groups. It gets 216 of the 225 true pairs, so recall is 96% and precision is 77%, against 4% for the baseline. One group holds two different real incidents, down from six. It joins two `benign_pentest` incidents that Jev scored 1.8 to 1.97 as the same event. The `shared_address` strangers are not linked at all. The 9 missed links are all `benign_backup`.
+Jev links 279 alert pairs into 917 groups. It gets 216 of the 225 true pairs, so recall is 96% and precision is 77%, against 4% for the baseline. One group holds more than one real incident, down from six. It joins two `benign_pentest` incidents that Jev scored 1.8 to 1.97 as the same event. The `shared_address` strangers are not linked at all. The 9 missed links are all `benign_backup`.
 
 The threshold started at 1.6. At 1.6 the `two_incidents_one_user` pairs (one user's travel alerts and phishing alerts) scored up to 1.78 and merged. We moved it to 1.8 after seeing this data. That is a value tuned on one seed, so a fresh seed has to test it. Recall falls to 77% at 1.9.
 
@@ -195,7 +195,7 @@ Each stage also runs as plain rules on the same alerts:
 - Grouping: shared entity inside a time window.
 - Account risk: the same score and window, with the detector's severity as the impact and a fixed confidence of 0.5. It has no grouping step, so an alert with no user is skipped and every alert counts in full, with no corroboration factor. Its `group_ids` column is only a pointer taken from the Jev groups.
 
-The grouping baseline is the floor Jev has to beat. On the current data it finds 1,393 candidate pairs and puts the 1,042 alerts into 363 groups. It links 5,451 alert pairs and gets all 225 true pairs, so recall is 100% and precision is 4%. Six groups each hold two different real incidents. Most of the wrong links join unrelated alerts that share a busy server or address (3,326 across scenarios, 1,760 in background noise).
+The grouping baseline is the floor Jev has to beat. On the current data it finds 1,393 candidate pairs and puts the 1,042 alerts into 363 groups. It links 5,451 alert pairs and gets all 225 true pairs, so recall is 100% and precision is 4%. Six groups each hold more than one real incident. Most of the wrong links join unrelated alerts that share a busy server or address (3,326 across scenarios, 1,760 in background noise).
 
 The account ranking is graded, not tuned. The score weights are this design's own version of the approach and were not adjusted after seeing results. Of the 21 compromised accounts, Jev's ranking puts 10 in the top 10 and 19 in the top 20. Its first hit is at rank 1. The detector-severity ranking puts 6 in the top 10 and 10 in the top 20. Its first hit is at rank 2.
 

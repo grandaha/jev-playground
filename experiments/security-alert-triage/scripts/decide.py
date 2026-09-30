@@ -10,7 +10,7 @@ from dataclasses import dataclass
 import rules
 from enrich import hours_apart
 from paths import path
-from tables import read_alerts, read_csv, write_csv
+from tables import read_alerts, read_csv, require, write_csv
 
 
 @dataclass(frozen=True)
@@ -33,9 +33,12 @@ def load_answers(rows):
 def _view(row):
     if not row or row.get("asked") != "yes" or row.get("error"):
         return None
-    return {"p_tp": float(row["p_true_positive"]),
-            "p_benign": float(row["p_false_positive"]) + float(row["p_benign_true_positive"]),
-            "expl": float(row["p_benign_explanation"]), "impact": float(row["impact"])}
+    try:
+        return {"p_tp": float(row["p_true_positive"]),
+                "p_benign": float(row["p_false_positive"]) + float(row["p_benign_true_positive"]),
+                "expl": float(row["p_benign_explanation"]), "impact": float(row["impact"])}
+    except (ValueError, TypeError):  # a malformed answer counts as no answer
+        return None
 
 
 def decide_alerts(alerts, answers, policy=Policy()):
@@ -99,7 +102,7 @@ def decide_alerts(alerts, answers, policy=Policy()):
 
 def main():
     alerts = read_alerts(path("alerts.csv"))
-    rows = decide_alerts(alerts, load_answers(read_csv(path("answers_alerts.csv"))))
+    rows = decide_alerts(alerts, load_answers(read_csv(require(path("answers_alerts.csv"), "run ask.py alerts first"))))
     write_csv(path("decisions_alerts.csv"), rows, COLUMNS)
     print("Jev policy:", {x: sum(1 for r in rows if r["action"] == x) for x in ("close", "investigate", "escalate")})
 

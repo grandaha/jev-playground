@@ -16,6 +16,7 @@ DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DAT
 CANON = {n.lower(): full.lower() for full, ns in NICKS.items() for n in ns}
 COMPANY_NOISE = {"inc", "incorporated", "llc", "co", "corp", "corporation", "ltd", "group", "company"}
 STREET = {"street": "st", "avenue": "ave", "road": "rd", "boulevard": "blvd", "drive": "dr"}
+GENERATIONS = {"jr", "sr", "ii", "iii", "iv"}
 ROLE_MAILBOXES = {"info", "sales", "office", "admin", "support", "contact", "billing", "hello", "accounts", "team"}
 PERSONAL_DOMAINS = {"gmail.com", "yahoo.com", "outlook.com", "hotmail.com"}
 
@@ -98,7 +99,9 @@ def norm_contact(r):
     dom = domain(r["email"])
     master = MASTER.get(r["account_id"], r["account_id"])  # the mastered account this contact belongs to
     names = "".join(sorted([f[:1] + soundex(l), l[:1] + soundex(f)]))  # first/last swap-proof
-    return {**r, "first_norm": f, "last_norm": l, "email_norm": r["email"].lower().strip(),
+    tail = words(r["last_name"])[-1:] or [""]
+    suffix = tail[0] if tail[0] in GENERATIONS else ""  # "Johnson Jr." -> jr; a Jr and a Sr are different people
+    return {**r, "first_norm": f, "last_norm": l, "name_suffix": suffix, "email_norm": r["email"].lower().strip(),
             "phone_norm": phone(r["phone"]), "address_norm": address(r["address"]),
             "k_email": "" if r["email"].split("@")[0].lower() in ROLE_MAILBOXES else r["email"].lower().strip(),  # a shared mailbox is not an identifier
             "k_phone": phone(r["phone"]),

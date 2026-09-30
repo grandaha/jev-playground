@@ -1,0 +1,34 @@
+group_id,master_id,members,reason
+AG00022,A00035,A00003 A00035,source billing (only one from the best source)
+AG00024,A00023,A00023 A00041,source crm (only one from the best source)
+AG00033,A00056,A00007 A00056,source erp (only one from the best source)
+AG00034,A00017,A00017 A00057,source crm (only one from the best source)
+AG00035,A00036,A00036 A00058,"source crm, newest of 2 from that source (2026-02-11)"
+AG00044,A00043,A00043 A00073,source billing (only one from the best source)
+AG00052,A00052,A00052 A00082,source billing (only one from the best source)
+AG00060,A00011,A00011 A00064 A00092,"source crm, newest of 2 from that source (2025-01-30)"
+AG00062,A00094,A00063 A00094,source erp (only one from the best source)
+AG00063,A00095,A00060 A00095,source erp (only one from the best source)
+AG00066,A00099,A00039 A00087 A00099,source erp (only one from the best source)
+AG00068,A00069,A00069 A00101,source billing (only one from the best source)
+AG00070,A00103,A00001 A00034 A00103,source erp (only one from the best source)
+AG00072,A00105,A00014 A00105,source billing (only one from the best source)
+AG00076,A00050,A00050 A00110,"source trade_show, newest of 2 from that source (2025-03-12)"
+AG00080,A00114,A00038 A00114,source erp (only one from the best source)
+AG00081,A00115,A00047 A00115,"source erp, newest of 2 from that source (2025-09-16)"
+AG00085,A00119,A00055 A00119,source billing (only one from the best source)
+AG00091,A00126,A00070 A00126,"source crm, newest of 2 from that source (2024-09-11)"
+AG00094,A00130,A00033 A00130,source web_form (only one from the best source)
+AG00099,A00013,A00013 A00136,"source erp, newest of 2 from that source (2026-07-08)"
+AG00100,A00137,A00044 A00137,source billing (only one from the best source)
+AG00104,A00142,A00025 A00142,source erp (only one from the best source)
+AG00105,A00071,A00071 A00143,source billing (only one from the best source)
+AG00109,A00086,A00086 A00147,source crm (only one from the best source)
+AG00110,A00138,A00138 A00148,source erp (only one from the best source)
+AG00112,A00150,A00037 A00150,source crm (only one from the best source)
+AG00114,A00127,A00127 A00152,"source billing, newest of 2 from that source (2026-08-21)"
+AG00115,A00010,A00010 A00153,source billing (only one from the best source)
+AG00116,A00005,A00005 A00132 A00154,source billing (only one from the best source)
+AG00119,A00157,A00097 A00157,"source trade_show, newest of 2 from that source (2026-04-28)"
+AG00123,A00079,A00079 A00161,source crm (only one from the best source)
+AG00130,A00168,A00106 A00125 A00168,"source crm, newest of 2 from that source (2024-09-17)"

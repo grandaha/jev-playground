@@ -1,63 +1,63 @@
 id_a,id_b,block_keys,hard_decision,hard_rule,error,score,confidence,p_diff,p_maybe,p_same,name_same,details_conflict,lookalike,decision,rule,detail
-C00001,C00062,k_initial_acct,,,,1.94,0.91,0.0,0.06,0.94,0.93,0.07,0.08,merge,single_high,"score 1.94 >= 1.6, lookalike 0.08 < 0.5"
-C00002,C00010,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.62,0.26,0.44,0.5,0.06,0.45,0.78,0.7,review,single_mid,0.6 < score 0.62 < 1.6
-C00003,C00155,k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.24,0.52,0.04,0.68,0.28,0.64,0.79,0.2,review,single_mid,0.6 < score 1.24 < 1.6
-C00006,C00112,k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.92,0.89,0.0,0.07,0.93,0.91,0.57,0.08,review,phone_conflict,"would merge (single_high) but phones differ. score 1.92 >= 1.6, lookalike 0.08 < 0.5"
-C00011,C00174,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,1.06,0.49,0.14,0.66,0.2,0.68,0.8,0.35,review,single_mid,0.6 < score 1.06 < 1.6
-C00012,C00149,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.98,0.0,0.01,0.99,0.94,0.41,0.08,merge,single_high,"score 1.99 >= 1.6, lookalike 0.08 < 0.5"
+C00001,C00062,k_initial_acct,,,,1.93,0.9,0.0,0.07,0.93,0.93,0.07,0.08,merge,single_high,"score 1.93 >= 1.6, lookalike 0.08 < 0.5"
+C00002,C00010,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.63,0.28,0.42,0.52,0.06,0.5,0.77,0.68,review,single_mid,0.6 < score 0.63 < 1.6
+C00003,C00155,k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.26,0.52,0.03,0.68,0.29,0.63,0.79,0.2,review,single_mid,0.6 < score 1.26 < 1.6
+C00006,C00112,k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.93,0.9,0.0,0.07,0.93,0.93,0.58,0.08,review,phone_conflict,"would merge (single_high) but phones differ. score 1.93 >= 1.6, lookalike 0.08 < 0.5"
+C00011,C00174,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,1.07,0.48,0.14,0.65,0.21,0.68,0.81,0.35,review,single_mid,0.6 < score 1.07 < 1.6
+C00012,C00149,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.98,0.97,0.0,0.02,0.98,0.94,0.39,0.08,merge,single_high,"score 1.98 >= 1.6, lookalike 0.08 < 0.5"
 C00014,C00057,k_email,merge,same_email,,,,,,,,,,merge,same_email,hard rule same_email
-C00017,C00238,k_phone,,,,1.92,0.87,0.02,0.05,0.93,0.88,0.28,0.12,merge,single_high,"score 1.92 >= 1.6, lookalike 0.12 < 0.5"
-C00019,C00093,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.0,1.0,0.94,0.39,0.08,merge,single_high,"score 1.99 >= 1.6, lookalike 0.08 < 0.5"
-C00020,C00132,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.97,0.23,0.05,merge,single_high,"score 2.00 >= 1.6, lookalike 0.05 < 0.5"
-C00022,C00058,k_name_acct+k_initial_acct,,,,1.97,0.95,0.0,0.03,0.97,0.95,0.05,0.07,merge,single_high,"score 1.97 >= 1.6, lookalike 0.07 < 0.5"
-C00024,C00047,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,1.32,0.39,0.04,0.59,0.37,0.73,0.82,0.28,review,single_mid,0.6 < score 1.32 < 1.6
-C00028,C00097,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.01,0.99,0.96,0.48,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"
-C00029,C00181,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,2.0,0.99,0.0,0.0,1.0,0.96,0.35,0.06,merge,single_high,"score 2.00 >= 1.6, lookalike 0.06 < 0.5"
-C00032,C00139,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.97,0.35,0.05,merge,single_high,"score 2.00 >= 1.6, lookalike 0.05 < 0.5"
-C00033,C00230,k_name_domain+k_name_street+k_initial_acct,,,,0.06,0.91,0.95,0.03,0.02,0.15,0.66,0.64,no_match,single_low,score 0.06 <= 0.6
-C00034,C00064,k_name_domain+k_name_street+k_initial_acct,,,,1.72,0.58,0.03,0.22,0.75,0.75,0.67,0.17,review,phone_conflict,"would merge (single_high) but phones differ. score 1.72 >= 1.6, lookalike 0.17 < 0.5"
-C00037,C00140,k_name_acct+k_initial_acct,,,,1.99,0.98,0.0,0.01,0.99,0.97,0.05,0.05,merge,single_high,"score 1.99 >= 1.6, lookalike 0.05 < 0.5"
-C00040,C00138,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,1.53,0.29,0.03,0.4,0.56,0.79,0.75,0.27,review,single_mid,0.6 < score 1.53 < 1.6
-C00041,C00111,k_name_domain+k_name_street+k_initial_acct,,,,1.0,0.08,0.31,0.39,0.3,0.52,0.68,0.29,review,single_mid,0.6 < score 1.00 < 1.6
-C00043,C00135,k_phone+k_name_acct,,,,1.99,0.98,0.0,0.01,0.99,0.96,0.12,0.05,merge,single_high,"score 1.99 >= 1.6, lookalike 0.05 < 0.5"
+C00017,C00238,k_phone,,,,1.9,0.86,0.02,0.06,0.92,0.87,0.3,0.12,merge,single_high,"score 1.90 >= 1.6, lookalike 0.12 < 0.5"
+C00019,C00093,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.0,1.0,0.94,0.38,0.08,merge,single_high,"score 1.99 >= 1.6, lookalike 0.08 < 0.5"
+C00020,C00132,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.97,0.22,0.05,merge,single_high,"score 2.00 >= 1.6, lookalike 0.05 < 0.5"
+C00022,C00058,k_name_acct+k_initial_acct,,,,1.97,0.95,0.0,0.03,0.97,0.96,0.05,0.07,merge,single_high,"score 1.97 >= 1.6, lookalike 0.07 < 0.5"
+C00024,C00047,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,1.19,0.53,0.06,0.69,0.25,0.69,0.82,0.33,review,single_mid,0.6 < score 1.19 < 1.6
+C00028,C00097,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.0,1.0,0.96,0.44,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"
+C00029,C00181,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.96,0.35,0.06,merge,single_high,"score 2.00 >= 1.6, lookalike 0.06 < 0.5"
+C00032,C00139,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,2.0,0.99,0.0,0.0,1.0,0.97,0.37,0.05,merge,single_high,"score 2.00 >= 1.6, lookalike 0.05 < 0.5"
+C00033,C00230,k_name_domain+k_name_street+k_initial_acct,,,,0.06,0.91,0.95,0.03,0.02,0.14,0.64,0.61,no_match,single_low,score 0.06 <= 0.6
+C00034,C00064,k_name_domain+k_name_street+k_initial_acct,,,,1.77,0.65,0.02,0.19,0.79,0.76,0.67,0.17,review,phone_conflict,"would merge (single_high) but phones differ. score 1.77 >= 1.6, lookalike 0.17 < 0.5"
+C00037,C00140,k_name_acct+k_initial_acct,,,,1.98,0.98,0.0,0.02,0.98,0.97,0.05,0.05,merge,single_high,"score 1.98 >= 1.6, lookalike 0.05 < 0.5"
+C00040,C00138,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,1.42,0.23,0.05,0.48,0.47,0.8,0.73,0.27,review,single_mid,0.6 < score 1.42 < 1.6
+C00041,C00111,k_name_domain+k_name_street+k_initial_acct,,,,0.87,0.0,0.39,0.35,0.26,0.49,0.7,0.3,review,single_mid,0.6 < score 0.87 < 1.6
+C00043,C00135,k_phone+k_name_acct,,,,1.99,0.98,0.0,0.01,0.99,0.96,0.11,0.06,merge,single_high,"score 1.99 >= 1.6, lookalike 0.06 < 0.5"
 C00053,C00115,k_email,merge,same_email,,,,,,,,,,merge,same_email,hard rule same_email
-C00054,C00078,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.6,0.27,0.44,0.52,0.04,0.45,0.84,0.66,no_match,single_low,score 0.60 <= 0.6
-C00055,C00217,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,2.0,0.99,0.0,0.0,1.0,0.96,0.41,0.07,merge,single_high,"score 2.00 >= 1.6, lookalike 0.07 < 0.5"
-C00060,C00072,k_name_acct+k_initial_acct,,,,1.98,0.97,0.0,0.02,0.98,0.96,0.08,0.05,merge,single_high,"score 1.98 >= 1.6, lookalike 0.05 < 0.5"
-C00065,C00137,k_phone+k_name_acct+k_initial_acct,,,,2.0,0.99,0.0,0.0,1.0,0.95,0.33,0.07,merge,single_high,"score 2.00 >= 1.6, lookalike 0.07 < 0.5"
-C00066,C00133,k_initial_acct,,,,1.97,0.96,0.0,0.03,0.97,0.94,0.06,0.06,merge,single_high,"score 1.97 >= 1.6, lookalike 0.06 < 0.5"
-C00070,C00122,k_name_street,,,,1.74,0.61,0.0,0.26,0.74,0.94,0.39,0.16,merge,single_high,"score 1.74 >= 1.6, lookalike 0.16 < 0.5"
-C00071,C00227,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.57,0.14,0.48,0.47,0.05,0.45,0.82,0.65,no_match,single_low,score 0.57 <= 0.6
-C00075,C00235,k_phone+k_name_acct,,,,1.97,0.95,0.01,0.02,0.97,0.93,0.13,0.08,merge,single_high,"score 1.97 >= 1.6, lookalike 0.08 < 0.5"
+C00054,C00078,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.6,0.29,0.44,0.52,0.04,0.48,0.82,0.65,no_match,single_low,score 0.60 <= 0.6
+C00055,C00217,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.0,1.0,0.96,0.45,0.06,merge,single_high,"score 1.99 >= 1.6, lookalike 0.06 < 0.5"
+C00060,C00072,k_name_acct+k_initial_acct,,,,1.98,0.98,0.0,0.01,0.99,0.96,0.09,0.05,merge,single_high,"score 1.98 >= 1.6, lookalike 0.05 < 0.5"
+C00065,C00137,k_phone+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.01,0.99,0.95,0.35,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"
+C00066,C00133,k_initial_acct,,,,1.97,0.95,0.0,0.03,0.97,0.94,0.06,0.06,merge,single_high,"score 1.97 >= 1.6, lookalike 0.06 < 0.5"
+C00070,C00122,k_name_street,,,,1.79,0.68,0.0,0.21,0.79,0.95,0.23,0.15,merge,single_high,"score 1.79 >= 1.6, lookalike 0.15 < 0.5"
+C00071,C00227,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.56,0.16,0.48,0.47,0.05,0.45,0.82,0.64,no_match,single_low,score 0.56 <= 0.6
+C00075,C00235,k_phone+k_name_acct,,,,1.97,0.95,0.01,0.02,0.97,0.92,0.14,0.09,merge,single_high,"score 1.97 >= 1.6, lookalike 0.09 < 0.5"
 C00081,C00241,k_name_street+k_name_acct+k_initial_acct,,,,2.0,0.99,0.0,0.0,1.0,0.97,0.1,0.05,merge,single_high,"score 2.00 >= 1.6, lookalike 0.05 < 0.5"
 C00084,C00165,k_email,merge,same_email,,,,,,,,,,merge,same_email,hard rule same_email
-C00087,C00231,k_phone+k_name_street+k_name_acct+k_initial_acct,,,,2.0,0.99,0.0,0.0,1.0,0.96,0.36,0.05,merge,single_high,"score 2.00 >= 1.6, lookalike 0.05 < 0.5"
+C00087,C00231,k_phone+k_name_street+k_name_acct+k_initial_acct,,,,2.0,0.99,0.0,0.0,1.0,0.96,0.33,0.06,merge,single_high,"score 2.00 >= 1.6, lookalike 0.06 < 0.5"
 C00088,C00161,k_phone+k_initial_acct,,,,1.99,0.99,0.0,0.01,0.99,0.95,0.06,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"
-C00090,C00134,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.0,1.0,0.95,0.32,0.06,merge,single_high,"score 1.99 >= 1.6, lookalike 0.06 < 0.5"
-C00091,C00242,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.61,0.32,0.42,0.55,0.03,0.45,0.81,0.67,review,single_mid,0.6 < score 0.61 < 1.6
-C00094,C00156,k_phone+k_name_acct,,,,1.98,0.97,0.0,0.01,0.99,0.95,0.24,0.06,merge,single_high,"score 1.98 >= 1.6, lookalike 0.06 < 0.5"
-C00096,C00119,k_name_acct+k_initial_acct,,,,1.99,0.98,0.0,0.01,0.99,0.96,0.1,0.06,merge,single_high,"score 1.99 >= 1.6, lookalike 0.06 < 0.5"
-C00098,C00113,k_name_domain+k_name_street+k_initial_acct,,,,1.63,0.45,0.02,0.32,0.66,0.73,0.78,0.15,review,phone_conflict,"would merge (single_high) but phones differ. score 1.63 >= 1.6, lookalike 0.15 < 0.5"
+C00090,C00134,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.01,0.99,0.95,0.33,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"
+C00091,C00242,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.66,0.36,0.38,0.57,0.05,0.44,0.81,0.62,review,single_mid,0.6 < score 0.66 < 1.6
+C00094,C00156,k_phone+k_name_acct,,,,1.97,0.96,0.0,0.02,0.98,0.95,0.21,0.05,merge,single_high,"score 1.97 >= 1.6, lookalike 0.05 < 0.5"
+C00096,C00119,k_name_acct+k_initial_acct,,,,1.99,0.98,0.0,0.01,0.99,0.95,0.08,0.06,merge,single_high,"score 1.99 >= 1.6, lookalike 0.06 < 0.5"
+C00098,C00113,k_name_domain+k_name_street+k_initial_acct,,,,1.67,0.51,0.02,0.28,0.7,0.77,0.73,0.15,review,phone_conflict,"would merge (single_high) but phones differ. score 1.67 >= 1.6, lookalike 0.15 < 0.5"
 C00103,C00163,k_email,merge,same_email,,,,,,,,,,merge,same_email,hard rule same_email
-C00104,C00141,k_initial_acct,,,,1.97,0.96,0.0,0.03,0.97,0.93,0.07,0.08,merge,single_high,"score 1.97 >= 1.6, lookalike 0.08 < 0.5"
-C00105,C00148,k_name_domain+k_initial_acct,,,,0.06,0.91,0.94,0.05,0.01,0.15,0.78,0.6,no_match,single_low,score 0.06 <= 0.6
-C00107,C00232,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.98,0.98,0.0,0.01,0.99,0.94,0.39,0.08,merge,single_high,"score 1.98 >= 1.6, lookalike 0.08 < 0.5"
-C00108,C00118,k_name_domain+k_name_street+k_initial_acct,,,,1.07,0.0,0.31,0.31,0.38,0.53,0.68,0.35,review,single_mid,0.6 < score 1.07 < 1.6
-C00110,C00124,k_phone+k_name_acct,,,,1.97,0.96,0.01,0.02,0.97,0.94,0.2,0.07,merge,single_high,"score 1.97 >= 1.6, lookalike 0.07 < 0.5"
-C00116,C00206,k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.15,0.67,0.03,0.78,0.19,0.64,0.82,0.18,review,single_mid,0.6 < score 1.15 < 1.6
-C00121,C00176,k_phone+k_name_acct,,,,1.97,0.96,0.0,0.02,0.98,0.94,0.17,0.08,merge,single_high,"score 1.97 >= 1.6, lookalike 0.08 < 0.5"
-C00128,C00144,k_name_domain+k_name_street+k_initial_acct,,,,0.53,0.21,0.59,0.29,0.12,0.36,0.67,0.41,no_match,single_low,score 0.53 <= 0.6
-C00142,C00211,k_name_acct+k_initial_acct,,,,1.97,0.96,0.0,0.03,0.97,0.96,0.06,0.06,merge,single_high,"score 1.97 >= 1.6, lookalike 0.06 < 0.5"
-C00146,C00187,k_phone+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.96,0.25,0.05,merge,single_high,"score 2.00 >= 1.6, lookalike 0.05 < 0.5"
-C00147,C00168,k_phone+k_name_street+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.97,0.41,0.06,merge,single_high,"score 2.00 >= 1.6, lookalike 0.06 < 0.5"
-C00157,C00186,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.59,0.24,0.46,0.49,0.05,0.43,0.81,0.65,no_match,single_low,score 0.59 <= 0.6
-C00159,C00172,k_name_acct+k_initial_acct,,,,1.98,0.97,0.0,0.02,0.98,0.96,0.06,0.06,merge,single_high,"score 1.98 >= 1.6, lookalike 0.06 < 0.5"
+C00104,C00141,k_initial_acct,,,,1.97,0.96,0.0,0.03,0.97,0.93,0.08,0.08,merge,single_high,"score 1.97 >= 1.6, lookalike 0.08 < 0.5"
+C00105,C00148,k_name_domain+k_initial_acct,,,,0.07,0.89,0.94,0.05,0.01,0.15,0.81,0.61,no_match,single_low,score 0.07 <= 0.6
+C00107,C00232,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.0,1.0,0.95,0.4,0.08,merge,single_high,"score 1.99 >= 1.6, lookalike 0.08 < 0.5"
+C00108,C00118,k_name_domain+k_name_street+k_initial_acct,,,,0.94,0.0,0.37,0.33,0.3,0.49,0.71,0.35,review,single_mid,0.6 < score 0.94 < 1.6
+C00110,C00124,k_phone+k_name_acct,,,,1.97,0.96,0.01,0.02,0.97,0.94,0.19,0.07,merge,single_high,"score 1.97 >= 1.6, lookalike 0.07 < 0.5"
+C00116,C00206,k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.14,0.67,0.04,0.78,0.18,0.62,0.81,0.19,review,single_mid,0.6 < score 1.14 < 1.6
+C00121,C00176,k_phone+k_name_acct,,,,1.97,0.95,0.0,0.02,0.98,0.93,0.18,0.07,merge,single_high,"score 1.97 >= 1.6, lookalike 0.07 < 0.5"
+C00128,C00144,k_name_domain+k_name_street+k_initial_acct,,,,0.41,0.39,0.69,0.22,0.09,0.31,0.68,0.45,no_match,single_low,score 0.41 <= 0.6
+C00142,C00211,k_name_acct+k_initial_acct,,,,1.98,0.96,0.0,0.02,0.98,0.96,0.06,0.07,merge,single_high,"score 1.98 >= 1.6, lookalike 0.07 < 0.5"
+C00146,C00187,k_phone+k_name_acct+k_initial_acct,,,,2.0,0.99,0.0,0.0,1.0,0.96,0.24,0.06,merge,single_high,"score 2.00 >= 1.6, lookalike 0.06 < 0.5"
+C00147,C00168,k_phone+k_name_street+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.97,0.44,0.05,merge,single_high,"score 2.00 >= 1.6, lookalike 0.05 < 0.5"
+C00157,C00186,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct,,,,0.52,0.21,0.51,0.46,0.03,0.4,0.82,0.69,no_match,single_low,score 0.52 <= 0.6
+C00159,C00172,k_name_acct+k_initial_acct,,,,1.98,0.96,0.0,0.02,0.98,0.96,0.06,0.07,merge,single_high,"score 1.98 >= 1.6, lookalike 0.07 < 0.5"
 C00177,C00207,k_name_street+k_initial_acct,,,,1.99,0.99,0.0,0.01,0.99,0.96,0.07,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"
-C00180,C00192,k_phone+k_name_acct,,,,1.99,0.99,0.0,0.01,0.99,0.96,0.15,0.06,merge,single_high,"score 1.99 >= 1.6, lookalike 0.06 < 0.5"
-C00188,C00228,k_name_street,,,,1.54,0.3,0.0,0.46,0.54,0.89,0.28,0.24,review,single_mid,0.6 < score 1.54 < 1.6
-C00190,C00196,k_initial_acct,,,,1.97,0.95,0.0,0.03,0.97,0.93,0.07,0.08,merge,single_high,"score 1.97 >= 1.6, lookalike 0.08 < 0.5"
-C00197,C00214,k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.56,0.35,0.01,0.42,0.57,0.79,0.74,0.22,review,single_mid,0.6 < score 1.56 < 1.6
-C00203,C00224,k_phone+k_name_acct,,,,1.94,0.91,0.01,0.04,0.95,0.9,0.24,0.1,merge,single_high,"score 1.94 >= 1.6, lookalike 0.10 < 0.5"
-C00208,C00239,k_phone+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.96,0.26,0.06,merge,single_high,"score 2.00 >= 1.6, lookalike 0.06 < 0.5"
-C00216,C00219,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.98,0.97,0.0,0.01,0.99,0.94,0.4,0.09,merge,single_high,"score 1.98 >= 1.6, lookalike 0.09 < 0.5"
-C00226,C00237,k_phone+k_name_street+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.01,0.99,0.96,0.46,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"
+C00180,C00192,k_phone+k_name_acct,,,,1.99,0.98,0.0,0.01,0.99,0.96,0.13,0.06,merge,single_high,"score 1.99 >= 1.6, lookalike 0.06 < 0.5"
+C00188,C00228,k_name_street,,,,1.55,0.32,0.0,0.45,0.55,0.88,0.35,0.25,review,single_mid,0.6 < score 1.55 < 1.6
+C00190,C00196,k_initial_acct,,,,1.96,0.94,0.0,0.04,0.96,0.93,0.07,0.07,merge,single_high,"score 1.96 >= 1.6, lookalike 0.07 < 0.5"
+C00197,C00214,k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.57,0.35,0.01,0.42,0.57,0.78,0.7,0.21,review,single_mid,0.6 < score 1.57 < 1.6
+C00203,C00224,k_phone+k_name_acct,,,,1.95,0.92,0.01,0.04,0.95,0.91,0.25,0.09,merge,single_high,"score 1.95 >= 1.6, lookalike 0.09 < 0.5"
+C00208,C00239,k_phone+k_name_acct+k_initial_acct,,,,2.0,1.0,0.0,0.0,1.0,0.96,0.3,0.06,merge,single_high,"score 2.00 >= 1.6, lookalike 0.06 < 0.5"
+C00216,C00219,k_phone+k_name_domain+k_name_swap+k_name_acct+k_initial_acct,,,,1.98,0.97,0.0,0.01,0.99,0.94,0.37,0.08,merge,single_high,"score 1.98 >= 1.6, lookalike 0.08 < 0.5"
+C00226,C00237,k_phone+k_name_street+k_name_acct+k_initial_acct,,,,1.99,0.99,0.0,0.01,0.99,0.96,0.45,0.07,merge,single_high,"score 1.99 >= 1.6, lookalike 0.07 < 0.5"

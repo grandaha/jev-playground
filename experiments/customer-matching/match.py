@@ -76,7 +76,9 @@ def hard_rule(table, a, b):
     """(decision, rule) for pairs that need no judgment, else None."""
     if table == "accounts" and a["k_phone"] and a["k_phone"] == b["k_phone"] and a["k_domain"] and a["k_domain"] == b["k_domain"]:
         return "merge", "same_phone_and_domain"
-    if table == "contacts" and a["k_email"] and a["k_email"] == b["k_email"]:
+    if table == "contacts" and a["name_suffix"] and b["name_suffix"] and a["name_suffix"] != b["name_suffix"]:
+        return "no_match", "generational_suffix_differs"  # Jr and Sr (or II and III) are different people, whatever else matches
+    if table == "contacts" and a["k_email"] and a["k_email"] == b["k_email"] and a["name_suffix"] == b["name_suffix"]:
         # one mailbox and a compatible name (nickname, initial or swapped order): phones and titles change, so they do not veto
         if names_compatible(a, b):
             return "merge", "same_email"
@@ -185,6 +187,9 @@ def decide_one(table, policy, a, b, r, merge_t, reject_t):
         total = sum(p for _, p in pts)
         detail = f"{total:+.1f} points: " + ", ".join(f"{n} {p:+.1f}" for n, p in sorted(pts, key=lambda x: -abs(x[1])) if abs(p) >= 0.05)
         d, rule = ("merge", "signals_high") if total >= merge_t else ("no_match", "signals_low") if total <= reject_t else ("review", "signals_mid")
+    if d == "merge" and table == "contacts" and a["name_suffix"] != b["name_suffix"]:
+        # one record says Jr/Sr and the other says nothing: could be the same person, could be father and son
+        d, detail, rule = "review", f"would merge ({rule}) but only one record has a generational suffix. {detail}", "generational_suffix_missing"
     shared = [k for k in ("k_phone", "k_domain", "k_email") if a.get(k) and a.get(k) == b.get(k)]
     if d == "no_match" and shared:
         # veto: sharing a phone, website or email is too strong to reject outright

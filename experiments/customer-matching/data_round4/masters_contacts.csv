@@ -1,0 +1,63 @@
+group_id,master_id,members,reason
+CG00021,C00012,C00012 C00033,source crm (only one from the best source)
+CG00042,C00065,C00036 C00065,source billing (only one from the best source)
+CG00045,C00069,C00028 C00069,"source trade_show, newest of 2 from that source (2026-07-05)"
+CG00055,C00013,C00013 C00079,source erp (only one from the best source)
+CG00071,C00083,C00083 C00104,source billing (only one from the best source)
+CG00076,C00109,C00090 C00109,"source crm, newest of 2 from that source (2024-11-18)"
+CG00077,C00019,C00019 C00110,source billing (only one from the best source)
+CG00096,C00006,C00006 C00134,"source erp, newest of 2 from that source (2026-08-21)"
+CG00103,C00143,C00100 C00143,source web_form (only one from the best source)
+CG00105,C00128,C00128 C00145,source erp (only one from the best source)
+CG00115,C00158,C00053 C00158,"source crm, newest of 2 from that source (2025-12-16)"
+CG00116,C00159,C00055 C00159,source erp (only one from the best source)
+CG00117,C00161,C00030 C00161,source crm (only one from the best source)
+CG00119,C00164,C00151 C00164,source web_form (only one from the best source)
+CG00121,C00163,C00163 C00166,source crm (only one from the best source)
+CG00125,C00024,C00024 C00170,"source crm, newest of 2 from that source (2026-08-12)"
+CG00139,C00185,C00098 C00185,"source trade_show, newest of 2 from that source (2024-08-31)"
+CG00147,C00124,C00124 C00196,source billing (only one from the best source)
+CG00150,C00043,C00043 C00199,source billing (only one from the best source)
+CG00153,C00027,C00027 C00204,"source crm, newest of 2 from that source (2022-09-21)"
+CG00154,C00039,C00039 C00205,source web_form (only one from the best source)
+CG00157,C00121,C00121 C00208,source erp (only one from the best source)
+CG00158,C00127,C00127 C00209,source erp (only one from the best source)
+CG00159,C00179,C00179 C00210,source erp (only one from the best source)
+CG00160,C00202,C00202 C00211,"source erp, newest of 2 from that source (2026-02-15)"
+CG00161,C00061,C00061 C00212,source erp (only one from the best source)
+CG00163,C00092,C00092 C00214,source erp (only one from the best source)
+CG00165,C00216,C00160 C00216,source erp (only one from the best source)
+CG00179,C00221,C00221 C00234,source crm (only one from the best source)
+CG00181,C00236,C00020 C00236,source erp (only one from the best source)
+CG00183,C00103,C00103 C00238,source erp (only one from the best source)
+CG00184,C00240,C00239 C00240,"source billing, newest of 2 from that source (2026-08-03)"
+CG00186,C00242,C00046 C00242,source web_form (only one from the best source)
+CG00191,C00015,C00015 C00247,source erp (only one from the best source)
+CG00192,C00248,C00157 C00248,source erp (only one from the best source)
+CG00198,C00255,C00228 C00255,source billing (only one from the best source)
+CG00201,C00258,C00001 C00258,source billing (only one from the best source)
+CG00202,C00259,C00129 C00259,source erp (only one from the best source)
+CG00205,C00262,C00040 C00262,source erp (only one from the best source)
+CG00213,C00271,C00201 C00271,source erp (only one from the best source)
+CG00219,C00150,C00150 C00278,source erp (only one from the best source)
+CG00228,C00142,C00142 C00287,source erp (only one from the best source)
+CG00230,C00290,C00004 C00290,source erp (only one from the best source)
+CG00238,C00298,C00263 C00298,source crm (only one from the best source)
+CG00239,C00299,C00252 C00299,source erp (only one from the best source)
+CG00247,C00308,C00232 C00308,source erp (only one from the best source)
+CG00250,C00311,C00306 C00311,source crm (only one from the best source)
+CG00251,C00312,C00223 C00312,source web_form (only one from the best source)
+CG00253,C00314,C00064 C00314,source erp (only one from the best source)
+CG00254,C00316,C00272 C00316,source web_form (only one from the best source)
+CG00255,C00102,C00102 C00317,source billing (only one from the best source)
+CG00256,C00318,C00101 C00318,"source billing, newest of 2 from that source (2026-07-11)"
+CG00259,C00321,C00060 C00321,source erp (only one from the best source)
+CG00262,C00324,C00191 C00324,source billing (only one from the best source)
+CG00263,C00066,C00066 C00325,"source erp, newest of 2 from that source (2024-06-21)"
+CG00266,C00328,C00051 C00328,source crm (only one from the best source)
+CG00267,C00329,C00135 C00329,source erp (only one from the best source)
+CG00268,C00194,C00194 C00330,"source crm, newest of 2 from that source (2025-03-31)"
+CG00269,C00331,C00288 C00331,source billing (only one from the best source)
+CG00273,C00195,C00195 C00335,"source trade_show, newest of 2 from that source (2024-03-25)"
+CG00275,C00337,C00315 C00337,source billing (only one from the best source)
+CG00278,C00340,C00096 C00340,"source erp, newest of 2 from that source (2026-05-11)"

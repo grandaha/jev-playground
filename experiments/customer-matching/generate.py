@@ -69,7 +69,16 @@ CONTACT_SCENARIOS = {
     "unrelated": 80,             # single records
 }
 
-if os.environ.get("ROUND") == "2":  # round 2 adds scenarios; earlier rounds are left exactly as they were
+ROUND = os.environ.get("ROUND", "1")
+if ROUND == "4":  # round 4 = round 3 plus a father and son who share one mailbox and phone
+    CONTACT_SCENARIOS.update({"jr_sr_shared_details": 6})  # DISTINCT: "Johnson Sr" and "Johnson Jr", same email and same phone
+if ROUND in ("3", "4"):  # round 3 = round 2 plus generational suffixes (Jr / Sr)
+    CONTACT_SCENARIOS.update({
+        "jr_sr_marked": 6,          # DISTINCT: "Johnson Sr" and "Johnson Jr" at one company, own emails and phones
+        "jr_marker_one_side": 6,    # DISTINCT: "Johnson Jr" and plain "Johnson" at one company; only the junior's record has the marker
+        "jr_both_same": 6,          # DUP: one "Johnson Jr" appearing twice, marker on both records
+    })
+if ROUND in ("2", "3", "4"):  # round 2 adds scenarios; earlier rounds are left exactly as they were
     CONTACT_SCENARIOS.update({
         "shared_personal_email": 6,     # DISTINCT: two different people (spouses) sharing one gmail, no account
         "same_email_details_changed": 6,  # DUP: same name, company and work email; the second record has a new phone and title
@@ -300,6 +309,22 @@ def make_contacts(accounts, dup_accounts):
     for _ in range(n.get("account_vs_no_account", 0)):
         c = base_contact(accounts); emit("account_vs_no_account", c)
         emit("account_vs_no_account", c, "variant", email=personal_email(c), no_account=True)
+    # round 3 scenarios (zero groups otherwise), drawn last so earlier rounds are unchanged
+    for _ in range(n.get("jr_sr_marked", 0)):
+        s = base_contact(accounts, addr=new_address()); j = {**s, "true_id": new_tid("C"), "phone": digits10(), "title": rng.choice(TITLES)}
+        emit("jr_sr_marked", s, last=s["last"] + " Sr")
+        emit("jr_sr_marked", j, last=j["last"] + " Jr", email=corp_email(j, accounts[j["acct"]]).replace("@", ".jr@"))
+    for _ in range(n.get("jr_marker_one_side", 0)):
+        s = base_contact(accounts, addr=new_address()); j = {**s, "true_id": new_tid("C"), "phone": digits10(), "title": rng.choice(TITLES)}
+        emit("jr_marker_one_side", s)
+        emit("jr_marker_one_side", j, last=j["last"] + " Jr", email=corp_email(j, accounts[j["acct"]]).replace("@", ".jr@"))
+    for _ in range(n.get("jr_both_same", 0)):
+        c = base_contact(accounts); emit("jr_both_same", c, last=c["last"] + " Jr")
+        emit("jr_both_same", c, "variant", last=c["last"] + " Jr.", email=personal_email(c))
+    for _ in range(n.get("jr_sr_shared_details", 0)):
+        s = base_contact(accounts, addr=new_address()); j = {**s, "true_id": new_tid("C"), "title": rng.choice(TITLES)}  # same phone too
+        emit("jr_sr_shared_details", s, last=s["last"] + " Sr")
+        emit("jr_sr_shared_details", j, last=j["last"] + " Jr", email=corp_email(s, accounts[s["acct"]]))
     return rows
 
 

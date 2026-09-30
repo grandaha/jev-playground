@@ -1,0 +1,170 @@
+account_id,name,website,phone,address,city,state,zip,industry,source_system,updated_at
+A00001,Harbor Point Consulting,www.harborpointconsulting.com,546-943-8231,7276 Church Dr,Phoenix,AZ,85047,Consulting,web_form,2024-03-01
+A00002,Keystone Staffing Inc,,(652) 877-8200,5310 Maple Road,Austin,TX,78756,Staffing,crm,2022-11-27
+A00003,Atlas  Insurance Ltd,,(824) 364-6980,5845 Washington Street,Austin,TX,78747,Insurance,web_form,2023-08-03
+A00004,Pioneer Consulting,www.pioneerconsulting.com,887.429.1930,4378 Maple Drive,Atlanta,GA,30311,Consulting,trade_show,2025-12-18
+A00005,Granite Landsccaping Inc,www.granitelandscaping.com,349.927.5676,6495 Washington Boulevard,Boston,MA,02159,Landscaping,billing,2025-11-29
+A00006,Riverbend Roofing LLC,,+1 685 523 4398,6986 Hill Drive,Phoenix,AZ,85031,Roofing,trade_show,2025-05-12
+A00007,Oakmont Design Co,www.oakmontdesign.com,681-530-4155,4476 Washington Road,Phoenix,AZ,85005,Design,billing,2025-05-19
+A00008,Keystone Design Corp,www.keystonedesign.com,+1 866 632 9003,3768 Hill Street,Portland,OR,97289,Design,erp,2022-08-20
+A00009,Ironwood Consulting LLC,www.ironwoodconsulting.com,2666842791,6002 Park Drive,Denver,CO,80273,Consulting,erp,2022-09-08
+A00010,Keystone Logistics,www.keystonelogistics.com,471-860-9774,5824 Oak Drive,Denver,CO,80249,Logistics,billing,2024-05-21
+A00011,Falco Legal Services LLC,www.falconlegalservices.com,(451) 353-6955,1077 Maple Street,Phoenix,AZ,85037,Legal Services,crm,2025-01-30
+A00012,Stonebridge Logistics Corp,,+1 919 540 3374,2527 Maple Road,Atlanta,GA,30324,Logistics,trade_show,2025-10-08
+A00013,SummitLogistics LLC,www.summitlogistics.com,,705 Cedar Road,Columbus,OH,43240,Logistics,erp,2026-07-08
+A00014,EVERGREEN DESIGN Corp,www.evergreendesign.com,427-351-9620,4561 Elm Blvd,Seattle,WA,98129,Design,web_form,2024-06-27
+A00015,Meridian Insurance LLC,www.meridianinsurance.com,(647) 742-0554,6036 Maple Boulevard,Atlanta,GA,30300,Insurance,web_form,2022-04-18
+A00016,Maple Leaf Analytics LLC,www.mapleleafanalytics.com,+1 899 475 6513,9512 Church Street,Denver,CO,80254,Analytics,web_form,2023-11-06
+A00017,Cedar Design Corp,www.cedardesign.com,346-486-6150,7195 Park Drive,Columbus,OH,43266,Design,crm,2022-11-08
+A00018,Ironwood Bakery Ltd,www.ironwoodbakery.com,(224) 664-6964,578 Washington Avenue,Columbus,OH,43293,Bakery,trade_show,2026-01-29
+A00019,Ironwood Software Corp,www.ironwoodsoftware.com,3667426037,2786 Main Avenue,Boston,MA,02120,Software,erp,2025-01-13
+A00020,Bright Path Bakery,,8526104319,9536 Hill Avenue,Phoenix,AZ,85098,Bakery,erp,2023-06-22
+A00021,Beacon Electric Ltd,www.beaconelectric.com,+1 740 274 2158,1592 Oak Road,Portland,OR,97226,Electric,crm,2024-09-26
+A00022,Granite Consulting Co,,(745) 406-8553,1843 Park Road,Atlanta,GA,30367,Consulting,erp,2026-05-09
+A00023,Northgate Logistics Ltd,www.northgatelogistics.com,(785) 298-7319,6279 Washington Street,Seattle,WA,98164,Logistics,crm,2023-03-02
+A00024,Silver Creek Design LLC,www.silvercreekdesign.com,458-627-3383,9003 Maple Street,Austin,TX,78738,Design,trade_show,2023-05-17
+A00025,Evergreen Legal Services Co,www.evergreenlegalservices.com,953.487.5589,7913 Cedar Drive,Nashville,TN,37210,Legal Services,trade_show,2026-04-18
+A00026,Falcon Logistics,www.falconlogistics.com,996.855.9359,3529 Main Drive,Denver,CO,80229,Logistics,trade_show,2022-12-30
+A00027,Atlas Design Corp,www.atlasdesign.com,3082290361,8163 Lake Drive,Boston,MA,02151,Design,erp,2025-04-09
+A00028,Ironwood Landscaping LLC,www.ironwoodlandscaping.com,988-415-5523,4240 Elm Drive,Atlanta,GA,30304,Landscaping,crm,2022-08-16
+A00029,Harbor Point Auto Repair LLC,www.harborpointautorepair.com,(640) 614-0606,9189 Hill Road,Portland,OR,97287,Auto Repair,erp,2022-08-03
+A00030,Pioneer Analytics,www.pioneeranalytics.com,944-687-3118,5979 Washington Street,Phoenix,AZ,85092,Analytics,trade_show,2022-02-07
+A00031,Blue Ridge Landscaping,www.blueridgelandscaping.com,5374173858,7964 Park Boulevard,Austin,TX,78771,Landscaping,trade_show,2024-02-19
+A00032,Evergreen Roofing LLC,,8552081099,8440 Main Street,Phoenix,AZ,85032,Roofing,web_form,2022-04-02
+A00033,Cedar Consulting Inc,www.cedarconsulting.com,+1 246 865 0499,9387 Sunset Avenue,Atlanta,GA,30398,Consulting,trade_show,2023-03-19
+A00034,HarborPoint Consulting Corp,www.harborpointconsulting.com,5469438231,7276 Church Drive,Phoenix,AZ,85047,Consulting,crm,2025-05-11
+A00035,Atlas Insurance Co,www.atlasinsurance.com,824.364.6980,5845 Washington Street,Austin,TX,78747,Insurance,billing,2023-10-27
+A00036,Blue Ridge Electric Inc,www.blueridgeelectric.com,2148048614,83 Church Boulevard,Denver,CO,80213,Electric,crm,2026-02-11
+A00037,Copper Hill Landscaping Corp,www.copperhilllandscaping.com,(848) 687-3662,2719 Elm Drive,Boston,MA,02132,Landscaping,trade_show,2022-05-30
+A00038,Atlas Dental Ltd,www.atlasdental.com,776-414-6423,4611 Maple Avenue,Boston,MA,02198,Dental,billing,2023-10-03
+A00039,Meridian Logistics LLC,www.meridianlogistics.com,5117243407,2651 Washington Avenue,Phoenix,AZ,85002,Logistics,web_form,2026-06-25
+A00040,Harbor Point Dental Ltd,,8383011324,5909 Elm Drive,Columbus,OH,43279,Dental,trade_show,2024-03-18
+A00041,Northgate Logistics Ltd,www.northgatelogistics.com,+1 785 298 7319,5534 Main Boulevard,Phoenix,AZ,85030,Logistics,trade_show,2023-08-01
+A00042,Ironwood Electric Ltd,www.ironwoodelectric.com,313.799.4519,1962 Sunset Road,Austin,TX,78733,Electric,billing,2025-10-31
+A00043,Meridian Plumbing Inc,www.meridianplumbing.com,(409) 840-1857,6359 Main Drive,Seattle,WA,98199,Plumbing,billing,2024-09-29
+A00044,Riverbend Logistics,www.riverbendlogistics.com,+1 859 390 2152,9188 Maple Road,Columbus,OH,43253,Logistics,crm,2023-12-07
+A00045,Lakeside Auto Repair,,(868) 961-7371,6073 Hill Road,Chicago,IL,60665,Auto Repair,web_form,2024-09-28
+A00046,Meridian Legal Services Inc,www.meridianlegalservices.com,+1 798 360 0254,1949 Hill Road,Phoenix,AZ,85023,Legal Services,trade_show,2025-05-22
+A00047,Ironwood Logistics LLC,www.ironwoodlogistics.com,919.602.7534,9241 Washington Street,Atlanta,GA,30374,Logistics,erp,2023-08-22
+A00048,BRIGHT PATH CONSULTING Inc,,,6470 Hill Road,Phoenix,AZ,85008,Consulting,web_form,2022-10-13
+A00049,Stonebridge Electric Co,www.stonebridgeelectric.com,4388535121,2627 Main Avenue,Columbus,OH,43248,Electric,billing,2024-01-03
+A00050,Silver Creek Analytics LLC,www.silvercreekanalytics.com,437-459-9805,8798 Washington Road,Nashville,TN,37299,Analytics,trade_show,2025-03-12
+A00051,Bright Path Insurance Co,www.brightpathinsurance.com,701-715-6447,6985 Washington Drive,Phoenix,AZ,85011,Insurance,web_form,2022-08-13
+A00052,Pioneer Insurance Inc,www.pioneerinsurance.com,+1 900 331 2070,8962 Cedar Boulevard,Austin,TX,78735,Insurance,billing,2023-07-15
+A00053,Silver Creek Plumbing Co,www.silvercreekplumbing.com,+1 988 894 6764,7025 Elm Drive,Columbus,OH,43245,Plumbing,crm,2023-12-26
+A00054,FALCON DESIGN,,,5633 Lake Avenue,Boston,MA,02158,Design,erp,2022-10-02
+A00055,Atlas Staffing Inc,www.atlasstaffing.com,4098442137,9259 Hill Boulevard,Boston,MA,02178,Staffing,web_form,2026-06-17
+A00056,Oakmont Deesign Corp,www.oakmontdesign.com,,4476 Washington Road,Phoenix,AZ,85005,Design,erp,2023-10-04
+A00057,CEDAR DESIGN Corp,www.cedardesign.com,(346) 486-6150,7195 Park Dr,Columbus,OH,43266,Design,web_form,2025-11-25
+A00058,Blue Ridge Electric Inc,www.blueridgeelectric.com,214.804.8614,83 Church Blvd,Denver,CO,80213,Electric,crm,2022-06-09
+A00059,Sterling Analytics Co,www.sterlinganalytics.com,632-214-0521,8493 Washington Drive,Phoenix,AZ,85066,Analytics,trade_show,2024-09-16
+A00060,Copper Hill Software Inc,www.copperhillsoftware.com,(791) 732-4866,9480 Park Drive,Columbus,OH,43274,Software,trade_show,2026-05-20
+A00061,Sterling Roofing Inc,www.sterlingroofing.com,719-365-9740,8782 Elm Drive,Denver,CO,80263,Roofing,web_form,2025-09-25
+A00062,Maple Leaf Legal Services Co,www.mapleleaflegalservices.com,2895191935,5919 Oak Avenue,Chicago,IL,60665,Legal Services,billing,2022-05-05
+A00063,Northgate Plumbing,www.northgateplumbing.com,992.577.6856,9799 Washington Road,Austin,TX,78724,Plumbing,trade_show,2022-08-31
+A00064,Falcon Legal Services LLC,www.falconlegalservices.com,451.353.6955,1077 Maple Street,Phoenix,AZ,85037,Legal Services,crm,2024-11-21
+A00065,Riverbend Software,www.riverbendsoftware.com,(687) 605-6207,9107 Lake Drive,Seattle,WA,98118,Software,web_form,2025-05-15
+A00066,Atlas Consulting Corp,www.atlasconsulting.com,4049664173,6908 Hill Drive,Atlanta,GA,30323,Consulting,erp,2024-12-28
+A00067,Maple Leaf Dental,www.mapleleafdental.com,249-393-1421,4736 Sunset Drive,Chicago,IL,60678,Dental,web_form,2024-09-18
+A00068,Stonebridge Logistics Corp,,613.874.1539,7693 Maple Drive,Columbus,OH,43280,Logistics,trade_show,2025-10-08
+A00069,Sumimt Analytics LLC,,355.552.3522,5636 Lake Road,Atlanta,GA,30353,Analytics,billing,2023-01-28
+A00070,Riverbend Analytics,www.riverbendanalytics.com,546-386-2656,1988 Washington Boulevard,Boston,MA,02149,Analytics,crm,2023-03-12
+A00071,Sterling Leagl Services Co,,(534) 810-1721,8548 Main Drive,Chicago,IL,60611,Legal Services,billing,2023-09-23
+A00072,Copper Hill Electric Co,www.copperhillelectric.com,(836) 645-3563,2845 Main Avenue,Columbus,OH,43268,Electric,billing,2025-01-04
+A00073,Meriian Plumbing Ltd,,(409) 840-1857,6359 Main Drive,Seattle,WA,98199,Plumbing,web_form,2026-06-21
+A00074,HARBOR POINT BAKERY LLC,,,3886 Cedar Road,Chicago,IL,60662,Bakery,erp,2023-06-23
+A00075,Harbor Point Electric Corp,www.harborpointelectric.com,+1 755 369 5598,3447 Main Boulevard,Chicago,IL,60656,Electric,crm,2023-12-27
+A00076,Cedar Roofing,www.cedarroofing.com,+1 358 733 6380,9150 Hill Road,Seattle,WA,98139,Roofing,erp,2026-08-08
+A00077,Stonebridge Landscaping Co,www.stonebridgelandscaping.com,5746914521,3437 Hill Avenue,Phoenix,AZ,85083,Landscaping,erp,2022-08-23
+A00078,Ironwood Dental,www.ironwooddental.com,490-676-8194,2053 Sunset Road,Denver,CO,80256,Dental,web_form,2025-10-17
+A00079,Bright Path Analytics LLC,www.brightpathanalytics.com,+1 462 248 1556,5681 Lake Street,Phoenix,AZ,85033,Analytics,crm,2022-12-12
+A00080,Granite Consulting Co,,589-984-8001,8014 Main Street,Phoenix,AZ,85049,Consulting,erp,2026-05-09
+A00081,Harbor Point Bakery LLC,www.harborpointbakery.com,5829837314,6827 Park Boulevard,Phoenix,AZ,85089,Bakery,billing,2025-06-26
+A00082,Pioneer Insurance Inc,www.pioneerinsurance.com,900.331.2070,98 Elm Drive,Denver,CO,80287,Insurance,trade_show,2024-02-16
+A00083,Falcon Design,www.falcondesign.com,584-808-5250,96 Washington Street,Austin,TX,78718,Design,crm,2023-12-22
+A00084,Evergreen Insurance,www.evergreeninsurance.com,416-452-5431,2280 Main Boulevard,Columbus,OH,43277,Insurance,trade_show,2022-02-11
+A00085,Granite Roofing Inc,www.graniteroofing.com,+1 382 889 3774,5240 Maple Street,Chicago,IL,60659,Roofing,erp,2024-08-05
+A00086,Northgate Design Inc,www.northgatedesign.com,+1 242 203 7951,7291 Main Road,Denver,CO,80240,Design,crm,2026-06-18
+A00087,Meridian Logistis LLC,www.meridianlogistics.com,+1 511 724 3407,2651 Washington Avenue,Phoenix,AZ,85002,Logistics,web_form,2025-06-27
+A00088,Oakmont Landscaping LLC,www.oakmontlandscaping.com,573-353-0482,5520 Lake Street,Austin,TX,78712,Landscaping,billing,2023-05-28
+A00089,Maple Leaf Software,www.mapleleafsoftware.com,(788) 540-7285,2122 Maple Drive,Columbus,OH,43243,Software,billing,2026-06-13
+A00090,Harbor Point Plumbing,www.harborpointplumbing.com,+1 235 293 1360,4260 Park Drive,Denver,CO,80270,Plumbing,erp,2025-05-20
+A00091,Blue Ridge Logistics Corp,www.blueridgelogistics.com,7182120317,5328 Church Drive,Phoenix,AZ,85058,Logistics,web_form,2024-01-12
+A00092,Falcon Legal Services Co,www.falconlegalservices.com,4513536955,1077 Maple St,Phoenix,AZ,85037,Legal Services,trade_show,2024-10-07
+A00093,Bright Path Bakery,,(321) 215-0077,1942 Maple Avenue,Nashville,TN,37236,Bakery,erp,2023-06-22
+A00094,Northgat Plumbing Co,,992.577.6856,9799 Washington Road,Austin,TX,78724,Plumbing,erp,2022-03-26
+A00095,Copper Hill Software Inc,www.copperhillsoftware.com,7917324866,1268 Cedar Drive,Portland,OR,97285,Software,erp,2026-04-10
+A00096,Silver Creek Logistics Corp,www.silvercreeklogistics.com,361-411-5890,5344 Church Street,Columbus,OH,43289,Logistics,web_form,2024-07-06
+A00097,MERIDIAN DESIGN Co,www.meridiandesign.com,(469) 751-9418,4609 Lake Dr,Columbus,OH,43283,Design,trade_show,2026-03-07
+A00098,Silver Creek Plumbing Co,www.silvercreekplumbing.com,950-464-9250,5818 Washington Street,Phoenix,AZ,85041,Plumbing,crm,2023-12-26
+A00099,Meridian Logistics Inc,www.meridianlogistics.com,+1 511 724 3407,2651 Washington Ave,Phoenix,AZ,85002,Logistics,erp,2026-04-17
+A00100,Copper Hill Bakery Corp,www.copperhillbakery.com,+1 404 878 8951,4562 Elm Street,Denver,CO,80255,Bakery,erp,2026-08-06
+A00101,Summit Analytics Corp,www.summitanalytics.com,+1 355 552 3522,5636 Lake Road,Atlanta,GA,30353,Analytics,trade_show,2026-06-10
+A00102,Harbor Point Software Inc,www.harborpointsoftware.com,321-622-1176,5181 Oak Road,Austin,TX,78727,Software,crm,2025-04-04
+A00103,Harbor Point Consulting Corp,www.harborpointconsulting.com,546.943.8231,7276 Church Drive,Phoenix,AZ,85047,Consulting,erp,2022-07-15
+A00104,Evergreen Landscaping Co,www.evergreenlandscaping.com,303.557.2642,3036 Maple Drive,Phoenix,AZ,85037,Landscaping,erp,2024-11-12
+A00105,Evergreen Design Corp,www.evergreendesign.com,427-351-9620,4561 Elm Boulevard,Seattle,WA,98129,Design,billing,2022-07-10
+A00106,Redwood Design Ltd,www.redwooddesign.com,595-286-7041,89 Oak Road,Denver,CO,80253,Design,trade_show,2026-03-08
+A00107,Falcon Electric LLC,www.falconelectric.com,819-552-1130,9761 Park Street,Columbus,OH,43210,Electric,crm,2024-07-03
+A00108,Falcon Software Ltd,www.falconsoftware.com,702.363.3795,6810 Oak Road,Nashville,TN,37223,Software,crm,2026-07-11
+A00109,Meridian Dental Co,,3349077438,6154 Sunset Avenue,Chicago,IL,60600,Dental,billing,2022-02-02
+A00110,Silver Creek Analytics LLC,www.silvercreekanalytics.com,437.459.9805,3584 Hill Drive,Columbus,OH,43247,Analytics,trade_show,2023-09-26
+A00111,Silver Creek Bakery Corp,www.silvercreekbakery.com,5464077860,2070 Hill Drive,Columbus,OH,43217,Bakery,erp,2022-08-11
+A00112,Silver Creek Staffing Inc,www.silvercreekstaffing.com,+1 985 628 9800,5862 Washington Street,Chicago,IL,60629,Staffing,trade_show,2023-06-29
+A00113,Falcon Dental LLC,www.falcondental.com,+1 277 544 3519,7603 Washington Drive,Austin,TX,78777,Dental,trade_show,2022-11-08
+A00114,Atlas Dental Ltd,www.atlasdental.com,776-414-6423,4611 Maple Ave,Boston,MA,02198,Dental,erp,2022-10-03
+A00115,Ironwood Logistics LLC,www.ironwoodlogistics.com,919-602-7534,99 Church Street,Austin,TX,78747,Logistics,erp,2025-09-16
+A00116,Northgate Insurance,www.northgateinsurance.com,769-429-9858,4204 Park Drive,Seattle,WA,98145,Insurance,web_form,2024-10-28
+A00117,Evergreen Plumbing Inc,www.evergreenplumbing.com,523.397.4389,5499 Maple Boulevard,Austin,TX,78736,Plumbing,web_form,2023-08-26
+A00118,Harbor Point Dental Ltd,,+1 416 879 5573,7351 Hill Avenue,Seattle,WA,98173,Dental,trade_show,2024-03-18
+A00119,Atals Staffing Ltd,,(409) 844-2137,9259 Hill Boulevard,Boston,MA,02178,Staffing,billing,2025-01-20
+A00120,Riverbend Roofing LLC,,5036587495,4510 Oak Street,Columbus,OH,43249,Roofing,trade_show,2025-05-12
+A00121,Pioneer Legal Services LLC,www.pioneerlegalservices.com,(744) 900-7412,6561 Sunset Street,Portland,OR,97250,Legal Services,crm,2025-10-22
+A00122,Ironwood Landscaping LLC,www.ironwoodlandscaping.com,(970) 216-5106,6535 Main Avenue,Portland,OR,97219,Landscaping,crm,2022-08-16
+A00123,Bright Path Consulting Inc,www.brightpathconsulting.com,(971) 524-3396,5153 Church Drive,Austin,TX,78791,Consulting,trade_show,2023-03-16
+A00124,Beacon Dental Corp,,942.363.6144,5214 Hill Street,Nashville,TN,37283,Dental,billing,2022-03-27
+A00125,Redwood Design Co,www.redwooddesign.com,+1 595 286 7041,89 Oak Rd,Denver,CO,80253,Design,crm,2024-01-22
+A00126,RIVERBEND ANALYTICS,www.riverbendanalytics.com,546.386.2656,1988 Washington Blvd,Boston,MA,02149,Analytics,crm,2024-09-11
+A00127,Keystone Landscaping Inc,www.keystonelandscaping.com,333.982.5297,8222 Park Dr,Chicago,IL,60660,Landscaping,billing,2026-08-21
+A00128,BRIGHT PATH INSURANCE Co,,,3051 Church Drive,Columbus,OH,43277,Insurance,web_form,2026-06-29
+A00129,Beacon Dental Corp,,+1 293 361 4206,3532 Maple Drive,Austin,TX,78789,Dental,billing,2022-03-27
+A00130,Cedar Consulting Inc,www.cedarconsulting.com,246.865.0499,7032 Cedar Drive,Denver,CO,80230,Consulting,web_form,2025-04-01
+A00131,Oakmont Dental Co,www.oakmontdental.com,795.558.0118,7365 Main Road,Phoenix,AZ,85068,Dental,crm,2024-03-10
+A00132,Granite Landscaping,www.granitelandscaping.com,+1 349 927 5676,6495 Washington Blvd,Boston,MA,02159,Landscaping,trade_show,2022-06-19
+A00133,Atlas Software Co,www.atlassoftware.com,688-248-2392,9027 Main Avenue,Boston,MA,02128,Software,crm,2022-12-22
+A00134,Bright Path Landscaping LLC,www.brightpathlandscaping.com,+1 673 509 5130,5289 Washington Road,Columbus,OH,43235,Landscaping,web_form,2023-09-02
+A00135,Harbor Point Plumbing,www.harborpointplumbing.com,+1 744 280 5436,2094 Sunset Road,Seattle,WA,98147,Plumbing,erp,2025-05-20
+A00136,Summit Logistics Inc,www.summitlogistics.com,+1 634 962 6630,705 Cedar Road,Columbus,OH,43240,Logistics,erp,2022-02-26
+A00137,Riverbend Logistics,www.riverbendlogistics.com,859.390.2152,9344 Cedar Avenue,Phoenix,AZ,85089,Logistics,billing,2024-06-28
+A00138,Oakmont Consulting LLC,www.oakmontconsulting.com,742.876.5146,190 Cedar St,Boston,MA,02186,Consulting,erp,2024-02-26
+A00139,Cedar Bakery Co,www.cedarbakery.com,809.629.5905,4717 Maple Drive,Seattle,WA,98178,Bakery,erp,2023-04-01
+A00140,Harbor Point Auto Repair LLC,www.harborpointautorepair.com,(638) 709-6874,5556 Lake Boulevard,Chicago,IL,60628,Auto Repair,erp,2022-08-03
+A00141,Silver Creek Logistics Corp,www.silvercreeklogistics.com,448-690-5864,8341 Cedar Road,Nashville,TN,37298,Logistics,web_form,2024-07-06
+A00142,Evergreen Legal Services Co,www.evergreenlegalservices.com,(953) 487-5589,4667 Cedar Road,Columbus,OH,43215,Legal Services,erp,2022-08-15
+A00143,Sterling Legal Services Ltd,www.sterlinglegalservices.com,5348101721,8548 Main Drive,Chicago,IL,60611,Legal Services,trade_show,2024-12-08
+A00144,Summit Consulting Co,www.summitconsulting.com,5083677695,8208 Main Boulevard,Austin,TX,78743,Consulting,web_form,2026-07-02
+A00145,Harbor Point Staffing,www.harborpointstaffing.com,2935393436,7131 Elm Boulevard,Denver,CO,80276,Staffing,crm,2026-04-07
+A00146,Keystone Staffing Inc,,6557434903,1498 Maple Street,Portland,OR,97274,Staffing,crm,2022-11-27
+A00147,Norhtgate Design LLC,www.northgatedesign.com,,7291 Main Road,Denver,CO,80240,Design,trade_show,2025-11-30
+A00148,Oakmont Consulting LLC,www.oakmontconsulting.com,742.876.5146,190 Cedar Street,Boston,MA,02186,Consulting,billing,2025-06-18
+A00149,Lakeside Auto Repair,,+1 981 534 4617,2370 Washington Boulevard,Portland,OR,97201,Auto Repair,web_form,2024-09-28
+A00150,COPPER HILL LANDSCAPING Corp,www.copperhilllandscaping.com,+1 848 687 3662,2719 Elm Dr,Boston,MA,02132,Landscaping,crm,2026-04-02
+A00151,Evergreen Electric Corp,www.evergreenelectric.com,2547891300,168 Sunset Boulevard,Nashville,TN,37256,Electric,crm,2024-04-20
+A00152,Keystone Landscaping Inc,www.keystonelandscaping.com,+1 333 982 5297,8222 Park Drive,Chicago,IL,60660,Landscaping,billing,2023-11-14
+A00153,Keystone Logistics,www.keystonelogistics.com,4718609774,5824 Oak Dr,Denver,CO,80249,Logistics,trade_show,2022-01-28
+A00154,Granite Landscaping Inc,www.granitelandscaping.com,349-927-5676,6495 Washington Boulevard,Boston,MA,02159,Landscaping,crm,2022-03-06
+A00155,Ironwood Staffing Inc,www.ironwoodstaffing.com,+1 504 960 1568,6308 Cedar Drive,Seattle,WA,98184,Staffing,crm,2022-10-19
+A00156,Keystone Electric Ltd,www.keystoneelectric.com,7208153510,5286 Hill Avenue,Nashville,TN,37270,Electric,web_form,2023-06-30
+A00157,Meridian Design Co,www.meridiandesign.com,(469) 751-9418,4609 Lake Drive,Columbus,OH,43283,Design,trade_show,2026-04-28
+A00158,Evergreen Roofing LLC,,576-878-9753,5506 Hill Avenue,Boston,MA,02123,Roofing,web_form,2022-04-02
+A00159,Bright Path Landscaping LLC,www.brightpathlandscaping.com,348-899-7404,295 Sunset Road,Nashville,TN,37280,Landscaping,web_form,2023-09-02
+A00160,Evergreen Consulting Ltd,www.evergreenconsulting.com,920-566-3243,4818 Church Road,Columbus,OH,43214,Consulting,crm,2022-09-25
+A00161,Bright Path Analytisc,,4622481556,5681 Lake Street,Phoenix,AZ,85033,Analytics,web_form,2022-10-15
+A00162,Beacon Design,www.beacondesign.com,322-280-8038,6624 Elm Drive,Nashville,TN,37293,Design,web_form,2026-04-30
+A00163,EVERGREEN ELECTRIC Corp,,,6460 Park Avenue,Phoenix,AZ,85025,Electric,billing,2024-10-21
+A00164,Blue Ridge Analytics Co,www.blueridgeanalytics.com,+1 328 782 8177,7678 Cedar Road,Nashville,TN,37222,Analytics,trade_show,2024-06-25
+A00165,Meridian Dental Co,,652-520-7392,7843 Cedar Street,Columbus,OH,43227,Dental,billing,2022-02-02
+A00166,Keystone Software,www.keystonesoftware.com,(520) 860-9972,1242 Hill Road,Chicago,IL,60627,Software,trade_show,2023-01-28
+A00167,Falcon Plumbing,www.falconplumbing.com,(704) 437-3027,6451 Park Drive,Nashville,TN,37259,Plumbing,trade_show,2023-05-15
+A00168,Redwoo dDesign Ltd,www.redwooddesign.com,595-286-7041,89 Oak Road,Denver,CO,80253,Design,crm,2024-09-17
+A00169,Evergreen Dental Corp,www.evergreendental.com,(585) 930-2856,5244 Cedar Street,Chicago,IL,60662,Dental,web_form,2023-12-25

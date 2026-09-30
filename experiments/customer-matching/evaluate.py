@@ -8,6 +8,8 @@ import csv
 from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 from itertools import combinations
+
+from master import SOURCE_RANK
 from pathlib import Path
 
 DATA = Path(__file__).parent / os.environ.get("MATCH_DATA", "data")  # MATCH_DATA=data_seed2 runs on another folder
@@ -109,10 +111,14 @@ def main():
             dis = f"{r['distinct_MERGED']:>3} / {r['distinct_review']:>3} / {r['distinct_rejected']:>3}"
             print(f"  {s:<24} dup {dup}   distinct {dis}")
 
-        m = read(f"masters_{table}.csv")
-        with_clean = [r for r in m if any(kind[i] == "clean" for i in r["members"].split())]
-        ok = sum(1 for r in with_clean if kind[r["master_id"]] == "clean")
-        print(f"Master = the original clean record: {ok}/{len(with_clean)} groups (a proxy: a variant can be a fine master)")
+        masters = read(f"masters_{table}.csv")
+        rk = lambda i: SOURCE_RANK.index(norm[i]["source_system"])
+        bad = 0
+        for m in masters:  # check the rule itself: no member has a better source, or the same source and a newer update
+            best = (rk(m["master_id"]), -int(norm[m["master_id"]]["updated_at"].replace("-", "")))
+            bad += any((rk(i), -int(norm[i]["updated_at"].replace("-", ""))) < best for i in m["members"].split())
+        by_source = Counter(norm[m["master_id"]]["source_system"] for m in masters)
+        print(f"Masters: {len(masters)} groups; {bad} break the source-then-recency rule; chosen from {dict(by_source)}")
 
 
 if __name__ == "__main__":

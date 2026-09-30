@@ -24,7 +24,7 @@ Goal: dedupe a messy synthetic customer file, explain every match, pick a master
    - Vetoes: a differing phone never auto-merges; a shared phone, website or email never auto-rejects. Both go to review.
    - Policy `single` (first design): the holistic Score alone. Kept so the two can be compared on the same answers.
 5. `cluster.py` -> union-find groups from merged pairs.
-6. `master.py` -> Jev scores per record in a group (completeness, recency, trustworthiness); code applies weights to pick the master. Optional field-level survivorship.
+6. `master.py` -> the master of each multi-record group is the record from the most trusted source system (`SOURCE_RANK` in master.py: erp, billing, crm, web_form, trade_show, an assumed order Dave can change), and among records from that source the most recently updated. Code only, no Jev calls. `evaluate.py` checks that no member beats the chosen master on that rule. An earlier version had Jev score completeness and name cleanliness and weighted them with recency; it is in git history and Dave chose source-then-recency as good enough.
 7. `evaluate.py` -> precision, recall, false-merge rate, review-queue size vs answer key; also a rules-only/fuzzy baseline for comparison.
 
 ## Match explanation (required)
@@ -66,7 +66,7 @@ Fixed after reading the seed 23 results (so seed 23 stopped being a clean holdou
 | 37 (fresh) | 0 | 100% | 100% | 0 |
 
 Open finding: the 2 contact true duplicates in review (seeds 11 and 23) are people whose accounts were never merged (an account pair left unmerged, e.g. a moved business), so the `different_account` penalty (-2) applies to two records that share a company email domain and often a phone. A company-domain signal would fix them, but adding it now would be tuning on these sets again, so it is left for a decision.
-- The master-record proxy is still low (recency 0.3 on random dates). Still open.
+- Master record: decided. Source system first, then recency (see step 6). The old "clean original" proxy was dropped because source and dates are random in the synthetic data.
 
 ## Round 2: new scenarios, fresh seed 41 (`data_round2/`)
 `ROUND=2 MATCH_DATA=data_round2 SEED=41 experiments/customer-matching/run_all.sh`. `ROUND=2` only adds scenarios; the seed 11, 23 and 37 data are byte-identical to before (checked with cmp). Rule: never edit data to make a result pass, so fixes are to rules.

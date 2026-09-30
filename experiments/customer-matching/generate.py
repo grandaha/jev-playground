@@ -72,7 +72,7 @@ CONTACT_SCENARIOS = {
 if os.environ.get("ROUND") == "2":  # round 2 adds scenarios; earlier rounds are left exactly as they were
     CONTACT_SCENARIOS.update({
         "shared_personal_email": 6,     # DISTINCT: two different people (spouses) sharing one gmail, no account
-        "namesake_identical_email": 6,  # DISTINCT per the generator: same name, company and work email, different phone/title. Ambiguous on purpose.
+        "same_email_details_changed": 6,  # DUP: same name, company and work email; the second record has a new phone and title
         "phone_only_shared": 6,         # DISTINCT: two different people sharing a phone number, no account
         "account_vs_no_account": 8,     # DUP: one record has its account, the other has none (personal email, same phone)
     })
@@ -238,8 +238,8 @@ def make_contacts(accounts, dup_accounts):
         rows.append((c["true_id"], scn, kind, None if o.get("no_account") else c["acct"], pick, {
             "first_name": o.get("first", c["first"]), "last_name": o.get("last", c["last"]),
             "email": o["email"] if "email" in o else corp_email(c, acct),
-            "phone": "" if o.get("drop_phone") else fmt_phone(c["phone"]),
-            "title": c["title"], **addr,
+            "phone": "" if o.get("drop_phone") else fmt_phone(o.get("phone", c["phone"])),
+            "title": o.get("title", c["title"]), **addr,
             "source_system": rng.choice(SOURCES) if variant else c["source_system"],
             "updated_at": when() if variant else c["updated_at"]}))
 
@@ -291,9 +291,9 @@ def make_contacts(accounts, dup_accounts):
         while b["first"] == a["first"]:
             b = base_contact(accounts, last=a["last"], acct=None, addr=None)
         emit("shared_personal_email", a, email=personal_email(a)); emit("shared_personal_email", b, email=personal_email(a))
-    for _ in range(n.get("namesake_identical_email", 0)):
-        a = base_contact(accounts); b = base_contact(accounts, first=a["first"], last=a["last"], acct=a["acct"])
-        emit("namesake_identical_email", a); emit("namesake_identical_email", b)
+    for _ in range(n.get("same_email_details_changed", 0)):
+        c = base_contact(accounts); emit("same_email_details_changed", c)
+        emit("same_email_details_changed", c, "variant", phone=digits10(), title=rng.choice([t for t in TITLES if t != c["title"]]))
     for _ in range(n.get("phone_only_shared", 0)):
         a = base_contact(accounts, acct=None, addr=None); b = base_contact(accounts, acct=None, addr=None, phone=a["phone"])
         emit("phone_only_shared", a, email=personal_email(a)); emit("phone_only_shared", b, email=personal_email(b))

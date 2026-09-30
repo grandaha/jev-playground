@@ -4,14 +4,14 @@ C00003,C00018,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct
 C00004,C00111,k_email
 C00006,C00295,k_initial_acct
 C00009,C00046,k_email
-C00010,C00118,k_email+k_name_domain+k_name_swap+k_name_acct+k_initial_acct
+C00010,C00118,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct
 C00014,C00098,k_name_acct+k_initial_acct
 C00015,C00269,k_name_domain+k_name_street+k_initial_acct
 C00024,C00271,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct
 C00027,C00139,k_phone
 C00029,C00286,k_email
 C00031,C00160,k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct
-C00032,C00125,k_email+k_name_domain+k_name_swap+k_name_acct+k_initial_acct
+C00032,C00125,k_email+k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct
 C00033,C00082,k_name_acct+k_initial_acct
 C00038,C00094,k_phone+k_name_domain+k_name_street+k_name_swap+k_name_acct+k_initial_acct
 C00039,C00178,k_phone+k_name_street+k_initial_acct

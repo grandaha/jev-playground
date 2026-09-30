@@ -22,7 +22,7 @@ python3.13 -m venv .venv
 experiments/security-alert-triage/replay.sh
 ```
 
-Then open `experiments/security-alert-triage/data/reports/triage_report.html`. To rebuild the other datasets the same way, run `TRIAGE_DATA=data_holdout experiments/security-alert-triage/replay.sh` (seed 202) or `TRIAGE_DATA=data_holdout_303 experiments/security-alert-triage/replay.sh` (seed 303). Each report is in that folder's `reports/triage_report.html`.
+Then open `experiments/security-alert-triage/data/reports/triage_report.html`.
 
 ## Run it yourself
 
@@ -32,7 +32,7 @@ Create a key at [console.typesafe.ai](https://console.typesafe.ai/) and put it i
 TYPESAFE_API_KEY=your-key
 ```
 
-Then run `experiments/security-alert-triage/run_all.sh`. It builds the dataset from scratch and sends Jev about 2,400 requests: one per alert and one per ambiguous pair of alerts. To build another dataset, run `SEED=202 TRIAGE_DATA=data_holdout experiments/security-alert-triage/run_all.sh`.
+Then run `experiments/security-alert-triage/run_all.sh`. It builds the dataset from scratch and sends Jev about 2,400 requests: one per alert and one per ambiguous pair of alerts. The repo keeps only the seed 101 data. Seeds 202 and 303 were each run once after the freeze, and their results are in the table below. To reproduce one, run `SEED=<n> TRIAGE_DATA=data_holdout_<n> experiments/security-alert-triage/run_all.sh`. It needs a key and spends about 2,400 real requests.
 
 ## How it works
 

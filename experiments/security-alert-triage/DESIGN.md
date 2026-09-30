@@ -226,8 +226,6 @@ experiments/security-alert-triage/
   README.md  DESIGN.md  run_all.sh  replay.sh
   scripts/      generate, enrich, rules, ask, decide, group, risk, evaluate, reports
   data/         source (alerts and answer key), work, output, reports (seed 101)
-  data_holdout/ the same layout for seed 202
-  data_holdout_303/ the same layout for seed 303
 ```
 It mirrors the matching experiment. `replay.sh` rebuilds every result from the saved Jev answers with no API key.
 
@@ -242,7 +240,7 @@ Each phase is checked before the next starts.
 Baseline floor (seed 101): the rules-only baseline misses 30 of 84 real alerts and 6 of 21 real incidents (no alert surfaced). 9 incidents have no escalated alert. 495 of 1042 alerts reach a person (52% fewer), and 517 of 958 benign alerts are closed. The misses are `slow_burn` (all 24 closed), `low_severity_real` (all 3) and `mfa_fatigue` (3 of 9). The benign look-alikes `benign_admin_tool` and `benign_backup` are all escalated.
 
 ## Results
-The rules were frozen (git tag `triage-rules-frozen`, which marks the rules at commit e42e04a) before seed 202 ran. Later commits changed only a metric count (real incidents merged in a group), guards against malformed answers, and docs. A replay shows no decision, group or score changed. Seed 202 ran once, into `data_holdout/`, and seed 303 ran once, into `data_holdout_303/`. No rule, threshold, question or weight changed between the freeze and either run, or afterward.
+The rules were frozen (git tag `triage-rules-frozen`, which marks the rules at commit e42e04a) before seed 202 ran. Later commits changed only a metric count (real incidents merged in a group), guards against malformed answers, and docs. A replay shows no decision, group or score changed. Seeds 202 and 303 each ran once, after the freeze. Their data is not committed, only the results below. To reproduce one, run `SEED=<n> TRIAGE_DATA=data_holdout_<n> experiments/security-alert-triage/run_all.sh`. It needs a key and spends about 2,400 real requests. No rule, threshold, question or weight changed between the freeze and either run, or afterward.
 
 **Seed 101 is the tuning seed.** The escalate and close thresholds and the link threshold (1.8) were chosen while looking at it. Its numbers are not a clean test. **Seeds 202 and 303 are the clean checks.** Seed 303 is a second clean check, run once after the freeze and after seed 202 was recorded. The scenarios are the same kinds with new random draws. It tests the thresholds on new data, not the scenario list on new kinds of attack.
 
@@ -277,7 +275,7 @@ The rules were frozen (git tag `triage-rules-frozen`, which marks the rules at c
 | Groups holding more than one real incident | 1 | 0 |
 | Compromised accounts in top 10 / top 20 (of 21) | 3 / 8 | 10 / 17 |
 
-**Seed 202 held on the headline. Jev closed no real alert and every real incident got an escalated alert. The baseline missed 30 alerts and left 6 incidents with no surfaced alert.
+**Seed 202 held on the headline.** Jev closed no real alert and every real incident got an escalated alert. The baseline missed 30 alerts and left 6 incidents with no surfaced alert.
 
 **Seed 303 held on the headline too.** Jev closed no real alert, every real incident got an escalated alert, and no group holds more than one real incident. The baseline again missed 30 alerts and 6 incidents had no surfaced alert. Jev's stage answer matched on 60 of 84 real alerts against 78 for the claimed tactic, as on the other seeds. The same generator caveat applies to the 78.
 

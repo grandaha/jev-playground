@@ -1,6 +1,6 @@
 #!/bin/sh
-# Builds the dataset in data/ from scratch. Run from the repo root. About 1,000 Jev requests for alerts
-# plus the candidate pairs the obvious-link rule does not settle.
+# Builds the dataset in data/ from scratch. Run from the repo root. About 2,400 Jev requests: one per alert
+# (1,036) plus one per candidate pair the obvious-link rule does not settle (about 1,400).
 # Another dataset: SEED=202 TRIAGE_DATA=data_holdout experiments/security-alert-triage/run_all.sh
 set -e
 P=.venv/bin/python; D=experiments/security-alert-triage/scripts

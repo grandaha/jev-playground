@@ -3,17 +3,20 @@
 Goal: dedupe a messy synthetic customer file, explain every match, pick a master per group.
 
 ## Decisions
-- Entities: people and businesses (mixed in one file).
-- Scale: 6,000 records total (~4,000 true entities, ~2,000 duplicate variants). Synthetic only, no real data, no PII concerns.
+- Entities: businesses (accounts) and people (contacts), in separate linked files.
+- Scale: 6,000 records total (across both files; ~4,000 true entities, ~2,000 duplicate variants). Synthetic only, no real data, no PII concerns.
 - Output: scripts only (terminal report + CSV/JSON files). UI later.
 - Language: Python 3.13, `.venv`, `typesafe-sdk`.
 - Lives in `experiments/customer-matching/`. Run scripts from the repo root, e.g. `.venv/bin/python experiments/customer-matching/generate.py`.
 
-## File layout: one file, both types
-`customers.csv` holds people and businesses together, like a real CRM export. Columns: `record_id`, `record_type` (person/business), `first_name`, `last_name`, `company_name`, `email`, `phone`, `address`, `city`, `state`, `zip`, `source_system`, `updated_at`. Person rows leave `company_name` mostly empty; business rows leave the name fields empty (or hold a contact). Kept together because cross-type matches are real (a sole proprietor as person and business, a contact listed under their company). Normalization and blocking branch on `record_type`, and cross-type candidates are allowed.
+## Files: accounts and contacts (Salesforce-style)
+- `accounts.csv` (businesses): `account_id`, `name`, `website`, `phone`, `address`, `city`, `state`, `zip`, `industry`, `source_system`, `updated_at`.
+- `contacts.csv` (people): `contact_id`, `account_id` (nullable), `first_name`, `last_name`, `email`, `phone`, `title`, `address`, `city`, `state`, `zip`, `source_system`, `updated_at`.
+- Dedupe runs twice, accounts against accounts and contacts against contacts. The two passes inform each other: two contacts with the same name at the same account are a stronger candidate pair, two accounts sharing contacts (same email or name) are a stronger account pair, and merging accounts repoints their contacts to the surviving account (which can expose new contact duplicates, so contacts run after accounts).
+- Sole proprietors and contacts with no account are left in as edge cases (`account_id` empty, or an account named after the person).
 
 ## Pipeline (one script per stage, files handed along in `data/`)
-1. `generate.py` -> `data/customers.csv` + `data/answer_key.csv` (hidden `true_entity_id`). Mess: nicknames, typos, swapped names, Inc/LLC/Co, phone/address formats, old addresses, missing fields, plus look-alike non-duplicates (twins, father/son, similar company names).
+1. `generate.py` -> `data/accounts.csv`, `data/contacts.csv` + `data/answer_key.csv` (hidden `true_account_id` / `true_contact_id`). Mess: nicknames, typos, swapped names, Inc/LLC/Co, phone/address formats, old addresses, missing fields, plus look-alike non-duplicates (twins, father/son, similar company names).
 2. `normalize.py` -> normalized fields + match keys (email, E.164 phone, name+ZIP, phonetic name, normalized company name, address).
 3. `block.py` -> candidate pairs. Each pair records `block_keys` (which keys it shared).
 4. `match.py` -> decision per pair, in this order:

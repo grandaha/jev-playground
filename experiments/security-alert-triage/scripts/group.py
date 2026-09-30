@@ -74,7 +74,7 @@ class LinkPolicy:
 
 def decide_links(pairs, alerts_by_id, answers, policy=LinkPolicy()):
     rows = []
-    for (a, b), shared in pairs.items():
+    for (a, b), shared in sorted(pairs.items()):
         row = {"alert_a": a, "alert_b": b}
         if obvious_link(alerts_by_id[a], alerts_by_id[b]):
             rows.append({**row, "link": "yes", "rule": "obvious_link", "detail": "same user and host within 30 minutes"})

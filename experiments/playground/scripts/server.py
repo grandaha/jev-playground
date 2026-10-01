@@ -1,6 +1,6 @@
 """Local Jev playground. Serves index.html and proxies requests to TypeSafe so the API key stays here.
 
-Run from the repo root: .venv/bin/python playground/server.py
+Run from the repo root: .venv/bin/python experiments/playground/scripts/server.py
 """
 import json
 import os
@@ -12,7 +12,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ENV_FILE = HERE.parent / ".env"
+ENV_FILE = HERE.parents[2] / ".env"  # repo root: scripts -> playground -> experiments -> root
 API = "https://api.typesafe.ai/v1"
 HOST, PORT = "127.0.0.1", 8765
 

@@ -147,7 +147,7 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
   <ul id="hlist" class="hlist"></ul>
 </section>
 
-<!-- Examples: exactly what the pipelines send. Checked by playground/test_playground.py. -->
+<!-- Examples: exactly what the pipelines send. Checked by experiments/playground/tests/test_playground.py. -->
 <script type="application/json" id="presets">
 [
  {
@@ -308,7 +308,7 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
 const $ = (id) => document.getElementById(id);
 const LS_CASES = "jevpg.usecases", LS_HIST = "jevpg.history", HIST_MAX = 50;
 
-/* presets live in the JSON block above so playground/test_playground.py can check them against the pipelines */
+/* presets live in the JSON block above so tests/test_playground.py can check them against the pipelines */
 const PRESETS = JSON.parse($("presets").textContent);
 
 /* ---------- small helpers ---------- */

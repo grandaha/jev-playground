@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jev Playground</title>
+<link rel="icon" href="data:,">
+<style>
+:root {
+  --bg: #f6f6f4; --panel: #ffffff; --ink: #1d1d1f; --muted: #6b6b70; --line: #dcdcd8;
+  --accent: #3a5bd9; --accent-soft: #e6ebfb; --yes: #2f8a4c; --no: #b8402f; --mid: #9a7a10;
+  --err-bg: #fdecea; --err-line: #e0a39a; --code-bg: #f1f1ee; --track: #e9e9e5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161618; --panel: #1f1f22; --ink: #ececee; --muted: #9a9aa2; --line: #34343a;
+    --accent: #7c96ff; --accent-soft: #263055; --yes: #5cc27c; --no: #ec7a68; --mid: #d6b545;
+    --err-bg: #3a1f1c; --err-line: #7a3a32; --code-bg: #18181a; --track: #2c2c31;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+code, .code, pre, textarea.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+input, select, textarea { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; width: 100%; }
+textarea { resize: none; overflow: hidden; min-height: 34px; }  /* height follows the content, see fit() */
+input:focus, select:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; white-space: nowrap; }
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .45; cursor: default; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+button.small { padding: 2px 7px; font-size: 12px; }
+header { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--panel); position: sticky; top: 0; z-index: 2; }
+header h1 { font-size: 16px; margin: 0 6px 0 0; }
+header label { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+header input, header select { width: auto; }
+#model { width: 130px; }
+#usecase { max-width: 260px; }
+.group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.kbd { color: var(--muted); font-size: 12px; }
+main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1.1fr); gap: 14px; padding: 14px 16px; align-items: start; }
+@media (max-width: 1100px) { main { grid-template-columns: 1fr; } }
+section.pane { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-width: 0; }
+section.pane > h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 8px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+#stateText { min-height: 160px; }
+.status { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.status.warn { color: var(--no); }
+.qcard { border: 1px solid var(--line); border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+.qhead { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+.qhead input.code { flex: 1 1 140px; width: auto; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; padding: 4px 10px; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.field { margin: 6px 0; }
+.field > span { display: block; font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+.rows { display: flex; flex-direction: column; gap: 6px; }
+.row { display: flex; gap: 6px; align-items: flex-start; }
+.row .idx { width: 22px; text-align: right; color: var(--muted); padding-top: 6px; font-variant-numeric: tabular-nums; }
+.row .opt { flex: 0 0 34%; }
+.row textarea { flex: 1; min-height: 32px; }
+.row .btns { display: flex; gap: 3px; }
+.problems { color: var(--no); font-size: 12px; margin: 6px 0 0; padding-left: 18px; }
+.problems:empty { display: none; }
+.hint { color: var(--muted); font-size: 12px; }
+pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: 6px; padding: 8px; overflow: auto; max-height: 420px; margin: 6px 0 0; white-space: pre-wrap; word-break: break-word; }
+details > summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+.meta b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.acard { border: 1px solid var(--line); border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+.ahead { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; margin-bottom: 6px; }
+.ahead code { font-weight: 600; font-size: 13px; }
+.tag { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+.big { font-size: 22px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.reading { color: var(--muted); }
+.track { position: relative; height: 10px; background: var(--track); border-radius: 5px; margin: 8px 0 4px; }
+.track .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 5px; }
+.track .midline { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 2px; background: var(--muted); }
+.ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+.bars { display: grid; grid-template-columns: minmax(0, auto) minmax(60px, 1fr) 42px; gap: 4px 8px; align-items: center; margin-top: 6px; }
+.bars .lbl { font-size: 12.5px; overflow-wrap: anywhere; }
+.bars .lbl.chosen { color: var(--accent); font-weight: 650; }
+.bars .bar { height: 8px; background: var(--track); border-radius: 4px; position: relative; }
+.bars .bar > div { position: absolute; left: 0; top: 0; bottom: 0; background: var(--muted); border-radius: 4px; }
+.bars .bar.chosen > div { background: var(--accent); }
+.bars .num { font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
+.scale { position: relative; height: 34px; margin: 10px 10px 4px; }
+.scale .line { position: absolute; left: 0; right: 0; top: 10px; height: 4px; background: var(--track); border-radius: 2px; }
+.scale .tick { position: absolute; top: 4px; width: 2px; height: 16px; background: var(--muted); transform: translateX(-1px); }
+.scale .ticklbl { position: absolute; top: 20px; font-size: 11px; color: var(--muted); transform: translateX(-50%); }
+.scale .marker { position: absolute; top: 2px; width: 16px; height: 20px; border-radius: 4px; background: var(--accent); transform: translateX(-50%); box-shadow: 0 0 0 2px var(--panel); }
+.conf { font-size: 12.5px; color: var(--muted); }
+.conf b { color: var(--ink); }
+.errbox { background: var(--err-bg); border: 1px solid var(--err-line); border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+.errbox strong { display: block; margin-bottom: 4px; }
+.empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+#history { margin: 0 16px 24px; }
+.hlist { list-style: none; margin: 0; padding: 0; }
+.hlist li button { width: 100%; text-align: left; white-space: normal; display: block; border-color: transparent; padding: 6px 8px; }
+.hlist li button:hover { border-color: var(--line); }
+.hlist li + li { border-top: 1px solid var(--line); }
+.htime { color: var(--muted); font-size: 12px; margin-right: 8px; font-variant-numeric: tabular-nums; }
+.hsum { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+.busy { opacity: .6; pointer-events: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Jev Playground</h1>
+  <label>Model <input id="model" class="code" list="models" value="jev-latest" spellcheck="false"></label>
+  <datalist id="models"></datalist>
+  <span class="group"><button id="run" class="primary">Run</button><span class="kbd">Cmd/Ctrl+Enter</span></span>
+  <span class="group">
+    <label>Use case <select id="usecase"></select></label>
+    <button id="newCase">New</button><button id="save">Save</button><button id="saveAs">Save as</button><button id="del">Delete</button>
+    <button id="export">Export JSON</button><button id="importBtn">Import JSON</button>
+    <input id="importFile" type="file" accept="application/json,.json" hidden>
+  </span>
+</header>
+
+<main>
+  <section class="pane" aria-labelledby="h-state">
+    <h2 id="h-state">State <span><button id="clearState" class="small">Clear</button> <button id="format" class="small">Format</button></span></h2>
+    <textarea id="stateText" class="code" spellcheck="false" aria-label="State, plain text or JSON" placeholder="Type or paste anything: a message, a document, a record. Plain text is fine. JSON is optional; an object or array is sent as structured data."></textarea>
+    <div id="stateStatus" class="status" aria-live="polite"></div>
+  </section>
+
+  <section class="pane" aria-labelledby="h-q">
+    <h2 id="h-q">Questions <button id="addQ" class="small">Add question</button></h2>
+    <ul id="globalProblems" class="problems"></ul>
+    <div id="qList"></div>
+    <details id="reqDetails">
+      <summary>Request JSON</summary>
+      <div style="margin-top:6px"><button id="copyReq" class="small">Copy</button> <span id="copyMsg" class="hint"></span></div>
+      <pre id="reqJson"></pre>
+    </details>
+  </section>
+
+  <section class="pane" aria-labelledby="h-a">
+    <h2 id="h-a">Answers</h2>
+    <div id="answers"><div class="empty">Run the questions to see answers. Every run costs tokens.</div></div>
+  </section>
+</main>
+
+<section id="history" class="pane" aria-labelledby="h-h">
+  <h2 id="h-h">History <button id="clearHist" class="small">Clear history</button></h2>
+  <ul id="hlist" class="hlist"></ul>
+</section>
+
+<!-- Examples: exactly what the pipelines send. Checked by experiments/playground/tests/test_playground.py. -->
+<script type="application/json" id="presets">
+[
+ {
+  "name": "Support ticket (SDK quickstart)",
+  "model": "jev-latest",
+  "state": {
+   "document": "I was charged twice. Please fix this ASAP."
+  },
+  "questions": {
+   "billing": {
+    "type": "noul",
+    "instructions": "Is this ticket about billing?"
+   },
+   "tone": {
+    "type": "choice",
+    "instructions": "What is the customer's tone?",
+    "criteria": {
+     "calm": null,
+     "frustrated": null,
+     "angry": null
+    }
+   },
+   "urgency": {
+    "type": "score",
+    "instructions": "How urgent is this ticket?",
+    "criteria": [
+     "can wait",
+     "this week",
+     "today"
+    ]
+   }
+  }
+ },
+ {
+  "name": "Security alert ALT-00062 (security-alert-triage)",
+  "model": "jev-latest",
+  "state": {
+   "alert": {
+    "timestamp": "2026-03-02T17:58:00Z",
+    "detector": "network_sensor",
+    "rule_name": "Large outbound transfer",
+    "description": "Hundreds of files sent from the file server to an address outside the company",
+    "source_severity": "high",
+    "user": "morgan.reyes@example.com",
+    "host": "FS-01",
+    "src_ip": "192.0.2.11",
+    "dst_ip": "203.0.113.39",
+    "claimed_tactic": "exfiltration"
+   },
+   "context": {
+    "asset_criticality": "high",
+    "user_access": "standard"
+   },
+   "note": "The detector's severity and tactic are its own guesses and are sometimes wrong."
+  },
+  "questions": {
+   "disposition": {
+    "type": "choice",
+    "instructions": "Is this alert a real attack, a false alarm, or real but authorized activity?",
+    "criteria": {
+     "true_positive": "Real malicious activity that needs a response.",
+     "false_positive": "Benign activity that only looked suspicious, or a detector misfire.",
+     "benign_true_positive": "Real behavior that is authorized or expected, such as an approved admin task, a scheduled job or an authorized security test."
+    }
+   },
+   "impact": {
+    "type": "score",
+    "instructions": "If this alert is real, how much damage could it do to the company?",
+    "criteria": [
+     "Minimal: no sensitive data or systems are at risk.",
+     "Limited: one account or workstation is affected and the damage is easy to contain.",
+     "Serious: sensitive data or an important system is at risk, or several accounts are affected.",
+     "Severe: customer data, crown-jewel systems or company-wide operations are at risk."
+    ]
+   },
+   "stage": {
+    "type": "choice",
+    "instructions": "Which attacker goal does this activity serve?",
+    "criteria": {
+     "reconnaissance": "Gathering information about the company to plan an attack.",
+     "resource_development": "Setting up infrastructure or accounts to support an attack.",
+     "initial_access": "Getting a first foothold, for example through phishing or a stolen sign-in.",
+     "execution": "Running attacker-controlled code.",
+     "persistence": "Keeping access across restarts and password changes.",
+     "privilege_escalation": "Gaining higher permissions.",
+     "stealth": "Hiding actions so they look normal.",
+     "defense_impairment": "Turning off or weakening security tools and logging.",
+     "credential_access": "Stealing or guessing account credentials.",
+     "discovery": "Mapping the environment to decide where to go next.",
+     "lateral_movement": "Moving from one system to another.",
+     "collection": "Gathering the data the attacker wants.",
+     "command_and_control": "Communicating with compromised systems from outside.",
+     "exfiltration": "Stealing data out of the company.",
+     "impact": "Disrupting, encrypting or destroying systems and data."
+    }
+   },
+   "benign_explanation": {
+    "type": "noul",
+    "instructions": "Does an ordinary, authorized explanation fit the evidence in this alert?"
+   }
+  }
+ },
+ {
+  "name": "Account pair A00002 / A00146 (customer-matching)",
+  "model": "jev-latest",
+  "state": {
+   "record_a": {
+    "name": "Keystone Staffing Inc",
+    "phone": "(652) 877-8200",
+    "address": "5310 Maple Road",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78756",
+    "industry": "Staffing",
+    "source_system": "crm",
+    "updated_at": "2022-11-27"
+   },
+   "record_b": {
+    "name": "Keystone Staffing Inc",
+    "phone": "6557434903",
+    "address": "1498 Maple Street",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97274",
+    "industry": "Staffing",
+    "source_system": "crm",
+    "updated_at": "2022-11-27"
+   }
+  },
+  "questions": {
+   "same_entity": {
+    "type": "score",
+    "instructions": "Do these two account records describe the same business?",
+    "criteria": [
+     "The two records describe different businesses, for example a similar name in a different place or a different line of work.",
+     "The two records might describe one business, but details are missing or conflict and it could be two.",
+     "The two records describe one and the same business, allowing for typos, formatting and a changed address or phone."
+    ]
+   },
+   "name_same": {
+    "type": "noul",
+    "instructions": "Do the two business names refer to the same business, allowing for a different legal suffix (Inc, LLC), abbreviations, capitalisation and typos?"
+   },
+   "details_conflict": {
+    "type": "noul",
+    "instructions": "Do the website, phone or address directly conflict in a way one business would not have? A business can move or get a new number, so blank fields do not count as a conflict."
+   },
+   "lookalike": {
+    "type": "noul",
+    "instructions": "Are these two different locations or sibling businesses that share a brand name, rather than one business?"
+   }
+  }
+ }
+]
+</script>
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const LS_CASES = "jevpg.usecases", LS_HIST = "jevpg.history", HIST_MAX = 50;
+
+/* presets live in the JSON block above so tests/test_playground.py can check them against the pipelines */
+const PRESETS = JSON.parse($("presets").textContent);
+
+/* ---------- small helpers ---------- */
+function el(tag, props, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (k === "class") n.className = v;
+    else if (k === "value") n.value = v;
+    else if (k === "text") n.textContent = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else if (k in n && typeof v !== "string") n[k] = v;
+    else n.setAttribute(k, v);
+  }
+  for (const c of kids.flat(Infinity)) if (c != null) n.append(c);  // strings become text nodes, never HTML
+  return n;
+}
+const fmt = (x, d = 2) => (typeof x === "number" && isFinite(x)) ? x.toFixed(d) : String(x);
+const clone = (v) => JSON.parse(JSON.stringify(v));
+function lsGet(key, fallback) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch { return fallback; } }
+function lsSet(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { return false; } }
+/* instructions and criteria may be string, object or array: text starting with { or [ that parses is sent as JSON */
+function toText(v) { return typeof v === "string" ? v : (v == null ? "" : JSON.stringify(v, null, 2)); }
+function fromText(t) {
+  const s = t.trim();
+  if (s.startsWith("{") || s.startsWith("[")) { try { return JSON.parse(s); } catch {} }
+  return t;
+}
+
+/* ---------- editor model ---------- */
+let S = { name: "", model: "jev-latest", questions: [] };
+let showProblems = false;
+
+function blankQuestion(id = "") {
+  return { id, type: "noul", instructions: "", yes: "", no: "",
+    options: [{ name: "", desc: "" }, { name: "", desc: "" }], levels: ["", ""] };
+}
+function questionFromApi(id, q) {
+  const e = blankQuestion(id);
+  e.type = ["noul", "choice", "score"].includes(q.type) ? q.type : "noul";
+  e.instructions = toText(q.instructions);
+  const c = q.criteria;
+  if (e.type === "noul" && c && typeof c === "object") { e.yes = toText(c.true); e.no = toText(c.false); }
+  if (e.type === "choice" && c && typeof c === "object" && !Array.isArray(c))
+    e.options = Object.entries(c).map(([name, d]) => ({ name, desc: toText(d) }));
+  if (e.type === "score" && Array.isArray(c)) e.levels = c.map(toText);
+  return e;
+}
+function questionToApi(q) {
+  const out = { type: q.type, instructions: fromText(q.instructions) };
+  if (q.type === "noul") {
+    const c = {};
+    if (q.yes.trim()) c.true = fromText(q.yes);
+    if (q.no.trim()) c.false = fromText(q.no);
+    if (Object.keys(c).length) out.criteria = c;
+  } else if (q.type === "choice") {
+    out.criteria = {};
+    for (const o of q.options) out.criteria[o.name.trim()] = o.desc.trim() ? fromText(o.desc) : null;
+  } else {
+    out.criteria = q.levels.map(fromText);
+  }
+  return out;
+}
+function parseState() {
+  const t = $("stateText").value;
+  try { const v = JSON.parse(t); if (v !== null && typeof v === "object") return { value: v, kind: Array.isArray(v) ? "JSON array" : "JSON object" }; }
+  catch (e) {
+    const s = t.trim();
+    if (s.startsWith("{") || s.startsWith("[")) return { value: t, kind: "text", error: e.message };
+  }
+  return { value: t, kind: "text" };
+}
+function buildRequest() {
+  const questions = {};
+  for (const q of S.questions) questions[q.id.trim()] = questionToApi(q);
+  return { state: parseState().value, model: $("model").value.trim(), questions };
+}
+function current() { const r = buildRequest(); return { name: S.name, model: r.model, state: r.state, questions: r.questions }; }
+
+function loadUseCase(uc) {
+  S = { name: uc.name || "", questions: Object.entries(uc.questions || {}).map(([id, q]) => questionFromApi(id, q)) };
+  $("model").value = uc.model || "jev-latest";
+  $("stateText").value = typeof uc.state === "string" ? uc.state : JSON.stringify(uc.state, null, 2);
+  showProblems = false;
+  renderQuestions();
+}
+
+/* ---------- validation ---------- */
+function problems() {
+  const global = [], per = S.questions.map(() => []);
+  if (!$("model").value.trim()) global.push("Model is empty.");
+  if (!S.questions.length) global.push("Add at least one question.");
+  const counts = {};
+  for (const q of S.questions) counts[q.id.trim()] = (counts[q.id.trim()] || 0) + 1;
+  S.questions.forEach((q, i) => {
+    const p = per[i], id = q.id.trim();
+    if (!id) p.push("Id is empty.");
+    else if (counts[id] > 1) p.push(`Id "${id}" is used by more than one question.`);
+    if (!q.instructions.trim()) p.push("Instructions are empty.");
+    if (q.type === "choice") {
+      const names = q.options.map((o) => o.name.trim());
+      if (!q.options.length) p.push("Choice needs at least one option.");
+      if (names.some((n) => !n)) p.push("Every option needs a name.");
+      if (new Set(names).size !== names.length) p.push("Option names must be unique.");
+      if (q.options.length > 255) p.push("Choice allows at most 255 options.");
+    }
+    if (q.type === "score") {
+      if (q.levels.length < 2) p.push("Score needs at least 2 levels.");
+      if (q.levels.length > 10) p.push("Score allows at most 10 levels.");
+      if (q.levels.some((l) => !l.trim())) p.push("Every level needs a description.");
+    }
+  });
+  return { global, per, ok: !global.length && per.every((p) => !p.length) };
+}
+function showProblemList(ul, list) { ul.replaceChildren(...list.map((t) => el("li", { text: t }))); }
+
+/* ---------- refresh derived views (cheap, runs on every edit) ---------- */
+function fit(t) { t.style.height = "auto"; t.style.height = t.scrollHeight + 2 + "px"; }
+document.addEventListener("input", (e) => { if (e.target.matches("textarea")) fit(e.target); });
+function refresh() {
+  document.querySelectorAll("textarea").forEach(fit);  // values set by code (presets, history, Format) resize too
+  const st = parseState(), status = $("stateStatus");
+  if (st.error) { status.textContent = `invalid JSON, will be sent as text (${st.error})`; status.className = "status warn"; }
+  else { status.textContent = st.kind === "text" ? "Plain text. Sent to Jev as one string." : `${st.kind}. Sent to Jev as structured data.`; status.className = "status"; }
+  $("reqJson").textContent = JSON.stringify(buildRequest(), null, 2);
+  const pr = problems();
+  showProblemList($("globalProblems"), showProblems ? pr.global : []);
+  [...$("qList").children].forEach((card, i) => showProblemList(card.querySelector(".problems"), showProblems ? pr.per[i] || [] : []));
+  return pr;
+}
+
+/* ---------- question cards ---------- */
+function renderQuestions() { $("qList").replaceChildren(...S.questions.map(card)); refresh(); }
+
+function card(q, i) {
+  const n = S.questions.length;
+  const seg = el("span", { class: "seg", role: "group", "aria-label": "Question type" },
+    ["noul", "choice", "score"].map((t) => el("button", { text: t[0].toUpperCase() + t.slice(1), "aria-pressed": String(q.type === t),
+      onclick: () => { q.type = t; renderQuestions(); } })));
+  return el("div", { class: "qcard" },
+    el("div", { class: "qhead" },
+      el("input", { class: "code", value: q.id, placeholder: "question_id", spellcheck: false, "aria-label": "Question id",
+        oninput: (e) => { q.id = e.target.value; refresh(); } }),
+      seg,
+      el("button", { class: "small", text: "Up", disabled: i === 0, "aria-label": "Move question up", onclick: () => move(S.questions, i, -1) }),
+      el("button", { class: "small", text: "Down", disabled: i === n - 1, "aria-label": "Move question down", onclick: () => move(S.questions, i, 1) }),
+      el("button", { class: "small", text: "Duplicate", onclick: () => { const c = clone(q); c.id = uniqueId(q.id); S.questions.splice(i + 1, 0, c); renderQuestions(); } }),
+      el("button", { class: "small", text: "Remove", onclick: () => { S.questions.splice(i, 1); renderQuestions(); } })),
+    labeled("Instructions", el("textarea", { value: q.instructions, rows: 2, placeholder: "The question Jev answers",
+      oninput: (e) => { q.instructions = e.target.value; refresh(); } })),
+    criteriaEditor(q),
+    el("ul", { class: "problems" }));
+}
+function labeled(text, input) { return el("label", { class: "field" }, el("span", { text }), input); }
+function move(arr, i, d) { const [x] = arr.splice(i, 1); arr.splice(i + d, 0, x); renderQuestions(); }
+function uniqueId(base) {
+  const ids = new Set(S.questions.map((q) => q.id.trim()));
+  let k = 2; while (ids.has(`${base || "q"}_${k}`)) k++;
+  return `${base || "q"}_${k}`;
+}
+
+function criteriaEditor(q) {
+  if (q.type === "noul") return el("div", {},
+    labeled("What yes means (optional)", el("textarea", { value: q.yes, rows: 1, oninput: (e) => { q.yes = e.target.value; refresh(); } })),
+    labeled("What no means (optional)", el("textarea", { value: q.no, rows: 1, oninput: (e) => { q.no = e.target.value; refresh(); } })),
+    el("div", { class: "hint", text: "Answer: the probability that the answer is yes, from 0 to 1." }));
+  if (q.type === "choice") return el("div", { class: "field" },
+    el("span", { class: "hint", text: "Options (name, optional description). Answer: one option, a probability for each, and confidence." }),
+    el("div", { class: "rows" }, q.options.map((o, j) => el("div", { class: "row" },
+      el("input", { class: "code opt", value: o.name, placeholder: "option", spellcheck: false, "aria-label": `Option ${j + 1} name`,
+        oninput: (e) => { o.name = e.target.value; refresh(); } }),
+      el("textarea", { value: o.desc, rows: 1, placeholder: "description (optional)", "aria-label": `Option ${j + 1} description`,
+        oninput: (e) => { o.desc = e.target.value; refresh(); } }),
+      el("button", { class: "small", text: "Remove", "aria-label": `Remove option ${j + 1}`, onclick: () => { q.options.splice(j, 1); renderQuestions(); } })))),
+    el("div", { style: "margin-top:6px" }, el("button", { class: "small", text: "Add option", disabled: q.options.length >= 255,
+      onclick: () => { q.options.push({ name: "", desc: "" }); renderQuestions(); } })));
+  return el("div", { class: "field" },
+    el("span", { class: "hint", text: "Levels, lowest first (2 to 10). Answer: a position on this scale, a probability per level, and confidence." }),
+    el("div", { class: "rows" }, q.levels.map((l, j) => el("div", { class: "row" },
+      el("span", { class: "idx", text: String(j) }),
+      el("textarea", { value: l, rows: 1, placeholder: `level ${j} description`, "aria-label": `Level ${j} description`,
+        oninput: (e) => { q.levels[j] = e.target.value; refresh(); } }),
+      el("span", { class: "btns" },
+        el("button", { class: "small", text: "Up", disabled: j === 0, "aria-label": `Move level ${j} up`, onclick: () => move(q.levels, j, -1) }),
+        el("button", { class: "small", text: "Down", disabled: j === q.levels.length - 1, "aria-label": `Move level ${j} down`, onclick: () => move(q.levels, j, 1) }),
+        el("button", { class: "small", text: "Remove", disabled: q.levels.length <= 2, "aria-label": `Remove level ${j}`, onclick: () => { q.levels.splice(j, 1); renderQuestions(); } }))))),
+    el("div", { style: "margin-top:6px" }, el("button", { class: "small", text: "Add level", disabled: q.levels.length >= 10,
+      onclick: () => { q.levels.push(""); renderQuestions(); } })));
+}
+
+/* ---------- answers ---------- */
+function bar(p, chosen) { return el("div", { class: "bar" + (chosen ? " chosen" : "") }, el("div", { style: `width:${Math.max(0, Math.min(1, +p || 0)) * 100}%` })); }
+function noulReading(p) {
+  if (p >= 0.9) return "strong yes"; if (p >= 0.6) return "leans yes";
+  if (p > 0.4) return "near even"; if (p > 0.1) return "leans no"; return "strong no";
+}
+function renderNoul(a) {
+  const p = a.noul;
+  return [el("div", {}, el("span", { class: "big", text: fmt(p) }), " ", el("span", { class: "reading", text: noulReading(p) })),
+    el("div", { class: "track", role: "img", "aria-label": `yes probability ${fmt(p)}` },
+      el("div", { class: "fill", style: `width:${Math.max(0, Math.min(1, p)) * 100}%` }), el("div", { class: "midline" })),
+    el("div", { class: "ends" }, el("span", { text: "0 no" }), el("span", { text: "0.5" }), el("span", { text: "1 yes" }))];
+}
+function renderChoice(a) {
+  const rows = Object.entries(a.probabilities || {}).sort((x, y) => y[1] - x[1]);
+  return [el("div", {}, el("span", { class: "big code", text: String(a.choice) }), " ",
+      el("span", { class: "conf" }, "confidence ", el("b", { text: fmt(a.confidence) }))),
+    el("div", { class: "bars" }, rows.map(([k, p]) => [
+      el("span", { class: "lbl code" + (k === a.choice ? " chosen" : ""), text: k }), bar(p, k === a.choice), el("span", { class: "num", text: fmt(p) })]))];
+}
+function renderScore(a) {
+  const legend = a.legend || {}, probs = a.probabilities || {};
+  const levels = Object.keys(legend).length ? Object.keys(legend) : Object.keys(probs);
+  levels.sort((x, y) => +x - +y);
+  const max = Math.max(1, levels.length - 1), pos = (v) => `${Math.max(0, Math.min(1, v / max)) * 100}%`;
+  const nearest = String(Math.round(a.score));
+  return [el("div", {}, el("span", { class: "big", text: fmt(a.score) }), el("span", { class: "reading", text: ` of 0 to ${levels.length - 1}` }), " ",
+      el("span", { class: "conf" }, "confidence ", el("b", { text: fmt(a.confidence) }))),
+    el("div", { class: "reading", text: `nearest level ${nearest}: ${legend[nearest] ?? ""}` }),
+    el("div", { class: "scale", role: "img", "aria-label": `score ${fmt(a.score)} on levels 0 to ${max}` },
+      el("div", { class: "line" }),
+      levels.flatMap((l) => [el("div", { class: "tick", style: `left:${pos(+l)}` }), el("div", { class: "ticklbl", style: `left:${pos(+l)}`, text: l })]),
+      el("div", { class: "marker", style: `left:${pos(+a.score)}` })),
+    el("div", { class: "bars" }, levels.map((l) => [
+      el("span", { class: "lbl" + (l === nearest ? " chosen" : ""), text: `${l}. ${legend[l] ?? ""}` }), bar(probs[l], l === nearest), el("span", { class: "num", text: fmt(probs[l]) })]))];
+}
+function renderAnswers(run) {
+  const box = $("answers"), out = [];
+  const status = run.status, body = run.response;
+  out.push(el("div", { class: "meta" },
+    el("span", {}, "model ", el("b", { text: String(body?.model ?? run.request.model) })),
+    el("span", {}, "input tokens ", el("b", { text: String(body?.usage?.input_tokens ?? "n/a") })),
+    el("span", {}, "output tokens ", el("b", { text: String(body?.usage?.output_tokens ?? "n/a") })),
+    el("span", {}, "round trip ", el("b", { text: `${run.ms} ms` }))));
+  if (status !== 200) {
+    out.push(el("div", { class: "errbox", role: "alert" },
+      el("strong", { text: status === "network" ? "Network error: the local server did not answer" : `HTTP ${status} ${errorMeaning(status)}` }),
+      el("pre", { text: typeof body === "string" ? body : JSON.stringify(body, null, 2) })));
+  } else {
+    for (const id of Object.keys(run.request.questions)) {
+      const a = body.answers?.[id], qt = run.request.questions[id].type;
+      const kids = !a ? [el("div", { class: "empty", text: "No answer returned for this question." })]
+        : a.type === "noul" ? renderNoul(a) : a.type === "choice" ? renderChoice(a) : a.type === "score" ? renderScore(a)
+        : [el("pre", { text: JSON.stringify(a, null, 2) })];
+      out.push(el("div", { class: "acard" }, el("div", { class: "ahead" }, el("code", { text: id }), el("span", { class: "tag", text: a?.type || qt })), kids));
+    }
+  }
+  out.push(el("details", {}, el("summary", { text: "Raw response JSON" }), el("pre", { text: typeof body === "string" ? body : JSON.stringify(body, null, 2) })));
+  box.replaceChildren(...out);
+}
+function errorMeaning(s) {
+  return { 401: "Unauthorized: missing or invalid API key", 403: "Forbidden by the local server", 422: "Unprocessable: the request failed validation",
+    429: "Too many requests: rate limited, retry shortly", 502: "Could not reach TypeSafe", 529: "Overloaded: retry shortly" }[s] || "";
+}
+
+/* ---------- run ---------- */
+async function run() {
+  showProblems = true;
+  if (!refresh().ok) return;
+  const request = buildRequest();
+  $("run").disabled = true; $("answers").classList.add("busy");
+  const t0 = performance.now();
+  let status, response;
+  try {
+    const r = await fetch("/run", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(request) });
+    status = r.status;
+    const text = await r.text();
+    try { response = JSON.parse(text); } catch { response = text; }
+  } catch (e) { status = "network"; response = String(e); }
+  const entry = { t: Date.now(), ms: Math.round(performance.now() - t0), status, request, response };
+  $("run").disabled = false; $("answers").classList.remove("busy");
+  renderAnswers(entry);
+  addHistory(entry);
+}
+
+/* ---------- history ---------- */
+function summary(e) {
+  if (e.status !== 200) return `error ${e.status}`;
+  return Object.keys(e.request.questions).map((id) => {
+    const a = e.response.answers?.[id];
+    if (!a) return `${id}: missing`;
+    if (a.type === "noul") return `${id}: ${fmt(a.noul)}`;
+    if (a.type === "choice") return `${id}: ${a.choice} ${fmt(a.probabilities?.[a.choice])}`;
+    if (a.type === "score") return `${id}: ${fmt(a.score)}`;
+    return `${id}: ?`;
+  }).join("  ");
+}
+function addHistory(entry) {
+  const h = lsGet(LS_HIST, []);
+  h.unshift(entry);
+  h.length = Math.min(h.length, HIST_MAX);
+  while (h.length && !lsSet(LS_HIST, h)) h.pop();  // drop the oldest if storage is full
+  renderHistory(h);
+}
+function renderHistory(h = lsGet(LS_HIST, [])) {
+  $("hlist").replaceChildren(...(h.length ? h.map((e) => el("li", {}, el("button", {
+    onclick: () => { loadUseCase({ name: S.name, model: e.request.model, state: e.request.state, questions: e.request.questions }); renderCaseSelect(""); renderAnswers(e); } },
+    el("span", { class: "htime", text: new Date(e.t).toLocaleString() }),
+    el("span", { class: "htime", text: `${e.response?.model ?? e.request.model} | in ${e.response?.usage?.input_tokens ?? "n/a"} out ${e.response?.usage?.output_tokens ?? "n/a"} | ${e.ms} ms` }),
+    el("div", { class: "hsum", text: summary(e) })))) : [el("li", { class: "empty", text: "No runs yet." })]));
+}
+
+/* ---------- use cases ---------- */
+function cases() { return lsGet(LS_CASES, {}); }
+function renderCaseSelect(selected) {
+  const saved = Object.keys(cases()).sort();
+  const sel = $("usecase");
+  sel.replaceChildren(
+    el("option", { value: "", text: "(unsaved)" }),
+    el("optgroup", { label: "Saved" }, saved.map((n) => el("option", { value: "saved:" + n, text: n }))),
+    el("optgroup", { label: "Examples" }, PRESETS.map((p, i) => el("option", { value: "preset:" + i, text: p.name }))));
+  sel.value = selected || "";
+  $("del").disabled = !sel.value.startsWith("saved:");
+}
+function saveAs(name) {
+  name = (name ?? prompt("Save use case as:", S.name || ""))?.trim();
+  if (!name) return;
+  S.name = name;
+  const all = cases(); all[name] = current();
+  if (!lsSet(LS_CASES, all)) return alert("Could not save: browser storage is unavailable or full.");
+  renderCaseSelect("saved:" + name);
+}
+
+$("usecase").addEventListener("change", (e) => {
+  const v = e.target.value;
+  if (v.startsWith("saved:")) loadUseCase(cases()[v.slice(6)]);
+  else if (v.startsWith("preset:")) loadUseCase(clone(PRESETS[+v.slice(7)]));
+  $("del").disabled = !v.startsWith("saved:");
+});
+$("newCase").onclick = () => {
+  loadUseCase({ name: "", model: $("model").value, state: "", questions: {} });
+  S.questions.push(blankQuestion()); renderQuestions(); renderCaseSelect(""); $("stateText").focus();
+};
+$("clearState").onclick = () => { $("stateText").value = ""; refresh(); $("stateText").focus(); };
+$("save").onclick = () => { const v = $("usecase").value; saveAs(v.startsWith("saved:") ? v.slice(6) : undefined); };
+$("saveAs").onclick = () => saveAs();
+$("del").onclick = () => {
+  const v = $("usecase").value;
+  if (!v.startsWith("saved:") || !confirm(`Delete "${v.slice(6)}"?`)) return;
+  const all = cases(); delete all[v.slice(6)]; lsSet(LS_CASES, all); renderCaseSelect("");
+};
+$("export").onclick = () => {
+  const uc = current();
+  const a = el("a", { href: URL.createObjectURL(new Blob([JSON.stringify(uc, null, 2)], { type: "application/json" })),
+    download: `${(uc.name || "use-case").replace(/[^\w.-]+/g, "_")}.json` });
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+};
+$("importBtn").onclick = () => $("importFile").click();
+$("importFile").onchange = async (e) => {
+  const f = e.target.files[0]; e.target.value = "";
+  if (!f) return;
+  try {
+    const uc = JSON.parse(await f.text());
+    if (!uc || typeof uc !== "object" || !("state" in uc) || !uc.questions || typeof uc.questions !== "object" || Array.isArray(uc.questions))
+      throw new Error("expected {name, model, state, questions}");
+    loadUseCase({ ...uc, name: uc.name || f.name.replace(/\.json$/, "") });
+    renderCaseSelect("");
+  } catch (err) { alert(`Import failed: ${err.message}`); }
+};
+
+/* ---------- wiring ---------- */
+$("stateText").addEventListener("input", refresh);
+$("model").addEventListener("input", refresh);
+$("format").onclick = () => { const st = parseState(); if (st.kind !== "text") { $("stateText").value = JSON.stringify(st.value, null, 2); refresh(); } };
+$("addQ").onclick = () => { S.questions.push(blankQuestion(uniqueId("q"))); renderQuestions(); };
+$("run").onclick = run;
+$("copyReq").onclick = async () => {
+  try { await navigator.clipboard.writeText($("reqJson").textContent); $("copyMsg").textContent = "copied"; }
+  catch { $("copyMsg").textContent = "copy failed"; }
+  setTimeout(() => { $("copyMsg").textContent = ""; }, 1500);
+};
+$("clearHist").onclick = () => { if (confirm("Clear all run history?")) { try { localStorage.removeItem(LS_HIST); } catch {} renderHistory([]); } };
+document.addEventListener("keydown", (e) => { if ((e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); if (!$("run").disabled) run(); } });
+
+fetch("/models").then((r) => r.ok ? r.json() : null).then((d) => {
+  for (const m of d?.models || []) $("models").append(el("option", { value: String(m.name), text: String(m.description || "") }));
+}).catch(() => {});
+
+renderCaseSelect("preset:0");
+loadUseCase(clone(PRESETS[0]));
+renderHistory();
+</script>
+</body>
+</html>

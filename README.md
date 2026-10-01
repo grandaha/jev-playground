@@ -12,6 +12,10 @@ Start with [experiments/customer-matching/README.md](experiments/customer-matchi
 
 Triages synthetic security alerts, groups them into incidents and ranks accounts, with a rules-only baseline beside every stage. See [experiments/security-alert-triage/README.md](experiments/security-alert-triage/README.md).
 
+## Playground
+
+A local web app for writing and running Jev questions by hand, with real requests from the two experiments as examples. See [experiments/playground/README.md](experiments/playground/README.md).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

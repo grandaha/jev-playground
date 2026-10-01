@@ -1,6 +1,6 @@
 # Jev playground
 
-Scratch space for trying use cases with Jev (TypeSafe System One). One directory per use case in `experiments/<name>/` with its own README.md, DESIGN.md, `scripts/` and one sample dataset in `data/`.
+Scratch space for trying use cases with Jev (TypeSafe System One). One directory per use case in `experiments/<name>/` with its own README.md, DESIGN.md, `scripts/` and one sample dataset in `data/`. `experiments/playground` is a hand-run tool with no dataset, so it has no `data/` folder.
 
 - Python venv: `.venv` (3.13). Run with `.venv/bin/python experiments/<name>/scripts/<script>.py`, or a use case's `run_all.sh`.
 - API key lives in `.env` as `TYPESAFE_API_KEY` (gitignored). Never commit or print it.

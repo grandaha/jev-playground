@@ -23,7 +23,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 syst
 code, .code, pre, textarea.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; }
 button, input, select, textarea { font: inherit; color: inherit; }
 input, select, textarea { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; width: 100%; }
-textarea { resize: vertical; min-height: 34px; }
+textarea { resize: none; overflow: hidden; min-height: 34px; }  /* height follows the content, see fit() */
 input:focus, select:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 button { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; white-space: nowrap; }
 button:hover:not(:disabled) { border-color: var(--accent); }
@@ -42,7 +42,7 @@ main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) mi
 @media (max-width: 1100px) { main { grid-template-columns: 1fr; } }
 section.pane { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-width: 0; }
 section.pane > h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 8px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-#stateText { min-height: 340px; }
+#stateText { min-height: 160px; }
 .status { font-size: 12px; color: var(--muted); margin-top: 6px; }
 .status.warn { color: var(--no); }
 .qcard { border: 1px solid var(--line); border-radius: 8px; padding: 10px; margin-bottom: 10px; }
@@ -425,7 +425,10 @@ function problems() {
 function showProblemList(ul, list) { ul.replaceChildren(...list.map((t) => el("li", { text: t }))); }
 
 /* ---------- refresh derived views (cheap, runs on every edit) ---------- */
+function fit(t) { t.style.height = "auto"; t.style.height = t.scrollHeight + 2 + "px"; }
+document.addEventListener("input", (e) => { if (e.target.matches("textarea")) fit(e.target); });
 function refresh() {
+  document.querySelectorAll("textarea").forEach(fit);  // values set by code (presets, history, Format) resize too
   const st = parseState(), status = $("stateStatus");
   if (st.error) { status.textContent = `invalid JSON, will be sent as text (${st.error})`; status.className = "status warn"; }
   else { status.textContent = `sent as ${st.kind}`; status.className = "status"; }

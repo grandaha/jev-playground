@@ -112,7 +112,7 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
   <span class="group"><button id="run" class="primary">Run</button><span class="kbd">Cmd/Ctrl+Enter</span></span>
   <span class="group">
     <label>Use case <select id="usecase"></select></label>
-    <button id="save">Save</button><button id="saveAs">Save as</button><button id="del">Delete</button>
+    <button id="newCase">New</button><button id="save">Save</button><button id="saveAs">Save as</button><button id="del">Delete</button>
     <button id="export">Export JSON</button><button id="importBtn">Import JSON</button>
     <input id="importFile" type="file" accept="application/json,.json" hidden>
   </span>
@@ -120,8 +120,8 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
 
 <main>
   <section class="pane" aria-labelledby="h-state">
-    <h2 id="h-state">State <button id="format" class="small">Format</button></h2>
-    <textarea id="stateText" class="code" spellcheck="false" aria-label="State, plain text or JSON"></textarea>
+    <h2 id="h-state">State <span><button id="clearState" class="small">Clear</button> <button id="format" class="small">Format</button></span></h2>
+    <textarea id="stateText" class="code" spellcheck="false" aria-label="State, plain text or JSON" placeholder="Type or paste anything: a message, a document, a record. Plain text is fine. JSON is optional; an object or array is sent as structured data."></textarea>
     <div id="stateStatus" class="status" aria-live="polite"></div>
   </section>
 
@@ -431,7 +431,7 @@ function refresh() {
   document.querySelectorAll("textarea").forEach(fit);  // values set by code (presets, history, Format) resize too
   const st = parseState(), status = $("stateStatus");
   if (st.error) { status.textContent = `invalid JSON, will be sent as text (${st.error})`; status.className = "status warn"; }
-  else { status.textContent = `sent as ${st.kind}`; status.className = "status"; }
+  else { status.textContent = st.kind === "text" ? "Plain text. Sent to Jev as one string." : `${st.kind}. Sent to Jev as structured data.`; status.className = "status"; }
   $("reqJson").textContent = JSON.stringify(buildRequest(), null, 2);
   const pr = problems();
   showProblemList($("globalProblems"), showProblems ? pr.global : []);
@@ -637,6 +637,11 @@ $("usecase").addEventListener("change", (e) => {
   else if (v.startsWith("preset:")) loadUseCase(clone(PRESETS[+v.slice(7)]));
   $("del").disabled = !v.startsWith("saved:");
 });
+$("newCase").onclick = () => {
+  loadUseCase({ name: "", model: $("model").value, state: "", questions: {} });
+  S.questions.push(blankQuestion()); renderQuestions(); renderCaseSelect(""); $("stateText").focus();
+};
+$("clearState").onclick = () => { $("stateText").value = ""; refresh(); $("stateText").focus(); };
 $("save").onclick = () => { const v = $("usecase").value; saveAs(v.startsWith("saved:") ? v.slice(6) : undefined); };
 $("saveAs").onclick = () => saveAs();
 $("del").onclick = () => {
